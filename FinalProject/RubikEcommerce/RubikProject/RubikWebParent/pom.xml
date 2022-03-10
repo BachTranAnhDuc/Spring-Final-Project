@@ -20,6 +20,7 @@
 	
 	<modules>
 		<module>RubikBackEnd</module>
+		<module>RubikFrontEnd</module>
 	</modules>
 	<dependencies>
 		<dependency>
