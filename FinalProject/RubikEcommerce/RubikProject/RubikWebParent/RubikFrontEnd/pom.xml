@@ -9,9 +9,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>RubikBackEnd</artifactId>
-	<name>RubikBackEnd</name>
-	<description>Rubik Admin project</description>
+	<artifactId>RubikFrontEnd</artifactId>
+
+
+	<name>RubikFrontEnd</name>
+	<description>Rubik web application</description>
 	
 	<properties>
 		<java.version>17</java.version>
@@ -26,16 +28,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-		    	<version>2.19.1</version>
-				<configuration>
-    			<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-		</plugin>
 		</plugins>
-		
 	</build>
 
 </project>

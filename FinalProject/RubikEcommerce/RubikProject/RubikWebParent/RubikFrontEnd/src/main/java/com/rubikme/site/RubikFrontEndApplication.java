@@ -1,13 +1,13 @@
-package com.rubikme;
+package com.rubikme.site;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RubikBackEndApplication {
+public class RubikFrontEndApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RubikBackEndApplication.class, args);
+		SpringApplication.run(RubikFrontEndApplication.class, args);
 	}
 
 }
