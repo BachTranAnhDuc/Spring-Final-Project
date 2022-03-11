@@ -38,7 +38,7 @@ public class RoleRepositoryTests {
 		
 		Role roleAssistant = new Role("Assistant", "manage questions and review");
 		
-		repo.saveAll(List.of(roleSaleperson, roleEditor, roleSaleperson, roleAssistant));
+		repo.saveAll(List.of(roleSaleperson, roleEditor, roleSaleperson, roleAssistant, roleShipper));
 		
 		
 	}
