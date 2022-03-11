@@ -96,4 +96,9 @@ public class UserRepositoryTests {
 		repo.deleteById(userId);
 		
 	}
+	
+	@Test
+	public void testGetUserByEmail() {
+		String email = "";
+	}
 }

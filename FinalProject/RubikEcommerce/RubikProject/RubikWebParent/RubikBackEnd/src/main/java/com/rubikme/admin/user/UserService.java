@@ -3,6 +3,7 @@ package com.rubikme.admin.user;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.rubikme.common.entity.User;
@@ -17,6 +18,9 @@ public class UserService {
 	@Autowired
 	private RoleRepository roleRepo;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	public List<User> listAll() {
 		return (List<User>) userRepo.findAll();
 	}
@@ -26,7 +30,12 @@ public class UserService {
 	}
 
 	public void save(User user) {
-		// TODO Auto-generated method stub
+		encodePassword(user);
 		userRepo.save(user);
+	}
+	
+	private void encodePassword(User user) {
+		String encoderPassword = passwordEncoder.encode(user.getPassword());
+		user.setPassword(encoderPassword);
 	}
 }
