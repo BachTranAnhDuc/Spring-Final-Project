@@ -54,41 +54,46 @@ public class UserRepositoryTests {
 	}
 	
 	@Test
-	public void testCreateUserWithTwoRoles1() {
-		User userLan = new User("qunh@gmail.com", "quynh2000", "quynh", "anh");
-		Role roleEditor = new Role(3);
-		Role roleAssistant = new Role(5);
-//		Role roleEditor = entityManager.find(Role.class, 3);
-//		Role roleAssistant = entityManager.find(Role.class, 5);
+	public void testListAllUsers() {
+		Iterable<User> listUsers = repo.findAll();
 		
-		userLan.addRole(roleEditor);
-		userLan.addRole(roleAssistant);
-		
-		
-//		repo.saveAll(List.of(roleEditor, roleAssistant));
-		
-		User savedUser = repo.save(userLan);
-		
-		assertThat(savedUser.getId()).isGreaterThan(0);
+		listUsers.forEach(user -> System.out.println(user));
 	}
 	
+	@Test
+	public void testGetUserById() {
+		User userName = repo.findById(1).get();
+		System.out.println(userName);
+		assertThat(userName).isNotNull();
+	}
 	
 	@Test
-	public void testCreateUserWithTwoRoles3() {
-		User userLan = new User("qunh@gmail.com", "quynh2000", "quynh", "anh");
-//		Role roleEditor = new Role(3);
-		Role roleAssistant = new Role(5);
-//		Role roleEditor = entityManager.find(Role.class, 3);
-//		Role roleAssistant = entityManager.find(Role.class, 5);
+	public void testUpdateUserDetails() {
+		User userName = repo.findById(2).get();
+		userName.setEnabled(true);
+		userName.setEmail("lanlan@gmail.com");
 		
-//		userLan.addRole(roleEditor);
-		userLan.addRole(roleAssistant);
+		repo.save(userName);
 		
+	}
+	
+	@Test 
+	public void testUpdateUserRoles() {
+		User userName = repo.findById(2).get();
 		
-//		repo.saveAll(List.of(roleEditor, roleAssistant));
+		Role roleEditor = new Role(3);
+		Role roleSalesPerson = new Role(2);
 		
-		User savedUser = repo.save(userLan);
+		userName.getRoles().remove(roleEditor);
+		userName.addRole(roleSalesPerson);
 		
-		assertThat(savedUser.getId()).isGreaterThan(0);
+		repo.save(userName);
+	}
+	
+	@Test
+	public void testDeleteUser() {
+		Integer userId = 2;
+		repo.deleteById(userId);
+		
 	}
 }

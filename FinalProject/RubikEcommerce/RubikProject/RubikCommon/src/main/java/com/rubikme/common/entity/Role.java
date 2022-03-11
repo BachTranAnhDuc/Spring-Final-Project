@@ -86,6 +86,9 @@ public class Role {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Role [name=" + name + "]";
+	}
 
-	
 }
