@@ -92,13 +92,17 @@ public class UserRepositoryTests {
 	
 	@Test
 	public void testDeleteUser() {
-		Integer userId = 2;
+		Integer userId = 9;
 		repo.deleteById(userId);
 		
 	}
 	
 	@Test
 	public void testGetUserByEmail() {
-		String email = "";
-	}
+		String email = "lan@gmail.com";
+		
+		User user = repo.getUserByEmail(email);
+		
+		assertThat(user).isNotNull();
+	} 
 }
