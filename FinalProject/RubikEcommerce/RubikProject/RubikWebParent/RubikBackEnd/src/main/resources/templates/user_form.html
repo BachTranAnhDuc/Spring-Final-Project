@@ -127,12 +127,12 @@
 			</div>
 		</form>		
 		
-		<div class="model fade text-center" id="modalDialog">
+		<div class="modal fade text-center" id="modalDialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h4 class="model-title" id="modalTitle">Warning</h4>
-						<button type="button" class="close" data-dimiss="modal">&times;</button>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					
 					<div class="modal-body">
@@ -140,7 +140,7 @@
 					</div>
 					
 					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dimiss="modal">Close</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
@@ -164,20 +164,27 @@
 			csrfValue = $("input[name='_csrf']").val();
 			params = {email: userEmail, _csrf: csrfValue};
 
-			$("#modalDialog").modal();
-
-			if (true) return false;
-
 			$.post(url, params, function(response) {
 				if (response == "OK") {
 					form.submit();
 				}
 				else if (response == "Duplicated") {
-					alert("There is another user having the email " + userEmail);
+					showModalDialog("Warning", "There is another user having the email " + userEmail);
 				}
-				alert("Response from sever: " + response);
+				else {
+					showModalDialog("Error", "Unknown response from server");
+				}
+			}).fail(function() {
+				showModalDialog("Error", "Could not connect to the server");
 			});
 			return false;
+		}
+
+
+		function showModalDialog(title, message) {
+			$("#modalTitle").text(title, message);
+			$("#modalBody").text(message);
+			$("#modalDialog").modal();
 		}
 	</script>
 </body>
