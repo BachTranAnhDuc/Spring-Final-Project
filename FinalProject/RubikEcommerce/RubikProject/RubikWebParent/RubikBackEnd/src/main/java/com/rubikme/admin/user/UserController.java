@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -24,12 +25,9 @@ public class UserController {
 	private UserService service;
 	
 	@GetMapping("/users")
-	public String listAll(Model model) {
+	public String listFirstPage(Model model) {
 		
-		List<User> listUsers = service.listAll(); 
-		model.addAttribute("listUsers", listUsers);
-		
-		return "users";
+		return listByPage(1, model);
 	}
 	
 	@GetMapping("/users/new")
@@ -67,10 +65,6 @@ public class UserController {
 		
 		//System.out.println(user);
 		//System.out.println(multipartFile.getOriginalFilename());
-		
-		
-		
-
 		
 		redirectAttributes.addFlashAttribute("message", "The user has been saved successfully.");
 		return "redirect:/users";
@@ -121,5 +115,29 @@ public class UserController {
 		redirectAttributes.addFlashAttribute("message", message);
 		
 		return "redirect:/users";
+	}
+	
+	@GetMapping("/users/page/{pageNum}")
+	public String listByPage(@PathVariable(name = "pageNum") int pageNum, Model model) {
+		Page<User> pageUser = service.listByPage(pageNum);
+		List<User> listUsers = pageUser.getContent();
+		
+//		System.out.println("Page number = " + pageNum);
+//		System.out.println("Total elements = " + pageUser.getTotalElements());
+//		System.out.println("Total pages = " + pageUser.getTotalPages());
+		
+		long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
+		long endCount = startCount + UserService.USERS_PER_PAGE - 1;
+		
+		if (endCount > pageUser.getTotalElements()) {
+			endCount = pageUser.getTotalElements();
+		}
+		
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", pageUser.getTotalElements());
+		model.addAttribute("listUsers", listUsers);
+		
+		return "users";
 	}
 }
