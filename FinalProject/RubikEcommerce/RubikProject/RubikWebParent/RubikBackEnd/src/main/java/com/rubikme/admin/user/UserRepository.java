@@ -12,4 +12,6 @@ public interface UserRepository extends CrudRepository<User, Integer>{
 	public User getUserByEmail(@Param("email") String email);
 	
 	public long countUserById(Integer id);
+	
+
 }
