@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -107,8 +108,12 @@ public class UserService {
 		userRepo.updateEnabledStatus(id, enabled);
 	}
 	
-	public Page<User> listByPage(int pageNum) {
-		Pageable pageable = PageRequest.of(pageNum - 1, USERS_PER_PAGE);
+	public Page<User> listByPage(int pageNum, String sortField, String sortDir) {
+		Sort sort = Sort.by(sortDir);
+		
+		sort = sortField.equals("asc") ? sort.ascending() : sort.descending();
+		
+		Pageable pageable = PageRequest.of(pageNum - 1, USERS_PER_PAGE, sort);
 		
 		return userRepo.findAll(pageable);
 	}
