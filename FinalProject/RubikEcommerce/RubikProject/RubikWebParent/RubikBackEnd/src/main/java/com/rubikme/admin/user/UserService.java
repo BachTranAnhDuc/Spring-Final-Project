@@ -50,13 +50,11 @@ public class UserService {
 		boolean isCreatingNew = (id == null);
 		
 		if (isCreatingNew) {
-			if (userByEmail != null) {
+			if (userByEmail != null) return false;
+		}
+		else {
+			if (userByEmail.getId() != id) {
 				return false;
-			}
-			else {
-				if (userByEmail.getId() != id) {
-					return false;
-				}
 			}
 		}
 		
