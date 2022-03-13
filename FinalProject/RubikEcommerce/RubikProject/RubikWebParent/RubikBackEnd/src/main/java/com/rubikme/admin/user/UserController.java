@@ -48,18 +48,26 @@ public class UserController {
 	@PostMapping("/users/save")
 	public String saveUser(User user, RedirectAttributes redirectAttributes,
 			@RequestParam("image") MultipartFile multipartFile) throws IOException {
-		System.out.println(user);
-		System.out.println(multipartFile.getOriginalFilename());
-		String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+		if (!multipartFile.isEmpty()) {
+			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+			
+			user.setPhotos(fileName);
+			
+			User savedUser = service.save(user);
+			
+			String uploadDir = "user-photos/" + savedUser.getId();
+			
+			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+		}   
 		
-		String uploadDir = "user-photos";
+		//System.out.println(user);
+		//System.out.println(multipartFile.getOriginalFilename());
 		
-		FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 		
 		
 		//service.save(user);
 		
-		//redirectAttributes.addFlashAttribute("message", "The user has been saved successfully.");
+		redirectAttributes.addFlashAttribute("message", "The user has been saved successfully.");
 		return "redirect:/users";
 	}
 	
@@ -70,7 +78,7 @@ public class UserController {
 			User user = service.get(id);
 			List<Role> listRoles = service.listRoles();
 			
-			model.addAttribute("user", user);
+			model.addAttribute("user", user);  
 			model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
 			model.addAttribute("listRoles", listRoles);
 			

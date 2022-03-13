@@ -98,7 +98,9 @@
 					<tr th:each="user : ${listUsers}">
 						<td>[[${user.id}]]</td>
 						<td>
-							<span class="fas fa-portrait fa-2x icon-dark"></span>
+							<span th:if="${user.photos == null}" class="fas fa-portrait fa-2x icon-dark"></span>
+							<img th:if="${user.photos != null}" th:src="@{${user.photosImagePath}}"
+								class="w-50"/>
 						</td>
 						<td>[[${user.email}]]</td>
 						<td>[[${user.firstName}]]</td>
@@ -121,7 +123,8 @@
 							 <a class="fas fa-trash fa-2x icon-dark link-delete-user" 
 							 	th:href="@{'/users/delete/' + ${user.id}}"
 							 	th:userId="${user.id}"
-							 	title="Delete this user"></a>
+							 	title="Delete this user">
+							 </a>
 						</td>
 					</tr>
 				</tbody>
