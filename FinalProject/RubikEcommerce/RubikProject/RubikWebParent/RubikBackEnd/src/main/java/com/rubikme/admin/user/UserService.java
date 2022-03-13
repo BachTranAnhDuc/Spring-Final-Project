@@ -31,7 +31,21 @@ public class UserService {
 	}
 
 	public void save(User user) {
-		encodePassword(user);
+		boolean isUpdatingUser = (user.getId() != null);
+		
+		if (isUpdatingUser) {
+			User existingUser = userRepo.findById(user.getId()).get();
+			
+			if (user.getPassword().isEmpty()) {
+				user.setPassword(existingUser.getPassword());
+			}
+			else {
+				encodePassword(user);
+			}
+		}
+		else {
+			encodePassword(user);
+		}
 		userRepo.save(user);
 	}
 	
@@ -69,5 +83,15 @@ public class UserService {
 		catch (NoSuchElementException ex) {
 			throw new UserNotFoundException("Could not find any user with ID" + id);
 		}
+	}
+	
+	public void delete(Integer id) throws UserNotFoundException{
+		long countId = userRepo.countUserById(id);
+		
+		if (countId == 0) {
+			throw new UserNotFoundException("Could not find any user with ID" + id);
+		}
+		
+		userRepo.deleteById(id);
 	}
 }
