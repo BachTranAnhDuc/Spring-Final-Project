@@ -131,8 +131,33 @@
 			</table>
 		</div>
 		
-		<div class="text-center m-1">
+		<div class="text-center m-1" th:if="${totalItems > 0}">
 			<span>Showing user # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+		</div>
+		<div class="text-center m-1" th:unless="${totalItems > 0}">
+			<span>Can not find user.</span>
+		</div>
+		
+		<div>
+			<nav>
+			  <ul class="pagination justify-content-center">
+			    <li class="page-item">
+			    	<a class="page-link" th:href="@{/users/page/1}">First</a>
+			    </li>
+			    <li class="page-item">
+			    	<a class="page-link" th:href="@{'/users/page/' + ${currentPage - 1}}">Previous</a>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item"><a class="page-link" href="#">2</a></li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			    <li class="page-item">
+			    	<a class="page-link" th:href="@{'/users/page/' + ${currentPage + 1}}">Next</a>
+			    </li>
+			    <li class="page-item">
+			    	<a class="page-link" th:href="@{'/users/page/' + ${totalPages}}">Last</a>
+			    </li>
+			  </ul>
+			</nav>
 		</div>
 		
 		<div class="modal fade text-center" id="confirmModal">
