@@ -3,6 +3,8 @@ package com.rubikme.admin.user;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ import com.rubikme.common.entity.User;
 import com.rubikme.common.entity.Role;
 
 @Service
+@Transactional
 public class UserService {
 	
 	@Autowired
@@ -93,5 +96,9 @@ public class UserService {
 		}
 		
 		userRepo.deleteById(id);
+	}
+	
+	public void updateEnableUserStatus(Integer id, boolean enabled) {
+		userRepo.updateEnabledStatus(id, enabled);
 	}
 }
