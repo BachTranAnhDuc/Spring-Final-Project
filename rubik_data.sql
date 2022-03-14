@@ -18,11 +18,11 @@ delete from users where id = 7;
 
 
 
-insert into roles values (1,'Admin','manage everything');
-insert into roles values(2,'Salesperson','manage product price, customers, shipping, orders and sales report');
-insert into roles values(3,'Editor','manage categories, brands, products, articles and menus');
-insert into roles values(4,'Shipper','view products, view orders and update order status');
-insert into roles values(5,'Assistant','manage questions and reviews');
+insert into roles values (1, 'manage everything', 'Admin');
+insert into roles values(2, 'manage product price, customers, shipping, orders and sales report', 'Salesperson');
+insert into roles values(3, 'manage categories, brands, products, articles and menus', 'Editor');
+insert into roles values(4, 'view products, view orders and update order status', 'Shipper');
+insert into roles values(5, 'manage questions and reviews','Assistant');
 
 insert into users values (1,'anhduc@gmail.com',1,'Duc','Bach Tran Anh','$2a$10$bDqskP9Z/y6BIZnFLgJ8HuwMYaZXD9w2jVk2pYHXgn1k6N4nckleu','avt45.jpg');
 insert into users values (2,'vinhduong@gmail.com',1,'Vinh','Duong Chan Nhat','$2a$10$zRa/rmQ8JarpYG2bNKftyelKnsUhsHwGB.xmCKTWJClsB7O9wzTnG','avt11.jpg');

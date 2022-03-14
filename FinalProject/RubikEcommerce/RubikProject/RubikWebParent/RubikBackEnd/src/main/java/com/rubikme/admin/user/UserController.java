@@ -68,7 +68,13 @@ public class UserController {
 		//System.out.println(multipartFile.getOriginalFilename());
 		
 		redirectAttributes.addFlashAttribute("message", "The user has been saved successfully.");
-		return "redirect:/users";
+		
+		return getRedirectURLtoAffectUser(user);
+	}
+
+	private String getRedirectURLtoAffectUser(User user) {
+		String firstPartOfEmail = user.getEmail().split("@")[0];
+		return "redirect:/users/page/1?sortField=id&sortDir=asc&keyword=" + firstPartOfEmail;
 	}
 	
 	@GetMapping("/users/edit/{id}")
