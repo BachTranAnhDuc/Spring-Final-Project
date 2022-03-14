@@ -79,7 +79,8 @@
 				<input type="hidden" name="sortDir" th:value="${sortDir}"/>
 				
 				<label class="mr-2">Filter:</label>
-				<input type="search" name="keyword" required class="form-control"/>
+				<input type="search" name="keyword" required class="form-control"
+					th:value="${keyword}"/>
 				&nbsp;&nbsp;
 				<button type="submit" class="btn btn-primary">
     				<i class="fas fa-search"></i>
@@ -227,7 +228,7 @@
 			<span>Can not find user.</span>
 		</div>
 		
-		<div>
+		<div th:if="${totalPages > 1}">
 			<nav>
 			  <ul class="pagination justify-content-center">
 			    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
