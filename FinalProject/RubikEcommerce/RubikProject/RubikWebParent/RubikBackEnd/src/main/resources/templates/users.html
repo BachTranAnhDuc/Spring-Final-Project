@@ -79,14 +79,14 @@
 				<input type="hidden" name="sortDir" th:value="${sortDir}"/>
 				
 				<label class="mr-2">Filter:</label>
-				<input type="search" name="keyword" required class="form-control"
+				<input type="search" th:name="${keyword}" required class="form-control"
 					th:value="${keyword}"/>
 				&nbsp;&nbsp;
 				<button type="submit" class="btn btn-primary">
     				<i class="fas fa-search"></i>
   				</button>
   				&nbsp;&nbsp;
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-primary" onclick="clearFilter()">
     				<i class="fa-thin fa-trash"></i>
   				</button>
 				<!-- <input type="submit" value="Search" class="btn btn-primary"/> -->
@@ -295,6 +295,10 @@
 				
 			})
 		});
+
+		function clearFilter(){
+			window.location = "[[@{/users}]]";
+		}
 	</script>
 </body>
 </html>
