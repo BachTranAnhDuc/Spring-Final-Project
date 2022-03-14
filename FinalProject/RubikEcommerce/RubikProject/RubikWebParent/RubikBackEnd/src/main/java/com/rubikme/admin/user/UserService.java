@@ -109,12 +109,12 @@ public class UserService {
 	}
 	
 	public Page<User> listByPage(int pageNum, String sortField, String sortDir) {
-		Sort sort = Sort.by(sortDir);
+		Sort sort = Sort.by(sortField);
 		
-		sort = sortField.equals("asc") ? sort.ascending() : sort.descending();
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
 		
 		Pageable pageable = PageRequest.of(pageNum - 1, USERS_PER_PAGE, sort);
 		
-		return userRepo.findAll(pageable);
+		return userRepo.findAll(pageable);  
 	}
 }
