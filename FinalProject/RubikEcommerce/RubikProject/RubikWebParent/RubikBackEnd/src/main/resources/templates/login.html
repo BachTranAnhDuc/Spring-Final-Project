@@ -22,6 +22,9 @@
 			<div th:if="${param.error}">
 				<p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
 			</div>
+			<div th:if="${param.logout}">
+				<p class="text-warning">You have been logout!</p>
+			</div>
 			<div class="border border-secondary rounded my-3">
 			
 				<p class="py-2 text-center">Access to Rubik Shop</p>
