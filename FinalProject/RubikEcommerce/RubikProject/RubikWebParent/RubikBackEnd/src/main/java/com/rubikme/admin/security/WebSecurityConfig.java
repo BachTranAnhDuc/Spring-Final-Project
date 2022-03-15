@@ -39,6 +39,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// TODO Auto-generated method stub
+//		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//		
+//		auth.inMemoryAuthentication()
+//			.withUser("vinhduong@gmail.com").password(encoder.encode("123456789"))
+//			.roles("Admin");
+		
+//		auth.inMemoryAuthentication()
+//        .withUser("anhduc@gmail.com").password("{bcrypt}$2a$10$rVUKaS7LhsvUSDsMgtreR.LmsRq.x/W5kBwT3rj.0GtYvneqRPcX.")
+//        .roles("Admin");
 		auth.authenticationProvider(authenticationProvider());
 	}
 
