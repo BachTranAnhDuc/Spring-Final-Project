@@ -133,6 +133,7 @@ public class UserController {
 			){
 		System.out.println("Sort Field: " + sortField);
 		System.out.println("Sort Order: " + sortDir);
+		System.out.println("Keyword: " +keyword);
 		
 		Page<User> pageUser = service.listByPage(pageNum, sortField, sortDir, keyword);
 		List<User> listUsers = pageUser.getContent();
@@ -161,6 +162,8 @@ public class UserController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);
 		
+		
+		
 		return "users";
 	}
 	
@@ -185,7 +188,7 @@ public class UserController {
 	public void exportToPDF(HttpServletResponse response) throws IOException {
 		List<User> listUser = service.listAll();
 		
-		UserPdfExporter userExcelExporter = new UserPdfExporter();
+		UserPdfExporter userPdfExporter = new UserPdfExporter();
 		
 		userPdfExporter.export(listUser, response);
 	}

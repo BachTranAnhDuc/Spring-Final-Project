@@ -6,7 +6,7 @@
 </head>
 <body>
 	<th th:fragment="column_link(fieldName, columnLabel)">
-		<a th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword' + keyword : ''}}"
+		<a th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + '&keyword=' + ${keyword != null ? keyword : ''}}"
 			class="text-white"> [[${columnLabel}]]]
 		</a> 
 		
@@ -16,7 +16,7 @@
 	</th>
 	
 	<a th:fragment="page_link(pageNum, label)"
-		th:href="@{'/users/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+		th:href="@{'/users/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}  + ${keyword != null ? '&keyword=' + keyword : ''}}"
 		class="page-link">
 		[[${label}]]
 	</a>

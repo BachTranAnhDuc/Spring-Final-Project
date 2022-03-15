@@ -81,16 +81,19 @@
 		
 		<div>
 			<form th:action="@{/users/page/1}" class="form-inline my-3">
+			
 				<input type="hidden" name="sortField" th:value="${sortField}"/>
+				
 				<input type="hidden" name="sortDir" th:value="${sortDir}"/>
 				
+				
 				<label class="mr-2">Filter:</label>
-				<input type="search" th:name="${keyword}" required class="form-control"
-					th:value="${keyword}"/>
+				
+				<input type="search" name="keyword" required class="form-control" th:value="${keyword}"/>
 				&nbsp;&nbsp;
-				<button type="submit" class="btn btn-primary">
-    				<i class="fas fa-search"></i>
-  				</button>
+				
+				<input type="submit" value="Search" class="btn btn-primary"/>
+
   				&nbsp;&nbsp;
 				<button type="button" class="btn btn-primary" onclick="clearFilter()">
     				<i class="fa-thin fa-trash"></i>

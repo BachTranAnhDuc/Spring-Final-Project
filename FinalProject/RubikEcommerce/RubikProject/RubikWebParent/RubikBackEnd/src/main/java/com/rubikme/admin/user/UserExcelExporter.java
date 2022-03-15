@@ -94,8 +94,6 @@ public class UserExcelExporter extends AbstractExporter{
 		writeHeaderLine();
 		writeDataLine(listUsers);
 		
-		
-		
 		String[] csvHeader = {"User ID", "E-mail", "First Name", "Last Name", "Roles", "Enabled"};
 		String[] fieldMapping = {"id", "email", "firstName", "lastName", "roles", "enabled"};
 		
