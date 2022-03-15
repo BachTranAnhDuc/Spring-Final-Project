@@ -3,6 +3,8 @@ package com.rubikme.admin.user;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -160,5 +162,13 @@ public class UserController {
 		model.addAttribute("keyword", keyword);
 		
 		return "users";
+	}
+	
+	@GetMapping("/users/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		List<User> listUser = service.listAll();
+		
+		UserCsvExporter userCsvExporter = new UserCsvExporter();
+		userCsvExporter.export(listUser, response);
 	}
 }
