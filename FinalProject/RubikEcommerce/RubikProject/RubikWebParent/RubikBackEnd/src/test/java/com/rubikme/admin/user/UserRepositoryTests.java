@@ -31,8 +31,20 @@ public class UserRepositoryTests {
 	@Test
 	public void testCreateUserWithOneRole() {
 //		Role roleAdmin = entityManager.find(Role.class, 1);
-		Role roleAdmin = new Role(1);
+		Role roleAdmin = new Role(3);
 		User userAnhDuc = new User("anhduc@gmail.com", "duc2001", "Anh Duc", "Bach Tran");
+		userAnhDuc.addRole(roleAdmin);
+		
+		User savedUser = repo.save(userAnhDuc);
+		
+		assertThat(savedUser.getId()).isGreaterThan(0);
+	}
+	
+	@Test
+	public void testCreateUserWithOneRole2() {
+//		Role roleAdmin = entityManager.find(Role.class, 1);
+		Role roleAdmin = new Role(1);
+		User userAnhDuc = new User("anhduc1@gmail.com", "duc2001", "Anh Duc", "Bach Tran", true);
 		userAnhDuc.addRole(roleAdmin);
 		
 		User savedUser = repo.save(userAnhDuc);

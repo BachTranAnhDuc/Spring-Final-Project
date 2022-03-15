@@ -18,6 +18,10 @@
 
 		<form th:action="@{/login}" method="post"
 			style="max-width: 350px; margin: 0 auto" class="mt-3">
+			
+			<div th:if="${param.error}">
+				<p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+			</div>
 			<div class="border border-secondary rounded my-3">
 			
 				<p class="py-2 text-center">Access to Rubik Shop</p>
