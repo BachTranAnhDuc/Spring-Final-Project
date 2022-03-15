@@ -66,13 +66,13 @@
 		</div>
 		<div>
 			<h1>Manage Users</h1>
-			<a th:href="@{/users/new}">Create New User</a>
+			<a th:href="@{/users/new}" class="fas fa-user-plus fa-2x icon-dark mr-2"></a>
 			&nbsp;|&nbsp;
-			<a th:href="@{'/users/export/csv'}">Exporrt to Csv</a>
+			<a th:href="@{'/users/export/csv'}" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
 			&nbsp;|&nbsp;
-			<a th:href="@{'/users/export/excel'}">Exporrt to Excel</a>
+			<a th:href="@{'/users/export/excel'}" class="fas fa-file-excel fa-2x icon-dark mr-2"></a>
 			&nbsp;|&nbsp;
-			<a th:href="@{'/users/export/pdf'}">Exporrt to PDF</a>
+			<a th:href="@{'/users/export/pdf'}" class="fas fa-file-pdf fa-2x icon-dark mr-2"></a>
 		</div>
 		
 		<div th:if="${message != null}" class="alert alert-success text-center">
@@ -89,20 +89,22 @@
 				
 				<label class="mr-2">Filter:</label>
 				
-				<input type="search" name="keyword" required class="form-control" th:value="${keyword}"/>
+				<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
+  				&nbsp;&nbsp;
+				
+				<button type="submit" value="Search" class="btn btn-primary">
+					<i class="fas fa-search"></i>
+				</button>
 				&nbsp;&nbsp;
 				
-				<input type="submit" value="Search" class="btn btn-primary"/>
-
-  				&nbsp;&nbsp;
-				<button type="button" class="btn btn-primary" onclick="clearFilter()">
-    				<i class="fa-thin fa-trash"></i>
+				<button type="button" class="btn btn-secondary" onclick="clearFilter()">
+    				<i class="fas fa-eraser"></i>
   				</button>
 				<!-- <input type="submit" value="Search" class="btn btn-primary"/> -->
 			</form>
 		</div>
 		
-		<div>
+		<div class="full-details">
 			<table class="table table-responsive-xl table-bordered table-striped table-hover">
 				<thead class="thead-dark">
 					<tr>
