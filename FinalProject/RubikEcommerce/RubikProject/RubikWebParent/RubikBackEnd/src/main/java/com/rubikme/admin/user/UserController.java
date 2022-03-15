@@ -180,4 +180,13 @@ public class UserController {
 		
 		userExcelExporter.export(listUser, response);
 	}
+	
+	@GetMapping("/users/export/pdf")
+	public void exportToPDF(HttpServletResponse response) throws IOException {
+		List<User> listUser = service.listAll();
+		
+		UserPdfExporter userExcelExporter = new UserPdfExporter();
+		
+		userPdfExporter.export(listUser, response);
+	}
 }
