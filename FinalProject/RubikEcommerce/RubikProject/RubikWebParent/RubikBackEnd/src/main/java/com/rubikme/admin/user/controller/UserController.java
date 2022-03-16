@@ -1,4 +1,4 @@
-package com.rubikme.admin.user;
+package com.rubikme.admin.user.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,6 +20,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.common.entity.User;
 import com.rubikme.admin.FileUploadUtil;
+import com.rubikme.admin.user.UserNotFoundException;
+import com.rubikme.admin.user.UserService;
 import com.rubikme.admin.user.export.UserCsvExporter;
 import com.rubikme.admin.user.export.UserExcelExporter;
 import com.rubikme.admin.user.export.UserPdfExporter;
@@ -46,7 +48,7 @@ public class UserController {
 		model.addAttribute("listRoles", listRoles);
 		model.addAttribute("pageTitle", "Create New User");
 		
-		return "user_form";
+		return "users/user_form";
 	}
 	
 	@PostMapping("/users/save")
@@ -93,7 +95,7 @@ public class UserController {
 			model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
 			model.addAttribute("listRoles", listRoles);
 			
-			return "user_form"; 
+			return "users/user_form"; 
 		}
 		catch (UserNotFoundException ex) {
 			redirectAttributes.addFlashAttribute("message", ex.getMessage());
@@ -167,7 +169,7 @@ public class UserController {
 		
 		
 		
-		return "users";
+		return "users/users";
 	}
 	
 	@GetMapping("/users/export/csv")

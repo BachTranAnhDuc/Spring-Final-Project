@@ -1,4 +1,4 @@
-package com.rubikme.admin.user;
+package com.rubikme.admin.user.controller;
 
 import java.io.IOException;
 
@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.admin.FileUploadUtil;
 import com.rubikme.admin.security.RubikUserDetails;
+import com.rubikme.admin.user.UserService;
 import com.rubikme.common.entity.User;
 
 @Controller
@@ -31,7 +32,7 @@ public class AccountController {
 		
 		model.addAttribute("user", user);
 		
-		return "account_form";
+		return "users/account_form";
 	}
 	
 	@PostMapping("/account/update")
