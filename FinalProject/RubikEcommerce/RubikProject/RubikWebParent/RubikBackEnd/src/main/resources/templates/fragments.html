@@ -60,12 +60,15 @@
 						th:href="@{/settings}">Settings</a></li>
 					<li class="nav-item"><span
 						class="fas fa-user fa-2x icon-white"></span></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" data-toggle="dropdown"
-						sec:authentication="principal.fullname"></a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown"
+							sec:authentication="principal.fullname"
+							th:href="@{/account/}">
+						</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" th:href="@{'/logout'}" id="logoutLink">Logout</a>
-						</div></li>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</nav>

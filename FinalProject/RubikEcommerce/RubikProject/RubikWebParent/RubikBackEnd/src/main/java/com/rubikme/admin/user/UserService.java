@@ -2,6 +2,7 @@ package com.rubikme.admin.user;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -31,6 +32,10 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	public User getByEmail(String email) {
+		return userRepo.getUserByEmail(email);
+	}
+	
 	public List<User> listAll() {
 		return (List<User>) userRepo.findAll();
 	}
@@ -56,6 +61,24 @@ public class UserService {
 			encodePassword(user);
 		}
 		return userRepo.save(user);
+	}
+	
+	public User updateAccount(User userInform) {
+		User userInDb = userRepo.findById(userInform.getId()).get();
+		
+		if (!userInform.getPassword().isEmpty()) {
+			userInDb.setPassword(userInform.getPassword());
+			encodePassword(userInDb);
+		}
+		
+		if (userInform.getPhotos() != null) {
+			userInDb.setPhotos(userInform.getPhotos());
+		}
+		
+		userInDb.setFirstName(userInform.getFirstName());
+		userInDb.setLastName(userInform.getLastName());
+		
+		return userRepo.save(userInDb);
 	}
 	
 	private void encodePassword(User user) {

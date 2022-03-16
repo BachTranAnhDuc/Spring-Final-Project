@@ -1,4 +1,4 @@
-package com.rubikme.admin.user;
+package com.rubikme.admin.user.export;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -12,6 +12,7 @@ import org.supercsv.io.CsvBeanWriter;
 import org.supercsv.io.ICsvBeanWriter;
 import org.supercsv.prefs.CsvPreference;
 
+import com.rubikme.admin.user.AbstractExporter;
 import com.rubikme.common.entity.User;
 
 public class UserCsvExporter extends AbstractExporter{
