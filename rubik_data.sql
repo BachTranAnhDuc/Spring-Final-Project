@@ -8,6 +8,7 @@ select * from user_roles;
 select * from users;
 
 
+
 delete from user_roles where user_id = 7;
 delete from users where id = 7;
 
@@ -24,12 +25,12 @@ insert into roles values(3, 'manage categories, brands, products, articles and m
 insert into roles values(4, 'view products, view orders and update order status', 'Shipper');
 insert into roles values(5, 'manage questions and reviews','Assistant');
 
-insert into users values (1,'anhduc@gmail.com',1,'Duc','Bach Tran Anh','123456789','avt45.jpg');
-insert into users values (2,'vinhduong@gmail.com',1,'Vinh','Duong Chan Nhat','123456789','avt11.jpg');
-insert into users values (3,'thaolan@gmail.com',0,'Lan','Pham Thi Thao','thaolan2001','avt1.jpg');
-insert into users values (4,'jotaro@gmail.com',1,'Jotaro','Joestar','123456789','avt31.jpg');
-insert into users values (5,'hannabaki@gmail.com',1,'Baki','Hanna','123456789','avt5.jpg');
-insert into users values (6,'juchiro@gmail.com',0,'Juchiro','Hanna','123456789','avt6.jpg');
+insert into users values (1,'anhduc@gmail.com',1,'Duc','Bach Tran Anh','$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi','avt45.jpg');
+insert into users values (2,'vinhduong@gmail.com',1,'Vinh','Duong Chan Nhat','$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi','avt11.jpg');
+insert into users values (3,'thaolan@gmail.com',0,'Lan','Pham Thi Thao','$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi','avt1.jpg');
+insert into users values (4,'jotaro@gmail.com',1,'Jotaro','Joestar','$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi','avt31.jpg');
+insert into users values (5,'hannabaki@gmail.com',1,'Baki','Hanna','$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi','avt5.jpg');
+insert into users values (6,'juchiro@gmail.com',0,'Juchiro','Hanna','$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi','avt6.jpg');
 insert into users values (7,'someone@gmail.com',1,'one','some','123456789','avt7.jpg');
 insert into users values (8,'someone1@gmail.com',1,'one1','some','123456789','avt8.jpg');
 insert into users values (9,'someone2@hotmail.com',1,'one2','some','123456789','avt9.jpg');

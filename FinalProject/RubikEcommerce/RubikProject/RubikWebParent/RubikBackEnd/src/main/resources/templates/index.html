@@ -8,6 +8,12 @@
 		<div th:replace="fragments :: menu"></div>
 		<div>
 			<h1>Rubik Control Panel</h1>
+			Welcome
+			<a sec:authentication="principal.fullname"
+				th:href="@{/account/}">
+			</a>
+			&nbsp;
+			<span sec:authentication="principal.authorities"></span>
 		</div>
 		<div th:replace="fragments :: footer_frag"></div>
 	</div>
