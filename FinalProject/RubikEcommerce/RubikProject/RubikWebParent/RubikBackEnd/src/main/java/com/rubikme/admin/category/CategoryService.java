@@ -7,6 +7,8 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 import com.rubikme.common.entity.Category;
 
 @Service
+@Transactional
 public class CategoryService {
 	
 	@Autowired
@@ -23,7 +26,7 @@ public class CategoryService {
 		return (List<Category>) repo.findAll();
 	}
 
-	public void updateEnableUserStatus(Integer id, boolean enabled) {
+	public void updateCategoryEnabledStatus(Integer id, boolean enabled) {
 		repo.updateEnabledStatus(id, enabled);
 	}
 	
@@ -86,4 +89,44 @@ public class CategoryService {
 			listSubCategoriesUsedInForm(categoriesUsedInForm, subCategory, newSubLevel);
 		}		
 	}	
+	
+	public Category save(Category category) {
+		Category parent = category.getParent();
+		if (parent != null) {
+			String allParentIds = parent.getAllParentIDs() == null ? "-" : parent.getAllParentIDs();
+			allParentIds += String.valueOf(parent.getId()) + "-";
+			category.setAllParentIDs(allParentIds);
+		}
+		
+		return repo.save(category);
+	}
+	
+	public String checkUnique(Integer id, String name, String alias) {
+		boolean isCreatingNew = (id == null || id == 0);
+		
+		Category categoryByName = repo.findByName(name);
+		
+		if (isCreatingNew) {
+			if (categoryByName != null) {
+				return "DuplicateName";
+			} else {
+				Category categoryByAlias = repo.findByAlias(alias);
+				if (categoryByAlias != null) {
+					return "DuplicateAlias";	
+				}
+			}
+		} else {
+			if (categoryByName != null && categoryByName.getId() != id) {
+				return "DuplicateName";
+			}
+			
+			Category categoryByAlias = repo.findByAlias(alias);
+			if (categoryByAlias != null && categoryByAlias.getId() != id) {
+				return "DuplicateAlias";
+			}
+			
+		}
+		
+		return "OK";
+	}
 }

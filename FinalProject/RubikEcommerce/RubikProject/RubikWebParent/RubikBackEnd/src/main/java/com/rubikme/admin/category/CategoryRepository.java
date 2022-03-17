@@ -8,10 +8,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.repository.query.Param;
 
 import com.rubikme.common.entity.Category;
-import com.rubikme.common.entity.User;
 
 public interface CategoryRepository extends PagingAndSortingRepository<Category, Integer> {
 	

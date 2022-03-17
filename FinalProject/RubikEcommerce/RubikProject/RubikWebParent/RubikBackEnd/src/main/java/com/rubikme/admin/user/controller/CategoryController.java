@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.admin.category.CategoryService;
@@ -31,16 +33,17 @@ public class CategoryController {
 	}
 	
 	@GetMapping("/categories/{id}/enabled/{status}")
-	public String updateUserEnabledStatus(@PathVariable("id") Integer id,
+	public String updateCategoryEnabledStatus(@PathVariable("id") Integer id,
 			@PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
 		
-		service.updateEnableUserStatus(id, enabled);
-		String status = enabled ? "enabled" : "disable";
+		service.updateCategoryEnabledStatus(id, enabled);
+		String status = enabled ? "enabled" : "disabled";
 		String message = "The category ID " + id + " has been " + status;
 		
 		redirectAttributes.addFlashAttribute("message", message);
 		
 		return "redirect:/categories";
+//		return "categories/categories";
 	}
 	
 	@GetMapping("/categories/new")
@@ -54,24 +57,24 @@ public class CategoryController {
 		return "categories/category_form";
 	}
 	
-//	@PostMapping("/categories/save")
-//	public String saveCategory(Category category, 
-//			@RequestParam("fileImage") MultipartFile multipartFile,
-//			RedirectAttributes ra) throws IOException {
-//		if (!multipartFile.isEmpty()) {
-//			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-//			category.setImage(fileName);
-//
-//			Category savedCategory = service.save(category);
+	@PostMapping("/categories/save")
+	public String saveCategory(Category category, 
+			@RequestParam("fileImage") MultipartFile multipartFile,
+			RedirectAttributes ra) throws IOException {
+		if (!multipartFile.isEmpty()) {
+			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+			category.setImage(fileName);
+
+			Category savedCategory = service.save(category);
 //			String uploadDir = "category-images/" + savedCategory.getId();
-//			
+			
 //			AmazonS3Util.removeFolder(uploadDir);
 //			AmazonS3Util.uploadFile(uploadDir, fileName, multipartFile.getInputStream());
-//		} else {
-//			service.save(category);
-//		}
-//		
-//		ra.addFlashAttribute("message", "The category has been saved successfully.");
-//		return "redirect:/categories";
-//	}
+		} else {
+			service.save(category);
+		}
+		
+		ra.addFlashAttribute("message", "The category has been saved successfully.");
+		return "redirect:/categories";
+	}
 }
