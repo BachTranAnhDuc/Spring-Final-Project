@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Categories - Rubik Shop')"></head>
+<body>
+	<div class="container-fluid">
+		<div th:replace="fragments :: menu"></div>
+		<div>
+			<h1>Manage Category</h1>
+			Welcome
+			<a class="fas fa-folder-plus fa-2x icon-dark mr-2"
+				th:href="@{/categories/new}">
+			</a>
+			<a class="fas fa-file-csv fa-2x icon-dark mr-2"
+				th:href="@{/categories/export/csv}">
+			</a>
+		</div>
+		
+		<div th:replace="fragments :: search_form_and_message"></div>
+		
+		<div class="full-details">
+			<table class="table table-bordered table-striped table-hover table-responsive-xl">
+				<thead class="thead-dark">
+					<tr>
+						<th>ID</th>
+						<th>Category Image</th>
+						<th>Category Name</th>
+						<th>Alias</th>
+						<th>Enabled</th>
+						<th></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="cat : ${listCategories}">
+						<td>[[${cat.id}]]</td>
+						<td></td>
+						<td>[[${cat.name}]]</td>
+						<td>[[${cat.alias}]]</td>
+						<td>
+							<div th:replace="fragments :: status(${cat.enabled}, 'category', '/categories/' + ${cat.id})"></div>
+						</td>
+						<!--  
+						<td>
+							<div th:replace="fragments :: edit('category', '/categories/edit/' + ${cat.id})" />
+							&nbsp; 
+							<div th:replace="fragments :: delete('category', ${cat.id}, '/categories/delete/' + ${cat.id}, ${!cat.hasChildren})" />						
+						</td>	
+						-->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div th:replace="fragments :: footer_frag"></div>
+	</div>
+	
+	
+	
+	<script type="text/javascript">
+		moduleURL = "[[@{/categories}]]";
+	
+		$(document).ready(function() {
+			$(".link-delete").on("click", function(e) {
+				e.preventDefault();
+				showDeleteConfirmModal($(this), 'category');
+			});
+		});
+	</script>
+</body>
+</html>
