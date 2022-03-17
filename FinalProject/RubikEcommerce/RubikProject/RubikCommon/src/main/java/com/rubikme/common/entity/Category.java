@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "categories")
@@ -28,7 +29,7 @@ public class Category {
 	private String alias;
 	
 	@Column(length = 512, nullable = false)
-	private String images;
+	private String image;
 	
 	private boolean enabled;
 	
@@ -50,12 +51,47 @@ public class Category {
 	public Category(String name) {
 		this.name = name;
 		this.alias = name;
-		this.images = "default.png";
+		this.image = "default.png";
 	}
 	
 	public Category(String name, Category parent) {
 		this(name);
 		this.parent = parent;
+	}
+	
+	public static Category copyIdAndName(Category category) {
+		Category copyCategory = new Category();
+		copyCategory.setId(category.getId());
+		copyCategory.setName(category.getName());
+		
+		return copyCategory;
+	}
+
+	public static Category copyIdAndName(Integer id, String name) {
+		Category copyCategory = new Category();
+		copyCategory.setId(id);
+		copyCategory.setName(name);
+		
+		return copyCategory;
+	}
+	
+	public static Category copyFull(Category category) {
+		Category copyCategory = new Category();
+		copyCategory.setId(category.getId());
+		copyCategory.setName(category.getName());
+		copyCategory.setImage(category.getImage());
+		copyCategory.setAlias(category.getAlias());
+		copyCategory.setEnabled(category.isEnabled());
+		copyCategory.setHasChildren(category.getChildren().size() > 0);
+		
+		return copyCategory;		
+	}
+	
+	public static Category copyFull(Category category, String name) {
+		Category copyCategory = Category.copyFull(category);
+		copyCategory.setName(name);
+		
+		return copyCategory;
 	}
 
 	public Integer getId() {
@@ -82,12 +118,12 @@ public class Category {
 		this.alias = alias;
 	}
 
-	public String getImages() {
-		return images;
+	public String getImage() {
+		return image;
 	}
 
-	public void setImages(String images) {
-		this.images = images;
+	public void setImage(String images) {
+		this.image = image;
 	}
 
 	public boolean isEnabled() {
@@ -114,5 +150,29 @@ public class Category {
 		this.children = children;
 	}
 	
+//	@Transient
+//	public String getImagePath() {
+//		if (this.id == null) return "/images/image-thumbnail.png";
+//		
+//		return Constants.S3_BASE_URI + "/category-images/" + this.id + "/" + this.image;
+//	}
+//	
+	public boolean isHasChildren() {
+		return hasChildren;
+	}
+
+	public void setHasChildren(boolean hasChildren) {
+		this.hasChildren = hasChildren;
+	}
+
+	@Transient
+	private boolean hasChildren;
 	
+//	public String getAllParentIDs() {
+//		return allParentIDs;
+//	}
+//
+//	public void setAllParentIDs(String allParentIDs) {
+//		this.allParentIDs = allParentIDs;
+//	}
 }
