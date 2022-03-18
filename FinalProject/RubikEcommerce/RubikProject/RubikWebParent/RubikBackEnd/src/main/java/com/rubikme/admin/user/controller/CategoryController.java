@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.rubikme.admin.FileUploadUtil;
 import com.rubikme.admin.category.CategoryService;
 import com.rubikme.common.entity.Category;
 
@@ -62,15 +63,19 @@ public class CategoryController {
 			@RequestParam("fileImage") MultipartFile multipartFile,
 			RedirectAttributes ra) throws IOException {
 		if (!multipartFile.isEmpty()) {
+			
 			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 			category.setImage(fileName);
 
 			Category savedCategory = service.save(category);
-//			String uploadDir = "category-images/" + savedCategory.getId();
+			String uploadDir = "../category-images/" + savedCategory.getId();
+			
+			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 			
 //			AmazonS3Util.removeFolder(uploadDir);
 //			AmazonS3Util.uploadFile(uploadDir, fileName, multipartFile.getInputStream());
 		} else {
+			if (category.getImage().isEmpty()) category.setImage(null);
 			service.save(category);
 		}
 		
