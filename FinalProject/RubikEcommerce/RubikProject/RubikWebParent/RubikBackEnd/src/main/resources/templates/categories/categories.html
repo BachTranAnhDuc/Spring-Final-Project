@@ -24,7 +24,9 @@
 						<th>Category Image</th>
 						
 						<th>
-							<a class="text-white" th:href="@{'/categories?sortDir=asc'}">Category Name</a>
+							<a class="text-white" th:href="@{'/categories?sortDir=' + ${reverseSortDir}}">Category Name</a>
+							<span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
+							</span>
 						</th>
 						
 						<th>Alias</th>
@@ -54,14 +56,7 @@
 						</td>	
 						-->
 						<td>
-							<a class="fas fa-edit fa-2x icon-green" th:href="@{'/categories/edit/' + ${cat.id}}"
-								title="Edit this user"></a>
-							 &nbsp; 
-							 <a class="fas fa-trash fa-2x icon-dark link-delete-user" 
-							 	th:href="@{'/categories/delete/' + ${cat.id}}"
-							 	th:userId="${cat.id}"
-							 	title="Delete this user">
-							 </a>
+							<div th:replace="fragments :: category_action"></div>
 						</td>
 					</tr>
 				</tbody>

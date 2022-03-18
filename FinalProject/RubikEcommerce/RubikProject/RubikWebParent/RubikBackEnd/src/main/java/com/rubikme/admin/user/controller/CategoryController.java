@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.admin.FileUploadUtil;
 import com.rubikme.admin.category.CategoryNotFoundException;
+import com.rubikme.admin.category.CategoryPageInfo;
 import com.rubikme.admin.category.CategoryService;
 import com.rubikme.common.entity.Category;
 
@@ -27,12 +28,30 @@ public class CategoryController {
 	private CategoryService service;
 	
 	@GetMapping("/categories")
-	public String listAll(@Param("sortDir") String sortDir, 
+	public String listFirstPage(@Param("sortDir") String sortDir, 
 			Model model) {
 		
-		List<Category> listCategories = service.listAll(sortDir);
+		return listByPage(1, sortDir, model);
+	}
+	
+	@GetMapping("/categories/page/{pageNum}")
+	public String listByPage(@PathVariable(name = "pageNum") int pageNum, 
+			@Param("sortDir") String sortDir, Model model) {
 		
+		if (sortDir == null || sortDir.isEmpty()) {
+			sortDir = "asc";
+		}
+		
+		CategoryPageInfo pageInfo = new CategoryPageInfo();
+		List<Category> listCategories = service.listByPage(pageInfo, pageNum, sortDir);
+		
+		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
+		
+		model.addAttribute("totalPages", pageInfo.getTotalPages());
+		model.addAttribute("totalItems", pageInfo.getTotalElements());
+		model.addAttribute("currentPage", pageNum);
 		model.addAttribute("listCategories", listCategories);
+		model.addAttribute("reverseSortDir", reverseSortDir);
 		
 		return "categories/categories";
 	}

@@ -11,7 +11,11 @@ import java.util.TreeSet;
 
 import javax.transaction.Transactional;
 
+import org.apache.commons.math3.analysis.solvers.PegasusSolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -21,23 +25,29 @@ import com.rubikme.common.entity.Category;
 @Transactional
 public class CategoryService {
 	
+	private static final int CATEGORY_PER_PAGE = 2;
+	
 	@Autowired
 	private CategoryRepository repo;
 	
-	public List<Category> listAll(String sortDir) {
+	public List<Category> listByPage(CategoryPageInfo pageInfor, int pageNum, String sortDir) {
 		
 		Sort sort = Sort.by("name");
 		
-		if (sortDir == null || sortDir.isEmpty()) {
-			sort = sort.ascending();
-		}
-		else if (sortDir.equals("asc")) {
+		if (sortDir.equals("asc")) {
 			sort = sort.ascending();
 		}
 		else if (sortDir.equals("desc")) {
 			sort = sort.descending();
 		}
-		List<Category> rootCategories = (List<Category>) repo.findRootCategories(sort);
+		
+		Pageable pageable = PageRequest.of(pageNum - 1, CATEGORY_PER_PAGE, sort);
+		
+		Page<Category> pageCategories = repo.findRootCategories(pageable);
+		List<Category> rootCategories = pageCategories.getContent();
+		
+		pageInfor.setTotalElements(pageCategories.getTotalElements());
+		pageInfor.setTotalPages(pageCategories.getTotalPages());
 		
 		return listHierarchicalCategories(rootCategories, sortDir);
 	}

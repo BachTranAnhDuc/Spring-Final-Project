@@ -136,12 +136,14 @@
 	</div>
 
 	
-	<th th:fragment="column_link(fieldName, columnLabel)"><a
-		th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + '&keyword=' + ${keyword != null ? keyword : ''}}"
-		class="text-white"> [[${columnLabel}]]] </a> <span
-		th:if="${sortField == 'fieldName'}"
-		th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
-	</span></th>
+	<th th:fragment="column_link(fieldName, columnLabel)">
+		<a th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + '&keyword=' + ${keyword != null ? keyword : ''}}"
+			class="text-white"> [[${columnLabel}]]] 
+		</a> 
+		<span th:if="${sortField == 'fieldName'}"
+			th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
+		</span>
+	</th>
 
 	<a th:fragment="page_link(pageNum, label)"
 		th:href="@{'/users/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}  + ${keyword != null ? '&keyword=' + keyword : ''}}"
@@ -205,23 +207,38 @@
 	</div>
 	
 	<div th:fragment="confirm_modal" class="modal fade text-center" id="confirmModal">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="model-title">Delete Confirmation</h4>
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="model-title">Delete Confirmation</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
 					
-					<div class="modal-body">
-						<span id="confirmText"></span>
-					</div>
+				<div class="modal-body">
+					<span id="confirmText"></span>
+				</div>
 					
-					<div class="modal-footer">
-						<a class="btn btn-success" href="" id="yes-delete">Yes</a>
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-					</div>
+				<div class="modal-footer">
+					<a class="btn btn-success" href="" id="yes-delete">Yes</a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
+	
+	<div th:fragment="category_action" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green"
+			th:href="@{'/categories/edit/' + ${cat.id}}"
+			title="Edit this category">
+		</a>
+		&nbsp;
+		<th:block th:if="${cat.hasChildren == false}">
+			<a class="fas fa-trash fa-2x icon-dark link-delete-user"
+				th:href="@{'/categories/delete/' + ${cat.id}}"
+				th:userId="${cat.id}"
+				title="Delete this user">
+			</a>
+		</th:block>
+	</div>
 </body>
 </html>
