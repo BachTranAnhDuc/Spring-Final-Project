@@ -1,8 +1,10 @@
 package com.rubikme.admin.category;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -22,13 +24,25 @@ public class CategoryService {
 	@Autowired
 	private CategoryRepository repo;
 	
-	public List<Category> listAll() {
-		List<Category> rootCategories = (List<Category>) repo.findRootCategories(Sort.by("name").ascending());
+	public List<Category> listAll(String sortDir) {
 		
-		return listHierarchicalCategories(rootCategories);
+		Sort sort = Sort.by("name");
+		
+		if (sortDir == null || sortDir.isEmpty()) {
+			sort = sort.ascending();
+		}
+		else if (sortDir.equals("asc")) {
+			sort = sort.ascending();
+		}
+		else if (sortDir.equals("desc")) {
+			sort = sort.descending();
+		}
+		List<Category> rootCategories = (List<Category>) repo.findRootCategories(sort);
+		
+		return listHierarchicalCategories(rootCategories, sortDir);
 	}
 	
-	private List<Category> listHierarchicalCategories(List<Category> rootCategories) {
+	private List<Category> listHierarchicalCategories(List<Category> rootCategories, String sortDir) {
 		List<Category> hierarchicalCategories = new ArrayList<>();
 		
 		for (Category rootCategory : rootCategories) {
@@ -41,7 +55,7 @@ public class CategoryService {
 				
 				hierarchicalCategories.add(Category.copyFull(subCategory, name));
 				
-				listSubHierarchicalCategories(hierarchicalCategories, subCategory, 1);
+				listSubHierarchicalCategories(hierarchicalCategories, subCategory, 1, sortDir);
 			}
 		}
 		
@@ -113,8 +127,8 @@ public class CategoryService {
 	}	
 	
 	private void listSubHierarchicalCategories(List<Category> hierarchicalCategories,
-			Category parent, int subLevel) {
-		Set<Category> children = sortSubCategories(parent.getChildren());
+			Category parent, int subLevel, String sortDir) {
+		Set<Category> children = sortSubCategories(parent.getChildren(), sortDir);
 		int newSubLevel = subLevel + 1;
 		
 		for (Category subCategory : children) {
@@ -126,7 +140,7 @@ public class CategoryService {
 		
 			hierarchicalCategories.add(Category.copyFull(subCategory, name));
 			
-			listSubHierarchicalCategories(hierarchicalCategories, subCategory, newSubLevel);
+			listSubHierarchicalCategories(hierarchicalCategories, subCategory, newSubLevel, sortDir);
 		}
 		
 	}
@@ -169,5 +183,23 @@ public class CategoryService {
 		}
 		
 		return "OK";
+	}
+	
+	public void delete(Integer id) throws CategoryNotFoundException {
+		Long countById = repo.countById(id);
+		if (countById == null || countById == 0) {
+			throw new CategoryNotFoundException("Could not find any category with ID " + id);
+		}
+		
+		repo.deleteById(id);
+	}
+	
+	public Category get(Integer id) throws CategoryNotFoundException {
+		try {
+			return repo.findById(id).get();
+		}
+		catch (NoSuchElementException ex) {
+			throw new CategoryNotFoundException("Could not find any category with ID: " + id);
+		}
 	}
 }

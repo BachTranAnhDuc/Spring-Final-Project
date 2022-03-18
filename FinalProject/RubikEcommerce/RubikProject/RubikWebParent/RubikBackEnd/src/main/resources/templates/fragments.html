@@ -135,6 +135,7 @@
 		<p>Rubik Control Panel - Copyright &copy; Rubik</p>  
 	</div>
 
+	
 	<th th:fragment="column_link(fieldName, columnLabel)"><a
 		th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + '&keyword=' + ${keyword != null ? keyword : ''}}"
 		class="text-white"> [[${columnLabel}]]] </a> <span
@@ -159,7 +160,7 @@
 		</a>	
 	</div>
 	
-	
+	<!-- Search -->
 	<div th:fragment="search_form_and_message()">
 		<form th:action="@{${moduleURL} + '/page/1'}" class="form-inline m-3">
 			<input type="hidden" name="sortField" th:value="${sortField}" />
@@ -181,5 +182,46 @@
 			[[${message}]]
 		</div>		
 	</div>
+	
+	
+	<!-- modal_dialog -->
+	<div th:fragment="modal_dialog" class="modal fade text-center" id="modalDialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="modalTitle">Warning</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				
+				<div class="modal-body">
+					<span id="modalBody"></span>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div th:fragment="confirm_modal" class="modal fade text-center" id="confirmModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="model-title">Delete Confirmation</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					
+					<div class="modal-body">
+						<span id="confirmText"></span>
+					</div>
+					
+					<div class="modal-footer">
+						<a class="btn btn-success" href="" id="yes-delete">Yes</a>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 </html>

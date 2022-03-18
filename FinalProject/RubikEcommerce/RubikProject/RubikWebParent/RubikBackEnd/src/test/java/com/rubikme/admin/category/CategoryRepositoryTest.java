@@ -36,4 +36,14 @@ public class CategoryRepositoryTest {
 		
 		assertThat(saveCate.getId()).isGreaterThan(0);
 	}
+	
+	@Test
+	public void testFindByName() {
+		String name = "Gear";
+		
+		Category cate = repo.findByName(name);
+		
+		assertThat(cate).isNotNull();
+		assertThat(cate.getName()).isEqualTo(name);
+	}
 }
