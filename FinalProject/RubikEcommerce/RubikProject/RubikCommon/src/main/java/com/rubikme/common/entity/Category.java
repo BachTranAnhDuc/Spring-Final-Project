@@ -165,7 +165,7 @@ public class Category {
 		if (id == null || image == null) {
 			return "/images/image-thumbnail.png";
 		}
-		return "../category-images/" + this.id + "/" + this.image;
+		return "/category-images/" + this.id + "/" + this.image;
 	}
 	
 	public boolean isHasChildren() {
@@ -186,4 +186,5 @@ public class Category {
 	public void setAllParentIDs(String allParentIDs) {
 		this.allParentIDs = allParentIDs;
 	}
+	
 }
