@@ -1,9 +1,6 @@
-package com.rubikme.admin.user.export;
+package com.rubikme.admin.category.exporter;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletOutputStream;
@@ -16,24 +13,22 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.supercsv.io.CsvBeanWriter;
-import org.supercsv.io.ICsvBeanWriter;
-import org.supercsv.prefs.CsvPreference;
 
 import com.rubikme.admin.exporter.AbstractExporter;
+import com.rubikme.common.entity.Category;
 import com.rubikme.common.entity.User;
 
-public class UserExcelExporter extends AbstractExporter{
+public class CategoryExcelExport extends AbstractExporter{
 	
 	private XSSFWorkbook workbook;
 	private XSSFSheet sheet;
 	
-	public UserExcelExporter() {
+	public CategoryExcelExport() {
 		workbook = new XSSFWorkbook();
 	}
 	
 	private void writeHeaderLine() {
-		sheet = workbook.createSheet("Users");
+		sheet = workbook.createSheet("Categories");
 		XSSFRow row = sheet.createRow(0);
 		
 		XSSFCellStyle cellStyle = workbook.createCellStyle();
@@ -42,12 +37,10 @@ public class UserExcelExporter extends AbstractExporter{
 		font.setFontHeight(16);
 		cellStyle.setFont(font);
 		
-		createCell(row, 0, "User ID", cellStyle);
-		createCell(row, 1, "E-mail", cellStyle);
-		createCell(row, 2, "First Name", cellStyle);
-		createCell(row, 3, "Last Name", cellStyle);
-		createCell(row, 4, "Roles", cellStyle);
-		createCell(row, 5, "Enabled", cellStyle);
+		createCell(row, 0, "Category ID", cellStyle);
+		createCell(row, 1, "Name", cellStyle);
+		createCell(row, 2, "Alias", cellStyle);
+		createCell(row, 3, "Enabled", cellStyle);
 		
 	}
 	
@@ -68,7 +61,7 @@ public class UserExcelExporter extends AbstractExporter{
 		cell.setCellStyle(style);
 	}
 	
-	private void writeDataLine(List<User> listUsers) {
+	private void writeDataLine(List<Category> listCategories) {
 		int rowIndex = 1;
 		
 		XSSFCellStyle cellStyle = workbook.createCellStyle();
@@ -76,24 +69,22 @@ public class UserExcelExporter extends AbstractExporter{
 		font.setFontHeight(14);
 		cellStyle.setFont(font);
 		
-		for (User user : listUsers) {
+		for (Category cate : listCategories) {
 			XSSFRow row = sheet.createRow(rowIndex++);
 			int columnIndex = 0;
 			
-			createCell(row, columnIndex++, user.getId(), cellStyle);
-			createCell(row, columnIndex++, user.getEmail(), cellStyle);
-			createCell(row, columnIndex++, user.getFirstName(), cellStyle);
-			createCell(row, columnIndex++, user.getLastName(), cellStyle);
-			createCell(row, columnIndex++, user.getRoles().toString(), cellStyle);
-			createCell(row, columnIndex++, user.isEnabled(), cellStyle);
+			createCell(row, columnIndex++, cate.getId(), cellStyle);
+			createCell(row, columnIndex++, cate.getName(), cellStyle);
+			createCell(row, columnIndex++, cate.getAlias(), cellStyle);
+			createCell(row, columnIndex++, cate.isEnabled(), cellStyle);
 		}
 	}
 	
-	public void export(List<User> listUsers, HttpServletResponse response) throws IOException {
-		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "Users_");
+	public void export(List<Category> listCategories, HttpServletResponse response) throws IOException {
+		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "Categories_");
 		
 		writeHeaderLine();
-		writeDataLine(listUsers);
+		writeDataLine(listCategories);
 		
 		String[] csvHeader = {"User ID", "E-mail", "First Name", "Last Name", "Roles", "Enabled"};
 		String[] fieldMapping = {"id", "email", "firstName", "lastName", "roles", "enabled"};

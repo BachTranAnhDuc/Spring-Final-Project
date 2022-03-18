@@ -5,15 +5,9 @@
 <body>
 	<div class="container-fluid">
 		<div th:replace="fragments :: menu"></div>
-		<div>
-			<h1>Manage Category</h1>
-			<a class="fas fa-folder-plus fa-2x icon-dark mr-2"
-				th:href="@{/categories/new}">
-			</a>
-
-		</div>
+		<div th:replace="fragments :: export('/categories', ${title})"></div>
 		
-		<div th:replace="fragments :: search_form_and_message"></div>
+		<div th:replace="fragments :: search_form('/categories/page/1')"></div>
 		
 		<div class="full-details">
 			<table class="table table-bordered table-striped table-hover table-responsive-xl">
@@ -25,7 +19,7 @@
 						
 						<th>
 							<a class="text-white" 
-								th:href="@{'/categories/page/' + ${pageNum} + '?sortDir=' + ${reverseSortDir}}">Category Name
+								th:href="@{'/categories/page/' + ${pageNum} + '?sortDir=' + ${reverseSortDir}+ '&keyword=' + ${keyword != null ? keyword : ''}}">Category Name
 							</a>
 							<span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
 							</span>
@@ -65,7 +59,14 @@
 			</table>
 		</div>
 		
-		<div th:replace="fragments :: pagination('/categories', 'top-level categories')"></div>
+		<div th:if="${keyword != null}" class="text-center">
+			<span>Result does not have in categories.</span>
+			<div th:replace="fragments :: pagination('/categories', 'categories')"></div>
+		</div>
+		
+		<th:block th:unless="${keyword != null}">
+			<div th:replace="fragments :: pagination('/categories', 'top-level categories')"></div>
+		</th:block>
 		
 		<div th:replace="fragments :: confirm_modal"></div>
 		

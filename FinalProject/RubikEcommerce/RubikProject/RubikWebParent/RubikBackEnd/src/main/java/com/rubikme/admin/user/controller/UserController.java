@@ -35,6 +35,7 @@ public class UserController {
 	@GetMapping("/users")
 	public String listFirstPage(Model model) {
 		
+		model.addAttribute("title", "Manage User");
 		return listByPage(1, model, "firstName", "asc", null);
 	}
 	
@@ -167,6 +168,7 @@ public class UserController {
 		model.addAttribute("sortDir", sortDir);
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);
+		model.addAttribute("title", "Manage User");
 		
 		
 		

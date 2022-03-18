@@ -25,12 +25,12 @@ import com.rubikme.common.entity.Category;
 @Transactional
 public class CategoryService {
 	
-	private static final int CATEGORY_PER_PAGE = 2;
+	public static final int CATEGORY_PER_PAGE = 2;
 	
 	@Autowired
 	private CategoryRepository repo;
 	
-	public List<Category> listByPage(CategoryPageInfo pageInfor, int pageNum, String sortDir) {
+	public List<Category> listByPage(CategoryPageInfo pageInfor, int pageNum, String sortDir, String keyword) {
 		
 		Sort sort = Sort.by("name");
 		
@@ -43,13 +43,32 @@ public class CategoryService {
 		
 		Pageable pageable = PageRequest.of(pageNum - 1, CATEGORY_PER_PAGE, sort);
 		
-		Page<Category> pageCategories = repo.findRootCategories(pageable);
+		Page<Category> pageCategories = null;
+		
+		if (keyword != null && !keyword.isEmpty()) {
+			pageCategories = repo.search(keyword, pageable);	
+		} 
+		else {
+			pageCategories = repo.findRootCategories(pageable);
+		}
+		
 		List<Category> rootCategories = pageCategories.getContent();
 		
 		pageInfor.setTotalElements(pageCategories.getTotalElements());
 		pageInfor.setTotalPages(pageCategories.getTotalPages());
 		
-		return listHierarchicalCategories(rootCategories, sortDir);
+		if (keyword != null && !keyword.isEmpty()) {
+			List<Category> searchResult = pageCategories.getContent();
+			for (Category category : searchResult) {
+				category.setHasChildren(category.getChildren().size() > 0);
+			}
+			
+			return searchResult;
+			
+		} 
+		else {
+			return listHierarchicalCategories(rootCategories, sortDir);
+		}
 	}
 	
 	private List<Category> listHierarchicalCategories(List<Category> rootCategories, String sortDir) {
