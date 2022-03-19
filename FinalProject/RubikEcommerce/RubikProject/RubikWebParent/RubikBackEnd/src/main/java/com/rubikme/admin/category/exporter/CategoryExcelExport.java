@@ -16,7 +16,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.rubikme.admin.exporter.AbstractExporter;
 import com.rubikme.common.entity.Category;
-import com.rubikme.common.entity.User;
 
 public class CategoryExcelExport extends AbstractExporter{
 	
@@ -61,6 +60,20 @@ public class CategoryExcelExport extends AbstractExporter{
 		cell.setCellStyle(style);
 	}
 	
+	
+	public void export(List<Category> listCategories, HttpServletResponse response) throws IOException {
+		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "Categories_");
+		
+		writeHeaderLine();
+		writeDataLine(listCategories);		
+		
+		ServletOutputStream outputStream = response.getOutputStream();
+		
+		workbook.write(outputStream);
+		workbook.close();
+		outputStream.close();
+	}
+	
 	private void writeDataLine(List<Category> listCategories) {
 		int rowIndex = 1;
 		
@@ -78,23 +91,5 @@ public class CategoryExcelExport extends AbstractExporter{
 			createCell(row, columnIndex++, cate.getAlias(), cellStyle);
 			createCell(row, columnIndex++, cate.isEnabled(), cellStyle);
 		}
-	}
-	
-	public void export(List<Category> listCategories, HttpServletResponse response) throws IOException {
-		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "Categories_");
-		
-		writeHeaderLine();
-		writeDataLine(listCategories);
-		
-		String[] csvHeader = {"User ID", "E-mail", "First Name", "Last Name", "Roles", "Enabled"};
-		String[] fieldMapping = {"id", "email", "firstName", "lastName", "roles", "enabled"};
-		
-		
-		
-		ServletOutputStream outputStream = response.getOutputStream();
-		
-		workbook.write(outputStream);
-		workbook.close();
-		outputStream.close();
 	}
 }

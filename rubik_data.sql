@@ -82,25 +82,32 @@ insert into user_roles values (23, 5);
 
 
 
-insert into categories values (1, 'rubik_2x2x2', null, 1, '2x2x2.png', '2x2x2', null);
-insert into categories values (2, 'rubik_3x3x3', null, 0, '3x3x3.png', '3x3x3', null);
-insert into categories values (3, 'rubik_4x4x4', null, 1, '4x4x4.png', '4x4x4', null);
-insert into categories values (4, 'rubik_5x5x5', null, 0, '5x5x5.png', '5x5x5', null);
-insert into categories values (5, 'rubik_6x6x6', null, 1, '6x6x6.png', '6x6x6', null);
-insert into categories values (6, 'rubik_7x7x7', null, 1, '7x7x7.png', '7x7x7', null);
-insert into categories values (7, 'rubik_8x8x8', null, 1, '8x8x8.png', '8x8x8', null);
-insert into categories values (8, 'rubik_9x9x9', null, 1, '9x9x9.png', '9x9x9', null);
-insert into categories values (9, 'rubik_10x10x10', null, 1, '10x10x10.png', '10x10x10', null);
-insert into categories values (10, 'rubik_11x11x11', null, 1, '11x11x11.png', '11x11x11', null);
-insert into categories values (11, 'rubik_12x12x12', null, 1, '12x12x12.png', '12x12x12', null);
-insert into categories values (12, 'rubik_gear', null, 1, '12x12x12.png', 'Gear', null);
-insert into categories values (13, 'rubik_megaminx', null, 1, '12x12x12.png', 'Megaminx', null);
-insert into categories values (14, 'rubik_mirror', null, 1, '12x12x12.png', 'Mirror', null);
-insert into categories values (15, 'rubik_pyraminx', null, 1, '12x12x12.png', 'Pyraminx', null);
-insert into categories values (16, 'rubik_skewb', null, 1, '12x12x12.png', 'Skewb', null);
-insert into categories values (17, 'rubik_square-1', null, 1, '12x12x12.png', 'Square-1', null);
+insert into categories values (1, 'standard_rubik', null, 1, 'standard.png', 'rubik standard', null);
+insert into categories values (2, 'variant_rubik', null, 1, 'standard.png', 'rubik variant', null);
+insert into categories values (3, 'accessory', null, 1, 'standard.png', 'accessory', null);
 
-insert into categories values (18, 'rubik_3x3_gan_m_pro', null, 1, '3x3.png', 'Rubik 3x3 Gan 11 M Pro', 1);
-insert into categories values (19, 'rubik_2x2_gan_m_pro', null, 1, '2x2.png', 'Rubik 2x2 Gan 11 M Pro', 18);
-insert into categories values (25, 'kkk', null, 1, '2x2.png', 'kkk', 18);
 
+insert into categories values (4, 'rubik_2x2x2', null, 1, '2x2x2.png', '2x2x2', 1);
+insert into categories values (5, 'rubik_3x3x3', null, 0, '3x3x3.png', '3x3x3', 1);
+insert into categories values (6, 'rubik_4x4x4', null, 1, '4x4x4.png', '4x4x4', 1);
+insert into categories values (7, 'rubik_5x5x5', null, 0, '5x5x5.png', '5x5x5', 1);
+insert into categories values (8, 'rubik_6x6x6', null, 1, '6x6x6.png', '6x6x6', 1);
+insert into categories values (9, 'rubik_7x7x7', null, 1, '7x7x7.png', '7x7x7', 1);
+insert into categories values (10, 'rubik_8x8x8', null, 1, '8x8x8.png', '8x8x8', 1);
+insert into categories values (11, 'rubik_9x9x9', null, 1, '9x9x9.png', '9x9x9', 1);
+insert into categories values (12, 'rubik_10x10x10', null, 1, '10x10x10.png', '10x10x10', 1);
+insert into categories values (13, 'rubik_11x11x11', null, 1, '11x11x11.png', '11x11x11', 1);
+insert into categories values (14, 'rubik_12x12x12', null, 1, '12x12x12.png', '12x12x12', 1);
+
+insert into categories values (15, 'rubik_gear', null, 1, '12x12x12.png', 'Gear', 2);
+insert into categories values (16, 'rubik_megaminx', null, 1, '12x12x12.png', 'Megaminx', 2);
+insert into categories values (17, 'rubik_mirror', null, 1, '12x12x12.png', 'Mirror', 2);
+insert into categories values (18, 'rubik_pyraminx', null, 1, '12x12x12.png', 'Pyraminx', 2);
+insert into categories values (19, 'rubik_skewb', null, 1, '12x12x12.png', 'Skewb', 2);
+insert into categories values (20, 'rubik_square-1', null, 1, '12x12x12.png', 'Square-1', 2);
+
+insert into categories values (21, 'cubible_sticker', null, 1, '12x12x12.png', 'Sticker', 3);
+insert into categories values (22, 'cubible_lube', null, 1, '12x12x12.png', 'Lube', 3);
+insert into categories values (23, 'core', null, 1, '12x12x12.png', 'Core', 3);
+insert into categories values (24, 'bag', null, 1, '12x12x12.png', 'Bag', 3);
+insert into categories values (25, 'time_clock', null, 1, '12x12x12.png', 'Time Clock', 3);

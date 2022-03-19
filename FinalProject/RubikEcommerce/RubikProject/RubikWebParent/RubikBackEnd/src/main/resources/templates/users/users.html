@@ -6,36 +6,36 @@
 	<div class="container-fluid">
 		<div th:replace="fragments :: menu"></div>
 		
-		<div th:if="${message != null}" class="alert alert-success text-center">
-			[[${message}]]
-		</div>
-		
 		<div th:replace="fragments :: export('/users', ${title})"></div>
 		
 		<div th:replace="fragments :: search_form('/users/page/1')"></div>
+		
+		<div th:if="${message != null}" class="alert alert-success text-center">
+			[[${message}]]
+		</div>
 		
 		<div class="full-details">
 			<table class="table table-responsive-xl table-bordered table-striped table-hover">
 				<thead class="thead-dark">
 					<tr>
 						<!-- use fragment -->
-						<th th:replace="fragments :: column_link('id', 'User ID')"/>
+						<th th:replace="fragments :: column_link('/users', 'id', 'User ID')"/>
 
 						<th>Photo</th>
 						
 						<!-- use fragment -->
-						<th th:replace="fragments :: column_link('email', 'Email')"/>
+						<th th:replace="fragments :: column_link('/users', 'email', 'Email')"/>
 
 						<!-- use fragment -->
-						<th th:replace="fragments :: column_link('firstName', 'First Name')"/>
+						<th th:replace="fragments :: column_link('/users', 'firstName', 'First Name')"/>
 
 						<!-- use fragment -->
-						<th th:replace="fragments :: column_link('lastName', 'Last Name')"/>
+						<th th:replace="fragments :: column_link('/users', 'lastName', 'Last Name')"/>
 
 						<th>Roles</th>
 
 						<!-- use fragment -->
-						<th th:replace="fragments :: column_link('enabled', 'Enabled')"/>
+						<th th:replace="fragments :: column_link('/users', 'enabled', 'Enabled')"/>
 
 						<th></th>
 					</tr>
@@ -54,23 +54,11 @@
 						<td>[[${user.roles}]]</td>
 						
 						<td>
-							<a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green" 
-								th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
-								title="Disable user"></a>
-							<a th:if="${user.enabled == false}" class="fas fa-circle fa-2x icon-dark" 
-								th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
-								title="Enable user"></a>
+							<div th:replace="fragments :: status(${user.enabled}, 'user', '/users/' + ${user.id})"></div>
 						</td>
 						
 						<td>
-							<a class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}"
-								title="Edit this user"></a>
-							 &nbsp; 
-							 <a class="fas fa-trash fa-2x icon-dark link-delete-user" 
-							 	th:href="@{'/users/delete/' + ${user.id}}"
-							 	th:userId="${user.id}"
-							 	title="Delete this user">
-							 </a>
+							<div th:replace="fragments :: delete_edit('/users/', ${user.id})"></div>
 						</td>
 					</tr>
 				</tbody>

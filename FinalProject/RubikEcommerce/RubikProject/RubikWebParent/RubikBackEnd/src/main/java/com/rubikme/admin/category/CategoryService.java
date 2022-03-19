@@ -20,6 +20,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.rubikme.common.entity.Category;
+import com.rubikme.common.entity.User;
 
 @Service
 @Transactional
@@ -230,5 +231,9 @@ public class CategoryService {
 		catch (NoSuchElementException ex) {
 			throw new CategoryNotFoundException("Could not find any category with ID: " + id);
 		}
+	}
+	
+	public List<Category> listAllCategory() {
+		return (List<Category>) repo.findAll();
 	}
 }

@@ -168,17 +168,19 @@ public class CategoryController {
 	@GetMapping("/categories/export/csv")
 	public void exportToCSV(HttpServletResponse response) throws IOException {
 		List<Category> listCategories = service.listCategoriesUsedInForm();
+		
 		CategoryCsvExporter exporter = new CategoryCsvExporter();
+		
 		exporter.export(listCategories, response);
 	}
 	
 	@GetMapping("/categories/export/excel")
 	public void exportToExcel(HttpServletResponse response) throws IOException {
-		List<Category> listCategories = service.listCategoriesUsedInForm();
+		List<Category> listCategories = service.listAllCategory();
 		
-		CategoryExcelExport categoryExcelExporter = new CategoryExcelExport();
+		CategoryExcelExport exporter = new CategoryExcelExport();
 		
-		categoryExcelExporter.export(listCategories, response);
+		exporter.export(listCategories, response);
 	}
 	
 	@GetMapping("/categories/export/pdf")

@@ -136,13 +136,11 @@
 	</div>
 
 	
-	<th th:fragment="column_link(fieldName, columnLabel)">
-		<a th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + '&keyword=' + ${keyword != null ? keyword : ''}}"
-			class="text-white"> [[${columnLabel}]]] 
+	<th th:fragment="column_link(moduleURL, fieldName, columnLabel)">
+		<a th:href="@{${moduleURL} + '/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + '&keyword=' + ${keyword != null ? keyword : ''}}"
+			class="text-white"> [[${columnLabel}]] 
 		</a> 
-		<span th:if="${sortField == 'fieldName'}"
-			th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
-		</span>
+		<span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
 	</th>
 
 	<a th:fragment="page_link(moduleURL, pageNum, label)"
@@ -206,6 +204,7 @@
 		</div>
 	</div>
 	
+	<!-- Cofirm modal -->
 	<div th:fragment="confirm_modal" class="modal fade text-center" id="confirmModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -226,6 +225,7 @@
 		</div>
 	</div>
 	
+	<!-- Edit and delete category -->
 	<div th:fragment="category_action" th:remove="tag">
 		<a class="fas fa-edit fa-2x icon-green"
 			th:href="@{'/categories/edit/' + ${cat.id}}"
@@ -241,6 +241,7 @@
 		</th:block>
 	</div>
 	
+	<!-- Pagination -->
 	<div th:fragment="pagination(moduleURL, entityName)" th:remove="tag">
 		<div class="text-center m-1" th:if="${totalItems > 0}">
 			<span>Showing [[${entityName}]] # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
@@ -311,6 +312,18 @@
 		<a th:href="@{${moduleURL} + '/export/excel'}" class="fas fa-file-excel fa-2x icon-dark mr-2"></a>
 		&nbsp;|&nbsp;
 		<a th:href="@{${moduleURL} + '/export/pdf'}" class="fas fa-file-pdf fa-2x icon-dark mr-2"></a>
+	</div>
+	
+	<!-- Delete and Edit not check-->
+	<div th:fragment="delete_edit(moduleURL, idEntity)">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{${moduleURL} +'edit/' + ${idEntity}}"
+			title="Edit this user"></a>
+		&nbsp; 
+		<a class="fas fa-trash fa-2x icon-dark link-delete-user" 
+			th:href="@{${moduleURL} + 'delete/' + ${idEntity}}"
+			th:userId="${idEntity}"
+			title="Delete this user">
+		</a>
 	</div>
 </body>
 </html>
