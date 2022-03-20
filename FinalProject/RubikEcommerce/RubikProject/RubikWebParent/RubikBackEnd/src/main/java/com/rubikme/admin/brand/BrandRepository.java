@@ -11,4 +11,6 @@ public interface BrandRepository extends PagingAndSortingRepository<Brand, Integ
 	
 	@Query("SELECT b FROM Brand b")
 	public List<Brand> findAll();
+	
+	public Long countById(Integer id);
 }

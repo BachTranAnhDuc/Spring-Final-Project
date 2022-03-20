@@ -5,6 +5,11 @@
 <body>
 <div class="container-fluid">
 	<div th:replace="fragments :: menu"></div>
+	
+	<div>
+		<h2>Manage Brands</h2>	
+		<a th:href="@{/brands/new}" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
+	</div>
 		
 	<div th:if="${message != null}" class="alert alert-success text-center">
 			[[${message}]]
@@ -25,6 +30,9 @@
 				<tr th:each="brand : ${listBrands}">
 					<td class="hideable-column">[[${brand.id}]]</td>
 					<td>
+						<span th:if="${brand.logo == null}" class="fas fa-portrait fa-2x icon-dark"></span>
+						<img th:if="${brand.logo != null}" th:src="@{${brand.getLogoPath}}"
+							class="w-25 h-25"/>
 					</td>
 					<td>[[${brand.name}]]</td>
 					<td>

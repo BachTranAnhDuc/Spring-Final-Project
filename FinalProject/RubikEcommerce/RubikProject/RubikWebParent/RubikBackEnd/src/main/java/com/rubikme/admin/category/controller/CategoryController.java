@@ -113,6 +113,7 @@ public class CategoryController {
 			
 			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 			category.setImage(fileName);
+			System.out.println(multipartFile.getOriginalFilename());
 
 			Category savedCategory = service.save(category);
 			String uploadDir = "../category-images/" + savedCategory.getId();
