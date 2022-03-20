@@ -10,6 +10,8 @@
 		<h2>Manage Brands</h2>	
 		<a th:href="@{/brands/new}" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
 	</div>
+	
+	<div th:replace="fragments :: search_form('/brands/page/1')"></div>
 		
 	<div th:if="${message != null}" class="alert alert-success text-center">
 			[[${message}]]
@@ -19,9 +21,9 @@
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
 			<thead class="thead-dark">
 				<tr>
-					<th class="hideable-column">Brand ID</th>
+					<th th:replace="fragments :: column_link('/brands', 'id', 'Brand ID')" class="hideable-column"/>
 					<th>Logo</th>
-					<th>Brand Name</th>
+					<th th:replace="fragments :: column_link('/brands', 'name', 'Brand Name')"/>
 					<th>Categories</th>
 					<th></th>
 				</tr>								
@@ -50,6 +52,8 @@
 	</div>
 	
 	<div th:replace="fragments :: confirm_modal"></div>
+	
+	<div th:replace="fragments :: pagination('/brands', 'brands')"></div>
 		
 	<div th:replace="fragments :: footer_frag"></div>
 	

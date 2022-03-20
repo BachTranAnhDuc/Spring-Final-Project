@@ -7,6 +7,8 @@ select * from roles;
 select * from user_roles;
 select * from users;
 select * from categories;
+select * from brands;
+select * from brands_categories;
 
 
 
@@ -111,3 +113,18 @@ insert into categories values (22, 'cubible_lube', null, 1, '12x12x12.png', 'Lub
 insert into categories values (23, 'core', null, 1, '12x12x12.png', 'Core', 3);
 insert into categories values (24, 'bag', null, 1, '12x12x12.png', 'Bag', 3);
 insert into categories values (25, 'time_clock', null, 1, '12x12x12.png', 'Time Clock', 3);
+
+insert into brands values (1, 'yong_jun.png', 'YongJun');
+insert into brands values (2, 'qiyi.png', 'QiYi');
+insert into brands values (3, 'moyu.png', 'MoYu');
+insert into brands values (4, 'gan.png', 'GAN');
+insert into brands values (5, 'dayan.png', 'DaYan');
+
+insert into brands_categories values (1, 5);
+insert into brands_categories values (2, 5);
+insert into brands_categories values (3, 5);
+insert into brands_categories values (4, 5);
+insert into brands_categories values (1, 6);
+insert into brands_categories values (2, 6);
+insert into brands_categories values (3, 6);
+insert into brands_categories values (4, 6);
