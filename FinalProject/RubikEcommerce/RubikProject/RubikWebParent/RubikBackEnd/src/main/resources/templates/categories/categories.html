@@ -34,21 +34,12 @@
 				<tbody>
 					<tr th:each="cat : ${listCategories}">
 						<td>[[${cat.id}]]</td>
-						<td>
-							<img th:src="@{${cat.imagePath}}" class="w-25 h-25" style="max-width: 75px;"/>
-						</td>
+						<td th:replace="fragments :: column_link_image(${cat.getImagePath}, ${cat.image})"></td>
 						<td>[[${cat.name}]]</td>
 						<td>[[${cat.alias}]]</td>
 						<td>
 							<div th:replace="fragments :: status(${cat.enabled}, 'category', '/categories/' + ${cat.id})"></div>
 						</td>
-						<!--  
-						<td>
-							<div th:replace="fragments :: edit('category', '/categories/edit/' + ${cat.id})" />
-							&nbsp; 
-							<div th:replace="fragments :: delete('category', ${cat.id}, '/categories/delete/' + ${cat.id}, ${!cat.hasChildren})" />						
-						</td>	
-						-->
 						<td>
 							<div th:replace="fragments :: category_action"></div>
 						</td>

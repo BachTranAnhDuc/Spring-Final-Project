@@ -43,11 +43,7 @@
 				<tbody>
 					<tr th:each="user : ${listUsers}">
 						<td>[[${user.id}]]</td>
-						<td>
-							<span th:if="${user.photos == null}" class="fas fa-portrait fa-2x icon-dark"></span>
-							<img th:if="${user.photos != null}" th:src="@{${user.photosImagePath}}"
-								class="w-25 h-25"/>
-						</td>
+						<td th:replace="fragments :: column_link_image(${user.photosImagePath}, ${user.photos})"></td>
 						<td>[[${user.email}]]</td>
 						<td>[[${user.firstName}]]</td>
 						<td>[[${user.lastName}]]</td>

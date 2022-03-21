@@ -142,6 +142,12 @@
 		</a> 
 		<span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
 	</th>
+	
+	<td th:fragment="column_link_image(imagePath, image)">
+		<span th:if="${image == null}" class="fas fa-portrait fa-2x icon-dark"></span>
+		<img th:if="${image != null}" th:src="@{${imagePath}}"
+			class="w-25 h-25"/>
+	</td>
 
 	<a th:fragment="page_link(moduleURL, pageNum, label)"
 		th:href="@{${moduleURL} + '/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}  + ${keyword != null ? '&keyword=' + keyword : ''}}"

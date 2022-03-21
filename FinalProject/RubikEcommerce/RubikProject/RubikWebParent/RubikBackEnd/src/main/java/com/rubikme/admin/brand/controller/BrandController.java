@@ -36,7 +36,7 @@ public class BrandController {
 	public String listFirstPage(Model model) {		
 		return listByPage(1, model, "name", "asc", null);
 	}
-	
+
 	@GetMapping("/brands/page/{pageNum}")
 	public String listByPage(@PathVariable(name = "pageNum") int pageNum,
 			Model model, @Param("sortField") String sortField,

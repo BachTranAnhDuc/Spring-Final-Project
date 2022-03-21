@@ -13,32 +13,49 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		// User
-		String dirName = "user-photos";
+//		String dirName = "user-photos";
+//		
+//		Path userPhotoDir = Paths.get(dirName);
+//		
+//		String userPhotosPath = userPhotoDir.toFile().getAbsolutePath();
+//		
+//		registry.addResourceHandler("/" + dirName + "/**").addResourceLocations("file:/" + userPhotosPath + "/");
 		
-		Path userPhotoDir = Paths.get(dirName);
-		
-		String userPhotosPath = userPhotoDir.toFile().getAbsolutePath();
-		
-		registry.addResourceHandler("/" + dirName + "/**").addResourceLocations("file:/" + userPhotosPath + "/");
+		exposoDirectory("user-photos", registry);
 		
 		// Category
-		String categoryImagesName = "../category-images";
+//		String categoryImagesName = "../category-images";
+//		
+//		Path categoryImagesDir = Paths.get(categoryImagesName);
+//		
+//		String categoryImagesPath = categoryImagesDir.toFile().getAbsolutePath();
+//		
+//		registry.addResourceHandler("/category-images/**")
+//			.addResourceLocations("file:/" + categoryImagesPath + "/");
 		
-		Path categoryImagesDir = Paths.get(categoryImagesName);
-		
-		String categoryImagesPath = categoryImagesDir.toFile().getAbsolutePath();
-		
-		registry.addResourceHandler("/category-images/**")
-			.addResourceLocations("file:/" + categoryImagesPath + "/");
+		exposoDirectory("../category-images", registry);
 		
 		// Brand
-		String brandLogoNameDirName = "../brand-logos";
+//		String brandLogoNameDirName = "../brand-logos";
+//		
+//		Path brandLogoNameDir = Paths.get(brandLogoNameDirName);
+//		
+//		String brandLogoPath = brandLogoNameDir.toFile().getAbsolutePath();
+//		
+//		registry.addResourceHandler("/brand-logos/**")
+//			.addResourceLocations("file:/" + brandLogoPath + "/");
 		
-		Path brandLogoNameDir = Paths.get(brandLogoNameDirName);
+		exposoDirectory("../brand-logos", registry);
+	}
+	
+	private void exposoDirectory(String pathPattern, ResourceHandlerRegistry registry) {
+		Path path = Paths.get(pathPattern);
+		String absolutePath = path.toFile().getAbsolutePath();
+		String logicalPath = pathPattern.replace("..", "") + "/**";
 		
-		String brandLogoPath = brandLogoNameDir.toFile().getAbsolutePath();
 		
-		registry.addResourceHandler("/brand-logos/**")
-			.addResourceLocations("file:/" + brandLogoPath + "/");
+		registry.addResourceHandler(logicalPath)
+		.addResourceLocations("file:/" + absolutePath + "/");
+		
 	}
 }
