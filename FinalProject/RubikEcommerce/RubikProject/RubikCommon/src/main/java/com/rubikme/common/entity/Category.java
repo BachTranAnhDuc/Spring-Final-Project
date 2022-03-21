@@ -192,5 +192,12 @@ public class Category {
 	public void setAllParentIDs(String allParentIDs) {
 		this.allParentIDs = allParentIDs;
 	}
+
+	@Override
+	public String toString() {
+		return this.name;
+	}
+	
+	
 	
 }

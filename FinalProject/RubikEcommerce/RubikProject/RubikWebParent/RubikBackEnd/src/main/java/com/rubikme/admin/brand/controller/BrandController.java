@@ -3,6 +3,8 @@ package com.rubikme.admin.brand.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -19,7 +21,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.rubikme.admin.FileUploadUtil;
 import com.rubikme.admin.brand.BrandService;
 import com.rubikme.admin.brand.error.BrandNotFoundException;
+import com.rubikme.admin.brand.exporter.BrandCsvExporter;
+import com.rubikme.admin.brand.exporter.BrandExcelExporter;
+import com.rubikme.admin.brand.exporter.BrandPDFExporter;
 import com.rubikme.admin.category.CategoryService;
+import com.rubikme.admin.category.exporter.CategoryCsvExporter;
+import com.rubikme.admin.category.exporter.CategoryExcelExport;
+import com.rubikme.admin.category.exporter.CategoryPDFExport;
 import com.rubikme.common.entity.Brand;
 import com.rubikme.common.entity.Category;
 
@@ -34,6 +42,8 @@ public class BrandController {
 	
 	@GetMapping("/brands") 
 	public String listFirstPage(Model model) {		
+		model.addAttribute("title", "Manage Brands");
+		
 		return listByPage(1, model, "name", "asc", null);
 	}
 
@@ -140,5 +150,32 @@ public class BrandController {
 		}
 		
 		return "redirect:/brands";
+	}
+	
+	@GetMapping("/brands/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		List<Brand> listBrands = service.listAll();
+		
+		BrandCsvExporter exporter = new BrandCsvExporter();
+		
+		exporter.export(listBrands, response);
+	}
+	
+	@GetMapping("/brands/export/excel")
+	public void exportToExcel(HttpServletResponse response) throws IOException {
+		List<Brand> listBrands = service.listAll();
+		
+		BrandExcelExporter exporter = new BrandExcelExporter();
+		
+		exporter.export(listBrands, response);
+	}
+	
+	@GetMapping("/brands/export/pdf")
+	public void exportToPDF(HttpServletResponse response) throws IOException {
+		List<Brand> listBrands = service.listAll();
+		
+		BrandPDFExporter exporter = new BrandPDFExporter();
+		
+		exporter.export(listBrands, response);
 	}
 }
