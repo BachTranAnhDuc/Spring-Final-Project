@@ -53,4 +53,11 @@ public class ProductRepositoryTest {
 		
 		assertThat(savedProduct).isNotNull();
 	}
+	
+	@Test
+	public void testListAllProduct() {
+		Iterable<Product> iterableProducts = repo.findAll();
+		
+		iterableProducts.forEach(System.out::println);
+	}
 }
