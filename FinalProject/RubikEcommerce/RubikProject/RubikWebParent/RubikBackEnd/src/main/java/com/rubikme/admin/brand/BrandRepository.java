@@ -11,7 +11,7 @@ import com.rubikme.common.entity.Brand;
 
 public interface BrandRepository extends PagingAndSortingRepository<Brand, Integer> {
 	
-	@Query("SELECT b FROM Brand b")
+	@Query("SELECT NEW Brand(b.id, b.name) FROM Brand b ORDER BY b.name ASC")
 	public List<Brand> findAll();
 	
 	public Long countById(Integer id);

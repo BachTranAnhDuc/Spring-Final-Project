@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Products - Rubik Admin')">
+</head>
+<body>
+<div class="container-fluid">
+	<div th:replace="fragments :: menu"></div>
+	
+	<div th:replace="fragments :: export('/products', ${title})"></div>
+	
+	<div th:replace="fragments :: search_form('/products/page/1')"></div>
+		
+	<div th:if="${message != null}" class="alert alert-success text-center">
+			[[${message}]]
+	</div>
+		
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Main Image</th>
+					<th>Product Name</th>
+					<th>Brand</th>
+					<th>Category</th>
+					<th>Enabled</th>
+					<th></th>	
+				</tr>								
+			</thead>
+			<tbody>
+				<tr th:each="product : ${listProducts}">
+				
+					<td>[[${product.id}]]</td>
+					
+					<td></td>
+					
+					<td>[[${product.name}]]</td>
+					
+					<td>[[${product.brand.name}]]</td>
+					
+					<td>[[${product.category.name}]]</td>
+					
+					<td>
+						<div th:replace="fragments :: status(${product.enabled}, 'product', '/products/' + ${product.id})"></div>
+					</td>
+
+					<td>
+						<a class="fas fa-file-alt fa-2x icon-green"
+							th:href="@{'/products/detail/' + ${product.id}}"
+							title="View detail of product">
+						</a>
+						&nbsp;
+						<div th:replace="fragments :: delete_edit('/products/', ${product.id})"></div>					
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div th:replace="fragments :: confirm_modal"></div>
+		
+	<div th:replace="fragments :: footer_frag"></div>
+	
+</div>
+	
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.link-delete-user').on("click", function(e) {
+			e.preventDefault();
+			link = $(this);
+			//alert($(this).attr("href"));
+			userId = link.attr("userId");
+			$('#yes-delete').attr("href", link.attr("href"));
+			$('#confirmText').text("Are you sure that you want to delete user ID " +userId + "?");
+			$('#confirmModal').modal();
+			
+		})
+	});
+
+	function clearFilter(){
+		window.location = "[[@{/users}]]";
+	}
+</script>
+</body>
+</html>

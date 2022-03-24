@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:fragment="product_overview" remove="tag">
+		<div class="form-group row">
+			<label class="col-sm-4 col-form-label">Product Name:</label>
+				
+			<div class="col-sm-8">
+				<input type="text" class="form-control" th:field="*{name}" required minlength="3" maxlength="256"  />
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

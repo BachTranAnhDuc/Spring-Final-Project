@@ -19,7 +19,7 @@ import com.rubikme.common.entity.Brand;
 @Transactional
 public class BrandService {
 	
-	public static final int BRAND_PER_PAGE = 2;
+	public static final int BRAND_PER_PAGE = 5;
 	@Autowired
 	private BrandRepository repo;
 	
