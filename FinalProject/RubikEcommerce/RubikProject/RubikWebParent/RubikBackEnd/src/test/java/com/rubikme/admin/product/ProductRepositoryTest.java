@@ -71,4 +71,18 @@ public class ProductRepositoryTest {
 		
 		assertThat(findById).isNotNull();
 	}
+	
+	@Test
+	public void testUpdateProduct() {
+		Integer id = 1;
+		
+		Product product = repo.findById(id).get();
+		
+		product.setPrice(430);
+		
+		repo.save(product);
+		
+		assertThat(product).isNotNull();
+		
+	}
 }
