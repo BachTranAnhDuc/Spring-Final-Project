@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.admin.brand.BrandService;
+import com.rubikme.admin.product.ProductNotFoundException;
 import com.rubikme.admin.product.ProductService;
 import com.rubikme.common.entity.Brand;
 import com.rubikme.common.entity.Product;
@@ -74,6 +75,22 @@ public class ProductController {
 		String message = "The product ID " + id + " has been" + status;
 		
 		re.addFlashAttribute("message", message);
+		
+		return "redirect:/products";
+	}
+	
+	@GetMapping("/products/delete/{id}")
+	public String deleteProduct(@PathVariable(name = "id") Integer id,
+			Model model,
+			RedirectAttributes re) {
+		try {
+			productService.delete(id);
+			
+			re.addFlashAttribute("message", "The product ID: " + id + " has been deleted successfully");
+		}
+		catch (ProductNotFoundException ex) {
+			re.addFlashAttribute("message", ex.getMessage());
+		}
 		
 		return "redirect:/products";
 	}

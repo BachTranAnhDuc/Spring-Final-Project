@@ -50,7 +50,6 @@
 							th:href="@{'/products/detail/' + ${product.id}}"
 							title="View detail of product">
 						</a>
-						&nbsp;
 						<div th:replace="fragments :: delete_edit('/products/', ${product.id})"></div>					
 					</td>					
 				</tr>
