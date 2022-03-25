@@ -86,5 +86,14 @@
 		
 	</div>
 	
+	
+	<!-- Description -->
+	
+	<div th:fragment="description" th:remove="tag">
+		<div>
+			<label>Short Description</label>
+			<textarea class="form-control" th:field="*{shortDescription}" rows="5" required></textarea>
+		</div>
+	</div>
 </body>
 </html>
