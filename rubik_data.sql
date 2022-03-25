@@ -9,11 +9,12 @@ select * from users;
 select * from categories;
 select * from brands;
 select * from brands_categories;
+select * from products;
+select * from product_images;
+select * from product_details
 
 
 
-delete from user_roles where user_id = 7;
-delete from users where id = 7;
 
 -- truncate table user_roles;
 -- set foreign_key_checks = 0;

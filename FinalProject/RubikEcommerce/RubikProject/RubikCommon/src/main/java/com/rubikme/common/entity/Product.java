@@ -251,6 +251,10 @@ public class Product {
 	public void setDetails(List<ProductDetail> details) {
 		this.details = details;
 	}
+	
+	public void addDetail(String name, String value) {
+		this.details.add(new ProductDetail(name, value, this));
+	}
 
 	@Transient
 	public String getMainImagePath() {

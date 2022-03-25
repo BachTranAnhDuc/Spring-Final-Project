@@ -61,7 +61,9 @@ public class ProductController {
 	public String saveProduct(Product product,
 				RedirectAttributes re,
 				@RequestParam("fileImage") MultipartFile mainMultipartFile,
-				@RequestParam("extraImage") MultipartFile[] extraImageMul) 
+				@RequestParam("extraImage") MultipartFile[] extraImageMul,
+				@RequestParam(name = "detailNames", required = false) String[] detailNames,
+				@RequestParam(name = "detailValues", required = false) String[] detailValues)
 						throws IOException {
 		
 //		System.out.println("Product Name: " + product.getName());
@@ -70,6 +72,7 @@ public class ProductController {
 		
 		setMainImageName(mainMultipartFile, product);
 		setExtraImageNames(extraImageMul, product);
+		setProductDetails(detailNames, detailValues, product);
 			
 		Product saveProduct = productService.save(product);
 		
@@ -84,6 +87,20 @@ public class ProductController {
 		return "redirect:/products";
 	}
 	
+	private void setProductDetails(String[] detailNames, String[] detailValues, Product product) {
+		// TODO Auto-generated method stub
+		if (detailNames == null || detailNames.length == 0) return;
+		
+		for (int count = 0; count < detailNames.length; count++) {
+			String name = detailNames[count];
+			String value = detailValues[count];
+			
+			if (!name.isEmpty() && !value.isEmpty()) {
+				product.addDetail(name, value);
+			}
+		}
+	}
+
 	private void saveUploadImages(MultipartFile mainMultipartFile, MultipartFile[] extraImageMul, Product saveProduct) throws IOException {
 		// TODO Auto-generated method stub
 		
