@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head th:replace="fragments :: page_head('Create new product')" />
+<head>
+	<head th:replace="fragments :: page_head('Create new product', 'tag')" />
+	<link rel="sytlesheet" th:href="@{/richtext.min.css}">
+	<script th:scr="@{/richtext/jquery.richtext.min.js}"></script>
+</head>
 <body>
 <div class="container-fluid">
 	<div th:replace="fragments :: menu"></div>
@@ -9,7 +13,7 @@
 		<h2>Manage Products | [[${pageTitle}]]</h2>	
 	</div>
 			
-	<form th:action="@{/product/save}" method="post"
+	<form th:action="@{/products/save}" method="post"
 		th:object="${product}">
 		
 		<input type="hidden" th:field="*{id}" />
