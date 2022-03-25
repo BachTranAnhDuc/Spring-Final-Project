@@ -55,10 +55,31 @@
 	
 </div>
 <script type="text/javascript">
-	MAX_FILE_SIZE = 102400; // 100KB
 	moduleURL = "[[@{/products}]]";
+	brandModuleURL = "[[@{/brands}]]";
 	
+	dropdownBrands = $("#brand");
+	dropdownCategories = $('#category')
+
+	$(document).ready(function() {
+		dropdownBrands.change(function() {
+			getCategories();
+		});
+	});
+
+	function getCategories() {
+		brandId = dropdownBrands.val();
+		url = brandModuleURL + "/" + brandId + "/categories";
+
+		$.get(url, function(responseJson) {
+			$.each(responseJson, function(index, category) {
+				alert(category.name);
+			});
+		});
+	};
 </script>
+
+
 <script th:src="@{/js/common_form.js}"></script>
 </body>
 </html>
