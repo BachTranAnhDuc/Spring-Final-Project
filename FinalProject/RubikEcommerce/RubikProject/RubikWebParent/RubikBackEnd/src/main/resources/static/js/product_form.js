@@ -11,43 +11,43 @@ $(document).ready(function() {
 		getCategories();
 	});
 	getCategories();
-
-	$("#extraImage1").change(function() {
-		if (!checkFileSize(this)) {
-			return;
-		}
-
-		showExtraImageThumbnail(this);
+	
+	$("input[name='extraImage']").each(function(index) {
+		$(this).change(function() {
+			showExtraImageThumbnail(this, index);
+		});
 	});
+
 });
 
-function showExtraImageThumbnail(fileInput) {
+function showExtraImageThumbnail(fileInput, index) {
 	var file = fileInput.files[0];
 	var reader = new FileReader();
 	reader.onload = function(e) {
-		$("#extraThumbnail1").attr("src", e.target.result);
+		$("#extraThumbnail" + index).attr("src", e.target.result);
 	};
 
 	reader.readAsDataURL(file);
 
-	addExtraImageSection();
+	addNextExtraImageSection(index + 1);
 }
 
-function addExtraImageSection() {
+function addNextExtraImageSection(index) {
 	html = `
 		<div class="col border m-3 p-2">
 			<div>
-				<label>Extra Image #2:</label>
+				<label>Extra Image #${index + 1}:</label>
 			</div>
 				
 			<div class="m-2">
-				<img id="extraThumbnail2" alt="Extra Image #2 Preview" class="img-fluid"
+				<img id="extraThumbnail${index}" alt="Extra Image #${index + 1} Preview" class="img-fluid"
 					src="${defaultImageThumbnailSrc}"/>
 			</div>
 			
 			<div>
-				<input type="file" id="extraImage2" name="extraImage2" 
-					accept="image/png, image/jpeg, image/jpg"/>
+				<input type="file" name="extraImage" 
+					accept="image/png, image/jpeg, image/jpg"
+					onchange="showExtraImageThumbnail(this, ${index})"/>
 			</div>
 		</div>
 	`;
