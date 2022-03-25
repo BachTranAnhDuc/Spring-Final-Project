@@ -42,7 +42,7 @@ function addExtraImageSection() {
 				
 			<div class="m-2">
 				<img id="extraThumbnail2" alt="Extra Image #2 Preview" class="img-fluid"
-					th:src="@{/images/image-thumbnail.png}"/>
+					src="${defaultImageThumbnailSrc}"/>
 			</div>
 			
 			<div>
