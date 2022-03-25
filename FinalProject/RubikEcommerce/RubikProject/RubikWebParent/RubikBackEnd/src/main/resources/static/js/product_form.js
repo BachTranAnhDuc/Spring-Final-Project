@@ -1,3 +1,4 @@
+
 dropdownBrands = $("#brand");
 dropdownCategories = $('#category')
 
@@ -33,9 +34,9 @@ function showExtraImageThumbnail(fileInput, index) {
 }
 
 function addNextExtraImageSection(index) {
-	html = `
-		<div class="col border m-3 p-2">
-			<div>
+	htmlExtraImage = `
+		<div class="col border m-3 p-2" id="divExtraImage${index}">
+			<div id="extraImageHeader${index}">
 				<label>Extra Image #${index + 1}:</label>
 			</div>
 				
@@ -52,7 +53,20 @@ function addNextExtraImageSection(index) {
 		</div>
 	`;
 	
-	$("#divProductImages").append(html);
+	htmlLinkRemove = `
+		<a class="btn fas fa-times-circle fa-2x float-right" 
+			title="Remove this image"
+			href="javascript:removeExtraImage(${index - 1})"></a>
+	`;
+	
+	$("#divProductImages").append(htmlExtraImage);
+	
+	$("#extraImageHeader" + (index - 1)).append(htmlLinkRemove);
+}
+
+function removeExtraImage(index) {
+	
+	$("#divExtraImage" + index).remove();
 }
 
 function checkFileSize(fileInput) {
