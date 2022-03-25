@@ -11,8 +11,19 @@ $(document).ready(function() {
 		dropdownCategories.empty();
 		getCategories();
 	});
-	getCategories();
+	getCategoriesForNewForm();
 });
+
+function getCategoriesForNewForm() {
+	catIdField = $("#categoryId");
+	editMode = false;
+	
+	if (catIdField.length) {
+		editMode = true;
+	}
+	
+	if (!editMode) getCategories();
+}
 
 function checkFileSize(fileInput) {
 	fileSize = fileInput.files[0].size;
