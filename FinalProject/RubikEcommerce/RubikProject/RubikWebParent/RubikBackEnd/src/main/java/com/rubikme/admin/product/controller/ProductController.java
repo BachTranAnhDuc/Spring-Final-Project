@@ -60,25 +60,22 @@ public class ProductController {
 	@PostMapping("/products/save")
 	public String saveProduct(Product product,
 				RedirectAttributes re,
-				@RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
+				@RequestParam("fileImage") MultipartFile mainMultipartFile,
+				@RequestParam("extraImage") MultipartFile[] extraImageMul) 
+						throws IOException {
 		
 //		System.out.println("Product Name: " + product.getName());
 //		System.out.println("Brand ID: " + product.getBrand().getId());
 //		System.out.println("Category ID: " + product.getCategory().getId());
 		
-		if (!multipartFile.isEmpty()) {
-			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-			product.setMainImage(fileName);
+		setMainImageName(mainMultipartFile, product);
+		setExtraImageNames(extraImageMul, product);
 			
-			Product saveProduct = productService.save(product);
-			String uploadDir = "../product-images/" + saveProduct.getId();
-			
-			FileUploadUtil.cleanDir(uploadDir);
-			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-		}
-		else {
-			productService.save(product);
-		}
+		Product saveProduct = productService.save(product);
+		
+		saveUploadImages(mainMultipartFile, extraImageMul, saveProduct);
+		
+		
 		
 		
 		
@@ -87,6 +84,53 @@ public class ProductController {
 		return "redirect:/products";
 	}
 	
+	private void saveUploadImages(MultipartFile mainMultipartFile, MultipartFile[] extraImageMul, Product saveProduct) throws IOException {
+		// TODO Auto-generated method stub
+		
+		if (!mainMultipartFile.isEmpty()) {
+			String fileName = StringUtils.cleanPath(mainMultipartFile.getOriginalFilename());
+			
+			String uploadDir = "../product-images/" + saveProduct.getId();
+			
+			FileUploadUtil.cleanDir(uploadDir);
+			FileUploadUtil.saveFile(uploadDir, fileName, mainMultipartFile);
+		}
+		
+		if (extraImageMul.length > 0) {
+			
+			String uploadDir = "../product-images/" + saveProduct.getId() + "/extras";
+			
+			for (MultipartFile mul : extraImageMul) {
+				if (mul.isEmpty()) continue;
+				
+				String fileName = StringUtils.cleanPath(mul.getOriginalFilename());
+				FileUploadUtil.saveFile(uploadDir, fileName, mul);
+			}
+		}
+	}
+
+	private void setExtraImageNames(MultipartFile[] extraImageMul, Product product) {
+		// TODO Auto-generated method stub
+		
+		if (extraImageMul.length > 0) {
+			for (MultipartFile mul : extraImageMul) {
+				if (!mul.isEmpty()) {
+					String fileName = StringUtils.cleanPath(mul.getOriginalFilename());
+					product.addExtraImage(fileName);
+				}
+			}
+		}
+	}
+
+	private void setMainImageName(MultipartFile mainImageMul, Product product) {
+		// TODO Auto-generated method stub
+		
+		if (!mainImageMul.isEmpty()) {
+			String fileName = StringUtils.cleanPath(mainImageMul.getOriginalFilename());
+			product.setMainImage(fileName);
+		}
+	}
+
 	@GetMapping("/products/{id}/enabled/{status}")
 	public String updateCategoryEnabledStatus(@PathVariable("id") Integer id,
 			@PathVariable("status") boolean enabled, RedirectAttributes re) {
@@ -105,6 +149,12 @@ public class ProductController {
 			RedirectAttributes re) {
 		try {
 			productService.delete(id);
+			
+			String productExtraImageDir = "../product-images/" + id + "/extras";
+			String productImageDir = "../product-images/" + id;
+			
+			FileUploadUtil.removeDir(productExtraImageDir);
+			FileUploadUtil.removeDir(productImageDir);
 			
 			re.addFlashAttribute("message", "The product ID: " + id + " has been deleted successfully");
 		}
