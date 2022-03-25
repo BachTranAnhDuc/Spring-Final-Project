@@ -63,8 +63,10 @@
 
 	$(document).ready(function() {
 		dropdownBrands.change(function() {
+			dropdownCategories.empty();
 			getCategories();
 		});
+		getCategories();
 	});
 
 	function getCategories() {
@@ -73,7 +75,7 @@
 
 		$.get(url, function(responseJson) {
 			$.each(responseJson, function(index, category) {
-				alert(category.name);
+				$("<option>").val(category.id).text(category.name).appendTo(dropdownCategories);
 			});
 		});
 	};
