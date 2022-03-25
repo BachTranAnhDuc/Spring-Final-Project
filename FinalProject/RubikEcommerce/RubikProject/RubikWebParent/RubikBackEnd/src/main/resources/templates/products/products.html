@@ -33,7 +33,7 @@
 				
 					<td>[[${product.id}]]</td>
 					
-					<td></td>
+					<td th:replace="fragments :: column_link_image(${product.getMainImagePath}, ${product.mainImage})"></td>
 					
 					<td>[[${product.name}]]</td>
 					

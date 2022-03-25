@@ -46,6 +46,8 @@ public class MvcConfig implements WebMvcConfigurer {
 //			.addResourceLocations("file:/" + brandLogoPath + "/");
 		
 		exposoDirectory("../brand-logos", registry);
+		
+		exposoDirectory("../product-images", registry);
 	}
 	
 	private void exposoDirectory(String pathPattern, ResourceHandlerRegistry registry) {

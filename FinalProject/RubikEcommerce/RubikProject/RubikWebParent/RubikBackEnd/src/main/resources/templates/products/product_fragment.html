@@ -136,5 +136,26 @@
 		</div>
 	</div>	
 	</div>
+	
+	<!-- Images -->
+	<div th:fragment="images" th:remove="tag">
+		<div class="row">
+			<div class="col border m-3 p-2">
+				<div>
+					<label>Main Image:</label>
+				</div>
+				
+				<div class="m-2">
+					<img id="thumbnail" alt="Main Image Preview" class="img-fluid"
+						th:src="@{${product.mainImagePath}}"/>
+				</div>
+				
+				<div>
+					<input type="file" id="imageFile" name="fileImage" requried 
+						accept="image/png, image/jpeg, image/jpg"/>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
