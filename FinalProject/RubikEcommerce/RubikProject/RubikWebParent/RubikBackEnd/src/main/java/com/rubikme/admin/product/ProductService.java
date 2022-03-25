@@ -3,12 +3,15 @@ package com.rubikme.admin.product;
 import java.util.Date;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rubikme.common.entity.Product;
 
 @Service
+@Transactional
 public class ProductService {
 	
 	@Autowired
@@ -50,5 +53,9 @@ public class ProductService {
 		}
 		
 		return "OK";
+	}
+	
+	public void updateProductEnabledStatus(Integer id, boolean enabled) {
+		repo.updateEnabledStatus(id, enabled);
 	}
 }
