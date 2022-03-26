@@ -11,7 +11,7 @@ select * from brands;
 select * from brands_categories;
 select * from products;
 select * from product_images;
-select * from product_details
+select * from product_details;
 
 
 

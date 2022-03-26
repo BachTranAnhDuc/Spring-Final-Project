@@ -164,20 +164,50 @@
 				</div>
 				
 				<div>
-					<input type="file" id="imageFile" name="fileImage" requried 
+					<input type="file" id="imageFile" name="fileImage" 
+						th:required="${product.mainImage == null}"
 						accept="image/png, image/jpeg, image/jpg"/>
 				</div>
 				
-				
+				<input type="hidden" th:field="*{mainImage}"/>
 			</div>
 			
-			<div class="col border m-3 p-2" id="divExtraImage0">
-				<div id="extraImageHeader0">
-					<label>Extra Image #1:</label>
+			<th:block th:each="productImage, status : ${product.images}">
+				<div class="col border m-3 p-2" th:id="'divExtraImage' + ${status.index}">
+					<div>
+						<label>Extra Image #[[${status.index + 1}]]: [[${productImage.name}]]</label>
+						
+						<a name="linkRemoveExtraImage" 
+							class="btn fas fa-times-circle fa-2x icon-dark float-right"
+							title="Remove this image">
+						</a>
+					</div>
+					
+					<div class="m-2">
+						<img th:id="'extraThumbnail' + ${status.index}" 
+							th:alt="'Extra image #' + ${status.index + 1} + ' preview'" 
+							class="img-fluid"
+							th:src="@{${productImage.imagePath}}"/>
+					</div>
+					
+					<div>
+						<input type="file" name="extraImage" 
+							accept="image/png, image/jpeg, image/jpg"/>
+					</div>
+					<input type="hidden" name="imageIDs" th:id="'imageId' + ${status.index}"/>
+					<input type="hidden" name="imageNames" th:id="'imageName' + ${status.index}"/>
+				</div>
+			</th:block>
+			
+			<div class="col border m-3 p-2" th:id="'divExtraImage' + ${numberOfExistingExtraImages}">
+				<div th:id="'extraImageHeader' + ${numberOfExistingExtraImages}">
+					<label>Extra Image #[[${numberOfExistingExtraImages + 1}]]:</label>		
 				</div>
 				
 				<div class="m-2">
-					<img id="extraThumbnail0" alt="Extra Image #1 Preview" class="img-fluid"
+					<img th:id="'extraThumbnail' + ${numberOfExistingExtraImages}" 
+						th:alt="'Extra image' + ${numberOfExistingExtraImages} + ' preview'"
+						class="img-fluid"
 						th:src="@{/images/image-thumbnail.png}"/>
 				</div>
 				
@@ -189,8 +219,21 @@
 		</div>
 	</div>
 	
+	<!-- Details -->
 	<div th:fragment="details" id="divProductDetails">
-		<div class="form-inline" id="divDetail0">
+		<th:block th:each="detail, status : ${product.details}">
+			<div class="form-inline" th:id="'divDetail' + ${status.index}">
+				<label class="m-3">Name:</label>
+				<input type="text" class="form-control w-25" name="detailNames" maxlength="256"
+					th:value="${detail.name}"/>
+				<label class="m-3">Value:</label>
+				<input type="text" class="form-control w-25" name="detailValues" maxlength="256"
+					th:value="${detail.value}"/>
+				<a name="linkRemoveDetail" class="btn fas fa-times-circle fa-2x icon-dark"
+					title="Remove this detail"></a>		
+			</div>
+		</th:block>
+		<div class="form-inline" th:id="'divDetail' + ${#lists.size(product.details)}">
 			<label class="m-3">Name:</label>
 			<input type="text" class="form-control w-25" name="detailNames" maxlength="256"/>
 			<label class="m-3">Value:</label>
