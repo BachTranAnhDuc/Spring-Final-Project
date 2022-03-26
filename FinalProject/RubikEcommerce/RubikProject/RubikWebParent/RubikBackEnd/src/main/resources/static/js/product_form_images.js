@@ -21,6 +21,14 @@ $(document).ready(function() {
 
 function showExtraImageThumbnail(fileInput, index) {
 	var file = fileInput.files[0];
+	
+	fileName = file.name;
+	imageNameHiddenField = $("#imageName" + index);
+	
+	if (imageNameHiddenField.length) {
+		imageNameHiddenField.val(fileName);
+	}
+	
 	var reader = new FileReader();
 	reader.onload = function(e) {
 		$("#extraThumbnail" + index).attr("src", e.target.result);
@@ -69,21 +77,6 @@ function addNextExtraImageSection(index) {
 function removeExtraImage(index) {
 	
 	$("#divExtraImage" + index).remove();
-}
-
-function checkFileSize(fileInput) {
-	fileSize = fileInput.files[0].size;
-
-	if (fileSize > 10485760) {
-		fileInput.setCustomValidity("You must choose an image less than 10485760 bytes!");
-		fileInput.reportValidity();
-
-		return false;
-	} else {
-		fileInput.setCustomValidity("");
-
-		return true;
-	}
 }
 
 

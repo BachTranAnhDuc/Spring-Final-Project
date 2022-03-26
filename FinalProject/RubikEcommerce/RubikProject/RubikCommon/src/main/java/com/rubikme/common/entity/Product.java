@@ -3,6 +3,7 @@ package com.rubikme.common.entity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -73,7 +74,8 @@ public class Product {
 	private Brand brand;
 	
 	@OneToMany(mappedBy = "product",
-			cascade = CascadeType.ALL)
+			cascade = CascadeType.ALL,
+			orphanRemoval = true)
 	private Set<ProductImage> images = new HashSet<>();
 	
 	@OneToMany(mappedBy = "product",
@@ -269,6 +271,22 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + "]";
+	}
+
+	public boolean containsImageName(String imageName) {
+		// TODO Auto-generated method stub
+		
+		Iterator<ProductImage> iterator = images.iterator();
+		
+		while (iterator.hasNext()) {
+			ProductImage image = iterator.next();
+			
+			if (image.getName().equals(imageName)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 	
 	
