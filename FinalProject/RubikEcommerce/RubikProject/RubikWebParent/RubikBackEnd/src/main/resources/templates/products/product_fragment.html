@@ -194,7 +194,7 @@
 						<input type="file" name="extraImage" 
 							accept="image/png, image/jpeg, image/jpg"/>
 					</div>
-					<input type="hidden" name="imageIDs" 
+					<input type="hidden" name="imageIds" 
 						th:id="'imageId' + ${status.index}"
 						th:value="${productImage.id}"/>
 					<input type="hidden" name="imageNames" 
@@ -205,7 +205,7 @@
 			
 			<div class="col border m-3 p-2" th:id="'divExtraImage' + ${numberOfExistingExtraImages}">
 				<div th:id="'extraImageHeader' + ${numberOfExistingExtraImages}">
-					<label>Extra Image #[[${numberOfExistingExtraImages + 1}]]:</label>		
+					<label>Extra Image:</label>		
 				</div>
 				
 				<div class="m-2">
@@ -227,25 +227,25 @@
 	<div th:fragment="details" id="divProductDetails">
 		<th:block th:each="detail, status : ${product.details}">
 			<div class="form-inline" th:id="'divDetail' + ${status.index}">
-				
-				
-				
+				<input type="hidden" name="detailIds" th:value="${detail.id}" />
 				<label class="m-3">Name:</label>
-				<input type="text" class="form-control w-25" name="detailNames" maxlength="256"
-					th:value="${detail.name}"/>
+				<input type="text" class="form-control w-25" name="detailNames" maxlength="255"
+					th:value="${detail.name}" />
 				<label class="m-3">Value:</label>
-				<input type="text" class="form-control w-25" name="detailValues" maxlength="256"
-					th:value="${detail.value}"/>
+				<input type="text" class="form-control w-25" name="detailValues" maxlength="255"
+					th:value="${detail.value}" />
 				<a name="linkRemoveDetail" class="btn fas fa-times-circle fa-2x icon-dark"
-					title="Remove this detail"></a>		
-			</div>
+					title="Remove this detail"></a>			
+			</div>	
 		</th:block>
+	
 		<div class="form-inline" th:id="'divDetail' + ${#lists.size(product.details)}">
+			<input type="hidden" name="detailIds" value="0" />
 			<label class="m-3">Name:</label>
-			<input type="text" class="form-control w-25" name="detailNames" maxlength="256"/>
+			<input type="text" class="form-control w-25" name="detailNames" maxlength="255" />
 			<label class="m-3">Value:</label>
-			<input type="text" class="form-control w-25" name="detailValues" maxlength="256"/>
-		</div>
+			<input type="text" class="form-control w-25" name="detailValues" maxlength="255" />
+		</div>	
 	</div>
 </body>
 </html>

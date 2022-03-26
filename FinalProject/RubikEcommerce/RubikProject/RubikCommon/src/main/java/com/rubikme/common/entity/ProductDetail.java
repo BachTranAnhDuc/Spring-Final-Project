@@ -31,6 +31,15 @@ public class ProductDetail {
 		
 	}
 
+	public ProductDetail(Integer id, String name, String value, Product product) {
+		this.id = id;
+		this.name = name;
+		this.value = value;
+		this.product = product;
+	}
+
+
+
 	public ProductDetail(String name, String value, Product product) {
 		this.name = name;
 		this.value = value;
