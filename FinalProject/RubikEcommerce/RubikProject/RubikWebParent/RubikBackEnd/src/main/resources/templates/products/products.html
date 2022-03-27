@@ -35,7 +35,13 @@
 					
 					<td th:replace="fragments :: column_link_image(${product.getMainImagePath}, ${product.mainImage})"></td>
 					
-					<td>[[${product.name}]]</td>
+					<td>
+						<a class="link-detail"
+							th:href="@{'/products/detail/' + ${product.id}}"
+							title="View detail of product">
+							[[${product.name}]]
+						</a>	
+					</td>
 					
 					<td>[[${product.brand.name}]]</td>
 					
@@ -46,10 +52,11 @@
 					</td>
 
 					<td>
-						<a class="fas fa-file-alt fa-2x icon-green"
+						<a class="fas fa-file-alt fa-2x icon-green link-detail"
 							th:href="@{'/products/detail/' + ${product.id}}"
 							title="View detail of product">
 						</a>
+						&nbsp;
 						<div th:replace="fragments :: delete_edit('/products/', ${product.id})"></div>					
 					</td>					
 				</tr>
@@ -58,12 +65,22 @@
 	</div>
 	
 	<div th:replace="fragments :: confirm_modal"></div>
+	
+	<div class="modal fade" id="detailModal">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
 		
 	<div th:replace="fragments :: footer_frag"></div>
 	
 </div>
 	
 <script type="text/javascript">
+
+	moduleURL = "[[@{/products}]]";
+	
 	$(document).ready(function() {
 		$('.link-delete-user').on("click", function(e) {
 			e.preventDefault();
@@ -74,7 +91,13 @@
 			$('#confirmText').text("Are you sure that you want to delete user ID " +userId + "?");
 			$('#confirmModal').modal();
 			
-		})
+		});
+
+		$(".link-detail").on("click", function(e){ 
+			e.preventDefault();
+			linkDetailURL = $(this).attr("href");
+			$("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
+		});
 	});
 
 	function clearFilter(){
