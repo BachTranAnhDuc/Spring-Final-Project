@@ -85,41 +85,52 @@ insert into user_roles values (23, 5);
 
 
 
-insert into categories values (1, 'standard_rubik', null, 1, 'standard.png', 'rubik standard', null);
-insert into categories values (2, 'variant_rubik', null, 1, 'standard.png', 'rubik variant', null);
-insert into categories values (3, 'accessory', null, 1, 'standard.png', 'accessory', null);
+insert into categories values (1, 'standard_rubik', null, 1, null, 'rubik standard', null);
+insert into categories values (2, 'variant_rubik', null, 1, null, 'rubik variant', null);
+insert into categories values (3, 'accessory', null, 1, null, 'accessory', null);
 
 
-insert into categories values (4, 'rubik_2x2x2', null, 1, '2x2x2.png', '2x2x2', 1);
-insert into categories values (5, 'rubik_3x3x3', null, 0, '3x3x3.png', '3x3x3', 1);
-insert into categories values (6, 'rubik_4x4x4', null, 1, '4x4x4.png', '4x4x4', 1);
-insert into categories values (7, 'rubik_5x5x5', null, 0, '5x5x5.png', '5x5x5', 1);
-insert into categories values (8, 'rubik_6x6x6', null, 1, '6x6x6.png', '6x6x6', 1);
-insert into categories values (9, 'rubik_7x7x7', null, 1, '7x7x7.png', '7x7x7', 1);
-insert into categories values (10, 'rubik_8x8x8', null, 1, '8x8x8.png', '8x8x8', 1);
-insert into categories values (11, 'rubik_9x9x9', null, 1, '9x9x9.png', '9x9x9', 1);
-insert into categories values (12, 'rubik_10x10x10', null, 1, '10x10x10.png', '10x10x10', 1);
-insert into categories values (13, 'rubik_11x11x11', null, 1, '11x11x11.png', '11x11x11', 1);
-insert into categories values (14, 'rubik_12x12x12', null, 1, '12x12x12.png', '12x12x12', 1);
+insert into categories values (4, 'rubik_2x2x2', null, 1, '2x2.jpg', '2x2x2', 1);
+insert into categories values (5, 'rubik_3x3x3', null, 0, '3x3.jpg', '3x3x3', 1);
+insert into categories values (6, 'rubik_4x4x4', null, 1, '4x4.jpg', '4x4x4', 1);
+insert into categories values (7, 'rubik_5x5x5', null, 0, '5x5.jpg', '5x5x5', 1);
+insert into categories values (8, 'rubik_6x6x6', null, 1, '6x6.png', '6x6x6', 1);
+insert into categories values (9, 'rubik_7x7x7', null, 1, '7x7.jpg', '7x7x7', 1);
+insert into categories values (10, 'rubik_8x8x8', null, 1, '8x8.jpg', '8x8x8', 1);
+insert into categories values (11, 'rubik_9x9x9', null, 1, '9x9.jpg', '9x9x9', 1);
+insert into categories values (12, 'rubik_10x10x10', null, 1, '10x10.jpg', '10x10x10', 1);
+insert into categories values (13, 'rubik_11x11x11', null, 1, '11x11.jpg', '11x11x11', 1);
+insert into categories values (14, 'rubik_12x12x12', null, 1, '12x12.jpg', '12x12x12', 1);
 
-insert into categories values (15, 'rubik_gear', null, 1, '12x12x12.png', 'Gear', 2);
-insert into categories values (16, 'rubik_megaminx', null, 1, '12x12x12.png', 'Megaminx', 2);
-insert into categories values (17, 'rubik_mirror', null, 1, '12x12x12.png', 'Mirror', 2);
-insert into categories values (18, 'rubik_pyraminx', null, 1, '12x12x12.png', 'Pyraminx', 2);
-insert into categories values (19, 'rubik_skewb', null, 1, '12x12x12.png', 'Skewb', 2);
-insert into categories values (20, 'rubik_square-1', null, 1, '12x12x12.png', 'Square-1', 2);
+insert into categories values (15, 'rubik_gear', null, 1, 'gear.jpg', 'Gear', 2);
+insert into categories values (16, 'rubik_megaminx', null, 1, 'megaminx.jpg', 'Megaminx', 2);
+insert into categories values (17, 'rubik_mirror', null, 1, 'mirror.jpg', 'Mirror', 2);
+insert into categories values (18, 'rubik_pyraminx', null, 1, 'pyraminx.jpg', 'Pyraminx', 2);
+insert into categories values (19, 'rubik_skewb', null, 1, 'skewb.jpg', 'Skewb', 2);
+insert into categories values (20, 'rubik_square-1', null, 1, 'square_1.jpg', 'Square-1', 2);
 
-insert into categories values (21, 'cubible_sticker', null, 1, '12x12x12.png', 'Sticker', 3);
-insert into categories values (22, 'cubible_lube', null, 1, '12x12x12.png', 'Lube', 3);
-insert into categories values (23, 'core', null, 1, '12x12x12.png', 'Core', 3);
-insert into categories values (24, 'bag', null, 1, '12x12x12.png', 'Bag', 3);
-insert into categories values (25, 'time_clock', null, 1, '12x12x12.png', 'Time Clock', 3);
+insert into categories values (21, 'cubible_sticker', null, 1, null, 'Sticker', 3);
+insert into categories values (22, 'cubible_lube', null, 1, null, 'Lube', 3);
+insert into categories values (23, 'core', null, 1, null, 'Core', 3);
+insert into categories values (24, 'bag', null, 1, null, 'Bag', 3);
+insert into categories values (25, 'time_clock', null, 1, null, 'Time Clock', 3);
 
-insert into brands values (1, 'yong_jun.png', 'YongJun');
-insert into brands values (2, 'qiyi.png', 'QiYi');
-insert into brands values (3, 'moyu.png', 'MoYu');
-insert into brands values (4, 'gan.png', 'GAN');
-insert into brands values (5, 'dayan.png', 'DaYan');
+insert into brands values (1, 'yongjun.png', 'YongJun');
+insert into brands values (2, 'qiyi.jpg', 'QiYi');
+insert into brands values (3, 'moyu.jpg', 'MoYu');
+insert into brands values (4, 'gan.jpg', 'GAN');
+insert into brands values (5, 'dayan.jpg', 'DaYan');
+insert into brands values (6, 'diansheng.jpg', 'DianSheng');
+insert into brands values (7, 'eastsheen.jpg', 'EastSheen');
+insert into brands values (8, 'fanxin.jpg', 'Fanxin');
+insert into brands values (9, 'gocube.png', 'GoCube');
+insert into brands values (10, 'mofang.jpg', 'MoFang');
+insert into brands values (11, 'monstergo.jpg', 'Monstergo');
+insert into brands values (12, 'mscube.jpg', 'MsCube');
+insert into brands values (13, 'valk.jpg', 'Valk');
+insert into brands values (14, 'xmandesign.jpg', 'X-man Design');
+insert into brands values (15, 'yuxin.png', 'Yuxin');
+
 
 insert into brands_categories values (1, 5);
 insert into brands_categories values (2, 5);
@@ -129,6 +140,7 @@ insert into brands_categories values (1, 6);
 insert into brands_categories values (2, 6);
 insert into brands_categories values (3, 6);
 insert into brands_categories values (4, 6);
+insert into brands_categories values (5, 4);
 
 insert into products values (1, 'Valk 5', 'valk-5', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 5, 4);
 insert into products values (2, 'Valk 6', 'valk-6', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 5, 4);
@@ -146,3 +158,13 @@ insert into products values (13, 'Valk 17', 'valk-17', 'some text short descript
 insert into products values (14, 'Valk 18', 'valk-18', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 5, 4);
 insert into products values (15, 'Valk 19', 'valk-19', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 5, 4);
 insert into products values (16, 'Valk 20', 'valk-20', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 5, 4);
+
+insert into products values (18, 'Valk 21', 'valk-21', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 1, 6);
+insert into products values (19, 'Valk 22', 'valk-22', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 2, 6);
+insert into products values (20, 'Valk 23', 'valk-23', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 3, 6);
+insert into products values (21, 'Valk 24', 'valk-24', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 4, 6);
+insert into products values (22, 'Valk 25', 'valk-25', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 1, 6);
+insert into products values (23, 'Valk 26', 'valk-26', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 2, 6);
+insert into products values (24, 'Valk 27', 'valk-27', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 3, 6);
+insert into products values (25, 'Valk 28', 'valk-28', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 4, 6);
+insert into products values (26, 'Valk 29', 'valk-29', 'some text short description', 'some text full description', null, null, 1, 1, 1, 100, 120, 2, 1, 1, 1, 1, 1, 6);

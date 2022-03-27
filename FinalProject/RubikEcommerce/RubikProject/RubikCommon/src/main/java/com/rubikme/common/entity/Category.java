@@ -28,7 +28,7 @@ public class Category {
 	@Column(length = 64, nullable = false, unique = true)
 	private String alias;
 	
-	@Column(length = 512, nullable = false)
+	@Column(length = 512)
 	private String image;
 	
 	private boolean enabled;

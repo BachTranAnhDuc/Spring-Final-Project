@@ -244,5 +244,17 @@
 			<input type="text" class="form-control w-25" name="detailValues" maxlength="255" />
 		</div>	
 	</div>
+	
+	<!-- Export -->
+	<div th:fragment="export(moduleURL, title)">
+		<h1>[[${title}]]</h1>
+		<a th:href="@{${moduleURL} + '/new'}" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
+		&nbsp;|&nbsp;
+		<a th:href="@{${moduleURL} + '/export/csv'}" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
+		&nbsp;|&nbsp;
+		<a th:href="@{${moduleURL} + '/export/excel'}" class="fas fa-file-excel fa-2x icon-dark mr-2"></a>
+		&nbsp;|&nbsp;
+		<a th:href="@{${moduleURL} + '/export/pdf'}" class="fas fa-file-pdf fa-2x icon-dark mr-2"></a>
+	</div>
 </body>
 </html>

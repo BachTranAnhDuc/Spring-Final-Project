@@ -62,8 +62,8 @@ public class AccountController {
 		//System.out.println(user);
 		//System.out.println(multipartFile.getOriginalFilename());
 		
-		redirectAttributes.addFlashAttribute("message", "Your accont details have been updated!");
+		redirectAttributes.addFlashAttribute("message", "Your account details have been updated!");
 		
-		return "redirect:/account";
+		return "redirect:/users";
 	}
 }
