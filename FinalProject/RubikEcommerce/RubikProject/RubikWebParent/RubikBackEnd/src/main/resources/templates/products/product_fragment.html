@@ -205,19 +205,16 @@
 			
 			<div class="col border m-3 p-2" th:id="'divExtraImage' + ${numberOfExistingExtraImages}">
 				<div th:id="'extraImageHeader' + ${numberOfExistingExtraImages}">
-					<label>Extra Image:</label>		
+					<label>Extra Image #[[${numberOfExistingExtraImages + 1}]]:</label>
 				</div>
-				
 				<div class="m-2">
 					<img th:id="'extraThumbnail' + ${numberOfExistingExtraImages}" 
-						th:alt="'Extra image' + ${numberOfExistingExtraImages} + ' preview'"
-						class="img-fluid"
+						th:alt="'Extra image' + ${numberOfExistingExtraImages} + ' preview'" class="img-fluid"
 						th:src="@{/images/image-thumbnail.png}"/>
 				</div>
-				
 				<div>
 					<input type="file" name="extraImage" 
-						accept="image/png, image/jpeg, image/jpg"/>
+						accept="image/png, image/jpeg" />
 				</div>
 			</div>
 		</div>

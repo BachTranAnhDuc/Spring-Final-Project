@@ -8,6 +8,7 @@ $(document).ready(function() {
 			if (!checkFileSize(this)) {
 				return;
 			}
+			
 			showExtraImageThumbnail(this, index);
 		});
 	});
@@ -23,21 +24,22 @@ function showExtraImageThumbnail(fileInput, index) {
 	var file = fileInput.files[0];
 	
 	fileName = file.name;
-	imageNameHiddenField = $("#imageName" + index);
 	
+	imageNameHiddenField = $("#imageName" + index);
 	if (imageNameHiddenField.length) {
 		imageNameHiddenField.val(fileName);
 	}
+		
 	
 	var reader = new FileReader();
 	reader.onload = function(e) {
 		$("#extraThumbnail" + index).attr("src", e.target.result);
 	};
-
-	reader.readAsDataURL(file);
+	
+	reader.readAsDataURL(file);	
 	
 	if (index >= extraImagesCount - 1) {
-		addNextExtraImageSection(index + 1);
+		addNextExtraImageSection(index + 1);		
 	}
 }
 
