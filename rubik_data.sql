@@ -221,16 +221,25 @@ insert into products values (2, 'YJ YuPo V2 Magnetic 2x2', 'YJ_YuPo_V2_Magnetic_
 insert into products values (3, 'YJ MGC2 Elite 2x2', 'YJ_MGC2_Elite_2x2', "<div><h3><b>Product Description</b></h3></div><span>The MGC Elite 2x2 is the second 2x2 speed cube in the MGC Elite line. It features an innovative, first of its kind on a 2x2, center/edge magnetic mechanism that offers great control and stability.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MGC Elite 2x2 is the second speed cube in the MGC Elite line. It features an innovative, first of its kind on a 2x2, center/edge magnetic mechanism that offers great control and stability.</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating!</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory. Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids. </li><li>Great corner cutting ,Tension adjustable. It doesn't corner twist as often nor does it lock up. Difficult to pop, good control of the cubes, comes pre-lubricated and tensioned.</li><li>No one falls out of love with the puzzle cubes. Perfect Christmas / Birthday / Children’s Day Gift Idea. This classic puzzle game will never go out of style. GIFT BOX PACKING Gift box packing makes it a perfect gift for your kids.</li></ul>", null, null, 1, 1, 17, 19.99, 5, 'YJ-MGC-Elite-Magnetic-2x2-Black-2-Main.jpg', 1, 1, 1, 1, 1, 4);
 insert into products values (4, 'Angstrom MGC2 Elite 2x2', 'Angstrom_MGC2_Elite_2x2', "<div><h3><b>Product Description</b></h3></div><span>The Angstrom MGC2 Elite 2x2 features an innovative center/edge magnetic mechanism that offers great control and stability. This puzzle is lubed with Angstrom Gravitas, Angstrom Dignitas, and DNM-37. This a fast and long-lasting mixture that is superior to a traditional silicone setup.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Original puzzle made by YJ. It features an Angstrom Research logo on the red side.</li><li>Angstrom MGCElite 2x2</li><li>Cubicle Cube Stand (assorted color)</li><li>Angstrom Research Collectible Card</li></ul>", null, null, 1, 1, 17, 19.99, 5, 'MGCPicture2_Main.jpg', 1, 1, 1, 1, 1, 4);
 insert into products values (5, 'GAN 249 V2 M', 'GAN_249_V2_M', "<div><h3><b>Product Description</b></h3></div><span>The GAN 249 V2 M the magnetized version of the GAN 249 V2. This 2x2 speed cube features a honeycomb design on the corner contact points and an overall smooth feel. The Stickerless version features a bright stickerless color scheme, primary plastic internals, while the black plastic version features the GAN Full Bright color scheme and black plastic internals.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The GAN249v2M has perfectly match of magnetic forces with elastic forces. Precisely placed 48 3*1.5 magnets inside. Easier to control the power of the cube with magnetic forces.</li><li>The GAN 249 V2 M the magnetized version of the GAN 249 V2. It features a honeycomb design on the corner contact points and an overall smooth feel. </li><li>The Stickerless version features a bright stickerless color scheme, primary plastic internals, while the black plastic version features the GAN Full Bright color scheme and black plastic internals. It is packaged inside a special GAN box with a plastic tensioning tool and GAN CFOP pamphlet </li><li>This 2x2 just glides its way to perfection. I'm really used to the buttery feel of GAN cubes, and this gives buttery a whole different meaning. It's smooth, but at the same time its not. If you turn it slowly, you can both feel and hear sort of a sandy and bumpy feeling from the honey-comb design and the magnets, but once you start scrambling and playing with it, it's so smooth but somehow has a dry feeling.</li><li>I won't say its the best on the market, but to my preferences, it's amazing. Nice job for a version 2 GAN! </li></ul>", null, null, 1, 1, 17, 19.99, 5, 'gan_249_v2_m_main.jpg', 1, 1, 1, 1, 4, 4);
-
 insert into products values (6, 'GAN251 M Explorer', 'GAN251_M_Explorer', "<div><h3><b>Product Description</b></h3></div><span>The GAN251 M Explorer is the newest 2x2 speed cube from GAN. This cube features all of the same characteristics of the 249 V2 M like great corner cutting, matte finish, a light/airy feel, and a medium magnetic strength. This small increase in size (2mm), although seemingly insignificant, is definitely noticeable and gives the solver much more control over the puzzle and ultimately leads to a better solving experience!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>GAN 251 M UPGRADED - 3 versions available from the menu: Air, Pro and Leap. With magnetic core inside, new GAN 251 series has smoother turning feel and lighter body.</li><li>WHAT MAKES THE DIFFERENCE - GAN 251 M Air has unadjustable corner magnets but no magnet in the core. That reduces the weight and the cube turns very straightforward. Both Pro and Leap have the same corner core adjustable magnet system, and Leap has much bigger mangets in the core. Overall, two versions perform consistently good, Pro has better stability and Leap has faster speed.</li><li>VARIOUS TUNING - Tuning versatility is always GAN's prominent feature, and GAN 251 M remain so. It is equipped with 2 kinds of nut distances, 4 levels elasticity, and optional 3 settings of magnets(Pro & Leap). All 24 configurations can be achieved within seconds, only a tool and alternative GES nut needed. Have more styles to tune but cost less time to explore.</li><li>FINE CRAFTMANSHIP - The mechanism of GAN251 M series supports adjustable magnet strength(Pro & Leap) and tension tuning individually, with great corner cutting and rounded slide track. All features combined together are less than 60 grams in total, serving as buttery smooth in your hands.</li><li>CONNECTED WITH GAN TEAM - By choosing GAN Cube store, you are choosing the world's most successful 3x3 brand. Here you can have the latest news of GAN products, join fans group, or even make a sound to future models. No worry about missing accessories or unpleasant experience, our CS Team will make you satisfied.</li></ul>", null, null, 1, 1, 27, 29.99, 5, 'GAN251_M_Explorer_Main.jpg', 1, 1, 1, 1, 4, 4);
+insert into products values (7, 'GAN 251 M Pro', 'GAN_251_M_Pro', "<div><h3><b>Product Description</b></h3></div><span>The GAN251 M Explorer is the newest 2x2 speed cube from GAN. This cube features all of the same characteristics of the 249 V2 M like great corner cutting, matte finish, a light/airy feel, and a medium magnetic strength. This small increase in size (2mm), although seemingly insignificant, is definitely noticeable and gives the solver much more control over the puzzle and ultimately leads to a better solving experience!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>GAN 251 M UPGRADED - 3 versions available from the menu: Air, Pro and Leap. With magnetic core inside, new GAN 251 series has smoother turning feel and lighter body.</li><li>WHAT MAKES THE DIFFERENCE - GAN 251 M Air has unadjustable corner magnets but no magnet in the core. That reduces the weight and the cube turns very straightforward. Both Pro and Leap have the same corner core adjustable magnet system, and Leap has much bigger mangets in the core. Overall, two versions perform consistently good, Pro has better stability and Leap has faster speed.</li><li>VARIOUS TUNING - Tuning versatility is always GAN's prominent feature, and GAN 251 M remain so. It is equipped with 2 kinds of nut distances, 4 levels elasticity, and optional 3 settings of magnets(Pro & Leap). All 24 configurations can be achieved within seconds, only a tool and alternative GES nut needed. Have more styles to tune but cost less time to explore.</li><li>FINE CRAFTMANSHIP - The mechanism of GAN251 M series supports adjustable magnet strength(Pro & Leap) and tension tuning individually, with great corner cutting and rounded slide track. All features combined together are less than 60 grams in total, serving as buttery smooth in your hands.</li><li>CONNECTED WITH GAN TEAM - By choosing GAN Cube store, you are choosing the world's most successful 3x3 brand. Here you can have the latest news of GAN products, join fans group, or even make a sound to future models. No worry about missing accessories or unpleasant experience, our CS Team will make you satisfied.</li></ul>", null, null, 1, 1, 31, 32.99, 5, 'GAN251_M_Explorer_Main.jpg', 1, 1, 1, 1, 4, 4);
+insert into products values (8, 'The GAN 251 M Leap', 'The_GAN_251_M_Leap', "<div><h3><b>Product Description</b></h3></div><span>Product Description</b></h3></div><span>The GAN 251 M Leap is an updated 2x2 mechanism which features corner/core and traditional magnets just like the GAN 11 M Pro. This version also utilizes large angle magnetic alignment technology, an internal magnet design that helps the cube snap into place easier and faster.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>GAN 251 M UPGRADED - 3 versions available from the menu: Air, Pro and Leap. With magnetic core inside, new GAN 251 series has smoother turning feel and lighter body.</li><li>WHAT MAKES THE DIFFERENCE - GAN 251 M Air has unadjustable corner magnets but no magnet in the core. That reduces the weight and the cube turns very straightforward. Both Pro and Leap have the same corner core adjustable magnet system, and Leap has much bigger mangets in the core. Overall, two versions perform consistently good, Pro has better stability and Leap has faster speed.</li><li>VARIOUS TUNING - Tuning versatility is always GAN's prominent feature, and GAN 251 M remain so. It is equipped with 2 kinds of nut distances, 4 levels elasticity, and optional 3 settings of magnets(Pro & Leap). All 24 configurations can be achieved within seconds, only a tool and alternative GES nut needed. Have more styles to tune but cost less time to explore.</li><li>FINE CRAFTMANSHIP - The mechanism of GAN251 M series supports adjustable magnet strength(Pro & Leap) and tension tuning individually, with great corner cutting and rounded slide track. All features combined together are less than 60 grams in total, serving as buttery smooth in your hands.</li><li>CONNECTED WITH GAN TEAM - By choosing GAN Cube store, you are choosing the world's most successful 3x3 brand. Here you can have the latest news of GAN products, join fans group, or even make a sound to future models. No worry about missing accessories or unpleasant experience, our CS Team will make you satisfied.</li></ul>", null, null, 1, 1, 37, 39.99, 5, 'GAN_251_M_Leap_Main.jpg', 1, 1, 1, 1, 4, 4);
+insert into products values (9, 'MoYu WeiPo 2x2 WR M', 'MoYu_WeiPo_2x2_WR_M', "<div><h3><b>Product Description</b></h3></div><span>The WeiPo 2x2 WRS from MoYu is a leap forward in 2x2 design from the famous company. This 2x2 has a magnetic adjustment system as well as a spring compression adjustment so you can find your perfect setup!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The WeiPo 2x2 WRS from MoYu is a leap forward in 2x2 design from the famous company. This 2x2 has a magnetic adjustment system as well as a spring compression adjustment so you can find your perfect setup!</li></ul>", null, null, 1, 1, 17, 19.99, 5, 'The_GAN_251_M_Leap_Main.jpg', 1, 1, 1, 1, 3, 4);
+insert into products values (10, 'MoYu RS2 M 2x2', 'MoYu_RS2_M_2x2', "<div><h3><b>Product Description</b></h3></div><span>The MoYu RS2 M 2x2 is the latest puzzle in the RS line. It features frosted plastic, medium/strong magnetic strength, and smooth turning right out of the box.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MoYu RS2 M 2x2 is the latest puzzle in the RS line. It features frosted plastic, medium/strong magnetic strength, and smooth turning right out of the box.</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating! The Anti-stick Degin can prevent the cube viscosity,make the cube solve smoothlt.Optimized parts of the round corner pieces,makes work coordinate effectively.enhance the corner cutting ability,make it more smooth when it solves </li><li>Magnetic Positioning Technology - magnets inside the cube improve the hand feel, magnet slots ensure the magnets placed accurately.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 5, 7.99, 5, 'MoYu_RS2_M_2x2_Main.jpg', 1, 1, 1, 1, 3, 4);
+insert into products values (11, 'Qiyi QiDi S 2x2 - Jelly', 'Qiyi_QiDi_S_2x2_Jelly', "<div><h3><b>Product Description</b></h3></div><span>The Qiyi QiDi S 2x2 - Jelly is just like a typical QiYi QiDi S, except this version has transparent, icy stickerless shades.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The QiYi QiDi S 2x2 is the latest 2x2 from QiYi/MoFangGe. It features a frosted, scratch-resistant surface, and symmetrical positioning technology -- all at a very economical price </li><li>The Qiyi QiDi S 2x2 - Jelly is just like a typical QiYi QiDi S, except this version has transparent, icy stickerless shades.</li></ul>", null, null, 1, 1, 4, 5.99, 5, 'Qiyi_QiDi_S_2x2_Jelly_Main.jpg', 1, 1, 1, 1, 2, 4);
+insert into products values (12, 'QiYi MS 2x2', 'QiYi_MS_2x2', "<div><h3><b>Product Description</b></h3></div><span>The QiYi MS 2x2 is a magnetic 2x2 speed cube built for performance and economy. Part of QiYi’s new economy “MS” line, this 2x2 has an unbelievably light and quick feel. This puzzle is sure to please beginners and advanced solvers alike.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The QiYi QiDi S 2x2 is the latest 2x2 from QiYi/MoFangGe. It features a frosted, scratch-resistant surface, and symmetrical positioning technology -- all at a very economical price </li><li>The Qiyi QiDi S 2x2 - Jelly is just like a typical QiYi QiDi S, except this version has transparent, icy stickerless shades.</li></ul>", null, null, 1, 1, 5, 6.99, 5, 'QiYi_MS_2x2_Main.jpg', 1, 1, 1, 1, 2, 4);
+insert into products values (13, ' QiYi MP 2x2 M', ' QiYi_MP_2x2_M', "<div><h3><b>Product Description</b></h3></div><span>The QiYi MP 2x2 M is a magnetic 2x2 with a smooth feel. The magnets on this cube are on the stronger side, but feel good when turning. This cube features a glossy outer finish and vibrant stickerless bright shades.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The QiYi QiDi S 2x2 is the latest 2x2 from QiYi/MoFangGe. It features a frosted, scratch-resistant surface, and symmetrical positioning technology -- all at a very economical price </li><li>The QiYi MP 2x2 M is just like a typical QiYi QiDi S, except this version has transparent, icy stickerless shades.</li></ul>", null, null, 1, 1, 14, 15.99, 5, 'QiYi_MP_2x2_M_Main.jpg', 1, 1, 1, 1, 2, 4);
+insert into products values (14, 'YuXin Little Magic 2x2', 'YuXin_Little_Magic_2x2', "<div><h3><b>Product Description</b></h3></div><span>The YuXin Little Magic 2x2 feel, that so many people have come to enjoy, is now available with factory magnets! This is a great magnetic speed cube for any skill level from beginner to professional.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The Yuxin Little Magic 2x2 is a fast, sandy feeling 2x2 that retains the feel of its 3x3 counterpart. It is definitely a competitor for best budget 2x2 on the market.</li><li>Super light, super fast. All I did was loosen it a few turns to unlock better corner cutting. Great for people who like light and fast cubes</li><li>It has a lot of grooves which are great for speed, and they fit nicely together giving it a stable feel. The frosted plastic is subtle. The turning feels smooth and a little scratchy.</li></ul>", null, null, 1, 1, 5, 6.99, 5, 'YuXin_Little_Magic_2x2_Main.jpg', 1, 1, 1, 1, 15, 4);
+insert into products values (15, 'Little Magic 2x2 V2 M', 'Little_Magic_2x2_V2_M', "<div><h3><b>Product Description</b></h3></div><span>The Little Magic 2x2 V2 M is a new magnetic 2x2 from YuXin. This puzzle has a medium/strong magnetic feel, black internals, and features vibrant stickerless bright shades.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The Yuxin Little Magic 2x2 is a fast, sandy feeling 2x2 that retains the feel of its 3x3 counterpart. It is definitely a competitor for best budget 2x2 on the market.</li><li>Super light, super fast. All I did was loosen it a few turns to unlock better corner cutting. Great for people who like light and fast cubes</li><li>It has a lot of grooves which are great for speed, and they fit nicely together giving it a stable feel. The frosted plastic is subtle. The turning feels smooth and a little scratchy.</li></ul>", null, null, 1, 1, 5, 6.99, 5, 'Little_Magic_2x2_V2_M_Main.jpg', 1, 1, 1, 1, 15, 4);
+insert into products values (16, 'MFJS MeiLong 2x2 M', 'MFJS_MeiLong_2x2_M', "<div><h3><b>Product Description</b></h3></div><span>The MFJS MeiLong 2x2 M is a budget friendly magnetic 2x2 speed cube from MFJS. It offers great performance and a medium/light magnetic feel at a fraction of the cost of other magnetic 2x2s!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MFJS MeiLong 2x2 M is a budget friendly magnetic 2x2 speed cube from MFJS. It offers great performance and a medium/light magnetic feel at a fraction of the cost of other magnetic 2x2s!</li><li>So ootb this cube does not feel cheap, kinda like the 251 it has a nice hollow feeling and crunchy turning, the corner cutting is amazing and its a really fast cube, it out preforms a fully setup gan 251 M, holy this cube is amazing </li><li>This puzzle is sure to be a challenge for beginners and seasoned puzzlers alike. It comes in vibrant stickerless bright shades </li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 5.00, 6.99, 5, 'MFJS_MeiLong_2x2_M_Main.jpg', 1, 1, 1, 1, 10, 4);
+insert into products values (17, 'Moyu MoFang JiaoShi Macaron Meilong 2x2 stickerless', 'MFJS_MeiLong_2x2_Macaron', "<div><h3><b>Product Description</b></h3></div><span>The MFJS MeiLong 2x2 - Macaron is a budget friendly 2x2 speed cube from MoFang JiaoShi. This puzzle features smooth turning right out of the box, and light pastel shades.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MFJS MeiLong 2x2 M is a budget friendly magnetic 2x2 speed cube from MFJS. It offers great performance and a medium/light magnetic feel at a fraction of the cost of other magnetic 2x2s!</li><li>So ootb this cube does not feel cheap, kinda like the 251 it has a nice hollow feeling and crunchy turning, the corner cutting is amazing and its a really fast cube, it out preforms a fully setup gan 251 M, holy this cube is amazing </li><li>This puzzle is sure to be a challenge for beginners and seasoned puzzlers alike. It comes in vibrant stickerless bright shades </li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 6.00, 7.99, 5, 'MFJS_MeiLong_2x2_Macaron_Main.jpg', 1, 1, 1, 1, 10, 4);
+
+insert into products values (18, 'DaYan TengYun 2x2 M', 'DaYan_TengYun_2x2_M', "<div><h3><b>Product Description</b></h3></div><span>The TengYun M is the newest 2x2 from DaYan. This puzzle is factory magnetized with medium/strong magnets and has wavy ridges on the inside of the pieces to ensure smooth turning. This puzzle takes the smooth, quiet feel from the TengYun 3x3 M and puts it in a very exciting 2x2.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The TengYun M is the newest 2x2 from DaYan. This puzzle is factory magnetized with medium/strong magnets and has wavy ridges on the inside of the pieces to ensure smooth turning.</li><li>This puzzle takes the smooth, quiet feel from the TengYun 3x3 M and puts it in a very exciting 2x2.</li><li>Environmental material, Using the original ABS material: no stickers, non-poisonous material, the color will never fade. Smooth and fast ,solve it when each side matches.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul></ul>", null, null, 1, 1, 17.00, 18.99, 5, 'DaYan_TengYun_2x2_M.jpg', 1, 1, 1, 1, 5, 4);
+
+insert into products values (20, 'DianSheng Solar S2M 2x2', 'DianSheng_Solar_S2M_2x2', "<div><h3><b>Product Description</b></h3></div><span>The Solar S Magnetic 2x2 is a new flagship 2x2 from DianSheng. This cube is very quick out of the box and corner cuts well. The Solar line of puzzles all have a glossy finish.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The DianSheng 3x3 M represents the company's first modern speed cube. This frosted plastic 3x3 has a very unique look due to the new center cap design. Turning is smooth right out of the box and it has a medium/strong magnetic feel.</li></ul>", null, null, 1, 1, 15.00, 16.99, 5, 'DianSheng_Solar_S2M_2x2_Main.jpg', 1, 1, 1, 1, 6, 4);
 
 
-
-
-
-
-insert into products values (3, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li><li></li></ul>", null, null, 1, 1, 17, 19.99, 5, '', 1, 1, 1, 1, 4, 4);
-
+insert into products values (1, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li></ul></ul>", null, null, 1, 1, 7.00, 9.99, 5, '.jpg', 1, 1, 1, 1, 1, 4);
 
 -- INSERT INTO product_images
 -- product id = 1
@@ -256,7 +265,6 @@ insert into product_images value (15, 'gan_249_v2_m_extras_3.jpg', 5);
 insert into product_images value (16, 'gan_249_v2_m_extras_4.jpg', 5);
 insert into product_images value (17, 'gan_249_v2_m_extras_5.jpg', 5);
 insert into product_images value (18, 'gan_249_v2_m_extras_6.jpg', 5);
-
 -- product id = 6
 insert into product_images value (19, 'GAN251_M_Explorer_Extras.jpg', 6);
 insert into product_images value (20, 'GAN251_M_Explorer_Extras_1.jpg', 6);
@@ -265,6 +273,72 @@ insert into product_images value (22, 'GAN251_M_Explorer_Extras_3.jpg', 6);
 insert into product_images value (23, 'GAN251_M_Explorer_Extras_4.jpg', 6);
 insert into product_images value (24, 'GAN251_M_Explorer_Extras_5.jpg', 6);
 insert into product_images value (25, 'GAN251_M_Explorer_Extras_6.jpg', 6);
+-- product id = 7
+insert into product_images value (26, 'GAN251_M_Explorer_Extras.jpg', 7);
+insert into product_images value (27, 'GAN251_M_Explorer_Extras_1.jpg', 7);
+insert into product_images value (28, 'GAN251_M_Explorer_Extras_2.jpg', 7);
+insert into product_images value (29, 'GAN251_M_Explorer_Extras_3.jpg', 7);
+insert into product_images value (30, 'GAN251_M_Explorer_Extras_4.jpg', 7);
+insert into product_images value (31, 'GAN251_M_Explorer_Extras_5.jpg', 7);
+insert into product_images value (32, 'GAN251_M_Explorer_Extras_6.jpg', 7);
+-- product id = 8
+insert into product_images value (33, 'GAN_251_M_Leap_Extras_1.jpg', 8);
+insert into product_images value (34, 'GAN_251_M_Leap_Extras_2.jpg', 8);
+insert into product_images value (35, 'GAN_251_M_Leap_Extras_3.jpg', 8);
+insert into product_images value (36, 'GAN_251_M_Leap_Extras_4.jpg', 8);
+insert into product_images value (37, 'GAN_251_M_Leap_Extras_5.jpg', 8);
+insert into product_images value (38, 'GAN_251_M_Leap_Extras_6.jpg', 8);
+insert into product_images value (39, 'GAN_251_M_Leap_Extras_7.jpg', 8);
+-- product id = 9
+insert into product_images value (40, 'The_GAN_251_M_Leap_Extras_1.jpg', 9);
+insert into product_images value (41, 'The_GAN_251_M_Leap_Extras_2.jpg', 9);
+insert into product_images value (42, 'The_GAN_251_M_Leap_Extras_3.jpg', 9);
+-- product id = 10
+insert into product_images value (43, 'MoYu_RS2_M_2x2_Extras_1.jpg', 10);
+insert into product_images value (44, 'MoYu_RS2_M_2x2_Extras_2.jpg', 10);
+-- product id = 11
+insert into product_images value (45, 'Qiyi_QiDi_S_2x2_Jelly_Extras_1.jpg', 11);
+insert into product_images value (46, 'Qiyi_QiDi_S_2x2_Jelly_Extras_2.jpg', 11);
+insert into product_images value (47, 'Qiyi_QiDi_S_2x2_Jelly_Extras_3.jpg', 11);
+insert into product_images value (48, 'Qiyi_QiDi_S_2x2_Jelly_Extras_4.jpg', 11);
+-- product id = 12
+insert into product_images value (49, 'QiYi_MS_2x2_Extras_1.jpg', 12);
+insert into product_images value (50, 'QiYi_MS_2x2_Extras_2.jpg', 12);
+insert into product_images value (51, 'QiYi_MS_2x2_Extras_3.jpg', 12);
+insert into product_images value (52, 'QiYi_MS_2x2_Extras_4.jpg', 12);
+-- product id = 13
+insert into product_images value (53, 'QiYi_MP_2x2_M_Extras.jpg', 13);
+-- product id = 14
+insert into product_images value (54, 'YuXin_Little_Magic_2x2_Extras_1.jpg', 14);
+insert into product_images value (55, 'YuXin_Little_Magic_2x2_Extras_2.jpg', 14);
+-- product id = 15
+insert into product_images value (56, 'Little_Magic_2x2_V2_M_Extras_1.jpg', 15);
+insert into product_images value (57, 'Little_Magic_2x2_V2_M_Extras_2.jpg', 15);
+insert into product_images value (58, 'Little_Magic_2x2_V2_M_Extras_3.jpg', 15);
+insert into product_images value (59, 'Little_Magic_2x2_V2_M_Extras_4.jpg', 15);
+insert into product_images value (60, 'Little_Magic_2x2_V2_M_Extras_5.jpg', 15);
+-- product id = 16
+insert into product_images value (61, 'MFJS_MeiLong_2x2_M_Extras_1.jpg', 16);
+insert into product_images value (62, 'MFJS_MeiLong_2x2_M_Extras_2.jpg', 16);
+insert into product_images value (63, 'MFJS_MeiLong_2x2_M_Extras_3.jpg', 16);
+insert into product_images value (64, 'MFJS_MeiLong_2x2_M_Extras_4.jpg', 16);
+-- product id = 17
+insert into product_images value (65, 'MFJS_MeiLong_2x2_Macaron_Extras_1.jpg', 17);
+insert into product_images value (66, 'MFJS_MeiLong_2x2_Macaron_Extras_2.jpg', 17);
+-- product id = 18
+insert into product_images value (66, 'DaYan_TengYun_2x2_M_Extras_1.jpg', 18);
+insert into product_images value (67, 'DaYan_TengYun_2x2_M_Extras_2.jpg', 18);
+insert into product_images value (68, 'DaYan_TengYun_2x2_M_Extras_3.jpg', 18);
+insert into product_images value (69, 'DaYan_TengYun_2x2_M_Extras_4.jpg', 18);
+
+-- product id = 20
+insert into product_images value (66, 'DianSheng_Solar_S2M_2x2_Extras_1.jpg', 20);
+
+
+insert into product_images value (67, 'DaYan_TengYun_2x2_M_Extras_2.jpg', 20);
+insert into product_images value (68, 'DaYan_TengYun_2x2_M_Extras_3.jpg', 20);
+insert into product_images value (69, 'DaYan_TengYun_2x2_M_Extras_4.jpg', 20);
+
 
 
 -- INSERT INTO product_detailsb
@@ -316,8 +390,105 @@ insert into product_details value (39, 'Feel', 'Smooth', 6);
 insert into product_details value (40, 'Gross Weight', '87g', 6);
 insert into product_details value (41, 'Item Weight', '55.9g', 6);
 insert into product_details value (42, 'Dimensions', '51.0mm', 6);
-
-
+-- product id = 7
+insert into product_details value (43, 'Brand', 'GAN', 7);
+insert into product_details value (44, 'Type', '2x2', 7);
+insert into product_details value (45, 'Magnets', 'Magnetic', 7);
+insert into product_details value (46, 'Stock Shades', 'Stickerless (Bright)', 7);
+insert into product_details value (47, 'Feel', 'Smooth', 7);
+insert into product_details value (48, 'Gross Weight', '87g', 7);
+insert into product_details value (49, 'Item Weight', '55.9g', 7);
+insert into product_details value (50, 'Dimensions', '51.0mm', 7);
+-- product id = 8
+insert into product_details value (51, 'Brand', 'GAN', 8);
+insert into product_details value (52, 'Type', '2x2', 8);
+insert into product_details value (53, 'Magnets', 'Magnetic', 8);
+insert into product_details value (54, 'Stock Shades', 'Stickerless (Bright)', 8);
+insert into product_details value (55, 'Feel', 'Smooth', 8);
+insert into product_details value (56, 'Gross Weight', '87g', 8);
+insert into product_details value (57, 'Item Weight', '55.9g', 8);
+insert into product_details value (58, 'Dimensions', '51.0mm', 8);
+-- product id = 9
+insert into product_details value (59, 'Brand', 'MoYu', 9);
+insert into product_details value (60, 'Type', '2x2', 9);
+insert into product_details value (61, 'Magnets', 'Magnetic', 9);
+insert into product_details value (62, 'Stock Shades', 'Stickerless (Bright)', 9);
+insert into product_details value (63, 'Feel', 'Smooth', 9);
+insert into product_details value (64, 'Gross Weight', '87g', 9);
+insert into product_details value (65, 'Item Weight', '55.9g', 9);
+insert into product_details value (66, 'Dimensions', '51.0mm', 9);
+-- product id = 10
+insert into product_details value (67, 'Brand', 'MoYu', 10);
+insert into product_details value (68, 'Type', '2x2', 10);
+insert into product_details value (69, 'Magnets', 'Magnetic', 10);
+insert into product_details value (70, 'Stock Shades', 'Stickerless (Bright)', 10);
+insert into product_details value (71, 'Feel', 'Smooth', 10);
+insert into product_details value (72, 'Gross Weight', '87g', 10);
+insert into product_details value (73, 'Item Weight', '55.9g', 10);
+insert into product_details value (74, 'Dimensions', '51.0mm', 10);
+-- product id = 11
+insert into product_details value (75, 'Brand', 'MoYu', 11);
+insert into product_details value (76, 'Type', '2x2', 11);
+insert into product_details value (77, 'Magnets', 'Magnetic', 11);
+insert into product_details value (78, 'Stock Shades', 'Stickerless (Bright)', 11);
+insert into product_details value (79, 'Feel', 'Smooth', 11);
+insert into product_details value (80, 'Gross Weight', '87g', 11);
+insert into product_details value (81, 'Item Weight', '55.9g', 11);
+insert into product_details value (82, 'Dimensions', '51.0mm', 11);
+-- product id = 12
+insert into product_details value (83, 'Brand', 'MoYu', 12);
+insert into product_details value (84, 'Type', '2x2', 12);
+insert into product_details value (85, 'Magnets', 'Magnetic', 12);
+insert into product_details value (86, 'Stock Shades', 'Stickerless (Bright)', 12);
+insert into product_details value (87, 'Feel', 'Smooth', 12);
+insert into product_details value (88, 'Gross Weight', '87g', 12);
+insert into product_details value (89, 'Item Weight', '55.9g', 12);
+insert into product_details value (90, 'Dimensions', '51.0mm', 12);
+-- product id = 13
+insert into product_details value (91, 'Brand', 'MoYu', 13);
+insert into product_details value (92, 'Type', '2x2', 13);
+insert into product_details value (93, 'Magnets', 'Magnetic', 13);
+insert into product_details value (94, 'Stock Shades', 'Stickerless (Bright)', 13);
+insert into product_details value (95, 'Feel', 'Smooth', 13);
+insert into product_details value (96, 'Gross Weight', '87g', 13);
+insert into product_details value (97, 'Item Weight', '55.9g', 13);
+insert into product_details value (98, 'Dimensions', '51.0mm', 13);
+-- product id = 14
+insert into product_details value (99, 'Brand', 'MoYu', 14);
+insert into product_details value (100, 'Type', '2x2', 14);
+insert into product_details value (101, 'Magnets', 'Magnetic', 14);
+insert into product_details value (102, 'Stock Shades', 'Stickerless (Bright)', 14);
+insert into product_details value (103, 'Feel', 'Smooth', 14);
+insert into product_details value (104, 'Gross Weight', '87g', 14);
+insert into product_details value (105, 'Item Weight', '55.9g', 14);
+insert into product_details value (106, 'Dimensions', '51.0mm', 14);
+-- product id = 15
+insert into product_details value (107, 'Brand', 'MoYu', 15);
+insert into product_details value (108, 'Type', '2x2', 15);
+insert into product_details value (109, 'Magnets', 'Magnetic', 15);
+insert into product_details value (110, 'Stock Shades', 'Stickerless (Bright)', 15);
+insert into product_details value (111, 'Feel', 'Smooth', 15);
+insert into product_details value (112, 'Gross Weight', '87g', 15);
+insert into product_details value (113, 'Item Weight', '55.9g', 15);
+insert into product_details value (114, 'Dimensions', '51.0mm', 15);
+-- product id = 16
+insert into product_details value (115, 'Brand', 'MoYu', 16);
+insert into product_details value (116, 'Type', '2x2', 16);
+insert into product_details value (117, 'Magnets', 'Magnetic', 16);
+insert into product_details value (118, 'Stock Shades', 'Stickerless (Bright)', 16);
+insert into product_details value (119, 'Feel', 'Smooth', 16);
+insert into product_details value (120, 'Gross Weight', '87g', 16);
+insert into product_details value (121, 'Item Weight', '55.9g', 16);
+insert into product_details value (122, 'Dimensions', '51.0mm', 16);
+-- product id = 16
+insert into product_details value (123, 'Brand', 'MoYu', 17);
+insert into product_details value (124, 'Type', '2x2', 17);
+insert into product_details value (125, 'Magnets', 'Magnetic', 17);
+insert into product_details value (126, 'Stock Shades', 'Stickerless (Bright)', 17);
+insert into product_details value (127, 'Feel', 'Smooth', 17);
+insert into product_details value (128, 'Gross Weight', '87g', 17);
+insert into product_details value (129, 'Item Weight', '55.9g', 17);
+insert into product_details value (130, 'Dimensions', '51.0mm', 17);
 
 
 
@@ -327,3 +498,5 @@ delete from product_images where id = 22;
 delete from product_images where id = 23;
 delete from product_images where id = 24;
 delete from product_images where id = 25;
+
+delete from products where id = 9;
