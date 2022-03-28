@@ -233,13 +233,23 @@ insert into products values (14, 'YuXin Little Magic 2x2', 'YuXin_Little_Magic_2
 insert into products values (15, 'Little Magic 2x2 V2 M', 'Little_Magic_2x2_V2_M', "<div><h3><b>Product Description</b></h3></div><span>The Little Magic 2x2 V2 M is a new magnetic 2x2 from YuXin. This puzzle has a medium/strong magnetic feel, black internals, and features vibrant stickerless bright shades.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The Yuxin Little Magic 2x2 is a fast, sandy feeling 2x2 that retains the feel of its 3x3 counterpart. It is definitely a competitor for best budget 2x2 on the market.</li><li>Super light, super fast. All I did was loosen it a few turns to unlock better corner cutting. Great for people who like light and fast cubes</li><li>It has a lot of grooves which are great for speed, and they fit nicely together giving it a stable feel. The frosted plastic is subtle. The turning feels smooth and a little scratchy.</li></ul>", null, null, 1, 1, 5, 6.99, 5, 'Little_Magic_2x2_V2_M_Main.jpg', 1, 1, 1, 1, 15, 4);
 insert into products values (16, 'MFJS MeiLong 2x2 M', 'MFJS_MeiLong_2x2_M', "<div><h3><b>Product Description</b></h3></div><span>The MFJS MeiLong 2x2 M is a budget friendly magnetic 2x2 speed cube from MFJS. It offers great performance and a medium/light magnetic feel at a fraction of the cost of other magnetic 2x2s!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MFJS MeiLong 2x2 M is a budget friendly magnetic 2x2 speed cube from MFJS. It offers great performance and a medium/light magnetic feel at a fraction of the cost of other magnetic 2x2s!</li><li>So ootb this cube does not feel cheap, kinda like the 251 it has a nice hollow feeling and crunchy turning, the corner cutting is amazing and its a really fast cube, it out preforms a fully setup gan 251 M, holy this cube is amazing </li><li>This puzzle is sure to be a challenge for beginners and seasoned puzzlers alike. It comes in vibrant stickerless bright shades </li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 5.00, 6.99, 5, 'MFJS_MeiLong_2x2_M_Main.jpg', 1, 1, 1, 1, 10, 4);
 insert into products values (17, 'Moyu MoFang JiaoShi Macaron Meilong 2x2 stickerless', 'MFJS_MeiLong_2x2_Macaron', "<div><h3><b>Product Description</b></h3></div><span>The MFJS MeiLong 2x2 - Macaron is a budget friendly 2x2 speed cube from MoFang JiaoShi. This puzzle features smooth turning right out of the box, and light pastel shades.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MFJS MeiLong 2x2 M is a budget friendly magnetic 2x2 speed cube from MFJS. It offers great performance and a medium/light magnetic feel at a fraction of the cost of other magnetic 2x2s!</li><li>So ootb this cube does not feel cheap, kinda like the 251 it has a nice hollow feeling and crunchy turning, the corner cutting is amazing and its a really fast cube, it out preforms a fully setup gan 251 M, holy this cube is amazing </li><li>This puzzle is sure to be a challenge for beginners and seasoned puzzlers alike. It comes in vibrant stickerless bright shades </li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 6.00, 7.99, 5, 'MFJS_MeiLong_2x2_Macaron_Main.jpg', 1, 1, 1, 1, 10, 4);
+insert into products values (18, 'DaYan TengYun 2x2 M', 'DaYan_TengYun_2x2_M', "<div><h3><b>Product Description</b></h3></div><span>The TengYun M is the newest 2x2 from DaYan. This puzzle is factory magnetized with medium/strong magnets and has wavy ridges on the inside of the pieces to ensure smooth turning. This puzzle takes the smooth, quiet feel from the TengYun 3x3 M and puts it in a very exciting 2x2.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The TengYun M is the newest 2x2 from DaYan. This puzzle is factory magnetized with medium/strong magnets and has wavy ridges on the inside of the pieces to ensure smooth turning.</li><li>This puzzle takes the smooth, quiet feel from the TengYun 3x3 M and puts it in a very exciting 2x2.</li><li>Environmental material, Using the original ABS material: no stickers, non-poisonous material, the color will never fade. Smooth and fast ,solve it when each side matches.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul></ul>", null, null, 1, 1, 17.00, 18.99, 5, 'DaYan_TengYun_2x2_M_Main.jpg', 1, 1, 1, 1, 5, 4);
+insert into products values (19, 'GoCube 2x2', 'GoCube_2x2', "<div><h3><b>Product Description</b></h3></div><span>The GoCube 2x2 is a smart 2x2x2 puzzle that works with the GoCube app! This puzzle is pillowed with colorful tiles surrounded by transparent plastic in the style of the original GoCube. &nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>SMART & CONNECTED - This smart cube wirelessly connects to your phone or tablet and allows everyone to LEARN how to solve the iconic puzzle Cube. THE PERFECT WAY TO GET INTO CUBING! And don’t be fooled by it, the GoCube 2x2 is still VERY challenging ;) LEARN, IMPROVE & PLAY!</li><li>EVERYONE CAN SOLVE IT! - Use the mobile FREE application to learn how to solve the cube. Track your electronic cube progress, Get accurate stats to improve your solve time, challenge yourself and get better! Sharpen your skills and join our global leaderboard.</li><li>INNOVATIVE & EDUCATIONAL - The GoCube 2x2 is the perfect STEM toy, it is educational and fun, and adds tons of value to screen time! Learn the fundamentals of Problem Solving in a fun and interactive way, develop your child’s memorization skills as well as hand & eye coordination. Proven to build Self-Esteem and Confidence. Oh, the look in their eyes when they solve it for the first time…</li><li>THE PERFECT GIFT FOR THE HOLIDAYS - The GoCube 2x2 is FUN, EDUCATIONAL and TECHIE. EVERYONE would love it! This is the best brain teaser, and a perfect gift for the holidays, especially when Covid is around and everyone is looking for new innovative toys to entertain their family! FITS ALL AGES & CAPABILITIES !!</li><li>1 YEAR WARRANTY, SUPERB CUSTOMER SERVICE - A family-friendly game, perfect for Family Saturday Nights, while on-the-go, flights and road trips. The GoCube 2x2 comes with a travel pouch, it is light and durable and will entertain your family for hours!! Oh, and you have a 1-year-warranty on your cube and superb customer support! </li></ul>", null, null, 1, 1, 47, 49.99, 5, 'GoCube_2x2_Main.jpg', 1, 1, 1, 1, 9, 4);
+insert into products values (20, 'MonsterGO 2x2', 'MonsterGO_2x2', "<div><h3><b>Product Description</b></h3></div><span>The MonsterGO 2x2 is a non-magnetic 2x2 that features frosted plastic, vibrant stickerless bright shades, and GES nuts installed for tensioning.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>That is a perfect product</li></ul>", null, null, 1, 1, 10.00, 1.99, 5, 'MonsterGO_2x2_Main.jpg', 1, 1, 1, 1, 11, 4);
+insert into products values (21, 'X-MAN FLARE 2X2 M', 'X-MAN_FLARE_2X2_M', "<div><h3><b>Product Description</b></h3></div><span>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating!</li><li>The Anti-stick Degin can prevent the cube viscosity,make the cube solve smoothlt.Optimized parts of the round corner pieces,makes work coordinate effectively.enhance the corner cutting ability,make it more smooth when it solves</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style</li></ul></ul>", null, null, 1, 1, 15.00, 16.99, 5, 'X-MAN_FLARE_2X2_M_Main.jpg', 1, 1, 1, 1, 14, 4);
+insert into products values (22, 'ANGSTROM X-MAN FLARE 2X2 M', 'ANGSTROM_X-MAN_FLARE_2X2_M', "<div><h3><b>Product Description</b></h3></div><span>The Angstrom X-Man Flare 2x2 M is one of our premium versions of QiYi’s flagship 2x2 in the X-Man series featuring adjustable magnets. It is set up with Angstrom Gravitas, Angstrom Dignitas, and DNM-37 on the pieces, creating a smooth and controllable turing experience, especially after breaking it in.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating!</li><li>The Anti-stick Degin can prevent the cube viscosity,make the cube solve smoothlt.Optimized parts of the round corner pieces,makes work coordinate effectively.enhance the corner cutting ability,make it more smooth when it solves</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style</li></ul></ul>", null, null, 1, 1, 25.00, 26.99, 5, 'ANGSTROM_X-MAN_FLARE_2X2_M_Main.jpg', 1, 1, 1, 1, 14, 4);
+insert into products values (23, 'PRO SHOP X-MAN FLARE 2X2 M', 'PRO_SHOP_X-MAN_FLARE_2X2_M', "<div><h3><b>Product Description</b></h3></div><span>The Pro Shop X-Man Flare 2x2 M is one of our premium versions of QiYi’s flagship 2x2 in the X-Man series featuring adjustable magnets. It is set up with Traxxas-30k, Lubicle Speedy, and DNM-37 on the pieces, creating a fast and controllable turing experience.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.</li></ul></ul>", null, null, 1, 1, 22.00, 23.99, 5, 'ANGSTROM_X-MAN_FLARE_2X2_M_Main.jpg', 1, 1, 1, 1, 14, 4);
 
-insert into products values (18, 'DaYan TengYun 2x2 M', 'DaYan_TengYun_2x2_M', "<div><h3><b>Product Description</b></h3></div><span>The TengYun M is the newest 2x2 from DaYan. This puzzle is factory magnetized with medium/strong magnets and has wavy ridges on the inside of the pieces to ensure smooth turning. This puzzle takes the smooth, quiet feel from the TengYun 3x3 M and puts it in a very exciting 2x2.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The TengYun M is the newest 2x2 from DaYan. This puzzle is factory magnetized with medium/strong magnets and has wavy ridges on the inside of the pieces to ensure smooth turning.</li><li>This puzzle takes the smooth, quiet feel from the TengYun 3x3 M and puts it in a very exciting 2x2.</li><li>Environmental material, Using the original ABS material: no stickers, non-poisonous material, the color will never fade. Smooth and fast ,solve it when each side matches.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul></ul>", null, null, 1, 1, 17.00, 18.99, 5, 'DaYan_TengYun_2x2_M.jpg', 1, 1, 1, 1, 5, 4);
-
-insert into products values (20, 'DianSheng Solar S2M 2x2', 'DianSheng_Solar_S2M_2x2', "<div><h3><b>Product Description</b></h3></div><span>The Solar S Magnetic 2x2 is a new flagship 2x2 from DianSheng. This cube is very quick out of the box and corner cuts well. The Solar line of puzzles all have a glossy finish.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The DianSheng 3x3 M represents the company's first modern speed cube. This frosted plastic 3x3 has a very unique look due to the new center cap design. Turning is smooth right out of the box and it has a medium/strong magnetic feel.</li></ul>", null, null, 1, 1, 15.00, 16.99, 5, 'DianSheng_Solar_S2M_2x2_Main.jpg', 1, 1, 1, 1, 6, 4);
 
 
-insert into products values (1, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li></ul></ul>", null, null, 1, 1, 7.00, 9.99, 5, '.jpg', 1, 1, 1, 1, 1, 4);
+
+
+
+insert into products values (31, 'MoYu WeiLong AI 3x3', 'MoYu_WeiLong_AI_3x3', "<div><h3><b>Product Description</b></h3></div><span>The WeiLong AI is a new smart cube from MoYu. The mechanism is based on the WR M 2020, so its performance is not compromised like all previous smart cubes. This puzzle also features a gyroscope to track rotations.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The WeiLong WR M MagLev is the latest version in the famous WeiLong line. This 3x3 features purple internals, magnetic adjustment, tension and compression adjustment, and a maglev system in place of traditional springs.</li><li>Maglev technology utilizes opposing magnets (magnetic levitation) to replicate spring force, this reduces friction and completely eliminates spring noise.</li><li>Unique 9-level dual adjustment design on the tensioning, you can adjust the elasticity on your own preference.</li><li>The torpedo on edges and corners come to multi-track inner circle, making the cube more stable and has a better anti-pop performance.</li><li>High quality ABS material and unified turning surface, keeping the cube smooth and stable. </li></ul>", null, null, 1, 1, 63.00, 64.99, 5, 'MoYu_WeiLong_AI_3x3_Main.jpg', 1, 1, 1, 1, 3, 5);
+
+
+
+insert into products values (1, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li></ul>", null, null, 1, 1, 7.00, 9.99, 5, '.jpg', 1, 1, 1, 1, 1, 4);
 
 -- INSERT INTO product_images
 -- product id = 1
@@ -326,18 +336,34 @@ insert into product_images value (64, 'MFJS_MeiLong_2x2_M_Extras_4.jpg', 16);
 insert into product_images value (65, 'MFJS_MeiLong_2x2_Macaron_Extras_1.jpg', 17);
 insert into product_images value (66, 'MFJS_MeiLong_2x2_Macaron_Extras_2.jpg', 17);
 -- product id = 18
-insert into product_images value (66, 'DaYan_TengYun_2x2_M_Extras_1.jpg', 18);
-insert into product_images value (67, 'DaYan_TengYun_2x2_M_Extras_2.jpg', 18);
-insert into product_images value (68, 'DaYan_TengYun_2x2_M_Extras_3.jpg', 18);
-insert into product_images value (69, 'DaYan_TengYun_2x2_M_Extras_4.jpg', 18);
-
+insert into product_images value (67, 'DaYan_TengYun_2x2_M_Extras_1.jpg', 18);
+insert into product_images value (68, 'DaYan_TengYun_2x2_M_Extras_2.jpg', 18);
+insert into product_images value (69, 'DaYan_TengYun_2x2_M_Extras_3.jpg', 18);
+insert into product_images value (70, 'DaYan_TengYun_2x2_M_Extras_4.jpg', 18);
+-- product id = 19
+insert into product_images value (71, 'GoCube_2x2_Extras_1.jpg', 19);
+insert into product_images value (72, 'GoCube_2x2_Extras_2.jpg', 19);
+insert into product_images value (73, 'GoCube_2x2_Extras_3.jpg', 19);
+insert into product_images value (74, 'GoCube_2x2_Extras_4.jpg', 19);
+insert into product_images value (75, 'GoCube_2x2_Extras_5.jpg', 19);
+insert into product_images value (76, 'GoCube_2x2_Extras_6.jpg', 19);
+insert into product_images value (77, 'GoCube_2x2_Extras_7.jpg', 19);
 -- product id = 20
-insert into product_images value (66, 'DianSheng_Solar_S2M_2x2_Extras_1.jpg', 20);
-
-
-insert into product_images value (67, 'DaYan_TengYun_2x2_M_Extras_2.jpg', 20);
-insert into product_images value (68, 'DaYan_TengYun_2x2_M_Extras_3.jpg', 20);
-insert into product_images value (69, 'DaYan_TengYun_2x2_M_Extras_4.jpg', 20);
+insert into product_images value (78, 'MonsterGO_2x2_Extras_1.jpg', 20);
+insert into product_images value (79, 'MonsterGO_2x2_Extras_2.jpg', 20);
+insert into product_images value (80, 'MonsterGO_2x2_Extras_3.jpg', 20);
+insert into product_images value (81, 'MonsterGO_2x2_Extras_4.jpg', 20);
+insert into product_images value (82, 'MonsterGO_2x2_Extras_5.jpg', 20);
+insert into product_images value (83, 'MonsterGO_2x2_Extras_6.jpg', 20);
+-- product id = 21
+insert into product_images value (84, 'X-MAN_FLARE_2X2_M_Extras_1.jpg', 21);
+insert into product_images value (85, 'X-MAN_FLARE_2X2_M_Extras_2.jpg', 21);
+-- product id = 22
+insert into product_images value (86, 'ANGSTROM_X-MAN_FLARE_2X2_M_Extras_1.jpg', 22);
+insert into product_images value (87, 'ANGSTROM_X-MAN_FLARE_2X2_M_Extras_2.jpg', 22);
+-- product id = 23
+insert into product_images value (88, 'MAN_FLARE_2X2_M_Extras_1.jpg', 23);
+insert into product_images value (89, 'MAN_FLARE_2X2_M_Extras_2.jpg', 23);
 
 
 
@@ -480,7 +506,7 @@ insert into product_details value (119, 'Feel', 'Smooth', 16);
 insert into product_details value (120, 'Gross Weight', '87g', 16);
 insert into product_details value (121, 'Item Weight', '55.9g', 16);
 insert into product_details value (122, 'Dimensions', '51.0mm', 16);
--- product id = 16
+-- product id = 17
 insert into product_details value (123, 'Brand', 'MoYu', 17);
 insert into product_details value (124, 'Type', '2x2', 17);
 insert into product_details value (125, 'Magnets', 'Magnetic', 17);
@@ -489,6 +515,60 @@ insert into product_details value (127, 'Feel', 'Smooth', 17);
 insert into product_details value (128, 'Gross Weight', '87g', 17);
 insert into product_details value (129, 'Item Weight', '55.9g', 17);
 insert into product_details value (130, 'Dimensions', '51.0mm', 17);
+-- product id = 18
+insert into product_details value (131, 'Brand', 'MoYu', 18);
+insert into product_details value (132, 'Type', '2x2', 18);
+insert into product_details value (133, 'Magnets', 'Magnetic', 18);
+insert into product_details value (134, 'Stock Shades', 'Stickerless (Bright)', 18);
+insert into product_details value (135, 'Feel', 'Smooth', 18);
+insert into product_details value (136, 'Gross Weight', '87g', 18);
+insert into product_details value (137, 'Item Weight', '55.9g', 18);
+insert into product_details value (138, 'Dimensions', '51.0mm', 18);
+-- product id = 19
+insert into product_details value (139, 'Brand', 'MoYu', 19);
+insert into product_details value (140, 'Type', '2x2', 19);
+insert into product_details value (141, 'Magnets', 'Magnetic', 19);
+insert into product_details value (142, 'Stock Shades', 'Stickerless (Bright)', 19);
+insert into product_details value (143, 'Feel', 'Smooth', 19);
+insert into product_details value (144, 'Gross Weight', '87g', 19);
+insert into product_details value (145, 'Item Weight', '55.9g', 19);
+insert into product_details value (146, 'Dimensions', '51.0mm', 19);
+-- product id = 20
+insert into product_details value (147, 'Brand', 'MoYu', 20);
+insert into product_details value (148, 'Type', '2x2', 20);
+insert into product_details value (149, 'Magnets', 'Magnetic', 20);
+insert into product_details value (150, 'Stock Shades', 'Stickerless (Bright)', 20);
+insert into product_details value (151, 'Feel', 'Smooth', 20);
+insert into product_details value (152, 'Gross Weight', '87g', 20);
+insert into product_details value (153, 'Item Weight', '55.9g', 20);
+insert into product_details value (154, 'Dimensions', '51.0mm', 20);
+-- product id = 21
+insert into product_details value (155, 'Brand', 'MoYu', 21);
+insert into product_details value (156, 'Type', '2x2', 21);
+insert into product_details value (157, 'Magnets', 'Magnetic', 21);
+insert into product_details value (158, 'Stock Shades', 'Stickerless (Bright)', 21);
+insert into product_details value (159, 'Feel', 'Smooth', 21);
+insert into product_details value (160, 'Gross Weight', '87g', 21);
+insert into product_details value (161, 'Item Weight', '55.9g', 21);
+insert into product_details value (162, 'Dimensions', '51.0mm', 21);
+-- product id = 22
+insert into product_details value (163, 'Brand', 'X-man', 22);
+insert into product_details value (164, 'Type', '2x2', 22);
+insert into product_details value (165, 'Magnets', 'Magnetic', 22);
+insert into product_details value (166, 'Stock Shades', 'Stickerless (Bright)', 22);
+insert into product_details value (167, 'Feel', 'Smooth', 22);
+insert into product_details value (168, 'Gross Weight', '87g', 22);
+insert into product_details value (169, 'Item Weight', '55.9g', 22);
+insert into product_details value (170, 'Dimensions', '51.0mm', 22);
+-- product id = 23
+insert into product_details value (171, 'Brand', 'X-man', 23);
+insert into product_details value (172, 'Type', '2x2', 23);
+insert into product_details value (173, 'Magnets', 'Magnetic', 23);
+insert into product_details value (174, 'Stock Shades', 'Stickerless (Bright)', 23);
+insert into product_details value (175, 'Feel', 'Smooth', 23);
+insert into product_details value (176, 'Gross Weight', '87g', 23);
+insert into product_details value (177, 'Item Weight', '55.9g', 23);
+insert into product_details value (178, 'Dimensions', '51.0mm', 23);
 
 
 
@@ -497,6 +577,10 @@ delete from product_images where id = 21;
 delete from product_images where id = 22;
 delete from product_images where id = 23;
 delete from product_images where id = 24;
-delete from product_images where id = 25;
+delete from product_images where id = 78;
+
+delete from product_details where product_id = 21;
 
 delete from products where id = 9;
+
+update products set maim_image = 'DaYan_TengYun_2x2_M_Main.jpg' where id = 18;
