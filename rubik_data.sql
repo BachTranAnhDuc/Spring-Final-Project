@@ -270,6 +270,12 @@ insert into products values (51, 'YJ MGC 5X5 M stickerless Speed Cube MGC Magnet
 insert into products values (52, 'Moyu Aochuang WR M 5X5 stickerless', 'MoYu_AoChuang_WR_M_5x5', "<div><h3><b>Product Description</b></h3></div><span>The MoYu AoChuang WR M 5x5 is a major update to MoYu's 5x5 lineup! The buttery, fast, turning is very controllable and is complimented by factory-installed moderate strength magnets. The AoChuang WR M's confidence-inspiring, stable design makes speedsolving a breeze -- your records won't stand a chance!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The AoChuang WR M is the latest in the record-breaking WR series from MoYu.</li><li>This 5x5 is a fantastically smooth, quick, and very high-performance flagship puzzle.</li></ul>", null, null, 1, 1, 37.00, 39.99, 5, 'MoYu_AoChuang_WR_M_5x5_Main.jpg', 1, 1, 1, 1, 3, 7);
 insert into products values (53, 'QiYi MP 5x5 Magnetic', 'QiYi_MP_5x5', "<div><h3><b>Product Description</b></h3></div><span>QiYi MP 5x5 Magnetic is part of QiYi's new mid-range series.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Light, super-fast turning</li><li>Unique turning feel</li><li>Semi-gloss exterior finish</li></ul>", null, null, 1, 1, 24.00, 25.99, 5, 'QiYi_MP_5x5_Main.jpg', 1, 1, 1, 1, 2, 7);
 insert into products values (54, 'QiYi Valk 5 M 5x5 ', 'QiYi_Valk_5_M_5x5 ', "<div><h3><b>Product Description</b></h3></div><span>The QiYi Valk 5 M 5x5 is quickly being recognized as the top 5x5 on the market. After Max Park's immediate world record after obtaining the Valk 5 M it is clear that this speedcube gets results. The smooth, effortless turning and forgiving corner cutting make this 5x5 versatile for any turning style. Strong magnets are installed at the factory to aid with turning accuracy and feel!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The Valk 5 M is a fast, smooth 5x5 from QiYi, famous for setting the current 5x5 single and average world records.</li><li>The first magnetic 5x5 by QiYi, this puzzle features medium/strong magnets, primary internals, and fantastic corner cutting </li><li>We expect this to be one of the top choices for top 5x5 solvers. If you're serious about this event, the Valk 5 M is a must.</li><li>We expect this to be one of the top choices for top 5x5 solvers. If you're serious about this event, the Valk 5 M is a must.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 47.00, 49.99, 5, 'QiYi_Valk_5_M_5x5_Main.jpg', 1, 1, 1, 1, 13, 7);
+insert into products values (55, 'X-Man Shadow V2 M 6x6', 'X_Man_Shadow_V2_M_6x6', "<div><h3><b>Product Description</b></h3></div><span>The X-Man Shadow V2 M 6x6 is the new and improved version of the once ground-breaking, Shadow V1.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>This speed cube features fast turning throughout all of the layers along with moderate strength magnets to assist with turning accuracy and smoothness. We were very happy with this upgrade and expect this to be the favorite of many!</li></ul>", null, null, 1, 1, 43.00, 44.99, 5, 'X_Man_Shadow_V2_M_6x6_Main.jpg', 1, 1, 1, 1, 14, 8);
+insert into products values (56, 'GAN Megaminx M, Pentagonal Magnetic Speed Cube, Stickerless', 'GAN_Megaminx', "<div><h3><b>Product Description</b></h3></div><span>The GAN Megaminx is a light weight, factory magnetic megaminx which utilizes GAN's popular GES spring system. This item comes with four different GES spring options which are easily interchangeable and offer a different feel. Same as other GAN cubes, this item features exposed moderate strength magnets to improve performance and feel.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>4oz/113g LIGHTWEIGHT - The first Megaminx of GAN is a product with less weight. It is even 15% lighter than other megaminx on the market. Your fingers will remain energetic after hundreds of solving.</li><li>INNER STRUCTURE MATTERS - To keep it light and stable, GAN Megaminx features 12-axis IPG core inside, made from carbon steel and high-strength plastic. It's also tunable with interchangeable GES nuts.</li><li>GOT EVERYTHING TO BE SMOOTH - Your every single move is aligned and positioned by 120 magnets; And your long-term progress is secured by lubricant long-lasting honeycomb touchface.</li><li>DETAILS YOU'D LIKE TO KNOW - 42°/25° corner cutting; small arc design on every tile of corner pieces; frosted stickerless surface; anti-POP & anti-corner twist.</li><li>CONNECTED WITH GAN TEAM - By choosing GAN Cube store, you are choosing the world's most successful 3x3 brand. Here you can have the latest news of GAN products, join fans group, or even make a sound to future models. No worry about missing accessories or unpleasant experience, our CS Team will make you satisfied.</li></ul>", null, null, 1, 1, 56.00, 57.99, 5, 'GAN_Megaminx_Main.jpg', 1, 1, 1, 1, 4, 16);
+insert into products values (57, 'DaYan Megaminx V2 Magnetic', 'DaYan_Megaminx_V2', "<div><h3><b>Product Description</b></h3></div><span>The DaYan Megaminx V2 Magnetic is the revival of the once-popular DaYan Megaminx. This version features 120 factory-installed magnets to assist with stability and control and the sculpted exterior helps improve grip which is incredibly important for megamix solvers. This lightweight design is already loved by many!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>MAGNETIC MEGAMINX: The DaYan MegaMinx v2 M is the upgraded version of its previous version. Compared to the v1, the v2 features a more compact design, lower weight, improved corner-cutting, and an overall more stable feel. The optimized weight of 99g combined with reduced side length provides more relaxing turning experience and makes it capable for speed solving.</li><li>SPECIFICATIONS: Size (in mm) – 30 x 30 x 30 | Product Weight (in grams) – 99 | Package Weight (in grams) – 174 | Package Contents 1 Unit Cube, 1 Cube Pouch, Screwdriver, Extra springs| Recommended Age Group (in years) : 3+ | Suitable for: Kids, Men, Women, Girls, Boys, College and school students, Office goers.</li><li>EASY TO ASSEMBLE AND LUBRICATE: Don't worry if the cube pops out (dis-assembles)while solving, it's very easy and a fun learning experience to assemble it back; Use proper lubrication to avoid any spring noise or lock-ups during solves and increases the smoothness of your cube, giving it longer life; Cubes normally become smoother after a few solves, so do not worry if it is turning a bit rough out of the box;If you face any difficulty in operating the cube let us know,we will be happy to help</li></ul>", null, null, 1, 1, 31.00, 32.99, 5, 'DaYan_Megaminx_V2_Main.jpg', 1, 1, 1, 1, 5, 16);
+insert into products values (58, 'Galaxy V2 M Magnetic Sculpture Stickerless X-Man Galaxy Megaminx V2 M', 'X_Man_Galaxy_Megaminx_V2_M', "<div><h3><b>Product Description</b></h3></div><span>The X-Man Galaxy Megaminx V2 (Sculpted) is the updated version of the world-famous X-Man Galaxy Megaminx (Sculpted).&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Galaxy Megaminx V2 M (Sculpted) is the QiYi magnetized version of the X-Man Galaxy Megaminx V2.</li><li>The puzzle has medium strength magnets that provide a very tactile feedback when the layers align. This version has sculpted ridges on each piece to aid turning and grip.</li><li>This is a fantastic Megaminx. It is a more stable version of the Galaxy v2, which was the intent. Unlike many other mass-produced magnetic puzzles, the magnets are fairly strong. Personally, I would have preferred very slightly weaker magnets, but I also don't have a problem with how they are. The strength just makes it slightly more tiring to do many solves in a row compared to a non-magnetic puzzle or a puzzle with weaker magnets. Out of the box, it was very tight and dry. After adding a varie</li></ul>", null, null, 1, 1, 28.00, 29.99, 5, 'X_Man_Galaxy_Megaminx_V2_M_Main.jpg', 1, 1, 1, 1, 14, 16);
+insert into products values (59, 'GAN Skewb, Magnetic Speed Cube Gans Skweb', 'GAN_Magnetic_Skewb', "<div><h3><b>Product Description</b></h3></div><span>The GAN Skewb is a massive advancement in Skewb mechanism! This Skewb features a lot of GAN's innovative features that put them on the map such as their GES tensioning system and the new Core/Corner Magnet system that was recently introduced!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>LIGHTWEIGHT AND REINVENTED - Only 81 grams, GAN Skewb is the most lightweight skewb puzzle in the market. Meanwhile it is first time with built-in magnets in the core. Total 2 versions available and you're viewing the one with 32 magnets.</li><li>MAGNETIC CORE POSITIONING - Introducing the new GAN Magnetic Core-Positioning System. In this system, GAN’s core has one side of the magnets, and edge pieces the other. Like an upgraded engine, it provides new sense of positioning with low starting resistance and better aligning. You'll feel super fast and super smooth in the very first turns!</li><li>EASILY TUNED DUAL ADJUSTMENT - Don't know which handfeel suits you best? Try our GES PRO design to explore easy tuning! Each axis has 4 kinds of nut distances and 6 levels elasticity. Altogether 24 configurations can be achieved using our accessories. Step-by-step instruction included!</li><li>DETAILS YOU'D LIKE TO KNOW - Includes lots of technology to give you the best skewb solving experience: 90° corner cutting; smooth tracks and round curves; scratch-proof stickerless surface; honeycomb touchface; all-symmetry lock up tiles; and more.</li></ul>", null, null, 1, 1, 30.00, 31.99, 5, 'GAN_Magnetic_Skewb_Main.jpg', 1, 1, 1, 1, 4, 19);
+insert into products values (60, 'MoYu AoYan Magnetic Skewb', 'MoYu_AoYan_Magnetic_Skewb', "<div><h3><b>Product Description</b></h3></div><span>The MoYu AoYan Magnetic Skewb is a new design featuring interchangeable center caps that have a large dimple that can improve grip and comfort for some speedcubers (stickerless version only). Additionally the AoYan features magnets to improve grip and improved corner cutting.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Accessories: display case, concave caps (stickerless version only) and screwdriver</li></ul>", null, null, 1, 1, 17.00, 18.99, 5, 'MoYu_AoYan_Magnetic_Skewb_Main.jpg', 1, 1, 1, 1, 3, 19);
 
 
 
@@ -278,7 +284,7 @@ insert into products values (54, 'QiYi Valk 5 M 5x5 ', 'QiYi_Valk_5_M_5x5 ', "<d
 
 
 
-insert into products values (1, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li></ul>", null, null, 1, 1, 7.00, 9.99, 5, '.jpg', 1, 1, 1, 1, 7, 7);
+insert into products values (1, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li></ul>", null, null, 1, 1, 31.00, 32.99, 5, '.jpg', 1, 1, 1, 1, 5, 19);
 
 -- INSERT INTO product_images
 -- product id = 1
@@ -565,7 +571,34 @@ insert into product_images value (227, 'QiYi_Valk_5_M_5x5_Extras_1.jpg', 54);
 insert into product_images value (228, 'QiYi_Valk_5_M_5x5_Extras_2.jpg', 54);
 insert into product_images value (229, 'QiYi_Valk_5_M_5x5_Extras_3.jpg', 54);
 insert into product_images value (230, 'QiYi_Valk_5_M_5x5_Extras_4.jpg', 54);
+-- product id = 55
+insert into product_images value (231, 'X_Man_Shadow_V2_M_6x6_Extras_1.jpg', 55);
+insert into product_images value (232, 'X_Man_Shadow_V2_M_6x6_Extras_2.jpg', 55);
+insert into product_images value (233, 'X_Man_Shadow_V2_M_6x6_Extras_3.jpg', 55);
+insert into product_images value (234, 'X_Man_Shadow_V2_M_6x6_Extras_4.jpg', 55);
+-- product id = 56
+insert into product_images value (235, 'GAN_Megaminx_Extras_1.jpg', 56);
+insert into product_images value (236, 'GAN_Megaminx_Extras_2.jpg', 56);
+insert into product_images value (237, 'GAN_Megaminx_Extras_3.jpg', 56);
+insert into product_images value (238, 'GAN_Megaminx_Extras_4.jpg', 56);
+insert into product_images value (239, 'GAN_Megaminx_Extras_5.jpg', 56);
+-- product id = 57
+insert into product_images value (240, 'DaYan_Megaminx_V2_Extras_1.jpg', 57);
+insert into product_images value (241, 'DaYan_Megaminx_V2_Extras_2.jpg', 57);
+insert into product_images value (242, 'DaYan_Megaminx_V2_Extras_3.jpg', 57);
+-- product id = 58
+insert into product_images value (243, 'X_Man_Galaxy_Megaminx_V2_M_Extras_1.jpg', 58);
+insert into product_images value (244, 'X_Man_Galaxy_Megaminx_V2_M_Extras_2.jpg', 58);
+insert into product_images value (245, 'X_Man_Galaxy_Megaminx_V2_M_Extras_3.jpg', 58);
+insert into product_images value (246, 'X_Man_Galaxy_Megaminx_V2_M_Extras_4.jpg', 58);
+insert into product_images value (247, 'X_Man_Galaxy_Megaminx_V2_M_Extras_5.jpg', 58);
 
+-- product id = 58
+insert into product_images value (248, 'GAN_Magnetic_Skewb_Extras_1.jpg', 59);
+insert into product_images value (249, 'GAN_Magnetic_Skewb_Extras_2.jpg', 59);
+insert into product_images value (250, 'GAN_Magnetic_Skewb_Extras_3.jpg', 59);
+insert into product_images value (251, 'GAN_Magnetic_Skewb_Extras_4.jpg', 59);
+insert into product_images value (252, 'GAN_Magnetic_Skewb_Extras_5.jpg', 59);
 
 
 
@@ -1051,6 +1084,56 @@ insert into product_details value (416, 'Gross Weight', '87g', 54);
 insert into product_details value (417, 'Item Weight', '55.9g', 54);
 insert into product_details value (418, 'Dimensions', '51.0mm', 54);
 insert into product_details value (419, 'Dimensions', '51.0mm', 54);
+-- product id = 55
+insert into product_details value (420, 'Brand', 'X-man Design', 55);
+insert into product_details value (421, 'Type', '5x5', 55);
+insert into product_details value (422, 'Magnets', 'Magnetic', 55);
+insert into product_details value (423, 'Stock Shades', 'Stickerless (Bright)', 55);
+insert into product_details value (424, 'Feel', 'Smooth', 55);
+insert into product_details value (425, 'Gross Weight', '87g', 55);
+insert into product_details value (426, 'Item Weight', '55.9g', 55);
+insert into product_details value (427, 'Dimensions', '51.0mm', 55);
+insert into product_details value (428, 'Dimensions', '51.0mm', 55);
+-- product id = 56
+insert into product_details value (429, 'Brand', 'GAN', 56);
+insert into product_details value (430, 'Type', 'Megaminx', 56);
+insert into product_details value (431, 'Magnets', 'Magnetic', 56);
+insert into product_details value (432, 'Stock Shades', 'Stickerless (Bright)', 56);
+insert into product_details value (433, 'Feel', 'Smooth', 56);
+insert into product_details value (434, 'Gross Weight', '87g', 56);
+insert into product_details value (435, 'Item Weight', '55.9g', 56);
+insert into product_details value (436, 'Dimensions', '51.0mm', 56);
+insert into product_details value (437, 'Dimensions', '51.0mm', 56);
+-- product id = 57
+insert into product_details value (438, 'Brand', 'DaYan', 57);
+insert into product_details value (439, 'Type', 'Megaminx', 57);
+insert into product_details value (440, 'Magnets', 'Magnetic', 57);
+insert into product_details value (441, 'Stock Shades', 'Stickerless (Bright)', 57);
+insert into product_details value (442, 'Feel', 'Smooth', 57);
+insert into product_details value (443, 'Gross Weight', '87g', 57);
+insert into product_details value (444, 'Item Weight', '55.9g', 57);
+insert into product_details value (445, 'Dimensions', '51.0mm', 57);
+insert into product_details value (446, 'Dimensions', '51.0mm', 57);
+-- product id = 58
+insert into product_details value (447, 'Brand', 'X-man Design', 58);
+insert into product_details value (448, 'Type', 'Megaminx', 58);
+insert into product_details value (449, 'Magnets', 'Magnetic', 58);
+insert into product_details value (450, 'Stock Shades', 'Stickerless (Bright)', 58);
+insert into product_details value (451, 'Feel', 'Smooth', 58);
+insert into product_details value (452, 'Gross Weight', '87g', 58);
+insert into product_details value (453, 'Item Weight', '55.9g', 58);
+insert into product_details value (454, 'Dimensions', '51.0mm', 58);
+insert into product_details value (455, 'Dimensions', '51.0mm', 58);
+-- product id = 59
+insert into product_details value (456, 'Brand', 'GAN', 59);
+insert into product_details value (457, 'Type', 'Skew-b', 59);
+insert into product_details value (458, 'Magnets', 'Magnetic', 59);
+insert into product_details value (459, 'Stock Shades', 'Stickerless (Bright)', 59);
+insert into product_details value (460, 'Feel', 'Smooth', 59);
+insert into product_details value (461, 'Gross Weight', '87g', 59);
+insert into product_details value (462, 'Item Weight', '55.9g', 59);
+insert into product_details value (463, 'Dimensions', '51.0mm', 59);
+insert into product_details value (464, 'Dimensions', '51.0mm', 59);
 
 
 

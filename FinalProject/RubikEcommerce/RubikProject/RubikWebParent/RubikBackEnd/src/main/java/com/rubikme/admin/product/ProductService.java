@@ -20,7 +20,7 @@ import com.rubikme.common.entity.Product;
 @Transactional
 public class ProductService {
 	
-	public static final int PRODUCTS_PER_PAGE = 4;
+	public static final int PRODUCTS_PER_PAGE = 6;
 	
 	@Autowired
 	private ProductRepository repo;
