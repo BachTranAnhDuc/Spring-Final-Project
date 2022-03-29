@@ -3,23 +3,37 @@
 		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:replace="fragments :: page_head('Home - Rubik Shop', 'none')">
 </head>
-<body>
+<body>	
 	<div class="container-scroller">
-		<div th:replace="fragments :: menu"></div>
-		<div>
-			<h1>Rubik Control Panel</h1>
-			Welcome
-			<a sec:authentication="principal.fullname"
-				th:href="@{/account/}">
-			</a>
-			&nbsp;
-			<span sec:authentication="principal.authorities"></span>
+		<div th:replace="front_fragments :: nav_head"></div>
+		
+		<div class="container-fluid page-body-wrapper">
+			<nav th:replace="front_fragments :: nav_left"></nav>
+			
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+						<div class="col-12">
+							<h1>Rubik Control Panel</h1>
+							<h2>Wellcome!!</h2>
+							<a sec:authentication="principal.fullname"
+								th:href="@{/account/}">
+							</a>
+							&nbsp;
+							<span sec:authentication="principal.authorities"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div th:replace="fragments :: footer_frag"></div>
+			</div>
 		</div>
-		<div th:replace="fragments :: footer_frag"></div>
 	</div>
 	
 	<script type="text/javascript">
 		
 	</script>
+	<script type="text/javascript"
+		th:src="@{/js/template.js}"></script>
 </body>
 </html>
