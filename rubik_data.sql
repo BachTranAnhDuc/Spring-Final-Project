@@ -239,17 +239,46 @@ insert into products values (20, 'MonsterGO 2x2', 'MonsterGO_2x2', "<div><h3><b>
 insert into products values (21, 'X-MAN FLARE 2X2 M', 'X-MAN_FLARE_2X2_M', "<div><h3><b>Product Description</b></h3></div><span>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating!</li><li>The Anti-stick Degin can prevent the cube viscosity,make the cube solve smoothlt.Optimized parts of the round corner pieces,makes work coordinate effectively.enhance the corner cutting ability,make it more smooth when it solves</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style</li></ul></ul>", null, null, 1, 1, 15.00, 16.99, 5, 'X-MAN_FLARE_2X2_M_Main.jpg', 1, 1, 1, 1, 14, 4);
 insert into products values (22, 'ANGSTROM X-MAN FLARE 2X2 M', 'ANGSTROM_X-MAN_FLARE_2X2_M', "<div><h3><b>Product Description</b></h3></div><span>The Angstrom X-Man Flare 2x2 M is one of our premium versions of QiYi’s flagship 2x2 in the X-Man series featuring adjustable magnets. It is set up with Angstrom Gravitas, Angstrom Dignitas, and DNM-37 on the pieces, creating a smooth and controllable turing experience, especially after breaking it in.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating!</li><li>The Anti-stick Degin can prevent the cube viscosity,make the cube solve smoothlt.Optimized parts of the round corner pieces,makes work coordinate effectively.enhance the corner cutting ability,make it more smooth when it solves</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style</li></ul></ul>", null, null, 1, 1, 25.00, 26.99, 5, 'ANGSTROM_X-MAN_FLARE_2X2_M_Main.jpg', 1, 1, 1, 1, 14, 4);
 insert into products values (23, 'PRO SHOP X-MAN FLARE 2X2 M', 'PRO_SHOP_X-MAN_FLARE_2X2_M', "<div><h3><b>Product Description</b></h3></div><span>The Pro Shop X-Man Flare 2x2 M is one of our premium versions of QiYi’s flagship 2x2 in the X-Man series featuring adjustable magnets. It is set up with Traxxas-30k, Lubicle Speedy, and DNM-37 on the pieces, creating a fast and controllable turing experience.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Flare 2x2 M is a new magnetic 2x2 by QiYi sub-brand, X-Man Design. The Flare is the first 2x2 to feature adjustable magnets. Using adjustable switches located in the red, green, white piece, the Flare has three different magnetic settings based on the positions of the switches. Apart from its elegant and creative adjustment system, the Flare has a satisfyingly light and crunchy feel.</li></ul></ul>", null, null, 1, 1, 22.00, 23.99, 5, 'ANGSTROM_X-MAN_FLARE_2X2_M_Main.jpg', 1, 1, 1, 1, 14, 4);
+insert into products values (24, 'YUXIN HUANGLONG 3X3 M', 'YUXIN_HUANGLONG_3X3_M', "<div><h3><b>Product Description</b></h3></div><span>The latest flagship 3x3 speed cube from Yuxin is a light and airy puzzle that offers fast, snappy turning with a very stable feel. All of this at what we consider to be a relatively low price point. This magnetic version has a stronger magnet feel than most other factory magnetized puzzles.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The latest flagship 3x3 from Yuxin is a light and airy puzzle that offers fast, snappy turning with a very stable feel. All of this at what we consider to be a relatively low price point.</li><li>This speedcube is AMAZING!! I just got it in stickerless, With lubicle Black, and I love it so much!! It’s extremly fast(almost too fast, but I’ll get used to it) and quiet. I love this thing and I recommend it to anyone!</li><li>Great out of the box, but dry. Tensioned evenly too. When I took it apart to 'Lubicle Black' the core, I found each center piece spring set to contain 3x washers! There are 2x washers at the base of the spring and a washer at the screw head surface. Lubing it still helped a little. After hitting it with Angstrom Gravitas and Dignitas, I tensioned for 45 degree corner cutting with slight effort and broke it in. Finally some dnm-37, and wow! After lube, I can really feel the magnetic strength. I t</li><li>I think that this cube is now my main. This is one of the greatest cubes I’ve ever felt and I’ve felt a lot. This flagship cube has great inner pieces that help the cube go smoothly when solving. It is very fast right out of the box which is really good. I like fast and uncontrollable cubes so this one is for me. I’ve heard that the Angstrom Reasearch lube has worked really nice on this too. I really have enjoyed this cube. It is affordable and reliable.</li><li>This magnetic version has a stronger magnet feel than most other factory magnetized puzzles.</li></ul></ul>", null, null, 1, 1, 23.00, 24.99, 5, 'YUXIN_HUANGLONG_3X3_M_Main.jpg', 1, 1, 1, 1, 15, 5);
+insert into products values (25, 'GoCube-X 3x3', 'GoCube_X_3x3', "<div><h3><b>Product Description</b></h3></div><span>The GoCube-X 3x3 is a new, less expensive smart cube from the famous brand. This one is non-magnetic, but still has all of the tracking of the original GoCube!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>SMART & CONNECTED - LEARN how to solve the iconic puzzle Cube - FINALLY EVERYONE CAN DO IT!! IMPROVE your game, PLAY & BATTLE online with other cubers from all over the world. The GoCube is the perfect STEM toy, it is educational and fun, and adds tons of value to screen time! It fits all ages and capabilities and is the perfect gift.</li><li>AWARD-WINNING - Awarded by the Parent’s Choice and the Tillywig Toy (Brain Toy). One of the “BEST TECHY Gifts” (WSJ) and “Best STEM Toys” two yeras in a row (WIRED). 4.6 stars with over 2,000 reviews!, Superb customer service! Full with technology, 3D real-time tracking, smart sensors, IMU, lighting system, comes with the full set of accessories! 1 YEAR WARRANTY!</li><li>LEARN & IMPROVE - Use the mobile application to learn how to solve the cube, and track your electronic cube progress. Get accurate stats to improve your solve time, challenge yourself and get better! Sharpen your skills and join our global leaderboard.</li><li>CONNECT WITH FRIENDS - Play classic games like simon or CubeHero, Join our global community of cubers and battle with friends and players from all over the world!!</li><li>INNOVATIVE & EDUCATIONAL - The GoCube teaches the fundamentals of Problem Solving and develops Spatial Awareness, Memorization Skills and Hand & Eye Coordination. It helps to build Self-Esteem and Confidence. Oh, the look in their eyes when they solve it for the first time… The GoCube is an amazing brain-teaser gadget - Get it for yourself and for others!</li></ul>", null, null, 1, 1, 37.00, 39.99, 5, 'GoCube_X_3x3_Main.jpg', 1, 1, 1, 1, 9, 5);
+insert into products values (26, 'GoCube The Connected Electronic Bluetooth Cube', 'GoCube_Edge_3x3', "<div><h3><b>Product Description</b></h3></div><span>One of the first smart cubes ever released, The GoCube Edge is a magnetic 3x3 equipped with Bluetooth 5.0. This model features a novel pillowed design, giving it a cool, futuristic appearance. GoCube’s accompanying app allows you to race with cubers around the world, play mini-games, learn, and compete in speedcubing events.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>SMART & CONNECTED - LEARN how to solve the iconic puzzle Cube - FINALLY EVERYONE CAN DO IT!! IMPROVE your game, PLAY & BATTLE online with other cubers from all over the world. The GoCube is the perfect STEM toy, it is educational and fun, and adds tons of value to screen time! It fits all ages and capabilities and is the perfect gift.</li><li>AWARD-WINNING - Awarded by the Parent’s Choice and the Tillywig Toy (Brain Toy). One of the “BEST TECHY Gifts” (WSJ) and “Best STEM Toys” two yeras in a row (WIRED). 4.6 stars with over 2,000 reviews!, Superb customer service! Full with technology, 3D real-time tracking, smart sensors, IMU, lighting system, comes with the full set of accessories! 1 YEAR WARRANTY!</li><li>LEARN & IMPROVE - Use the mobile application to learn how to solve the cube, and track your electronic cube progress. Get accurate stats to improve your solve time, challenge yourself and get better! Sharpen your skills and join our global leaderboard.</li><li>CONNECT WITH FRIENDS - Play classic games like simon or CubeHero, Join our global community of cubers and battle with friends and players from all over the world!!</li><li>INNOVATIVE & EDUCATIONAL - The GoCube teaches the fundamentals of Problem Solving and develops Spatial Awareness, Memorization Skills and Hand & Eye Coordination. It helps to build Self-Esteem and Confidence. Oh, the look in their eyes when they solve it for the first time… The GoCube is an amazing brain-teaser gadget - Get it for yourself and for others!</li></ul>", null, null, 1, 1, 77.00, 79.99, 5, 'GoCube_Edge_3x3_Main.jpg', 1, 1, 1, 1, 9, 5);
+insert into products values (27, 'Monster Go 3Ai, 3x3 Speed Cube MG356 Smart Cube', 'MonsterGO_AI_3x3', "<div><h3><b>Product Description</b></h3></div><span>The MonsterGO AI 3x3 is a smart cube designed for kids and beginners. Featuring a sturdy mechanism and support from the CubeStation App, this is a cube that will have you or the budding cuber in your life solving in no time!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>LONG-LASTING EDUCATIONAL SMART TOY: Monster Go Smart Cube is the 3x3 cube with compatible app that helps you solve it as a beginner and improve yourself as a cuber. With inside replaceable battery, it offers a 280-hour play time. Awesome STEM toy!</li><li>EASY TO PICK UP, HARD TO PUT DOWN: With in-app video tutorial and 7-step solving instruction, even a beginner can quickly learn to solve individually. Get one and you'll soon be attracted and addicted to this smart cube.</li><li>TRACKING AND BATTLE, AS ALWAYS: Monster Go Smart Cube measures and saves your solve in 4 parameters: Time/Move/TPS/Fluency. Online battle is also available in MG3 Ai. Match same level opponent within seconds, anytime, anywhere!</li><li>ALSO A GOOD CUBE FOR SPEED CUBING: Intelligence and performance are perfectly combined in MG3 Ai. Weight only 81g while adopting sensors, battery, circuit board iniside, and still keeps great handfeel and excellent corner cutting. Turns smoothly!</li><li>SATISFACTION GUARANTEED OR YOUR MONEY BACK - The cube goes through strict testing and comes in exquisite package. If for any reason you are not happy with this 3x3 speed cube, just tell us and a replacement or a full refund will be applied. Go get this little puzzle and start exploring the world of cubing!</li></ul>", null, null, 1, 1, 27.00, 29.99, 5, 'MonsterGO_AI_3x3_Main.jpg', 1, 1, 1, 1, 11, 5);
+insert into products values (28, 'Eastsheen 3x3x3 Cube with Wall Stickers', 'Eastsheen_3x3x3_Cube', "<div><h3><b>Product Description</b></h3></div><span>That is a perfect rubik!!!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The Eastsheen 3x3x3 Cube with Wall Stickers is a standard Eastsheen 3x3 with stickers applied that have a marble texture look to them.</li></ul>", null, null, 1, 1, 12.00, 14.99, 5, 'Eastsheen_3x3x3_Cube_Main.jpg', 1, 1, 1, 1, 7, 5);
+insert into products values (29, 'Cuberspeed YJ MGC evo Magnetic stickerless 3x3', 'YJ_MGC_Evo_3x3', "<div><h3><b>Product Description</b></h3></div><span>The YJ MGC Evo is the latest 3x3 in the MGC line. This cube features 6 magnetic adjustments and 10 compression adjustments. All of these can be changed with just your hand and this small screwdriver that comes with the puzzle.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The YJ MGC Evo is the latest 3x3 in the MGC line. This cube features 6 magnetic adjustments and 10 compression adjustments. All of these can be changed with just your hand and this small screwdriver that comes with the puzzle.</li></ul>", null, null, 1, 1, 24.00, 25.99, 5, 'YJ_MGC_Evo_3x3_Main.jpg', 1, 1, 1, 1, 1, 5);
+insert into products values (30, 'Cubelelo MsCube Ms3-v1 3x3 Stickerless Standard', 'MsCube_MS3_V1_M', "<div><h3><b>Product Description</b></h3></div><span>The MsCUBE Ms3-v1 is a new magnetic speedcube by up-and-coming MsCUBE. Designed by a former GAN designer, the Ms3-v1 has a crunchy, tactile feel with a high degree of flex. The Enhanced edition features a dual magnetic positioning system. If you’re curious about a speedcube made by a brand new manufacturer, give this one a try!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>PREMIUM MAGNETIC BUDGET CUBE: The MsCube Ms3-v1 3x3 is the new and latest flagship 3x3 by up-coming manufacturer MsCUBE, designed by a former GAN designer. The Ms3-v1 includes all new magnetic core design and spider web design. This puzzle features a smooth, soft feel and it comes in two versions Standard & Enhanced.</li><li>SPECIFICATIONS: Size (in mm) – 55.5 x 55.5 x 55.5 | Product Weight (in grams) - 79 | Package Weight (in grams) – 218 | Package Contents - 1 Unit Cube, Cube Pouch, Cube stand, Manual, Card, Extra Springs and Alternative Shaft | Recommended Age Group (in years) : 3 + | Suitable for : Kids, Men, Women, Girls, Boys, College and school students, Office goers.</li><li>EASY TO ASSEMBLE AND LUBRICATE: Don't worry if the cube pops out (dis-assembles)while solving, it's very easy and a fun learning experience to assemble it back; Use proper lubrication to avoid any spring noise or lock-ups during solves and increases the smoothness of your cube, giving it longer life; Cubes normally become smoother after a few solves, so do not worry if it is turning a bit rough out of the box;If you face any difficulty in operating the cube let us know,we will be happy to help</li><li>BENEFITS-GET RID OF SCREEN ADDICTION: Give your child more playtime and reduce their addiction to mobile gaming and excessive screen-time; Helps in enhancing concentration, analytical and problem solving skills,memory and mind;Builds better hand-eye coordination,patience in solving real life problems and handling anxiety; It's a brain exercise for all ages to help increase the intelligence of kids, release work pressure of the adults, to help prevent a decline in memory of the elderly</li><li>PERFECT GIFT IDEA: No one falls out of love with the magic puzzle cube. Perfect Festive gift, Valentines, Friendship day,Holi, Diwali, Rakshabandhan (rakhi),Christmas Gift,Birthday Gift for kids, students, friends, college goers, adults, men, women, girls, boys, school students; Amaze everyone with your cubing skills; keep it on office desk as decorative item, ; This classic magic cube puzzle game will never go out of style, gift your loved ones today </li></ul>", null, null, 1, 1, 32.00, 34.99, 5, 'MsCube_MS3_V1_M_Main.jpg', 1, 1, 1, 1, 12, 5);
+insert into products values (31, 'Valk 3 Elite M Magnetic 3x3x3 Stickerless', 'Valk_3_Elite_M', "<div><h3><b>Product Description</b></h3></div><span>The Valk 3 is one of the most-anticipated cubes ever. Personally endorsed and used by renowned speedcuber Mats Valk himself, the Valk 3 has been touted as the premier speedcube from popular cube manufacturer QiYi/MoFangGe.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The Valk 3 Elite is the long-awaited flagship from the famous Valk line by QiYi MoFangGe.</li><li>This cube features a brand new magnetic system with three different levels of strength. The moderate and strong versions features a 'twin-magnetic' scheme and uses 'center-edge' plus 'corner-edge' magnetism for positioning </li><li>The Valk 3 Elite comes with a variety of accessory packs that include magnetic center caps, spring accessories, cleaning cloth, extra logos, and a Mats Valk signature card.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style</li></ul>", null, null, 1, 1, 47.00, 49.99, 5, 'Valk_3_Elite_M_Main.jpg', 1, 1, 1, 1, 13, 5);
+insert into products values (32, 'MoYu WeiLong AI Bluetooth 3x3', 'MoYu_WeiLong_AI_3x3', "<div><h3><b>Product Description</b></h3></div><span>The WeiLong AI is a new smart cube from MoYu. The mechanism is based on the WR M 2020, so its performance is not compromised like all previous smart cubes. This puzzle also features a gyroscope to track rotations.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MoYu WeiLong AI Bluetooth 3x3 is MoYu's first smart cube release! What immediately sets the WeiLong AI apart from other smart cubes is the cube itself.</li><li>The cube is essentially a WR M 2020 with a gyroscope which means that you will be able to speed cube without any limitations!</li><li>The free downloadable app contains many features that will help you not only improve your times but also have tons of fun!</li><li></li>Disclaimer: Make sure the bottom of the charging base is set to 'C'. Only use setting 'D' if the cube is not charging normally. For more information, refer to the included documentation.</ul>", null, null, 1, 1, 63.00, 64.99, 5, 'MoYu_WeiLong_AI_3x3_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (33, 'The Yoo Cube Deluxe 3x3', 'The_Yoo_Cube_Deluxe_3x3', "<div><h3><b>Product Description</b></h3></div><span>The Yoo Cube Deluxe is the ultimate Yoo Cube. This custom built magnetic core WeiLong WR M 2021 MagLev has a smooth, creamy texture from the Cubicle Labs Mystic, Angstrom Dignitas, Weight 5, and DNM-37 on the pieces and Weight 5 in the core. Out of the box, it has a strong magnetic setting and medium spring compression.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li></ul>", null, null, 1, 1, 57.00, 59.99, 5, 'The_Yoo_Cube_Deluxe_3x3_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (34, 'Cuberspeed Moyu Weilong WR M 2021 3x3 stickerless', 'MAX_WeiLong_WR_M_3x3', "<div><h3><b>Product Description</b></h3></div><span>The MAX Weilong WR M is a smooth, controllable 3x3 with excellent turning. This puzzle features moderately strong factory-installed magnets, a ridgeless design, and dual-adjustment tensioning system.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The WeiLong WR M 2021 is the latest flagship 3x3 from MoYu. This updated design now features adjustable magnets along with the standard MoYu spring compression/tension system. The WR M 2021 offers a softer feel and more customization at a lower price!</li><li>Dual-adjustment system (9 levels of elasticity) and 5 levels of magnet strengths give you more choices of adjusting.</li><li>The Weilong WRM2021 has a size of 55mm, smaller than conventional cubes, more controllable, easier to hold and grip. This promotes better competition and practice results and speed!</li><li>48 pcs magnets are properly placed in order to provide a good turning experience, making the cube more controllable and stable!</li><li>Unique 9-level dual adjustment design on the tensioning, you can adjust the elasticity on your own preference.</li></ul>", null, null, 1, 1, 50.00, 51.99, 5, 'MAX_WeiLong_WR_M_3x3_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (35, 'ROWE’S WEILONG WR M 3X3 LITE', 'ROWE_WEILONG_WR_M_3X3_LITE', "<div><h3><b>Product Description</b></h3></div><span>Rowe’s Weilong WR M 3x3 Lite is a fast and reliable 3x3. This puzzle is custom magnetized with lite magnets and is lubed with a balanced mixture of Weight 5 and Weight 1 silicone. Gear compression comes preset at the fourth setting. This setup, created by Cubicle Pro Shop manager Rowe Hessler, is designed specifically for 3x3 Blindfolded, and is an exact replica of his multiple blindfolded mains. &nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MoYu WeiLong WR M 2021 Lite is just like the WeiLong WR M 2021 except this one comes with fewer accessories. If you want the cube without all of the extras, this is what you're looking for.</li><li>Dual-adjustment system (9 levels of elasticity) and 5 levels of magnet strengths give you more choices of adjusting.</li><li>The Weilong WRM2021 has a size of 55mm, smaller than conventional cubes, more controllable, easier to hold and grip. This promotes better competition and practice results and speed!</li><li>48 pcs magnets are properly placed in order to provide a good turning experience, making the cube more controllable and stable!</li></ul>", null, null, 1, 1, 43.00, 44.99, 5, 'ROWES_WEILONG_WR_M_3X3_LITE_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (36, 'TOMMY CHERRYS WEILONG GTS3 M', 'TOMMY_CHERRYS_WEILONG_GTS3_M', "<div><h3><b>Product Description</b></h3></div><span>Rowe’s Weilong WR M 3x3 Lite is a fast and reliable 3x3. This puzzle is custom magnetized with lite magnets and is lubed with a balanced mixture of Weight 5 and Weight 1 silicone. Gear compression comes preset at the fourth setting. This setup, created by Cubicle Pro Shop manager Rowe Hessler, is designed specifically for 3x3 Blindfolded, and is an exact replica of his multiple blindfolded mains. &nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MoYu WeiLong WR M 2021 Lite is just like the WeiLong WR M 2021 except this one comes with fewer accessories. If you want the cube without all of the extras, this is what you're looking for.</li><li>Dual-adjustment system (9 levels of elasticity) and 5 levels of magnet strengths give you more choices of adjusting.</li><li>The Weilong WRM2021 has a size of 55mm, smaller than conventional cubes, more controllable, easier to hold and grip. This promotes better competition and practice results and speed!</li><li>48 pcs magnets are properly placed in order to provide a good turning experience, making the cube more controllable and stable!</li></ul>", null, null, 1, 1, 47.00, 48.99, 5, 'TOMMY_CHERRYS_WEILONG_GTS3_M_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (37, 'MOYU WEILONG WR M 3X3', 'MOYU_WEILONG_WR_M_3X3', "<div><h3><b>Product Description</b></h3></div><span>Rowe’s Weilong WR M 3x3 Lite is a fast and reliable 3x3. This puzzle is custom magnetized with lite magnets and is lubed with a balanced mixture of Weight 5 and Weight 1 silicone. Gear compression comes preset at the fourth setting. This setup, created by Cubicle Pro Shop manager Rowe Hessler, is designed specifically for 3x3 Blindfolded, and is an exact replica of his multiple blindfolded mains. &nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MoYu WeiLong WR M 2021 Lite is just like the WeiLong WR M 2021 except this one comes with fewer accessories. If you want the cube without all of the extras, this is what you're looking for.</li><li>Dual-adjustment system (9 levels of elasticity) and 5 levels of magnet strengths give you more choices of adjusting.</li><li>The Weilong WRM2021 has a size of 55mm, smaller than conventional cubes, more controllable, easier to hold and grip. This promotes better competition and practice results and speed!</li><li>48 pcs magnets are properly placed in order to provide a good turning experience, making the cube more controllable and stable!</li></ul>", null, null, 1, 1, 37.00, 38.99, 5, 'MOYU_WEILONG_WR_M_3X3_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (38, 'MOYU WEILONG GTS2 M 3X3', 'MOYU_WEILONG_GTS2_M_3X3', "<div><h3><b>Product Description</b></h3></div><span>Rowe’s Weilong WR M 3x3 Lite is a fast and reliable 3x3. This puzzle is custom magnetized with lite magnets and is lubed with a balanced mixture of Weight 5 and Weight 1 silicone. Gear compression comes preset at the fourth setting. This setup, created by Cubicle Pro Shop manager Rowe Hessler, is designed specifically for 3x3 Blindfolded, and is an exact replica of his multiple blindfolded mains. &nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MoYu WeiLong WR M 2021 Lite is just like the WeiLong WR M 2021 except this one comes with fewer accessories. If you want the cube without all of the extras, this is what you're looking for.</li><li>Dual-adjustment system (9 levels of elasticity) and 5 levels of magnet strengths give you more choices of adjusting.</li><li>The Weilong WRM2021 has a size of 55mm, smaller than conventional cubes, more controllable, easier to hold and grip. This promotes better competition and practice results and speed!</li><li>48 pcs magnets are properly placed in order to provide a good turning experience, making the cube more controllable and stable!</li></ul>", null, null, 1, 1, 22.00, 25.99, 5, 'MOYU_WEILONG_GTS2_M_3X3_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (39, 'CELERITAS RS3 M 2020+ 3X3', 'CELERITAS_RS3_M_2020_3X3', "<div><h3><b>Product Description</b></h3></div><span>Rowe’s Weilong WR M 3x3 Lite is a fast and reliable 3x3. This puzzle is custom magnetized with lite magnets and is lubed with a balanced mixture of Weight 5 and Weight 1 silicone. Gear compression comes preset at the fourth setting. This setup, created by Cubicle Pro Shop manager Rowe Hessler, is designed specifically for 3x3 Blindfolded, and is an exact replica of his multiple blindfolded mains. &nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MoYu WeiLong WR M 2021 Lite is just like the WeiLong WR M 2021 except this one comes with fewer accessories. If you want the cube without all of the extras, this is what you're looking for.</li><li>Dual-adjustment system (9 levels of elasticity) and 5 levels of magnet strengths give you more choices of adjusting.</li><li>The Weilong WRM2021 has a size of 55mm, smaller than conventional cubes, more controllable, easier to hold and grip. This promotes better competition and practice results and speed!</li><li>48 pcs magnets are properly placed in order to provide a good turning experience, making the cube more controllable and stable!</li></ul>", null, null, 1, 1, 17.00, 19.99, 5, 'CELERITAS_RS3_M_2020_3X3_Main.jpg', 1, 1, 1, 1, 3, 5);
+insert into products values (40, 'Cuberspeed QY Toys mp 3x3 Magnetic Speed Cube MP', 'QiYi_MP_3x3_M', "<div><h3><b>Product Description</b></h3></div><span>The QiYi MP 3x3 M seems like a slightly simplified X-Man Tornado V2. This 3x3 features soft turning and a medium magnetic feel. This is a fantastic puzzle at a reasonable price. Definitely give this one a shot.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The QiYi MP 3x3 M seems like a slightly simplified X-Man Tornado V2. This 3x3 features soft turning and a medium magnetic feel. This is a fantastic puzzle at a reasonable price. Definitely give this one a shot.</li></ul>", null, null, 1, 1, 17.00, 17.99, 5, 'QiYi_MP_3x3_M_Main.jpg', 1, 1, 1, 1, 2, 5);
+insert into products values (41, 'Cubelelo Dayan ZhanChi PRO M 3x3 Stickerless', 'DaYan_ZhanChi_Pro_M_3x3', "<div><h3><b>Product Description</b></h3></div><span>The DaYan ZhanChi Pro M is the newest iteration of the legendary ZhanChi, a cube that dominated the cubing scene nearly a decade ago. This new version of the ZhanChi is lightweight, and has adjustable magnets, elasticities, and tensions.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>A new take on an old favorite, meet the brand new Zhanchi Pro M 3x3 from Dayan! The DaYan ZhanChi is the fifth cube of the DaYan series and is quickly becoming one of the most popular in the market.</li><li>Aside from mechanism updates to improve turning and stability, the ZhanChi Pro is highly customizable as it borrows the magnet, tension, and elasticity system from the TengYun V2 which is great to see! Here are the top features.</li><li>Fast with lightweight design Tunable magnets on a Rotatable Magnetic Insert (Weak, Moderate, Strong) Adjustable tension and elasticity systems Wavy-pattern tracks on corner pieces Rounded corners for improve corner cut performance Seamless corner and edge piece design to reduce friction</li></ul>", null, null, 1, 1, 33.00, 34.99, 5, 'DaYan_ZhanChi_Pro_M_3x3_Main.jpg', 1, 1, 1, 1, 5, 5);
+insert into products values (42, 'Dayan TengYun M 3x3x3 Magnetic Speed Cube Stickerless', 'DaYan_TengYun_M_3x3', "<div><h3><b>Product Description</b></h3></div><span>The DaYan TengYun M is a smooth, 55 mm 3x3 speed cube that is one of the quietest 3x3’s on the market. It has a unique design and feel that sets it apart from other modern 3x3's.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The DaYan TengYun M 3x3 is a smooth, 55mm 3x3 that is possibly one of the quietest puzzles on the market. It has a unique design and feel that set it apart from other modern 3x3s.</li><li>Out of the box the puzzle is a little scratchy, but after some light breaking in the turning is fantastic. This is definitely the best release from DaYan in recent times</li><li>I was pleasantly surprised OOTB that this cube performs just as good as my gan354 and is actually quieter then any other cube I own. I think I might be making this my main. Good job Dayan for making a comeback with this one. I own the stickerless version if you want to know. Just wow!</li><li>my new main, the Dayan Tengyun has an amazing feel to it, and when you break it in, the turning is VERY fast and controllable. I use this cube in school because its SO quiet. I think its better than all moyu, qiyi, and other very good puzzle brands' 3x3s. I recommend this to anyone as it fits most people's opinions just like the gan x.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 24.00, 25.99, 5, 'DaYan_TengYun_M_3x3_Main.jpg', 1, 1, 1, 1, 5, 5);
+insert into products values (43, 'X-Man Tornado V2 3x3 (Magnetic Core)', 'X_Man_Tornado_V2_3x3', "<div><h3><b>Product Description</b></h3></div><span>X-Man Tornado V2 3x3 (Magnetic Core) is packed full of high-end features but at a fraction of the price.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Added stability & improved feel through corner/core magnets</li><li></li><li>Easy-to-use customization system</li><li>Smooth, controllable turning</li></ul><h4>Accessories included</h4><ul><li>Leather storage bag ($3 value)</li><li>Adjustment tool</li><li>Cleaning cloth</li><li>Hard-shell case</li></ul>", null, null, 1, 1, 47.00, 49.99, 5, 'X_Man_Tornado_V2_3x3_Main.jpg', 1, 1, 1, 1, 14, 5);
+insert into products values (44, 'LiangCuber QY Toys Tornado V2 M 3x3 Speed Cube', 'Tornado_V2_M_3x3', "<div><h3><b>Product Description</b></h3></div><span>The MAX Tornado V2 3x3 is one of our premium versions of X-Man Design’s 2021 flagship 3x3. It is more stable than many other flagships and features a robust adjustment system with 125 total setting combinations.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>QY Toys latest flagship 3x3 cube in 2021, with adjustable magnetic positioning, low price and high cost performance</li><li>The new surface feel, similar to the appearance of the matte surface (between the smooth surface and the matte surface), which greatly reduces the probability of the cube being released while reducing surface scratches</li><li>Made of environmentally friendly ABS material, black core design, exquisite appearance, weighs only 72 grams</li><li>Adhesive design-cube corner block mesh contact surface + magnetic storage position auxiliary anti-sticking, cube edge block magnetic storage position + magnet stall mark auxiliary anti-sticking</li><li>Magnetic adjustment system — 5 magnetic gears, adjustable at any time, the magnetic compartment is designed with red and yellow contrasting colors. Dual adjustment system-5 gears with adjustable elasticity + 5 gears with adjustable wheelbase, having it is equivalent to having 125 kinds of hand feelings<li></ul>", null, null, 1, 1, 25.00, 25.99, 5, 'Tornado_V2_M_3x3_Main.jpg', 1, 1, 1, 1, 14, 5);
+insert into products values (45, 'GAN12 M MagLev 3x3', 'GAN12_M_MagLev_3x3', "<div><h3><b>Product Description</b></h3></div><span>GAN 12 M 3x3 is here to refine the way that you speed solve. With two different versions to choose from (Leap or MagLev), the GAN 12 includes lots of new features.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Enhanced core positioning 2.0 auto aligning technology</li><li>Frosted exterior</li><li>64 magnets</li><li>Numerical GTN tensioning system</li><li>6 corner magnet settings</li></ul>", null, null, 1, 1, 89.00, 90.99, 5, 'GAN12_M_MagLev_3x3_Main.jpg', 1, 1, 1, 1, 4, 5);
+insert into products values (46, 'QiYi Valk 4 M 4x4', 'QiYi_Valk_4_M_4x4', "<div><h3><b>Product Description</b></h3></div><span>This version of the Valk 4 M features lighter magnets over the strong magnetic version.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The insanely popular 'The Valk' lineup continues to grow with the QiYi Valk 4 M 4x4! QiYi has succeeded with transferring the signature feel of 'The Valk' speedcubes into this 4x4 and the result is impressive. Buttery turning, incredible corner cutting, and a compact design all make the Valk 4 M a hit that you are sure to love!</li></ul>", null, null, 1, 1, 37.00, 39.99, 5, 'QiYi_Valk_4_M_4x4_Main.jpg', 1, 1, 1, 1, 13, 6);
+insert into products values (47, 'QiYi MP 4x4 Magnetic', 'QiYi_MP_4x4_Magnetic', "<div><h3><b>Product Description</b></h3></div><span>QiYi MP 4x4 Magnetic is part of QiYi's new mid-range series.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Light, quick turning</li><li>Unique turning feel</li><li>Semi-gloss exterior finish</li></ul><h4>Accessories included</h4><ul><li>Hard-shell case</li></ul>", null, null, 1, 1, 21.00, 22.99, 5, 'QiYi_MP_4x4_Magnetic_Main.jpg', 1, 1, 1, 1, 2, 6);
+insert into products values (48, 'Moyu AoSu WR M 4x4 Magnetic Speed Cube stickerless Aosu WRM 4x4', 'MoYu_AoSu_WR_M_4x4', "<div><h3><b>Product Description</b></h3></div><span>The MoYu AoSu WR M 4x4 is MoYu's new flagship featuring some key features. Some of our favorites are the new compact size, upgraded positioning system, new half-bright stickerless shades (Stickerless model only) and moderate strength magnets.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Controllable59mm --- Size The Aosu WR has the 59mm size, which is smaller than regular 4x4s, making it morecontrollable and speed up your solves.</li><li>Accurate MagnetsLayout 96 pcs magnets are properly placed in order to provide a good turning experience making the cube more controllable and stable! Magnets size:4x1.5mm(corners), 4x1mm(edges). AoSuWR/WRM Mhas magnet slots inside,OnlyAosu WRM is placed with magnets.</li><li>Optimized contactsurfaces --- Fully optimized antisticky slots on the contact surfaces, which can reducestiction eficiently and bring atighter feeling. This improvement can keep thetotiginal feeling after long-time practice!</li><li>Upgrade positioningsystem --- optimized positioning system makes the core attached to the center pieces tightly,solving the lockup problem.New Color Shade, We adjust some colors of the original half-bright stickerless shaded, providinga better speedcubing feel.</li><li>Cubic Wide Outer Layer --- Cubic exteror and wide outer layer makes theturning more controllable and prevents thecube from slipping out of your hands. Safe and envurenmenital ABSplastic applied on the cube,makng itsoftishatter proof and flexible. </li></ul>", null, null, 1, 1, 41.00, 42.99, 5, 'MoYu_AoSu_WR_M_4x4_Main.jpg', 1, 1, 1, 1, 3, 6);
+insert into products values (49, 'X Man Ambition 4x4 M Stickerless', 'X_Man_Ambition_Magnetic_4x4', "<div><h3><b>Product Description</b></h3></div><span>The X-Man Ambition Magnetic 4x4 is the 2021 flagship and is a welcomed refresh from X-Man Designs!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Ambition 4x4 M is a magnetic 4x4 designed by Jim Zhang of X-Man Design. Compact and light, the Ambition feels smooth and soft to turn while retaining high stability</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating! This is a Frosted Surface Cube.Feels more texture and avoid the scratches after the long-time using.Whole new vivid color work more effectively and more easier to recognize </li><li>The Anti-stick Degin can prevent the cube viscosity,make the cube solve smoothlt.Optimized parts of the round corner pieces,makes work coordinate effectively.enhance the corner cutting ability,make it more smooth when it solves.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style </li></ul>", null, null, 1, 1, 27.00, 29.99, 5, 'X_Man_Ambition_Magnetic_4x4_Main.jpg', 1, 1, 1, 1, 14, 6);
+insert into products values (50, 'GAN 460 M Speed Cube, 4x4 Magnetic Master Cube', 'GAN_460_M_4x4', "<div><h3><b>Product Description</b></h3></div><span>This speedcube does not need an introduction... The GAN 460 M is a groundbreaking new release from GAN Cube and features an all-new magnetic positioning system. The 460 is most recognized for its outer layers that turn almost identically to any modern 3x3.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>SEE THE FORCE, SPEED WITH YOU - GAN 460M features revolutionary GMC (GAN magnet capsule) technology to show all 96 magnets noticeably. Magnets are tightly locked into each capsule so no longer missing/falling out.</li><li>TOTAL SYMMETRY, TOTAL STRENGTHENED - The GAN460M is endowed with total symmetric clips, high-strength feets and unbreakable blocks. Pieces & blocks are all locked up by clips perfectly and firmly.</li><li>ASSEMBLED WITH GANSCORE - GAN460M comes with new 4x4 IPG built by merging iron and plastic and based on the 3x3 IPG design. Higher perpendicularity, bigger inner space, longer hidden edge piece, resulting stronger anti-POP abilities.</li><li>YOUR PB RENEWER WITH THIS BUTTERY SMOOTH CUBE - Inner honeycomb surface reduces friction and endures lubrication; 40°/25° corner-cutting ability is optimized to the best degree. Gan 460 M has all latest features a 4x4 speed cube can have to be your record breaker.</li><li>CONNECTED WITH GAN TEAM - By choosing GAN Cube store, you are choosing the world's most successful 3x3 brand. Here you can have the latest news of GAN products, join fans group, or even make a sound to future models. No worry about missing accessories or unpleasant experience, our CS Team will make you satisfied.</li></ul>", null, null, 1, 1, 54.00, 55.99, 5, 'GAN_460_M_4x4_Main.jpg', 1, 1, 1, 1, 4, 6);
+insert into products values (51, 'YJ MGC 5X5 M stickerless Speed Cube MGC Magnetic', 'YJ_MGC_5X5_M', "<div><h3><b>Product Description</b></h3></div><span>The MGC Magnetic 5x5 is the continuation of the popular MGC series! In true MGC fashion, the MGC 5x5 performs so well, it is hard to believe that it is so inexpensive!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The MGC 5x5 is the newest puzzle in the MGC series from YJ.</li><li>This magnetic 5x5 features a strong magnetic feel and performs great out of the box. If you're a speedcuber on a budget, but still want fantastic performance, this is the 5x5 you've been waiting for!</li><li>The traditional stickers have been replaced with original and eco-friendly ABS material, which mean no fading, peeling or cheating!</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids.</li><li>No one falls out of love with the puzzle cubes. Perfect Christmas / Birthday / Children’s Day Gift Idea. This classic puzzle game will never go out of style. GIFT BOX PACKING Gift box packing makes it a perfect gift for your kids.</li></ul>", null, null, 1, 1, 24.00, 25.99, 5, 'YJ_MGC_5X5_M_Main.jpg', 1, 1, 1, 1, 1, 7);
+insert into products values (52, 'Moyu Aochuang WR M 5X5 stickerless', 'MoYu_AoChuang_WR_M_5x5', "<div><h3><b>Product Description</b></h3></div><span>The MoYu AoChuang WR M 5x5 is a major update to MoYu's 5x5 lineup! The buttery, fast, turning is very controllable and is complimented by factory-installed moderate strength magnets. The AoChuang WR M's confidence-inspiring, stable design makes speedsolving a breeze -- your records won't stand a chance!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The AoChuang WR M is the latest in the record-breaking WR series from MoYu.</li><li>This 5x5 is a fantastically smooth, quick, and very high-performance flagship puzzle.</li></ul>", null, null, 1, 1, 37.00, 39.99, 5, 'MoYu_AoChuang_WR_M_5x5_Main.jpg', 1, 1, 1, 1, 3, 7);
+insert into products values (53, 'QiYi MP 5x5 Magnetic', 'QiYi_MP_5x5', "<div><h3><b>Product Description</b></h3></div><span>QiYi MP 5x5 Magnetic is part of QiYi's new mid-range series.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Light, super-fast turning</li><li>Unique turning feel</li><li>Semi-gloss exterior finish</li></ul>", null, null, 1, 1, 24.00, 25.99, 5, 'QiYi_MP_5x5_Main.jpg', 1, 1, 1, 1, 2, 7);
+insert into products values (54, 'QiYi Valk 5 M 5x5 ', 'QiYi_Valk_5_M_5x5 ', "<div><h3><b>Product Description</b></h3></div><span>The QiYi Valk 5 M 5x5 is quickly being recognized as the top 5x5 on the market. After Max Park's immediate world record after obtaining the Valk 5 M it is clear that this speedcube gets results. The smooth, effortless turning and forgiving corner cutting make this 5x5 versatile for any turning style. Strong magnets are installed at the factory to aid with turning accuracy and feel!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The Valk 5 M is a fast, smooth 5x5 from QiYi, famous for setting the current 5x5 single and average world records.</li><li>The first magnetic 5x5 by QiYi, this puzzle features medium/strong magnets, primary internals, and fantastic corner cutting </li><li>We expect this to be one of the top choices for top 5x5 solvers. If you're serious about this event, the Valk 5 M is a must.</li><li>We expect this to be one of the top choices for top 5x5 solvers. If you're serious about this event, the Valk 5 M is a must.</li><li>Solving puzzles and brain teasers are important activities to teach kids to work hard at solving complex problems and foster your kid's sense of space and enhance a child's memory.Whether you're trying to stretch your brain capacity or spending some leisure time with your loved ones, this would be a great gift for your kids</li><li>Perfect Christmas gift/ birthday gift for kids. This classic puzzle game will never go out of style.</li></ul>", null, null, 1, 1, 47.00, 49.99, 5, 'QiYi_Valk_5_M_5x5_Main.jpg', 1, 1, 1, 1, 13, 7);
 
 
 
 
 
 
-insert into products values (31, 'MoYu WeiLong AI 3x3', 'MoYu_WeiLong_AI_3x3', "<div><h3><b>Product Description</b></h3></div><span>The WeiLong AI is a new smart cube from MoYu. The mechanism is based on the WR M 2020, so its performance is not compromised like all previous smart cubes. This puzzle also features a gyroscope to track rotations.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The WeiLong WR M MagLev is the latest version in the famous WeiLong line. This 3x3 features purple internals, magnetic adjustment, tension and compression adjustment, and a maglev system in place of traditional springs.</li><li>Maglev technology utilizes opposing magnets (magnetic levitation) to replicate spring force, this reduces friction and completely eliminates spring noise.</li><li>Unique 9-level dual adjustment design on the tensioning, you can adjust the elasticity on your own preference.</li><li>The torpedo on edges and corners come to multi-track inner circle, making the cube more stable and has a better anti-pop performance.</li><li>High quality ABS material and unified turning surface, keeping the cube smooth and stable. </li></ul>", null, null, 1, 1, 63.00, 64.99, 5, 'MoYu_WeiLong_AI_3x3_Main.jpg', 1, 1, 1, 1, 3, 5);
 
 
-
-insert into products values (1, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li></ul>", null, null, 1, 1, 7.00, 9.99, 5, '.jpg', 1, 1, 1, 1, 1, 4);
+insert into products values (1, '', '', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li><li></li></ul>", null, null, 1, 1, 7.00, 9.99, 5, '.jpg', 1, 1, 1, 1, 7, 7);
 
 -- INSERT INTO product_images
 -- product id = 1
@@ -364,6 +393,179 @@ insert into product_images value (87, 'ANGSTROM_X-MAN_FLARE_2X2_M_Extras_2.jpg',
 -- product id = 23
 insert into product_images value (88, 'MAN_FLARE_2X2_M_Extras_1.jpg', 23);
 insert into product_images value (89, 'MAN_FLARE_2X2_M_Extras_2.jpg', 23);
+-- product id = 24
+insert into product_images value (90, 'YUXIN_KYLIN_3X3_V2_M_Extras_1.jpg', 24);
+insert into product_images value (91, 'YUXIN_KYLIN_3X3_V2_M_Extras_2.jpg', 24);
+insert into product_images value (92, 'YUXIN_KYLIN_3X3_V2_M_Extras_3.jpg', 24);
+insert into product_images value (93, 'YUXIN_KYLIN_3X3_V2_M_Extras_4.jpg', 24);
+insert into product_images value (94, 'YUXIN_KYLIN_3X3_V2_M_Extras_5.jpg', 24);
+-- product id = 25
+insert into product_images value (95, 'GoCube_X_3x3_Extras_1.jpg', 25);
+insert into product_images value (96, 'GoCube_X_3x3_Extras_2.jpg', 25);
+insert into product_images value (97, 'GoCube_X_3x3_Extras_3.jpg', 25);
+insert into product_images value (98, 'GoCube_X_3x3_Extras_4.jpg', 25);
+insert into product_images value (99, 'GoCube_X_3x3_Extras_5.jpg', 25);
+insert into product_images value (100, 'GoCube_X_3x3_Extras_6.jpg', 25);
+insert into product_images value (101, 'GoCube_X_3x3_Extras_7.jpg', 25);
+-- product id = 26
+insert into product_images value (102, 'GoCube_Edge_3x3_Extras_1.jpg', 26);
+insert into product_images value (103, 'GoCube_Edge_3x3_Extras_2.jpg', 26);
+insert into product_images value (104, 'GoCube_Edge_3x3_Extras_3.jpg', 26);
+insert into product_images value (105, 'GoCube_Edge_3x3_Extras_4.jpg', 26);
+insert into product_images value (106, 'GoCube_Edge_3x3_Extras_5.jpg', 26);
+insert into product_images value (107, 'GoCube_Edge_3x3_Extras_6.jpg', 26);
+insert into product_images value (108, 'GoCube_Edge_3x3_Extras_7.jpg', 26);
+-- product id = 27
+insert into product_images value (109, 'MonsterGO_AI_3x3_Extras_1.jpg', 27);
+insert into product_images value (110, 'MonsterGO_AI_3x3_Extras_2.jpg', 27);
+insert into product_images value (111, 'MonsterGO_AI_3x3_Extras_3.jpg', 27);
+insert into product_images value (112, 'MonsterGO_AI_3x3_Extras_4.jpg', 27);
+insert into product_images value (113, 'MonsterGO_AI_3x3_Extras_5.jpg', 27);
+-- product id = 28
+insert into product_images value (114, 'Eastsheen_3x3x3_Cube_Extras_1.jpg', 28);
+-- product id = 29
+insert into product_images value (115, 'YJ_MGC_Evo_3x3_Extras_1.jpg', 29);
+insert into product_images value (116, 'YJ_MGC_Evo_3x3_Extras_2.jpg', 29);
+insert into product_images value (117, 'YJ_MGC_Evo_3x3_Extras_3.jpg', 29);
+insert into product_images value (118, 'YJ_MGC_Evo_3x3_Extras_4.jpg', 29);
+insert into product_images value (119, 'YJ_MGC_Evo_3x3_Extras_5.jpg', 29);
+-- product id = 30
+insert into product_images value (120, 'MsCube_MS3_V1_M_Extras_1.jpg', 30);
+insert into product_images value (121, 'MsCube_MS3_V1_M_Extras_2.jpg', 30);
+insert into product_images value (122, 'MsCube_MS3_V1_M_Extras_3.jpg', 30);
+-- product id = 31
+insert into product_images value (123, 'Valk_3_Elite_M_Extras_1.jpg', 31);
+insert into product_images value (124, 'Valk_3_Elite_M_Extras_2.jpg', 31);
+insert into product_images value (125, 'Valk_3_Elite_M_Extras_3.jpg', 31);
+insert into product_images value (126, 'Valk_3_Elite_M_Extras_4.jpg', 31);
+-- product id = 32
+insert into product_images value (127, 'MoYu_WeiLong_AI_3x3_Extras_1.jpg', 32);
+insert into product_images value (128, 'MoYu_WeiLong_AI_3x3_Extras_2.jpg', 32);
+insert into product_images value (129, 'MoYu_WeiLong_AI_3x3_Extras_3.jpg', 32);
+insert into product_images value (130, 'MoYu_WeiLong_AI_3x3_Extras_4.jpg', 32);
+insert into product_images value (131, 'MoYu_WeiLong_AI_3x3_Extras_5.jpg', 32);
+insert into product_images value (132, 'MoYu_WeiLong_AI_3x3_Extras_6.jpg', 32);
+insert into product_images value (133, 'MoYu_WeiLong_AI_3x3_Extras_7.jpg', 32);
+-- product id = 33
+insert into product_images value (134, 'The_Yoo_Cube_Deluxe_3x3_Extras_1.jpg', 33);
+insert into product_images value (135, 'The_Yoo_Cube_Deluxe_3x3_Extras_2.jpg', 33);
+insert into product_images value (136, 'The_Yoo_Cube_Deluxe_3x3_Extras_3.jpg', 33);
+insert into product_images value (137, 'The_Yoo_Cube_Deluxe_3x3_Extras_4.jpg', 33);
+insert into product_images value (138, 'The_Yoo_Cube_Deluxe_3x3_Extras_5.jpg', 33);
+insert into product_images value (139, 'The_Yoo_Cube_Deluxe_3x3_Extras_6.jpg', 33);
+-- product id = 34
+insert into product_images value (140, 'MAX_WeiLong_WR_M_3x3_Extras_1.jpg', 34);
+insert into product_images value (141, 'MAX_WeiLong_WR_M_3x3_Extras_2.jpg', 34);
+-- product id = 35
+insert into product_images value (142, 'ROWES_WEILONG_WR_M_3X3_LITE_Extras_1.jpg', 35);
+insert into product_images value (143, 'ROWES_WEILONG_WR_M_3X3_LITE_Extras_2.jpg', 35);
+insert into product_images value (144, 'ROWES_WEILONG_WR_M_3X3_LITE_Extras_3.jpg', 35);
+insert into product_images value (145, 'ROWES_WEILONG_WR_M_3X3_LITE_Extras_4.jpg', 35);
+-- product id = 36
+insert into product_images value (146, 'ROWE’S_WEILONG_WR_M_3X3_LITE_Extras_1.jpg', 36);
+insert into product_images value (147, 'ROWE’S_WEILONG_WR_M_3X3_LITE_Extras_2.jpg', 36);
+insert into product_images value (148, 'ROWE’S_WEILONG_WR_M_3X3_LITE_Extras_3.jpg', 36);
+-- product id = 37
+insert into product_images value (149, 'MOYU_WEILONG_WR_M_3X3_Extras_1.jpg', 37);
+insert into product_images value (150, 'MOYU_WEILONG_WR_M_3X3_Extras_2.jpg', 37);
+insert into product_images value (151, 'MOYU_WEILONG_WR_M_3X3_Extras_3.jpg', 37);
+insert into product_images value (152, 'MOYU_WEILONG_WR_M_3X3_Extras_4.jpg', 37);
+-- product id = 38
+insert into product_images value (153, 'MOYU_WEILONG_GTS2_M_3X3_Extras_1.jpg', 38);
+insert into product_images value (154, 'MOYU_WEILONG_GTS2_M_3X3_Extras_2.jpg', 38);
+insert into product_images value (155, 'MOYU_WEILONG_GTS2_M_3X3_Extras_3.jpg', 38);
+insert into product_images value (156, 'MOYU_WEILONG_GTS2_M_3X3_Extras_4.jpg', 38);
+-- product id = 39
+insert into product_images value (157, 'CELERITAS_RS3_M_2020_3X3_Extras_1.jpg', 39);
+insert into product_images value (158, 'CELERITAS_RS3_M_2020_3X3_Extras_2.jpg', 39);
+insert into product_images value (159, 'CELERITAS_RS3_M_2020_3X3_Extras_3.jpg', 39);
+insert into product_images value (160, 'CELERITAS_RS3_M_2020_3X3_Extras_4.jpg', 39);
+-- product id = 40
+insert into product_images value (161, 'QiYi_MP_3x3_M_Extras_1.jpg', 40);
+insert into product_images value (162, 'QiYi_MP_3x3_M_Extras_2.jpg', 40);
+insert into product_images value (163, 'QiYi_MP_3x3_M_Extras_3.jpg', 40);
+-- product id = 41
+insert into product_images value (164, 'DaYan_ZhanChi_Pro_M_3x3_Extras_1.jpg', 41);
+insert into product_images value (165, 'DaYan_ZhanChi_Pro_M_3x3_Extras_2.jpg', 41);
+insert into product_images value (166, 'DaYan_ZhanChi_Pro_M_3x3_Extras_3.jpg', 41);
+insert into product_images value (167, 'DaYan_ZhanChi_Pro_M_3x3_Extras_4.jpg', 41);
+-- product id = 42
+insert into product_images value (168, 'DaYan_TengYun_M_3x3_Extras_1.jpg', 42);
+insert into product_images value (169, 'DaYan_TengYun_M_3x3_Extras_2.jpg', 42);
+insert into product_images value (170, 'DaYan_TengYun_M_3x3_Extras_3.jpg', 42);
+insert into product_images value (171, 'DaYan_TengYun_M_3x3_Extras_4.jpg', 42);
+-- product id = 43
+insert into product_images value (172, 'X_Man_Tornado_V2_3x3_Extras_1.jpg', 43);
+insert into product_images value (173, 'X_Man_Tornado_V2_3x3_Extras_2.jpg', 43);
+insert into product_images value (174, 'X_Man_Tornado_V2_3x3_Extras_3.jpg', 43);
+insert into product_images value (175, 'X_Man_Tornado_V2_3x3_Extras_4.jpg', 43);
+insert into product_images value (176, 'X_Man_Tornado_V2_3x3_Extras_5.jpg', 43);
+-- product id = 44
+insert into product_images value (177, 'Tornado_V2_M_3x3_Extras_1.jpg', 44);
+insert into product_images value (178, 'Tornado_V2_M_3x3_Extras_2.jpg', 44);
+insert into product_images value (179, 'Tornado_V2_M_3x3_Extras_3.jpg', 44);
+insert into product_images value (180, 'Tornado_V2_M_3x3_Extras_4.jpg', 44);
+insert into product_images value (181, 'Tornado_V2_M_3x3_Extras_5.jpg', 44);
+insert into product_images value (182, 'Tornado_V2_M_3x3_Extras_6.jpg', 44);
+insert into product_images value (183, 'Tornado_V2_M_3x3_Extras_7.jpg', 44);
+insert into product_images value (184, 'Tornado_V2_M_3x3_Extras_8.jpg', 44);
+-- product id = 45
+insert into product_images value (185, 'GAN12_M_MagLev_3x3_Extras_1.jpg', 45);
+insert into product_images value (186, 'GAN12_M_MagLev_3x3_Extras_2.jpg', 45);
+insert into product_images value (187, 'GAN12_M_MagLev_3x3_Extras_3.jpg', 45);
+insert into product_images value (188, 'GAN12_M_MagLev_3x3_Extras_4.jpg', 45);
+insert into product_images value (189, 'GAN12_M_MagLev_3x3_Extras_5.jpg', 45);
+insert into product_images value (190, 'GAN12_M_MagLev_3x3_Extras_6.jpg', 45);
+insert into product_images value (191, 'GAN12_M_MagLev_3x3_Extras_7.jpg', 45);
+insert into product_images value (192, 'GAN12_M_MagLev_3x3_Extras_8.jpg', 45);
+insert into product_images value (193, 'GAN12_M_MagLev_3x3_Extras_9.jpg', 45);
+insert into product_images value (194, 'GAN12_M_MagLev_3x3_Extras_10.jpg', 45);
+insert into product_images value (195, 'GAN12_M_MagLev_3x3_Extras_11.jpg', 45);
+-- product id = 46
+insert into product_images value (196, 'QiYi_Valk_4_M_4x4_Extras_1.jpg', 46);
+insert into product_images value (197, 'QiYi_Valk_4_M_4x4_Extras_2.jpg', 46);
+insert into product_images value (198, 'QiYi_Valk_4_M_4x4_Extras_3.jpg', 46);
+insert into product_images value (199, 'QiYi_Valk_4_M_4x4_Extras_4.jpg', 46);
+-- product id = 47
+insert into product_images value (200, 'QiYi_MP_4x4_Magnetic_Extras_1.jpg', 47);
+insert into product_images value (201, 'QiYi_MP_4x4_Magnetic_Extras_2.jpg', 47);
+insert into product_images value (202, 'QiYi_MP_4x4_Magnetic_Extras_3.jpg', 47);
+-- product id = 48
+insert into product_images value (203, 'MoYu_AoSu_WR_M_4x4_Extras_1.jpg', 48);
+insert into product_images value (204, 'MoYu_AoSu_WR_M_4x4_Extras_2.jpg', 48);
+insert into product_images value (205, 'MoYu_AoSu_WR_M_4x4_Extras_3.jpg', 48);
+insert into product_images value (206, 'MoYu_AoSu_WR_M_4x4_Extras_4.jpg', 48);
+insert into product_images value (207, 'MoYu_AoSu_WR_M_4x4_Extras_5.jpg', 48);
+insert into product_images value (208, 'MoYu_AoSu_WR_M_4x4_Extras_6.jpg', 48);
+insert into product_images value (209, 'MoYu_AoSu_WR_M_4x4_Extras_7.jpg', 48);
+-- product id = 49
+insert into product_images value (210, 'X_Man_Ambition_Magnetic_4x4_Extras_1.jpg', 49);
+insert into product_images value (211, 'X_Man_Ambition_Magnetic_4x4_Extras_2.jpg', 49);
+-- product id = 50
+insert into product_images value (212, 'GAN_460_M_4x4_Extras_1.jpg', 50);
+insert into product_images value (213, 'GAN_460_M_4x4_Extras_2.jpg', 50);
+insert into product_images value (214, 'GAN_460_M_4x4_Extras_3.jpg', 50);
+insert into product_images value (215, 'GAN_460_M_4x4_Extras_4.jpg', 50);
+insert into product_images value (216, 'GAN_460_M_4x4_Extras_5.jpg', 50);
+-- product id = 51
+insert into product_images value (217, 'YJ_MGC_5X5_M_Extras_1.jpg', 51);
+insert into product_images value (218, 'YJ_MGC_5X5_M_Extras_2.jpg', 51);
+insert into product_images value (219, 'YJ_MGC_5X5_M_Extras_3.jpg', 51);
+insert into product_images value (220, 'YJ_MGC_5X5_M_Extras_4.jpg', 51);
+-- product id = 52
+insert into product_images value (221, 'MoYu_AoChuang_WR_M_5x5_Extras_1.jpg', 52);
+insert into product_images value (222, 'MoYu_AoChuang_WR_M_5x5_Extras_2.jpg', 52);
+insert into product_images value (223, 'MoYu_AoChuang_WR_M_5x5_Extras_3.jpg', 52);
+-- product id = 53
+insert into product_images value (224, 'QiYi_MP_5x5_Extras_1.jpg', 53);
+insert into product_images value (225, 'QiYi_MP_5x5_Extras_2.jpg', 53);
+insert into product_images value (226, 'QiYi_MP_5x5_Extras_3.jpg', 53);
+-- product id = 54
+insert into product_images value (227, 'QiYi_Valk_5_M_5x5_Extras_1.jpg', 54);
+insert into product_images value (228, 'QiYi_Valk_5_M_5x5_Extras_2.jpg', 54);
+insert into product_images value (229, 'QiYi_Valk_5_M_5x5_Extras_3.jpg', 54);
+insert into product_images value (230, 'QiYi_Valk_5_M_5x5_Extras_4.jpg', 54);
+
 
 
 
@@ -569,6 +771,286 @@ insert into product_details value (175, 'Feel', 'Smooth', 23);
 insert into product_details value (176, 'Gross Weight', '87g', 23);
 insert into product_details value (177, 'Item Weight', '55.9g', 23);
 insert into product_details value (178, 'Dimensions', '51.0mm', 23);
+-- product id = 24
+insert into product_details value (179, 'Brand', 'Yuxin', 24);
+insert into product_details value (180, 'Type', '3x3', 24);
+insert into product_details value (181, 'Magnets', 'Magnetic', 24);
+insert into product_details value (182, 'Stock Shades', 'Stickerless (Bright)', 24);
+insert into product_details value (183, 'Feel', 'Smooth', 24);
+insert into product_details value (184, 'Gross Weight', '87g', 24);
+insert into product_details value (185, 'Item Weight', '55.9g', 24);
+insert into product_details value (186, 'Dimensions', '51.0mm', 24);
+-- product id = 25
+insert into product_details value (187, 'Brand', 'Go-cube', 25);
+insert into product_details value (188, 'Type', '3x3', 25);
+insert into product_details value (189, 'Magnets', 'Magnetic', 25);
+insert into product_details value (190, 'Stock Shades', 'Stickerless (Bright)', 25);
+insert into product_details value (191, 'Feel', 'Smooth', 25);
+insert into product_details value (192, 'Gross Weight', '87g', 25);
+insert into product_details value (193, 'Item Weight', '55.9g', 25);
+insert into product_details value (194, 'Dimensions', '51.0mm', 25);
+-- product id = 26
+insert into product_details value (195, 'Brand', 'Go-cube', 26);
+insert into product_details value (196, 'Type', '3x3', 26);
+insert into product_details value (197, 'Magnets', 'Magnetic', 26);
+insert into product_details value (198, 'Stock Shades', 'Stickerless (Bright)', 26);
+insert into product_details value (199, 'Feel', 'Smooth', 26);
+insert into product_details value (200, 'Gross Weight', '87g', 26);
+insert into product_details value (201, 'Item Weight', '55.9g', 26);
+insert into product_details value (202, 'Dimensions', '51.0mm', 26);
+-- product id = 27
+insert into product_details value (203, 'Brand', 'Monster-go', 27);
+insert into product_details value (204, 'Type', '3x3', 27);
+insert into product_details value (205, 'Magnets', 'Magnetic', 27);
+insert into product_details value (206, 'Stock Shades', 'Stickerless (Bright)', 27);
+insert into product_details value (207, 'Feel', 'Smooth', 27);
+insert into product_details value (208, 'Gross Weight', '87g', 27);
+insert into product_details value (209, 'Item Weight', '55.9g', 27);
+insert into product_details value (210, 'Dimensions', '51.0mm', 27);
+-- product id = 28
+insert into product_details value (211, 'Brand', 'Eastsheen', 28);
+insert into product_details value (212, 'Type', '3x3', 28);
+insert into product_details value (213, 'Magnets', 'Magnetic', 28);
+insert into product_details value (214, 'Stock Shades', 'Stickerless (Bright)', 28);
+insert into product_details value (215, 'Feel', 'Smooth', 28);
+insert into product_details value (216, 'Gross Weight', '87g', 28);
+insert into product_details value (217, 'Item Weight', '55.9g', 28);
+insert into product_details value (218, 'Dimensions', '51.0mm', 28);
+-- product id = 29
+insert into product_details value (219, 'Brand', 'YJ', 29);
+insert into product_details value (220, 'Type', '3x3', 29);
+insert into product_details value (221, 'Magnets', 'Magnetic', 29);
+insert into product_details value (222, 'Stock Shades', 'Stickerless (Bright)', 29);
+insert into product_details value (223, 'Feel', 'Smooth', 29);
+insert into product_details value (224, 'Gross Weight', '87g', 29);
+insert into product_details value (225, 'Item Weight', '55.9g', 29);
+insert into product_details value (226, 'Dimensions', '51.0mm', 29);
+-- product id = 30
+insert into product_details value (227, 'Brand', 'Ms-Cube', 30);
+insert into product_details value (228, 'Type', '3x3', 30);
+insert into product_details value (229, 'Magnets', 'Magnetic', 30);
+insert into product_details value (230, 'Stock Shades', 'Stickerless (Bright)', 30);
+insert into product_details value (231, 'Feel', 'Smooth', 30);
+insert into product_details value (232, 'Gross Weight', '87g', 30);
+insert into product_details value (233, 'Item Weight', '55.9g', 30);
+insert into product_details value (234, 'Dimensions', '51.0mm', 30);
+-- product id = 31
+insert into product_details value (235, 'Brand', 'The Valk', 31);
+insert into product_details value (236, 'Type', '3x3', 31);
+insert into product_details value (237, 'Magnets', 'Magnetic', 31);
+insert into product_details value (238, 'Stock Shades', 'Stickerless (Bright)', 31);
+insert into product_details value (239, 'Feel', 'Smooth', 31);
+insert into product_details value (240, 'Gross Weight', '87g', 31);
+insert into product_details value (241, 'Item Weight', '55.9g', 31);
+insert into product_details value (242, 'Dimensions', '51.0mm', 31);
+-- product id = 32
+insert into product_details value (243, 'Brand', 'MoYu', 32);
+insert into product_details value (244, 'Type', '3x3', 32);
+insert into product_details value (245, 'Magnets', 'Magnetic', 32);
+insert into product_details value (246, 'Stock Shades', 'Stickerless (Bright)', 32);
+insert into product_details value (247, 'Feel', 'Smooth', 32);
+insert into product_details value (248, 'Gross Weight', '87g', 32);
+insert into product_details value (249, 'Item Weight', '55.9g', 32);
+insert into product_details value (250, 'Dimensions', '51.0mm', 32);
+-- product id = 33
+insert into product_details value (251, 'Brand', 'MoYu', 33);
+insert into product_details value (252, 'Type', '3x3', 33);
+insert into product_details value (253, 'Magnets', 'Magnetic', 33);
+insert into product_details value (254, 'Stock Shades', 'Stickerless (Bright)', 33);
+insert into product_details value (255, 'Feel', 'Smooth', 33);
+insert into product_details value (256, 'Gross Weight', '87g', 33);
+insert into product_details value (257, 'Item Weight', '55.9g', 33);
+insert into product_details value (258, 'Dimensions', '51.0mm', 33);
+-- product id = 34
+insert into product_details value (259, 'Brand', 'MoYu', 34);
+insert into product_details value (260, 'Type', '3x3', 34);
+insert into product_details value (261, 'Magnets', 'Magnetic', 34);
+insert into product_details value (262, 'Stock Shades', 'Stickerless (Bright)', 34);
+insert into product_details value (263, 'Feel', 'Smooth', 34);
+insert into product_details value (264, 'Gross Weight', '87g', 34);
+insert into product_details value (265, 'Item Weight', '55.9g', 34);
+insert into product_details value (266, 'Dimensions', '51.0mm', 34);
+-- product id = 35
+insert into product_details value (267, 'Brand', 'MoYu', 35);
+insert into product_details value (268, 'Type', '3x3', 35);
+insert into product_details value (269, 'Magnets', 'Magnetic', 35);
+insert into product_details value (270, 'Stock Shades', 'Stickerless (Bright)', 35);
+insert into product_details value (271, 'Feel', 'Smooth', 35);
+insert into product_details value (272, 'Gross Weight', '87g', 35);
+insert into product_details value (273, 'Item Weight', '55.9g', 35);
+insert into product_details value (274, 'Dimensions', '51.0mm', 35);
+-- product id = 36
+insert into product_details value (275, 'Brand', 'MoYu', 36);
+insert into product_details value (276, 'Type', '3x3', 36);
+insert into product_details value (277, 'Magnets', 'Magnetic', 36);
+insert into product_details value (278, 'Stock Shades', 'Stickerless (Bright)', 36);
+insert into product_details value (279, 'Feel', 'Smooth', 36);
+insert into product_details value (280, 'Gross Weight', '87g', 36);
+insert into product_details value (281, 'Item Weight', '55.9g', 36);
+insert into product_details value (282, 'Dimensions', '51.0mm', 36);
+-- product id = 37
+insert into product_details value (283, 'Brand', 'MoYu', 37);
+insert into product_details value (284, 'Type', '3x3', 37);
+insert into product_details value (285, 'Magnets', 'Magnetic', 37);
+insert into product_details value (286, 'Stock Shades', 'Stickerless (Bright)', 37);
+insert into product_details value (287, 'Feel', 'Smooth', 37);
+insert into product_details value (288, 'Gross Weight', '87g', 37);
+insert into product_details value (289, 'Item Weight', '55.9g', 37);
+insert into product_details value (290, 'Dimensions', '51.0mm', 37);
+-- product id = 38
+insert into product_details value (291, 'Brand', 'MoYu', 38);
+insert into product_details value (292, 'Type', '3x3', 38);
+insert into product_details value (293, 'Magnets', 'Magnetic', 38);
+insert into product_details value (294, 'Stock Shades', 'Stickerless (Bright)', 38);
+insert into product_details value (295, 'Feel', 'Smooth', 38);
+insert into product_details value (296, 'Gross Weight', '87g', 38);
+insert into product_details value (297, 'Item Weight', '55.9g', 38);
+insert into product_details value (298, 'Dimensions', '51.0mm', 38);
+-- product id = 39
+insert into product_details value (299, 'Brand', 'MoYu', 39);
+insert into product_details value (300, 'Type', '3x3', 39);
+insert into product_details value (301, 'Magnets', 'Magnetic', 39);
+insert into product_details value (302, 'Stock Shades', 'Stickerless (Bright)', 39);
+insert into product_details value (303, 'Feel', 'Smooth', 39);
+insert into product_details value (304, 'Gross Weight', '87g', 39);
+insert into product_details value (305, 'Item Weight', '55.9g', 39);
+insert into product_details value (306, 'Dimensions', '51.0mm', 39);
+-- product id = 40
+insert into product_details value (307, 'Brand', 'QiYi', 40);
+insert into product_details value (308, 'Type', '3x3', 40);
+insert into product_details value (309, 'Magnets', 'Magnetic', 40);
+insert into product_details value (310, 'Stock Shades', 'Stickerless (Bright)', 40);
+insert into product_details value (311, 'Feel', 'Smooth', 40);
+insert into product_details value (312, 'Gross Weight', '87g', 40);
+insert into product_details value (313, 'Item Weight', '55.9g', 40);
+insert into product_details value (314, 'Dimensions', '51.0mm', 40);
+-- product id = 41
+insert into product_details value (315, 'Brand', 'DaYan', 41);
+insert into product_details value (316, 'Type', '3x3', 41);
+insert into product_details value (317, 'Magnets', 'Magnetic', 41);
+insert into product_details value (318, 'Stock Shades', 'Stickerless (Bright)', 41);
+insert into product_details value (319, 'Feel', 'Smooth', 41);
+insert into product_details value (320, 'Gross Weight', '87g', 41);
+insert into product_details value (321, 'Item Weight', '55.9g', 41);
+insert into product_details value (322, 'Dimensions', '51.0mm', 41);
+-- product id = 42
+insert into product_details value (323, 'Brand', 'DaYan', 42);
+insert into product_details value (324, 'Type', '3x3', 42);
+insert into product_details value (325, 'Magnets', 'Magnetic', 42);
+insert into product_details value (326, 'Stock Shades', 'Stickerless (Bright)', 42);
+insert into product_details value (327, 'Feel', 'Smooth', 42);
+insert into product_details value (328, 'Gross Weight', '87g', 42);
+insert into product_details value (329, 'Item Weight', '55.9g', 42);
+insert into product_details value (330, 'Dimensions', '51.0mm', 42);
+-- product id = 43
+insert into product_details value (331, 'Brand', 'X-man Design', 43);
+insert into product_details value (332, 'Type', '3x3', 43);
+insert into product_details value (333, 'Magnets', 'Magnetic', 43);
+insert into product_details value (334, 'Stock Shades', 'Stickerless (Bright)', 43);
+insert into product_details value (335, 'Feel', 'Smooth', 43);
+insert into product_details value (336, 'Gross Weight', '87g', 43);
+insert into product_details value (337, 'Item Weight', '55.9g', 43);
+insert into product_details value (338, 'Dimensions', '51.0mm', 43);
+-- product id = 44
+insert into product_details value (339, 'Brand', 'X-man Design', 44);
+insert into product_details value (340, 'Type', '3x3', 44);
+insert into product_details value (341, 'Magnets', 'Magnetic', 44);
+insert into product_details value (342, 'Stock Shades', 'Stickerless (Bright)', 44);
+insert into product_details value (343, 'Feel', 'Smooth', 44);
+insert into product_details value (344, 'Gross Weight', '87g', 44);
+insert into product_details value (345, 'Item Weight', '55.9g', 44);
+insert into product_details value (346, 'Dimensions', '51.0mm', 44);
+-- product id = 45
+insert into product_details value (347, 'Brand', 'GAN', 45);
+insert into product_details value (348, 'Type', '3x3', 45);
+insert into product_details value (349, 'Magnets', 'Magnetic', 45);
+insert into product_details value (350, 'Stock Shades', 'Stickerless (Bright)', 45);
+insert into product_details value (351, 'Feel', 'Smooth', 45);
+insert into product_details value (352, 'Gross Weight', '87g', 45);
+insert into product_details value (353, 'Item Weight', '55.9g', 45);
+insert into product_details value (354, 'Dimensions', '51.0mm', 45);
+-- product id = 46
+insert into product_details value (355, 'Brand', 'The Valk', 46);
+insert into product_details value (356, 'Type', '4x4', 46);
+insert into product_details value (357, 'Magnets', 'Magnetic', 46);
+insert into product_details value (358, 'Stock Shades', 'Stickerless (Bright)', 46);
+insert into product_details value (359, 'Feel', 'Smooth', 46);
+insert into product_details value (360, 'Gross Weight', '87g', 46);
+insert into product_details value (361, 'Item Weight', '55.9g', 46);
+insert into product_details value (362, 'Dimensions', '51.0mm', 46);
+-- product id = 47
+insert into product_details value (363, 'Brand', 'QiYi', 47);
+insert into product_details value (364, 'Type', '4x4', 47);
+insert into product_details value (365, 'Magnets', 'Magnetic', 47);
+insert into product_details value (366, 'Stock Shades', 'Stickerless (Bright)', 47);
+insert into product_details value (367, 'Feel', 'Smooth', 47);
+insert into product_details value (368, 'Gross Weight', '87g', 47);
+insert into product_details value (369, 'Item Weight', '55.9g', 47);
+insert into product_details value (370, 'Dimensions', '51.0mm', 47);
+-- product id = 48
+insert into product_details value (371, 'Brand', 'MoYu', 48);
+insert into product_details value (372, 'Type', '4x4', 48);
+insert into product_details value (373, 'Magnets', 'Magnetic', 48);
+insert into product_details value (374, 'Stock Shades', 'Stickerless (Bright)', 48);
+insert into product_details value (375, 'Feel', 'Smooth', 48);
+insert into product_details value (376, 'Gross Weight', '87g', 48);
+insert into product_details value (377, 'Item Weight', '55.9g', 48);
+insert into product_details value (378, 'Dimensions', '51.0mm', 48);
+-- product id = 49
+insert into product_details value (379, 'Brand', 'X-man Design', 49);
+insert into product_details value (380, 'Type', '4x4', 49);
+insert into product_details value (381, 'Magnets', 'Magnetic', 49);
+insert into product_details value (382, 'Stock Shades', 'Stickerless (Bright)', 49);
+insert into product_details value (383, 'Feel', 'Smooth', 49);
+insert into product_details value (384, 'Gross Weight', '87g', 49);
+insert into product_details value (385, 'Item Weight', '55.9g', 49);
+insert into product_details value (386, 'Dimensions', '51.0mm', 49);
+-- product id = 50
+insert into product_details value (387, 'Brand', 'GAN', 50);
+insert into product_details value (388, 'Type', '4x4', 50);
+insert into product_details value (389, 'Magnets', 'Magnetic', 50);
+insert into product_details value (390, 'Stock Shades', 'Stickerless (Bright)', 50);
+insert into product_details value (391, 'Feel', 'Smooth', 50);
+insert into product_details value (392, 'Gross Weight', '87g', 50);
+insert into product_details value (393, 'Item Weight', '55.9g', 50);
+insert into product_details value (394, 'Dimensions', '51.0mm', 50);
+-- product id = 51
+insert into product_details value (395, 'Brand', 'YJ', 51);
+insert into product_details value (396, 'Type', '5x5', 51);
+insert into product_details value (397, 'Magnets', 'Magnetic', 51);
+insert into product_details value (398, 'Stock Shades', 'Stickerless (Bright)', 51);
+insert into product_details value (399, 'Feel', 'Smooth', 51);
+insert into product_details value (400, 'Gross Weight', '87g', 51);
+insert into product_details value (401, 'Item Weight', '55.9g', 51);
+insert into product_details value (402, 'Dimensions', '51.0mm', 51);
+-- product id = 52
+insert into product_details value (403, 'Brand', 'MoYu', 52);
+insert into product_details value (404, 'Type', '5x5', 52);
+insert into product_details value (405, 'Magnets', 'Magnetic', 52);
+insert into product_details value (406, 'Stock Shades', 'Stickerless (Bright)', 52);
+insert into product_details value (407, 'Feel', 'Smooth', 52);
+insert into product_details value (408, 'Gross Weight', '87g', 52);
+insert into product_details value (409, 'Item Weight', '55.9g', 52);
+-- product id = 53
+insert into product_details value (410, 'Brand', 'QiYi', 53);
+insert into product_details value (411, 'Type', '5x5', 53);
+insert into product_details value (412, 'Magnets', 'Magnetic', 53);
+insert into product_details value (413, 'Stock Shades', 'Stickerless (Bright)', 53);
+insert into product_details value (414, 'Feel', 'Smooth', 53);
+insert into product_details value (415, 'Gross Weight', '87g', 53);
+insert into product_details value (416, 'Item Weight', '55.9g', 53);
+insert into product_details value (417, 'Dimensions', '51.0mm', 53);
+insert into product_details value (410, 'Dimensions', '51.0mm', 52);
+-- product id = 54
+insert into product_details value (411, 'Brand', 'The Valk', 54);
+insert into product_details value (412, 'Type', '5x5', 54);
+insert into product_details value (413, 'Magnets', 'Magnetic', 54);
+insert into product_details value (414, 'Stock Shades', 'Stickerless (Bright)', 54);
+insert into product_details value (415, 'Feel', 'Smooth', 54);
+insert into product_details value (416, 'Gross Weight', '87g', 54);
+insert into product_details value (417, 'Item Weight', '55.9g', 54);
+insert into product_details value (418, 'Dimensions', '51.0mm', 54);
+insert into product_details value (419, 'Dimensions', '51.0mm', 54);
 
 
 
@@ -583,4 +1065,4 @@ delete from product_details where product_id = 21;
 
 delete from products where id = 9;
 
-update products set maim_image = 'DaYan_TengYun_2x2_M_Main.jpg' where id = 18;
+update products set maim_image = 'QiYi_Valk_5_M_5x5_Main.jpg' where id = 54;
