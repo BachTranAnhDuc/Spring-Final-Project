@@ -2,6 +2,7 @@
 *.icon.silver {color: silver}
 *.icon-green {color: green}
 *.icon-dark {color: gray}
+*.icon-red {color: #ff367c}
 
 @media screen and (max-width: 768px){
 	/* small screen */
@@ -19,3 +20,12 @@
 	/* large screen */
 }
 
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

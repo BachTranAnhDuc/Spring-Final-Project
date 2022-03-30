@@ -3732,14 +3732,17 @@ progress {
 
 .content {
   position: relative;
-  min-height: 100vh; }
+  min-height: 100vh; 
+  }
   @media (min-width: 992px) {
     .content {
       margin-left: 260px; } }
 
 .content-header {
   padding: 20px 25px;
-  position: relative; }
+  position: relative; 
+  background-color: #47BCCE !important;
+}
 
 .content-menu {
   display: flex;

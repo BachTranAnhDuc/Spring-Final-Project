@@ -13,13 +13,15 @@
 <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}" />
 <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
 <link rel="stylesheet" type="text/css" th:href="@{/dashboard/assets/css/style.min.css}" />
+
 <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script type="text/javascript"
 	th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	
+<link rel="stylesheet" type="text/css" th:href="@{/dropdown/dist/css/main.css}" />
 <script type="text/javascript"
-	th:src="@{/js/common.js}"></script>
-
+		th:src="@{/js/common.js}">
+</script>
 </head>
 <body>
 	<div th:fragment="menu">
@@ -141,15 +143,16 @@
 	
 	<th th:fragment="column_link(moduleURL, fieldName, columnLabel)">
 		<a th:href="@{${moduleURL} + '/page/' + ${currentPage} + '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + '&keyword=' + ${keyword != null ? keyword : ''}}"
-			class="text-white"> [[${columnLabel}]] 
+			class=""> [[${columnLabel}]] 
+			<span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
 		</a> 
-		<span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
+		
 	</th>
 	
 	<td th:fragment="column_link_image(imagePath, image)">
 		<span th:if="${image == null}" class="fas fa-portrait fa-2x icon-dark"></span>
 		<img th:if="${image != null}" th:src="@{${imagePath}}"
-			class="w-25 h-25" style="max-width: 300px"/>
+			class=""/>
 	</td>
 
 	<a th:fragment="page_link(moduleURL, pageNum, label)"
@@ -286,41 +289,46 @@
 		</div>		
 	</div>
 	
-	<div th:fragment="search_form(moduleURL)">
-		<form th:action="@{${moduleURL}}" class="form-inline my-3">
-		
+	<div th:fragment="search_form(moduleURL)" class="col-5">
+		<form th:action="@{${moduleURL}}" class="card card-sm" style="border: none">
+			
 			<input type="hidden" name="sortField" th:value="${sortField}"/>
 				
 			<input type="hidden" name="sortDir" th:value="${sortDir}"/>
-				
-				
-			<label class="mr-2">Filter:</label>
 			
-			<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
-  			&nbsp;&nbsp;
-			
-			<button type="submit" value="Search" class="btn btn-primary">
-				<i class="fas fa-search"></i>
-			</button>
-			&nbsp;&nbsp;
-				
-			<button type="button" class="btn btn-secondary" onclick="clearFilter()">
-    			<i class="fas fa-eraser"></i>
-  			</button>
+			<div class="card-body row no-gutters align-items-center">
+           		<div class="col-auto">
+               		<i class="fas fa-search text-body"></i>
+               	</div>
+   				<!--end of col-->
+        		<div class="col">
+         			<input class="form-control form-control form-control-borderless" type="search" placeholder="Search topics or keywords"
+         				name="keyword" th:value="${keyword}">
+      			</div>
+            	<!--end of col-->
+           		<div class="col-auto mr-2">
+            		<button class="btn btn btn-success" type="submit">Search</button>
+	         	</div>
+	         	<div class="col-auto">
+            		<button type="button" class="btn btn-secondary" onclick="clearFilter()">
+    					Clear
+  					</button>
+	         	</div>
+	          	<!--end of col-->
+	        </div>
 			<!-- <input type="submit" value="Search" class="btn btn-primary"/> -->
 		</form>
 	</div>
 	
 	<!-- Export -->
-	<div th:fragment="export(moduleURL, title)">
-		<h1>[[${title}]]</h1>
-		<a th:href="@{${moduleURL} + '/new'}" class="fas fa-user-plus fa-2x icon-dark mr-2"></a>
+	<div th:fragment="export(moduleURL, title)" class="col-7 my-auto">
+		<a th:href="@{${moduleURL} + '/new'}" class="fas fa-user-plus fa-2x icon.silver mr-2"></a>
 		&nbsp;|&nbsp;
-		<a th:href="@{${moduleURL} + '/export/csv'}" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
+		<a th:href="@{${moduleURL} + '/export/csv'}" class="fas fa-file-csv fa-2x icon.silver mr-2"></a>
 		&nbsp;|&nbsp;
-		<a th:href="@{${moduleURL} + '/export/excel'}" class="fas fa-file-excel fa-2x icon-dark mr-2"></a>
+		<a th:href="@{${moduleURL} + '/export/excel'}" class="fas fa-file-excel fa-2x icon.silver mr-2"></a>
 		&nbsp;|&nbsp;
-		<a th:href="@{${moduleURL} + '/export/pdf'}" class="fas fa-file-pdf fa-2x icon-dark mr-2"></a>
+		<a th:href="@{${moduleURL} + '/export/pdf'}" class="fas fa-file-pdf fa-2x icon.silver mr-2"></a>
 	</div>
 	
 	<!-- Delete and Edit not check-->
@@ -328,7 +336,7 @@
 		<a class="fas fa-edit fa-2x icon-green" th:href="@{${moduleURL} +'edit/' + ${idEntity}}"
 			title="Edit this user"></a>
 		&nbsp; 
-		<a class="fas fa-trash fa-2x icon-dark link-delete-user" 
+		<a class="fas fa-trash fa-2x link-delete-user icon-red mt-2" 
 			th:href="@{${moduleURL} + 'delete/' + ${idEntity}}"
 			th:userId="${idEntity}"
 			title="Delete this user">

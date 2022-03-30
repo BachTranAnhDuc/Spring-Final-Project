@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+button,a {
+    @apply inline-block transition-all duration-200;
+    &:active {
+        @apply shadow-none scale-90;
+    }
+}
