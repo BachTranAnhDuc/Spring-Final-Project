@@ -150,9 +150,15 @@
 	</th>
 	
 	<td th:fragment="column_link_image(imagePath, image)">
-		<span th:if="${image == null}" class="fas fa-portrait fa-2x icon-dark"></span>
+		<span th:if="${image == null}" class="fas fa-portrait fa-1x icon-dark"></span>
 		<img th:if="${image != null}" th:src="@{${imagePath}}"
 			class=""/>
+	</td>
+	
+	<td th:fragment="column_link_image_brand(imagePath, image)">
+		<span th:if="${image == null}" class="fas fa-portrait fa-1x icon-dark"></span>
+		<img th:if="${image != null}" th:src="@{${imagePath}}"
+			class="w-75" style="max-width: 100px;"/>
 	</td>
 
 	<a th:fragment="page_link(moduleURL, pageNum, label)"
@@ -319,6 +325,8 @@
 			<!-- <input type="submit" value="Search" class="btn btn-primary"/> -->
 		</form>
 	</div>
+	
+	
 	
 	<!-- Export -->
 	<div th:fragment="export(moduleURL, title)" class="col-7 my-auto">

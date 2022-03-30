@@ -21,7 +21,7 @@ import com.rubikme.common.entity.Role;
 @Transactional
 public class UserService {
 	
-	public static final int USERS_PER_PAGE = 4;
+	public static final int USERS_PER_PAGE = 6;
 	
 	@Autowired
 	private UserRepository userRepo;

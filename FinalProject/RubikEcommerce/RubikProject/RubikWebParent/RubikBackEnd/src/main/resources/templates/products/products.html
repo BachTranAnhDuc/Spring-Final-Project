@@ -3,137 +3,156 @@
 		xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:replace="fragments :: page_head('Products - Rubik Admin', 'none')">
 </head>
-<body>
-<div class="container-fluid">
-	<div th:replace="fragments :: menu"></div>
-	
-	<div th:replace="fragments :: export('/products', ${title})"></div>
-	
-	<div>
-		<form th:action="@{/products/page/1}" class="form-inline m-3" id="searchForm">
-			<input type="hidden" name="sortField" th:value="${sortField}" />
-			<input type="hidden" name="sortDir" th:value="${sortDir}" />
-			
-			Category:&nbsp;
-			<select class="form-control" name="categoryId" id="dropdownCategory">
-				<option value="0">All Categories</option>
-				
-				<th:block th:each="cat : ${listCategories}">
-				<option th:value="${cat.id}" th:selected="(${categoryId} == ${cat.id})">[[${cat.name}]]</option>
-				</th:block>
-			</select>
-			
-			&nbsp;Filter:&nbsp;
-			<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
-			&nbsp;&nbsp;
-			<button type="submit" class="btn btn-primary">
-				<i class="fas fa-search"></i>
-			</button>
-			&nbsp;&nbsp;
-			<button type="button" class="btn btn-secondary" onclick="clearFilter()">
-				<i class="fas fa-eraser"></i>
-			</button>
-		</form>
-		
-		<div th:if="${message != null}" class="alert alert-success text-center">
-			[[${message}]]
-		</div>		
-	</div>
-		
-	<div class="full-details">
-		<table class="table table-bordered table-striped table-hover table-responsive-xl">
-			<thead class="thead-dark">
-				<tr>
-					<th>ID</th>
-					<th>Main Image</th>
-					<th>Product Name</th>
-					<th>Brand</th>
-					<th>Category</th>
-					<th>Enabled</th>
-					<th></th>	
-				</tr>								
-			</thead>
-			<tbody>
-				<tr th:each="product : ${listProducts}">
-				
-					<td>[[${product.id}]]</td>
-					
-					<td th:replace="fragments :: column_link_image(${product.getMainImagePath}, ${product.mainImage})"></td>
-					
-					<td>
-						<a class="link-detail"
-							th:href="@{'/products/detail/' + ${product.id}}"
-							title="View detail of product">
-							[[${product.name}]]
-						</a>	
-					</td>
-					
-					<td>[[${product.brand.name}]]</td>
-					
-					<td>[[${product.category.name}]]</td>
-					
-					<td>
-						<div th:replace="fragments :: status(${product.enabled}, 'product', '/products/' + ${product.id})"></div>
-					</td>
+<body class="skin-base animate">
+	<div th:replace="front_fragments :: side_bar"></div>
 
-					<td>
-						<a class="fas fa-file-alt fa-2x icon-green link-detail"
-							th:href="@{'/products/detail/' + ${product.id}}"
-							title="View detail of product">
-						</a>
-						&nbsp;
-						<div th:replace="fragments :: delete_edit('/products/', ${product.id})"></div>					
-					</td>					
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
-	<div th:replace="fragments :: confirm_modal"></div>
-	
-	<div class="modal fade" id="detailModal">
-		<div class="modal-dialog modal-xl">
-			<div class="modal-content">
+    <div class="content">
+      	<div th:replace="front_fragments :: content_header"></div>
+   		
+		<div class="content-body">
+			<div class="row mt-5">
+				<div class="col-12 mr-auto">
+					<form th:action="@{/products/page/1}" class="form-inline m-3" id="searchForm">
+						<input type="hidden" name="sortField" th:value="${sortField}" />
+						<input type="hidden" name="sortDir" th:value="${sortDir}" />
+						
+						Category:&nbsp;
+						<select class="form-control" name="categoryId" id="dropdownCategory">
+							<option value="0">All Categories</option>
+							
+							<th:block th:each="cat : ${listCategories}">
+							<option th:value="${cat.id}" th:selected="(${categoryId} == ${cat.id})">[[${cat.name}]]</option>
+							</th:block>
+						</select>
+						
+						&nbsp;Filter:&nbsp;
+						<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
+						&nbsp;&nbsp;
+						<button type="submit" class="btn btn-primary">
+							<i class="fas fa-search"></i>
+						</button>
+						&nbsp;&nbsp;
+						<button type="button" class="btn btn-secondary" onclick="clearFilter()">
+							<i class="fas fa-eraser"></i>
+						</button>
+					</form>
+				</div>	
 			</div>
-		</div>
-	</div>
-	
-	<div th:replace="fragments :: pagination('/products', 'products')"></div>
-		
-	<div th:replace="fragments :: footer_frag"></div>
-	
-</div>
-	
-<script type="text/javascript">
-
-	moduleURL = "[[@{/products}]]";
-	
-	$(document).ready(function() {
-		$('.link-delete-user').on("click", function(e) {
-			e.preventDefault();
-			link = $(this);
-			//alert($(this).attr("href"));
-			userId = link.attr("userId");
-			$('#yes-delete').attr("href", link.attr("href"));
-			$('#confirmText').text("Are you sure that you want to delete user ID " +userId + "?");
-			$('#confirmModal').modal();
+			<div class="full-details mt-4 mb-4">
+				<div class="row">
+            		<div class="col-lg-12 grid-margin stretch-card">
+              			<div class="card">
+                			<div class="card-body">
+                				<div class="row mb-4">
+                					<div th:replace="fragments :: export('/users', ${title})"></div>
+                				</div>
+                  				
+								<div th:if="${message != null}" class="alert alert-success text-center row">
+									[[${message}]]
+								</div>
+                  				<div class="table-responsive">
+                    				<table class="table table-hover table-responsive-xl table-striped">
+                    					<thead>
+											<tr class="table-light">
+												<th>ID</th>
+												<th>Main Image</th>
+												<th>Product Name</th>
+												<th>Brand</th>
+												<th>Category</th>
+												<th>Enabled</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="product : ${listProducts}">
+				
+												<td>[[${product.id}]]</td>
+												
+												<td th:replace="fragments :: column_link_image_brand(${product.getMainImagePath}, ${product.mainImage})"></td>
+												
+												<td>
+													<a class="link-detail"
+														th:href="@{'/products/detail/' + ${product.id}}"
+														title="View detail of product">
+														[[${product.name}]]
+													</a>	
+												</td>
+												
+												<td>[[${product.brand.name}]]</td>
+												
+												<td>[[${product.category.name}]]</td>
+												
+												<td>
+													<div th:replace="fragments :: status(${product.enabled}, 'product', '/products/' + ${product.id})"></div>
+												</td>
+							
+												<td>
+													<a class="fas fa-file-alt fa-2x icon-green link-detail"
+														th:href="@{'/products/detail/' + ${product.id}}"
+														title="View detail of product">
+													</a>
+													&nbsp;
+													<div th:replace="fragments :: delete_edit('/products/', ${product.id})"></div>					
+												</td>					
+											</tr>
+										</tbody>
+                    				</table>
+                    			</div>
+                    		</div>
+                    	</div>
+                    </div>
+				</div>
+			</div>
 			
-		});
+			<div th:replace="fragments :: confirm_modal"></div>
+	
+			<div class="modal fade" id="detailModal">
+				<div class="modal-dialog modal-xl">
+					<div class="modal-content">
+					</div>
+				</div>
+			</div>
+			
+			<div th:replace="fragments :: pagination('/products', 'products')"></div>
+				
+			<div th:replace="fragments :: footer_frag"></div>
+		</div><!-- content-body -->
+		
+	</div><!-- content -->
 
-		$(".link-detail").on("click", function(e){ 
-			e.preventDefault();
-			linkDetailURL = $(this).attr("href");
-			$("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
-		});
 
-		$("#dropdownCategory").on("change", function() {
-			$("#searchForm").submit();
+	<div th:replace="front_fragments :: js_file"></div>
+		
+	<script type="text/javascript">
+	
+		moduleURL = "[[@{/products}]]";
+		
+		$(document).ready(function() {
+			$('.link-delete-user').on("click", function(e) {
+				e.preventDefault();
+				link = $(this);
+				//alert($(this).attr("href"));
+				userId = link.attr("userId");
+				$('#yes-delete').attr("href", link.attr("href"));
+				$('#confirmText').text("Are you sure that you want to delete user ID " +userId + "?");
+				$('#confirmModal').modal();
+				
+			});
+	
+			$(".link-detail").on("click", function(e){ 
+				e.preventDefault();
+				linkDetailURL = $(this).attr("href");
+				$("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
+			});
+	
+			$("#dropdownCategory").on("change", function() {
+				$("#searchForm").submit();
+			});
 		});
-	});
-
-	function clearFilter(){
-		window.location = moduleURL;
-	}
-</script>
+	
+		function clearFilter(){
+			window.location = moduleURL;
+		}
+	</script>
 </body>
 </html>

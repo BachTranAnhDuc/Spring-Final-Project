@@ -2,55 +2,74 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: page_head('Rubik Admin Control Panel', 'none')">
 </head>
-<body>
-<div class="container-fluid">
-	<div th:replace="fragments :: menu"></div>
-	
-	<div th:replace="fragments :: export('/brands', ${title})"></div>
-	
-	<div th:replace="fragments :: search_form('/brands/page/1')"></div>
-		
-	<div th:if="${message != null}" class="alert alert-success text-center">
-			[[${message}]]
-	</div>
-		
-	<div class="full-details">
-		<table class="table table-bordered table-striped table-hover table-responsive-xl">
-			<thead class="thead-dark">
-				<tr>
-					<th th:replace="fragments :: column_link('/brands', 'id', 'Brand ID')" class="hideable-column"/>
-					<th>Logo</th>
-					<th th:replace="fragments :: column_link('/brands', 'name', 'Brand Name')"/>
-					<th>Categories</th>
-					<th></th>
-				</tr>								
-			</thead>
-			<tbody>
-				<tr th:each="brand : ${listBrands}">
-					<td class="hideable-column">[[${brand.id}]]</td>
-					<td th:replace="fragments :: column_link_image(${brand.getLogoPath}, ${brand.logo})"></td>
-					<td>[[${brand.name}]]</td>
-					<td>
-						<th:block th:each="cat : ${brand.categories}">
-						<span class="badge badge-secondary" th:text="${cat.name}"></span>
-						</th:block>
-					</td>
+<body class="skin-base animate">
+	<div th:replace="front_fragments :: side_bar"></div>
 
-					<td>
-						<div th:replace="fragments :: delete_edit('/brands/', ${brand.id})"></div>					
-					</td>					
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
-	<div th:replace="fragments :: confirm_modal"></div>
-	
-	<div th:replace="fragments :: pagination('/brands', 'brands')"></div>
+    <div class="content">
+      	<div th:replace="front_fragments :: content_header"></div>
+   		
+		<div class="content-body">
 		
-	<div th:replace="fragments :: footer_frag"></div>
+			<div class="full-details mt-4 mb-4">
+				<div class="row">
+            		<div class="col-lg-12 grid-margin stretch-card">
+              			<div class="card">
+                			<div class="card-body">
+                				<div class="row mb-4">
+                					<div th:replace="fragments :: export('/brands', ${title})"></div>
+                					<div th:replace="fragments :: search_form('/brands/page/1')"
+                						class=""></div>
+                				</div>
+                  				
+								<div th:if="${message != null}" class="alert alert-success text-center row">
+									[[${message}]]
+								</div>
+                  				<div class="table-responsive">
+                    				<table class="table table-hover table-responsive-xl table-striped">
+                    					<thead>
+											<tr class="table-light">
+												<th class="col-1 hideable-column" th:replace="fragments :: column_link('/brands', 'id', 'Brand ID')"/>
+												<th class="col-3">Logo</th>
+												<th class="col-2" th:replace="fragments :: column_link('/brands', 'name', 'Brand Name')"/>
+												<th class="col-4">Categories</th>
+												<th class="col-2"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="brand : ${listBrands}">
+												<td class="hideable-column font-weight-bold">[[${brand.id}]]</td>
+												<td th:replace="fragments :: column_link_image_brand(${brand.getLogoPath}, ${brand.logo})"></td>
+												<td>[[${brand.name}]]</td>
+												<td>
+													<th:block th:each="cat : ${brand.categories}">
+													<span class="badge badge-info" th:text="${cat.name}"></span>
+													</th:block>
+												</td>
+							
+												<td>
+													<div th:replace="fragments :: delete_edit('/brands/', ${brand.id})"></div>					
+												</td>					
+											</tr>
+										</tbody>
+                    				</table>
+                    			</div>
+                    		</div>
+                    	</div>
+                    </div>
+				</div>
+			</div>
+			
+			<div th:replace="fragments :: confirm_modal"></div>
 	
-</div>
+			<div th:replace="fragments :: pagination('/brands', 'brands')"></div>
+		
+			<div th:replace="fragments :: footer_frag"></div>
+		</div><!-- content-body -->
+		
+	</div><!-- content -->
+
+
+    <div th:replace="front_fragments :: js_file"></div>
 	
 <script type="text/javascript">
 	$(document).ready(function() {

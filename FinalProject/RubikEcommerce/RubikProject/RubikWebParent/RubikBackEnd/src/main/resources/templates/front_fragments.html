@@ -29,7 +29,7 @@
           	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 	          	<a th:href="@{/brands}" class="nav-link"
 	          		onclick="change_brands()">
-	          		<i data-feather="shopping-bag"></i>
+	          		<i data-feather="archive"></i>
 	          		<span>Brands</span>
 	          	</a>
           	</th:block>
@@ -37,35 +37,35 @@
           	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Editor', 'Shipper')">
 	          	<a th:href="@{/products}" class="nav-link"
 	          		onclick="change_products()">
-	         		<i data-feather="file-text"></i>
+	         		<i data-feather="shopping-bag"></i>
 	          		<span>Products</span>
 	          	</a>
           	</th:block>
           		
           	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 	          	<a th:href="@{/customers}" class="nav-link">
-	          		<i data-feather="calendar"></i>
+	          		<i data-feather="smile"></i>
 	          		<span>Customers</span>
 	          	</a>
           	</th:block>
           		
           	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 	          	<a th:href="@{/shipping}" class="nav-link">
-	          		<i data-feather="briefcase"></i>
+	          		<i data-feather="truck"></i>
 	          		<span>Shipping</span>
 	          	</a>
           	</th:block>
           		
           	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 	          	<a th:href="@{/orders}" class="nav-link">
-	          		<i data-feather="briefcase"></i>
+	          		<i data-feather="inbox"></i>
 	          		<span>Orders</span>
 	          	</a>
           	</th:block>
           		
           	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
 	          	<a th:href="@{/report}" class="nav-link">
-	          		<i data-feather="briefcase"></i>
+	          		<i data-feather="heart"></i>
 	          		<span>Sales Report</span>
 	          	</a>
           	</th:block>
@@ -74,7 +74,11 @@
         <hr>
 
         <nav class="nav-sidebar">
-          	<a href="" class="nav-link"><i data-feather="users"></i><span>Manage Accounts</span></a>
+          	<a href="" class="nav-link"
+          		onclick="change_account();">
+          		<i data-feather="users"></i>
+          		<span>Manage Accounts</span>
+          	</a>
           	<a href="" class="nav-link"><i data-feather="package"></i><span>Menus</span></a>
           	<a href="" class="nav-link"><i data-feather="file-text"></i><span>Setting</span></a>
         </nav>
@@ -106,7 +110,7 @@
   
   
 <!-- Content header -->
-<div th:fragment="content_header" class="content-header" style="background-color: white;">
+<div th:fragment="content_header" class="content-header" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; background-color: #d6dbdf;">
 	<form th:action="@{/logout}" method="post" th:hidden="true"
 		name="logoutForm">
 		<input type="submit"/>
@@ -205,6 +209,10 @@
 
 		function change_admin() {
 			window.location = "[[@{/index}]]"
+		}
+
+		function change_account() {
+			window.location = "[[@{/account}]]"
 		}
 	</script>
 </div>

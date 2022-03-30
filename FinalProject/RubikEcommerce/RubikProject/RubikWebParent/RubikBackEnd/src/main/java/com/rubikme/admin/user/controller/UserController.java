@@ -47,7 +47,7 @@ public class UserController {
 		user.setEnabled(true);
 		model.addAttribute("user", user);
 		model.addAttribute("listRoles", listRoles);
-		model.addAttribute("pageTitle", "Create New User");
+		model.addAttribute("title", "Create New User");
 		
 		return "users/user_form";
 	}
@@ -93,7 +93,7 @@ public class UserController {
 			List<Role> listRoles = service.listRoles();
 			
 			model.addAttribute("user", user);  
-			model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
+			model.addAttribute("title", "Edit User (ID: " + id + ")");
 			model.addAttribute("listRoles", listRoles);
 			
 			return "users/user_form"; 
