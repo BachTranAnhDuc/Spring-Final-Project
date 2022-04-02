@@ -44,7 +44,9 @@
               			<div class="card">
                 			<div class="card-body">
                 				<div class="row mb-4">
-                					<div th:replace="fragments :: export('/products', ${title})"></div>
+                					<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+                						<div th:replace="fragments :: export('/products', ${title})"></div>
+                					</th:block>
                 				</div>
                   				
 								<div th:if="${message != null}" class="alert alert-success text-center row">
@@ -59,7 +61,9 @@
 												<th>Product Name</th>
 												<th>Brand</th>
 												<th>Category</th>
-												<th>Enabled</th>
+												<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+													<th>Enabled</th>
+												</th:block>
 												<th></th>
 											</tr>
 										</thead>
@@ -82,9 +86,11 @@
 												
 												<td>[[${product.category.name}]]</td>
 												
-												<td>
-													<div th:replace="fragments :: status(${product.enabled}, 'product', '/products/' + ${product.id})"></div>
-												</td>
+												<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+													<td>
+														<div th:replace="fragments :: status(${product.enabled}, 'product', '/products/' + ${product.id})"></div>
+													</td>
+												</th:block>
 							
 												<td>
 													<a class="fas fa-file-alt fa-2x icon-green link-detail"
@@ -92,7 +98,14 @@
 														title="View detail of product">
 													</a>
 													&nbsp;
-													<div th:replace="fragments :: delete_edit('/products/', ${product.id})"></div>					
+													
+													<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
+														<div th:replace="fragments :: edit_entity('/products/', ${product.id})"></div>
+													</th:block>
+													
+													<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+														<div th:replace="fragments :: delete_entity('/products/', ${product.id})"></div>	
+													</th:block>			
 												</td>					
 											</tr>
 										</tbody>

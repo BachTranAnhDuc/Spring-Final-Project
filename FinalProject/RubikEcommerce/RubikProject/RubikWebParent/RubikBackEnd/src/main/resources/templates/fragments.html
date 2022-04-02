@@ -61,7 +61,7 @@
 						</li>
 					</th:block>
 					
-					<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Editor', 'Shipper')">
+					<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Shipper')">
 						<li class="nav-item">
 							<a class="nav-link"
 								th:href="@{/products}">Products
@@ -341,14 +341,38 @@
 	
 	<!-- Delete and Edit not check-->
 	<div th:fragment="delete_edit(moduleURL, idEntity)">
-		<a class="fas fa-edit fa-2x icon-green" th:href="@{${moduleURL} +'edit/' + ${idEntity}}"
-			title="Edit this user"></a>
+		<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
+			<a class="fas fa-edit fa-2x icon-green" th:href="@{${moduleURL} +'edit/' + ${idEntity}}"
+				title="Edit this user">
+			</a>
+		</th:block>
+		<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 		&nbsp; 
 		<a class="fas fa-trash fa-2x link-delete-user icon-red mt-2" 
 			th:href="@{${moduleURL} + 'delete/' + ${idEntity}}"
 			th:userId="${idEntity}"
 			title="Delete this user">
 		</a>
+		</th:block>
 	</div>
+	
+	<div th:fragment="delete_entity(moduleURL, idEntity)">
+		<a class="fas fa-trash fa-2x link-delete-user icon-red mt-2" 
+			th:href="@{${moduleURL} + 'delete/' + ${idEntity}}"
+			th:userId="${idEntity}"
+			title="Delete this user">
+			
+		</a>
+		&nbsp;
+	</div>
+	
+	<div th:fragment="edit_entity(moduleURL, idEntity)">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{${moduleURL} +'edit/' + ${idEntity}}"
+			title="Edit this user">
+		</a>
+		&nbsp;
+	</div>
+	
+	<!-- Delete and Edit not check-->
 </body>
 </html>
