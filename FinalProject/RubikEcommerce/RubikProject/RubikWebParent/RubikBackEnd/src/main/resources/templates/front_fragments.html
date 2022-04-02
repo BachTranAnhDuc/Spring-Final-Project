@@ -110,7 +110,7 @@
   
   
 <!-- Content header -->
-<div th:fragment="content_header" class="content-header" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; background-color: #d6dbdf;">
+<div th:fragment="content_header" id="ct_header" class="content-header">
 	<form th:action="@{/logout}" method="post" th:hidden="true"
 		name="logoutForm">
 		<input type="submit"/>

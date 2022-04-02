@@ -3,7 +3,7 @@
 		xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:replace="fragments :: page_head('Products - Rubik Admin', 'none')">
 </head>
-<body class="skin-base animate">
+<body class="skin-red animate">
 	<div th:replace="front_fragments :: side_bar"></div>
 
     <div class="content">
@@ -44,7 +44,7 @@
               			<div class="card">
                 			<div class="card-body">
                 				<div class="row mb-4">
-                					<div th:replace="fragments :: export('/users', ${title})"></div>
+                					<div th:replace="fragments :: export('/products', ${title})"></div>
                 				</div>
                   				
 								<div th:if="${message != null}" class="alert alert-success text-center row">

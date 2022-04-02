@@ -1,3 +1,5 @@
+
+
 $(function(){
   'use script'
 
@@ -136,8 +138,8 @@ $(function(){
   });
 
   //on page load
-  var sk = (localStorage.getItem('skin'))? localStorage.getItem('skin') : 'base';
-  var st = (localStorage.getItem('style'))? localStorage.getItem('style') : 'base';
+  var sk = (localStorage.getItem('skin'))? localStorage.getItem('skin') : 'red';
+  var st = (localStorage.getItem('style'))? localStorage.getItem('style') : 'red';
 
   // skin
   $('body').attr('class', function(i, c){
@@ -152,10 +154,12 @@ $(function(){
     return c.replace(/(^|\s)style-\S+/g, '');
   });
 
-  if(st !== 'base') {
+  if(st !== 'red') {
     $('.nav-sidebar').addClass('style-'+st);
   }
 
   $('#navigationStyles a[data-style='+st+']').addClass('active').siblings().removeClass('active');
 
 });
+
+

@@ -84,7 +84,8 @@ public class ProductController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);		
 		model.addAttribute("listProducts", listProducts);
-		model.addAttribute("listCategories", listCategories);		
+		model.addAttribute("listCategories", listCategories);	
+		model.addAttribute("title", "Manage Product");
 		
 		return "products/products";		
 	}
@@ -101,8 +102,9 @@ public class ProductController {
 		
 		model.addAttribute("product", product);
 		model.addAttribute("listBrands", listBrands);
-		model.addAttribute("pageTitle", "Create New Product");
+		model.addAttribute("title", "Create New Product");
 		model.addAttribute("numberOfExistingExtraImages", 0);
+		
 		
 		return "products/product_form";
 	}

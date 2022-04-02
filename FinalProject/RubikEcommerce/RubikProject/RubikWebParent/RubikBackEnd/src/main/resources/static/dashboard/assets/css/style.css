@@ -3782,6 +3782,7 @@ progress {
   .content-menu:hover {
     background-color: #e9ebf0;
     color: #627293; }
+    
 
 .content-body .nav-link {
   background-color: #f7f9fc;
@@ -3794,7 +3795,9 @@ progress {
     border-color: #627293;
     color: #223458;
     font-weight: 500;
-    box-shadow: 0 1px 1px rgba(202, 207, 217, 0.25), 0 2px 2px rgba(202, 207, 217, 0.2), 0 4px 4px rgba(202, 207, 217, 0.15); }
+    box-shadow: 0 1px 1px rgba(202, 207, 217, 0.25), 0 2px 2px rgba(202, 207, 217, 0.2), 0 4px 4px rgba(202, 207, 217, 0.15);
+    }
+
 
 .content-label {
   color: #9aa6be; }
@@ -3981,9 +3984,14 @@ progress {
     position: relative;
     z-index: 800;
     box-shadow: -1px 0 1px rgba(216, 222, 230, 0.22), -2px 0 2px rgba(216, 222, 230, 0.17), -4px 0 4px rgba(216, 222, 230, 0.12), -8px 0 8px rgba(216, 222, 230, 0.07), -16px 0 16px rgba(216, 222, 230, 0.02); }
-
+  	
+  	
+  	
 .skin-dark {
   background-color: #f7f9fd; }
+  .skin-dark .content .content-body .rb-shop {
+  		color: red;
+  		background-color: red;}
   .skin-dark .sidebar {
     background-color: #14274E;
     -webkit-font-smoothing: antialiased;
