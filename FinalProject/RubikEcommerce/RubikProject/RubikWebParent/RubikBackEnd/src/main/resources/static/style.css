@@ -3,6 +3,7 @@
 *.icon-green {color: green}
 *.icon-dark {color: gray}
 *.icon-red {color: #ff367c}
+*.icon-blue {color: #62aeff}
 
 @media screen and (max-width: 768px){
 	/* small screen */

@@ -86,7 +86,7 @@ public class BrandController {
 		
 		model.addAttribute("listCategories", listCategories);
 		model.addAttribute("brand", new Brand());
-		model.addAttribute("pageTitle", "Create New Brand");
+		model.addAttribute("title", "Create New Brand");
 		model.addAttribute("headerTitle", "/brands/new");
 		
 		return "brands/brand_form";

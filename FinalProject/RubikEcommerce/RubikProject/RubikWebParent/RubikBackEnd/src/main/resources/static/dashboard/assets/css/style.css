@@ -3543,7 +3543,6 @@ progress {
       height: 20px;
       margin-right: 12px; }
     .nav-sidebar .nav-link.with-sub::after {
-      content: '\EA6E';
       font-family: 'remixicon';
       font-weight: 400;
       font-size: 16px;
@@ -3662,7 +3661,7 @@ progress {
   justify-content: space-between;
   cursor: pointer; }
   .nav-group-label::after {
-    content: '\EA4E';
+
     font-family: 'remixicon';
     font-weight: 400;
     font-size: 16px;

@@ -3,94 +3,139 @@
         <a href="#" class="sidebar-logo"><span></span></a>
         <a th:href="@{/}" class="sidebar-logo-text">RubikShop</a>
     </div><!-- sidebar-header -->
+    
       <div class="sidebar-search">
         <div class="search-body">
           	<i data-feather="search"></i>
           	<input type="text" class="form-control" placeholder="Search...">
         </div><!-- search-body -->
       </div><!-- sidebar-search -->
-      <div class="sidebar-body">
-        <nav class="nav-sidebar">
-        	<a class="nav-link" th:href="@{/users}"
-				sec:authorize="hasAuthority('Admin')"
-				onclick="change_users()">
-					<i data-feather="users"></i>
-          		<span>Users</span>
-			</a>
-			
-			<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-	         	<a th:href="@{/categories}" class="nav-link"
-	          		onclick="change_categories()">
-	          		<i data-feather="monitor"></i>
-	          		<span>Categories</span>
-	          	</a>
-	        </th:block>
-          		
-          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-	          	<a th:href="@{/brands}" class="nav-link"
-	          		onclick="change_brands()">
-	          		<i data-feather="archive"></i>
-	          		<span>Brands</span>
-	          	</a>
-          	</th:block>
-          		
-          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Editor', 'Shipper')">
-	          	<a th:href="@{/products}" class="nav-link"
-	          		onclick="change_products()">
-	         		<i data-feather="shopping-bag"></i>
-	          		<span>Products</span>
-	          	</a>
-          	</th:block>
-          		
-          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-	          	<a th:href="@{/customers}" class="nav-link">
-	          		<i data-feather="smile"></i>
-	          		<span>Customers</span>
-	          	</a>
-          	</th:block>
-          		
-          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-	          	<a th:href="@{/shipping}" class="nav-link">
-	          		<i data-feather="truck"></i>
-	          		<span>Shipping</span>
-	          	</a>
-          	</th:block>
-          		
-          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-	          	<a th:href="@{/orders}" class="nav-link">
-	          		<i data-feather="inbox"></i>
-	          		<span>Orders</span>
-	          	</a>
-          	</th:block>
-          		
-          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
-	          	<a th:href="@{/report}" class="nav-link">
-	          		<i data-feather="heart"></i>
-	          		<span>Sales Report</span>
-	          	</a>
-          	</th:block>
-        </nav>
-
-        <hr>
-
-        <nav class="nav-sidebar">
-          	<a href="" class="nav-link"
-          		onclick="change_account();">
-          		<i data-feather="users"></i>
-          		<span>Manage Accounts</span>
-          	</a>
-          	<a href="" class="nav-link"><i data-feather="package"></i><span>Menus</span></a>
-          	<a href="" class="nav-link"><i data-feather="file-text"></i><span>Setting</span></a>
-        </nav>
-
-        <hr>
-
-        <nav class="nav-sidebar">
-          	<a href="" class="nav-link"><i data-feather="activity"></i><span>Activity Logs</span></a>
-          	<a href="" class="nav-link"><i data-feather="settings"></i><span>Preferences</span></a>
-          	<a href="" class="nav-link"><i data-feather="help-circle"></i><span>Help &amp; Support</span></a>
-          	<a href="" class="nav-link"><i data-feather="edit-3"></i><span>Give Feedback</span></a>
-        </nav>
+      
+      <div class="sidebar-body pt-3">
+		<div class="nav-group show">
+        	<div class="nav-group-label">Management</div>
+	        <ul class="nav-sidebar">
+	        	<li class="nav-item">
+	        		<a class="nav-link with-sub" href=""
+						sec:authorize="hasAuthority('Admin')">
+						<i data-feather="users"></i>
+		          		<span>Users</span>
+					</a>
+					
+					<nav class="nav-sub">
+		                <a th:href="@{'/users'}" class="sub-link"
+		                	onclick="change_users_detail()">Details</a>
+		                <a th:href="@{'/users/new'}" class="sub-link"
+		                	onclick="change_users_new()">New User</a>
+		       		</nav>
+	        	</li>
+				
+				<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+					<li class="nav-item">
+			         	<a href="" class="nav-link with-sub">
+			          		<i data-feather="monitor"></i>
+			          		<span>Categories</span>
+			          	</a>
+			          	
+			          	<nav class="nav-sub">
+			                <a th:href="@{'/categories'}" class="sub-link"
+			                	onclick="change_categories_detail()">Details</a>
+			                <a th:href="@{'/categories/new'}" class="sub-link"
+			                	onclick="change_categories_new()">New Categories</a>
+			       		</nav>
+		          	</li>
+		        </th:block>
+	          		
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+	          		<li class="nav-item">
+			          	<a href="" class="nav-link with-sub">
+			          		<i data-feather="archive"></i>
+			          		<span>Brands</span>
+			          	</a>
+			          	
+			          	<nav class="nav-sub">
+			                <a th:href="@{'/brands'}" class="sub-link"
+			                	onclick="change_brands_detail()">Details</a>
+			                <a th:href="@{'/brands/new'}" class="sub-link"
+			                	onclick="change_brands_new()">New Brands</a>
+			       		</nav>
+		          	</li>
+	          	</th:block>
+	          		
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Editor', 'Shipper')">
+	          		<li class="nav-item">
+			          	<a href="" class="nav-link with-sub">
+			         		<i data-feather="shopping-bag"></i>
+			          		<span>Products</span>
+			          	</a>
+			          	
+			          	<nav class="nav-sub">
+			                <a th:href="@{'/products'}" class="sub-link"
+			                	onclick="change_products_detail()">Details</a>
+			                <a th:href="@{'/products/new'}" class="sub-link"
+			                	onclick="change_products_new()">New Products</a>
+			       		</nav>
+		          	</li>
+	          	</th:block>
+	          		
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+	          		<li class="nav-item">
+			          	<a href="" class="nav-link with-sub">
+			          		<i data-feather="smile"></i>
+			          		<span>Customers</span>
+			          	</a>
+		          	</li>
+	          	</th:block>
+	          		
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+	          		<li class="nav-item">
+			          	<a href="" class="nav-link with-sub">
+			          		<i data-feather="truck"></i>
+			          		<span>Shipping</span>
+			          	</a>
+		          	</li>
+	          	</th:block>
+	          		
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+	          		<li class="nav-item">
+			          	<a th:href="@{/orders}" class="nav-link with-sub">
+			          		<i data-feather="inbox"></i>
+			          		<span>Orders</span>
+			          	</a>
+		          	</li>
+	          	</th:block>
+	          		
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
+	          		<li class="nav-item">
+			          	<a class="nav-link with-sub">
+			          		<i data-feather="heart"></i>
+			          		<span>Sales Report</span>
+			          	</a>
+		          	</li>
+	          	</th:block>
+	        </ul>
+		</div>
+		
+		<div class="nav-group">
+       		<div class="nav-group-label">Accounts &amp; Settings</div>
+       		
+	        <ul class="nav-sidebar">
+	        	<li class="nav-item">
+		          	<a href="" class="nav-link with-sub">
+		          		<i data-feather="users"></i>
+		          		<span>Manage Accounts</span>
+		          	</a>
+	          	</li>
+	          	
+	          	<li class="nav-item">
+	          		<a href="" class="nav-link with-sub"><i data-feather="package"></i><span>Menus</span></a>
+	          	</li>
+	          	
+	          	<li class="nav-item">
+	          		<a href="" class="nav-link with-sub"><i data-feather="file-text"></i><span>Setting</span></a>
+	          	</li>
+	        </ul>
+	   	</div>
         
 	</div><!-- sidebar-body -->
       	
@@ -178,20 +223,36 @@
 	</script>
 	
 	<script type="text/javascript">
-		function change_users() {
+		function change_users_detail() {
 			window.location = "[[@{/users}]]";
 		}
 
-		function change_categories() {
+		function change_users_new() {
+			window.location = "[[@{/users/new}]]";
+		}
+
+		function change_categories_detail() {
 			window.location = "[[@{/categories}]]";
 		}
 
-		function change_products() {
+		function change_categories_new() {
+			window.location = "[[@{/categories/new}]]";
+		}
+
+		function change_products_detail() {
 			window.location = "[[@{/products}]]";
 		}
 
-		function change_brands() {
+		function change_products_new() {
+			window.location = "[[@{/products/new}]]";
+		}
+
+		function change_brands_detail() {
 			window.location = "[[@{/brands}]]";
+		}
+
+		function change_brands_new() {
+			window.location = "[[@{/brands/new}]]";
 		}
 
 		function change_customers() {
