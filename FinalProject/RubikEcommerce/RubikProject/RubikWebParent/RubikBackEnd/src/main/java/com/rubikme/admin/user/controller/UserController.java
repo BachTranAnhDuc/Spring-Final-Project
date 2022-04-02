@@ -48,6 +48,7 @@ public class UserController {
 		model.addAttribute("user", user);
 		model.addAttribute("listRoles", listRoles);
 		model.addAttribute("title", "Create New User");
+		model.addAttribute("headerTitle", "/users/new");
 		
 		return "users/user_form";
 	}
@@ -92,9 +93,12 @@ public class UserController {
 			User user = service.get(id);
 			List<Role> listRoles = service.listRoles();
 			
+			String header = "/users/edit/" + id;
+			
 			model.addAttribute("user", user);  
 			model.addAttribute("title", "Edit User (ID: " + id + ")");
 			model.addAttribute("listRoles", listRoles);
+			model.addAttribute("headerTitle", header);
 			
 			return "users/user_form"; 
 		}
@@ -169,6 +173,7 @@ public class UserController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("title", "Manage User");
+		model.addAttribute("headerTitle", "/users");
 		
 		
 		

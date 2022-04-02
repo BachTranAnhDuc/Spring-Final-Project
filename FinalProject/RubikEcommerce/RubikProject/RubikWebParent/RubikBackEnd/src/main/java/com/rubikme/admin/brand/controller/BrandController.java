@@ -75,6 +75,7 @@ public class BrandController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("listBrands", listBrands);
+		model.addAttribute("headerTitle", "/brands");
 		
 		return "brands/brands";
 	}
@@ -86,6 +87,7 @@ public class BrandController {
 		model.addAttribute("listCategories", listCategories);
 		model.addAttribute("brand", new Brand());
 		model.addAttribute("pageTitle", "Create New Brand");
+		model.addAttribute("headerTitle", "/brands/new");
 		
 		return "brands/brand_form";
 	}
@@ -121,9 +123,12 @@ public class BrandController {
 			Brand brand = service.get(id);
 			List<Category> listCategories = cateService.listCategoriesUsedInForm();
 			
+			String header = "/brands/edit/" + id;
+			
 			model.addAttribute("brand", brand);
 			model.addAttribute("listCategories", listCategories);
 			model.addAttribute("pageTitle", "Edit Brand (ID: " + id + ")");
+			model.addAttribute("headerTitle", header);
 			
 			return "brands/brand_form";
 		}

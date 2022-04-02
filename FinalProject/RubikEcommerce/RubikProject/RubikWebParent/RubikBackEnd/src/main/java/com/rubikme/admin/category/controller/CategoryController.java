@@ -76,6 +76,7 @@ public class CategoryController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("moduleURL", "/categories");
 		model.addAttribute("title", "Manage Category");
+		model.addAttribute("headerTitle", "/categories");
 		
 		return "categories/categories";
 	}
@@ -101,6 +102,7 @@ public class CategoryController {
 		model.addAttribute("category", new Category());
 		model.addAttribute("listCategories", listCategories);
 		model.addAttribute("pageTitle", "Create New Category");
+		model.addAttribute("headerTitle", "/categories/new");
 		
 		return "categories/category_form";
 	}
@@ -139,9 +141,12 @@ public class CategoryController {
 			Category category = service.get(id);
 			List<Category> listCategories = service.listCategoriesUsedInForm();
 			
+			String header = "/categories/edit/" + id;
+			
 			model.addAttribute("category", category);
 			model.addAttribute("listCategories", listCategories);
 			model.addAttribute("pageTitle", "Edit Category (ID: " + id + ")");
+			model.addAttribute("headerTitle", header);
 			
 			return "categories/category_form";			
 		} catch (CategoryNotFoundException ex) {

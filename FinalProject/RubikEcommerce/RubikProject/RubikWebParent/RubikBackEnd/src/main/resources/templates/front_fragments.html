@@ -118,7 +118,8 @@
 	<nav class="navbar col-lg-12 col-12">
 		<a id="contentMenu" href="#" class="content-menu d-none d-lg-flex mr-5"><i data-feather="menu"></i></a>
 	    <a id="mobileMenu" href="#" class="content-menu d-lg-none"><i data-feather="menu"></i></a>
-	    <p class="h3 mr-auto">[[${title}]]</p>    	
+	    <a class="h3 mr-auto"
+	    	th:href="@{${headerTitle}}">[[${title}]]</a>    	
 	    <div class="navbar-menu-wrapper">
 	    	
 	        <ul class="navbar-nav">
@@ -132,10 +133,12 @@
 						<div data-dropdown-menu>
 							<a th:href="@{'/logout'}" id="logoutLink"
 								role="menu"
-								tabindex="-1">Logout</a>
-							<a href=""
+								tabindex="-1">Logout
+							</a>
+							<a th:href="@{/account/}"
 								role="menu"
-								tabindex="-1">Manage Account</a>
+								tabindex="-1">Manage Account
+							</a>
 						</div>
 					</div>
 				</li>

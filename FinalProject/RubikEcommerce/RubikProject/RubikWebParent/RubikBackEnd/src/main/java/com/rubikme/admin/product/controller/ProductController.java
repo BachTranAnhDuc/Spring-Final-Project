@@ -86,6 +86,7 @@ public class ProductController {
 		model.addAttribute("listProducts", listProducts);
 		model.addAttribute("listCategories", listCategories);	
 		model.addAttribute("title", "Manage Product");
+		model.addAttribute("headerTitle", "/products");
 		
 		return "products/products";		
 	}
@@ -104,6 +105,7 @@ public class ProductController {
 		model.addAttribute("listBrands", listBrands);
 		model.addAttribute("title", "Create New Product");
 		model.addAttribute("numberOfExistingExtraImages", 0);
+		model.addAttribute("headerTitle", "/products/new");
 		
 		
 		return "products/product_form";
@@ -292,10 +294,13 @@ public class ProductController {
 			List<Brand> listBrands = brandService.listAll();
 			Integer numberOfExistingExtraImages = product.getImages().size();
 			
+			String header = "/products/edit/" + id;
+			
 			model.addAttribute("product", product);
 			model.addAttribute("title", "Edit Product (ID: " + id + ")");
 			model.addAttribute("listBrands", listBrands);
 			model.addAttribute("numberOfExistingExtraImages", numberOfExistingExtraImages);
+			model.addAttribute("headerTitle", header);
 			
 			
 			
