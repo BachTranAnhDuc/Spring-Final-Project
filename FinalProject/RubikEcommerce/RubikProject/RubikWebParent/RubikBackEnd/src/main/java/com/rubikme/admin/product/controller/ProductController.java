@@ -293,7 +293,7 @@ public class ProductController {
 			Integer numberOfExistingExtraImages = product.getImages().size();
 			
 			model.addAttribute("product", product);
-			model.addAttribute("pageTitle", "Edit Product (ID: " + id + ")");
+			model.addAttribute("title", "Edit Product (ID: " + id + ")");
 			model.addAttribute("listBrands", listBrands);
 			model.addAttribute("numberOfExistingExtraImages", numberOfExistingExtraImages);
 			
