@@ -31,6 +31,8 @@ public class AccountController {
 		User user = userService.getByEmail(email);
 		
 		model.addAttribute("user", user);
+		model.addAttribute("title", "Manage Account");
+		model.addAttribute("headerTitle", "/account");
 		
 		return "users/account_form";
 	}

@@ -121,19 +121,28 @@
        		
 	        <ul class="nav-sidebar">
 	        	<li class="nav-item">
-		          	<a href="" class="nav-link with-sub">
+		          	<a href="" class="nav-link with-sub"
+		          		onclick="change_account();">
 		          		<i data-feather="users"></i>
 		          		<span>Manage Accounts</span>
 		          	</a>
 	          	</li>
 	          	
 	          	<li class="nav-item">
-	          		<a href="" class="nav-link with-sub"><i data-feather="package"></i><span>Menus</span></a>
+	          		<a href="" class="nav-link with-sub"><i data-feather="file-text">
+	          			</i><span>Setting</span>
+	          		</a>
 	          	</li>
 	          	
 	          	<li class="nav-item">
-	          		<a href="" class="nav-link with-sub"><i data-feather="file-text"></i><span>Setting</span></a>
+	          		<a href="" class="nav-link with-sub"
+	          			id="logoutLink"
+	          			onclick="change_logout();">
+	          			<i data-feather="package"></i>
+	          			<span>Logout</span>
+	          		</a>
 	          	</li>
+	          	
 	        </ul>
 	   	</div>
         
@@ -278,6 +287,11 @@
 		function change_account() {
 			window.location = "[[@{/account}]]"
 		}
+
+		function change_logout() {
+			window.location = "[[@{/logout}]]"
+		}
+			
 	</script>
 </div>
 <!-- js file -->
