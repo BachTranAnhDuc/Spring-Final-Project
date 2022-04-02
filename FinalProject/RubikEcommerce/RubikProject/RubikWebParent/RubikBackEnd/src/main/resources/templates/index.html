@@ -13,20 +13,13 @@
 		<div class="content-body">
 	      	<p class="h2 font-weight-bold rb-shop">Rubbik Shop</p>
 	      	
-	      	<div id="navigationSkins" class="nav">
-	       		<a href="" data-skin="base" class="nav-link active">Base</a>
-	          	<a href="" data-skin="blue" class="nav-link" id="blue_white">Blue/White</a>
-	          	<a href="" data-skin="dark" class="nav-link">Dark</a>
-	          	<a href="" data-skin="red" class="nav-link">Red/Dark</a>
-	          	<a href="" data-skin="indigo" class="nav-link">White/Indigo</a>
-	          	<a href="" data-skin="gradient" class="nav-link">White/Gradient</a>
-	        </div>
-	       
+	       	<div th:replace="fragments :: footer_frag"></div>
 		</div><!-- content-body -->
 		
+		
+		
 	</div><!-- content -->
-
-
+	
     <div th:replace="front_fragments :: js_file"></div>
 </body>
 </html>

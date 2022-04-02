@@ -9,49 +9,161 @@
 
 <link rel="stylesheet" type="text/css"
 	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	
+<script type="text/javascript"
+	th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+
+<style>
+
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		background: #afadcd !important;
+	}
+	.user_card {
+	height: 400px;
+	width: 350px;
+	margin-top: auto;
+	margin-bottom: auto;
+	background: #f39c12;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+	}
+	
+	.brand_logo_container {
+		position: absolute;
+		height: 170px;
+		width: 170px;
+		top: -75px;
+		border-radius: 50%;
+		background: #60a3bc;
+		padding: 10px;
+		text-align: center;
+	}
+	
+	.brand_logo {
+		height: 150px;
+		width: 150px;
+		border-radius: 50%;
+		border: 2px solid white;
+	}
+	
+	.form_container {
+		margin-top: 100px;
+	}
+	
+	.login_btn {
+		width: 100%;
+		background: #c0392b !important;
+		color: white !important;
+	}
+	
+	.login_btn:focus {
+		box-shadow: none !important;
+		outline: 0px !important;
+	}
+	
+	.login_container {
+		padding: 0 2rem;
+	}
+	
+	.input-group-text {
+		background: #c0392b !important;
+		color: white !important;
+		border: 0 !important;
+		border-radius: 0.25rem 0 0 0.25rem !important;
+	}
+	
+	.input_user, .input_pass:focus {
+		box-shadow: none !important;
+		outline: 0px !important;
+	}
+	
+	.custom-checkbox .custom-control-input:checked ~.custom-control-label::before
+		{
+		background-color: #c0392b !important;
+	}
+	
+	.warning {
+		color: #9dff62;
+	}
+</style>
+
 </head>
 <body>
-	<div class="fluid-container">
-		<div class="text-center">
-			<img th:src="@{/images/ShopmeAdminBig.png}" class="" />
+<div class="container h-100">
+	<div class="d-flex justify-content-center h-100 mx-auto">
+		<div class="user_card">
+			<div class="d-flex justify-content-center">
+				<div class="brand_logo_container">
+						<img th:src="@{/images/logo/logo2.jpg}" class="brand_logo" alt="Logo">
+				</div>
+			</div>
+			<div class="d-flex justify-content-center form_container">
+				<form th:action="@{/login}" method="post">
+					<div th:if="${param.error}">
+						<p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+					</div>
+					
+					<div th:if="${param.logout}">
+						<p class="warning">You have been logout!</p>
+					</div>
+					
+					<div class="input-group mb-3">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="email" class="form-control input_user" value="" placeholder="Username"
+							id="email" name="email">
+					</div>
+					
+					<div class="input-group mb-2">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control input_pass" placeholder="Password"
+							id="pwd" name="password">
+					</div>
+						
+					<div class="form-group">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="customControlInline" name="remember-me">
+							<label class="custom-control-label" for="customControlInline">Remember me</label>
+						</div>
+					</div>
+						
+					<div class="d-flex justify-content-center mt-3 login_container">
+				 		<button type="submit" class="btn login_btn">Login</button>
+				  		</div>
+				</form>
+			</div>
+		
+			<div class="mt-4">
+				<div class="d-flex justify-content-center links">
+					Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+				</div>
+				<div class="d-flex justify-content-center links">
+					<a href="#">Forgot your password?</a>
+				</div>
+			</div>
 		</div>
-
-		<form th:action="@{/login}" method="post"
-			style="max-width: 350px; margin: 0 auto" class="mt-3">
-			
-			<div th:if="${param.error}">
-				<p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
-			</div>
-			<div th:if="${param.logout}">
-				<p class="text-warning">You have been logout!</p>
-			</div>
-			<div class="border border-secondary rounded my-3">
-			
-				<p class="py-2 text-center">Access to Rubik Shop</p>
-				
-				<div class="form-group m-3">
-					<label for="email">Email address:</label> 
-					<input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
-				</div>
-				
-				<div class="form-group m-3">
-					<label for="pwd">Password:</label> 
-					<input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password">
-				</div>
-				
-				<div class="form-group form-check m-3">
-					<label class="form-check-label"> 
-						<input class="form-check-input" type="checkbox" name="remember-me"> Remember me
-					</label>
-				</div>
-				
-				<button type="submit" class="btn btn-primary m-3">Submit</button>
-			</div>
-
-
-		</form>
-
-		<div th:replace="fragments :: footer_frag"></div>
 	</div>
+		
+	<div th:replace="fragments :: footer_frag"></div>
+</div>
 </body>
 </html>

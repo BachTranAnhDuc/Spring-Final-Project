@@ -14,7 +14,7 @@
 			<div class="full-details mt-4 mb-4">
 				<div class="row">
             		<div class="col-lg-12 grid-margin stretch-card">
-              			<div class="card user-card">
+              			<div class="card">
                 			<div class="card-body">
                 				<div class="row mb-4">
                 					<div th:replace="fragments :: export('/users', ${title})"></div>
@@ -86,9 +86,10 @@
 		
 			<div th:replace="fragments :: confirm_modal"></div>
 		
-			<div th:replace="fragments :: footer_frag"></div>
+			
 		</div><!-- content-body -->
 		
+		<div th:replace="front_fragments :: footer_frag"></div>
 	</div><!-- content -->
 
 

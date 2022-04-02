@@ -36,7 +36,7 @@ public class UserController {
 	public String listFirstPage(Model model) {
 		
 		model.addAttribute("title", "Manage User");
-		return listByPage(1, model, "firstName", "asc", null);
+		return listByPage(1, model, "id", "asc", null);
 	}
 	
 	@GetMapping("/users/new")
