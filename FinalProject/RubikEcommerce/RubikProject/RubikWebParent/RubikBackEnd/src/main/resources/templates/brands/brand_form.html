@@ -36,7 +36,7 @@
 							
 							<input type="file" id="imageFile" name="fileImage" accept="image/png, image/jpeg, image/jpg"
 								th:required="${brand.id == null}"
-								class="mb-2" />
+								class="mb-2" style="max-width: 100px"/>
 							
 							<div class="mt-2">
 								<img id="thumbnail" alt="Image preview" th:src="@{${brand.getLogoPath}}"

@@ -101,7 +101,7 @@ public class CategoryController {
 		
 		model.addAttribute("category", new Category());
 		model.addAttribute("listCategories", listCategories);
-		model.addAttribute("pageTitle", "Create New Category");
+		model.addAttribute("title", "Create New Category");
 		model.addAttribute("headerTitle", "/categories/new");
 		
 		return "categories/category_form";
@@ -145,7 +145,7 @@ public class CategoryController {
 			
 			model.addAttribute("category", category);
 			model.addAttribute("listCategories", listCategories);
-			model.addAttribute("pageTitle", "Edit Category (ID: " + id + ")");
+			model.addAttribute("title", "Edit Category (ID: " + id + ")");
 			model.addAttribute("headerTitle", header);
 			
 			return "categories/category_form";			
