@@ -26,7 +26,7 @@ import com.rubikme.common.entity.User;
 @Transactional
 public class CategoryService {
 	
-	public static final int CATEGORY_PER_PAGE = 3;
+	public static final int CATEGORY_PER_PAGE = 2;
 	
 	@Autowired
 	private CategoryRepository repo;

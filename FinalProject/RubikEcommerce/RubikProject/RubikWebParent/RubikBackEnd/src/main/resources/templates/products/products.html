@@ -9,7 +9,7 @@
     <div class="content">
       	<div th:replace="front_fragments :: content_header"></div>
    		
-		<div class="content-body">
+		<div class="content-body mb-5">
 			<div class="row mt-5">
 				<div class="col-12 mr-auto">
 					<form th:action="@{/products/page/1}" class="form-inline m-3" id="searchForm">
@@ -49,68 +49,81 @@
                 					</th:block>
                 				</div>
                   				
-								<div th:if="${message != null}" class="alert alert-success text-center row">
-									[[${message}]]
-								</div>
-                  				<div class="table-responsive">
-                    				<table class="table table-hover table-responsive-xl table-striped">
-                    					<thead>
-											<tr class="table-light">
-												<th>ID</th>
-												<th>Main Image</th>
-												<th>Product Name</th>
-												<th>Brand</th>
-												<th>Category</th>
-												<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-													<th>Enabled</th>
-												</th:block>
-												<th></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr th:each="product : ${listProducts}">
-				
-												<td>[[${product.id}]]</td>
-												
-												<td th:replace="fragments :: column_link_image_brand(${product.getMainImagePath}, ${product.mainImage})"></td>
-												
-												<td>
-													<a class="link-detail"
-														th:href="@{'/products/detail/' + ${product.id}}"
-														title="View detail of product">
-														[[${product.name}]]
-													</a>	
-												</td>
-												
-												<td>[[${product.brand.name}]]</td>
-												
-												<td>[[${product.category.name}]]</td>
-												
-												<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-													<td>
-														<div th:replace="fragments :: status(${product.enabled}, 'product', '/products/' + ${product.id})"></div>
-													</td>
-												</th:block>
-							
-												<td>
-													<a class="fas fa-file-alt fa-2x icon-green link-detail"
-														th:href="@{'/products/detail/' + ${product.id}}"
-														title="View detail of product">
-													</a>
-													&nbsp;
-													
-													<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
-														<div th:replace="fragments :: edit_entity('/products/', ${product.id})"></div>
-													</th:block>
-													
-													<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-														<div th:replace="fragments :: delete_entity('/products/', ${product.id})"></div>	
-													</th:block>			
-												</td>					
-											</tr>
-										</tbody>
-                    				</table>
-                    			</div>
+								<div class="row">             					
+                  					<div class="col">
+                  						<div th:if="${message != null}" class="alert alert-success"> 
+							                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+							              	<i class="fas fa-shield-check"></i> 
+							              	<strong>Success Message</strong>
+							                <hr class="message-inner-separator">
+							                <p>[[${message}]]</p>
+		                        		</div>
+                  					</div>
+                  				</div>
+                  				
+                  				<div class="row">
+                  					<div class="col">
+                  						<div class="table-responsive">
+		                    				<table class="table table-hover table-responsive-xl table-striped">
+		                    					<thead>
+													<tr class="table-light">
+														<th>ID</th>
+														<th>Main Image</th>
+														<th>Product Name</th>
+														<th>Brand</th>
+														<th>Category</th>
+														<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+															<th>Enabled</th>
+														</th:block>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr th:each="product : ${listProducts}">
+						
+														<td>[[${product.id}]]</td>
+														
+														<td th:replace="fragments :: column_link_image_brand(${product.getMainImagePath}, ${product.mainImage})"></td>
+														
+														<td>
+															<a class="link-detail"
+																th:href="@{'/products/detail/' + ${product.id}}"
+																title="View detail of product">
+																[[${product.name}]]
+															</a>	
+														</td>
+														
+														<td>[[${product.brand.name}]]</td>
+														
+														<td>[[${product.category.name}]]</td>
+														
+														<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+															<td>
+																<div th:replace="fragments :: status(${product.enabled}, 'product', '/products/' + ${product.id})"></div>
+															</td>
+														</th:block>
+									
+														<td>
+															<a class="fas fa-file-alt fa-2x icon-green link-detail"
+																th:href="@{'/products/detail/' + ${product.id}}"
+																title="View detail of product">
+															</a>
+															&nbsp;
+															
+															<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
+																<div th:replace="fragments :: edit_entity('/products/', ${product.id})"></div>
+															</th:block>
+															
+															<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+																<div th:replace="fragments :: delete_entity('/products/', ${product.id})"></div>	
+															</th:block>			
+														</td>					
+													</tr>
+												</tbody>
+		                    				</table>
+		                    			</div>
+                  					</div>
+                  				</div>
                     		</div>
                     	</div>
                     </div>
@@ -128,9 +141,9 @@
 			
 			<div th:replace="fragments :: pagination('/products', 'products')"></div>
 				
-			<div th:replace="fragments :: footer_frag"></div>
 		</div><!-- content-body -->
 		
+		<div th:replace="front_fragments :: footer_frag"></div>
 	</div><!-- content -->
 
 

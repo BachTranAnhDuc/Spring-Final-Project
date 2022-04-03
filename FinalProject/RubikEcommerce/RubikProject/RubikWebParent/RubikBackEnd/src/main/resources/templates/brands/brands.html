@@ -8,7 +8,7 @@
     <div class="content">
       	<div th:replace="front_fragments :: content_header"></div>
    		
-		<div class="content-body">
+		<div class="content-body mb-5">
 		
 			<div class="full-details mt-4 mb-4">
 				<div class="row">
@@ -21,38 +21,52 @@
                 						class=""></div>
                 				</div>
                   				
-								<div th:if="${message != null}" class="alert alert-success text-center row">
-									[[${message}]]
-								</div>
-                  				<div class="table-responsive">
-                    				<table class="table table-hover table-responsive-xl table-striped">
-                    					<thead>
-											<tr class="table-light">
-												<th class="col-1 hideable-column" th:replace="fragments :: column_link('/brands', 'id', 'Brand ID')"/>
-												<th class="col-3">Logo</th>
-												<th class="col-2" th:replace="fragments :: column_link('/brands', 'name', 'Brand Name')"/>
-												<th class="col-4">Categories</th>
-												<th class="col-2"></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr th:each="brand : ${listBrands}">
-												<td class="hideable-column font-weight-bold">[[${brand.id}]]</td>
-												<td th:replace="fragments :: column_link_image_brand(${brand.getLogoPath}, ${brand.logo})"></td>
-												<td>[[${brand.name}]]</td>
-												<td>
-													<th:block th:each="cat : ${brand.categories}">
-													<span class="badge badge-info" th:text="${cat.name}"></span>
-													</th:block>
-												</td>
-							
-												<td>
-													<div th:replace="fragments :: delete_edit('/brands/', ${brand.id})"></div>					
-												</td>					
-											</tr>
-										</tbody>
-                    				</table>
-                    			</div>
+								<div class="row">             					
+                  					<div class="col">
+                  						<div th:if="${message != null}" class="alert alert-success"> 
+							                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+							              	<i class="fas fa-shield-check"></i> 
+							              	<strong>Success Message</strong>
+							                <hr class="message-inner-separator">
+							                <p>[[${message}]]</p>
+		                        		</div>
+                  					</div>
+                  				</div>
+                  				
+                  				<div class="row">
+                  					<div class="col">
+                  						<div class="table-responsive">
+		                    				<table class="table table-hover table-responsive-xl table-striped">
+		                    					<thead>
+													<tr class="table-light">
+														<th class="col-1 hideable-column" th:replace="fragments :: column_link('/brands', 'id', 'Brand ID')"/>
+														<th class="col-3">Logo</th>
+														<th class="col-2" th:replace="fragments :: column_link('/brands', 'name', 'Brand Name')"/>
+														<th class="col-4">Categories</th>
+														<th class="col-2"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr th:each="brand : ${listBrands}">
+														<td class="hideable-column font-weight-bold">[[${brand.id}]]</td>
+														<td th:replace="fragments :: column_link_image_brand(${brand.getLogoPath}, ${brand.logo})"></td>
+														<td>[[${brand.name}]]</td>
+														<td>
+															<th:block th:each="cat : ${brand.categories}">
+															<span class="badge badge-info" th:text="${cat.name}"></span>
+															</th:block>
+														</td>
+									
+														<td>
+															<div th:replace="fragments :: delete_edit('/brands/', ${brand.id})"></div>					
+														</td>					
+													</tr>
+												</tbody>
+		                    				</table>
+		                    			</div>
+                  					</div>
+                  				</div>
+                  				
                     		</div>
                     	</div>
                     </div>
@@ -63,9 +77,9 @@
 	
 			<div th:replace="fragments :: pagination('/brands', 'brands')"></div>
 		
-			<div th:replace="fragments :: footer_frag"></div>
 		</div><!-- content-body -->
 		
+		<div th:replace="front_fragments :: footer_frag"></div>
 	</div><!-- content -->
 
 
