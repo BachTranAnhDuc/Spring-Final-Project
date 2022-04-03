@@ -354,26 +354,43 @@
 		</th:block>
 	</div>
 	
-	<div th:fragment="delete_entity(moduleURL, idEntity)">
-		<a class="fas fa-trash fa-2x link-delete-user icon-red mt-2" 
-			th:href="@{${moduleURL} + 'delete/' + ${idEntity}}"
-			th:userId="${idEntity}"
-			title="Delete this user">
-			
-		</a>
-		&nbsp;
-	</div>
 	
-	<div th:fragment="edit_entity(moduleURL, idEntity)">
-		<a class="fas fa-edit fa-2x icon-green" th:href="@{${moduleURL} +'edit/' + ${idEntity}}"
-			title="Edit this user">
-		</a>
-		&nbsp;
-	</div>
 	
-	<!-- Delete and Edit not check-->
+	<!--Edit not check-->
+	<div th:fragment="edit_entity(entityName, editURL)" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{${editURL}}"
+			th:title="'Edit this ' + ${entityName}"></a>
+	</div>
+	<!--Edit not check-->
+	
+	<!-- Delete check-->
+	<div th:fragment="delete_entity(entityName, entityId, deleteURL, visible)" th:remove="tag">
+		<th:block th:if="${visible}">
+			<a class="fas fa-trash fa-2x icon-red link-delete" 
+				th:href="@{${deleteURL}}"
+				th:entityId="${entityId}"
+				th:title="'Delete this ' + ${entityName}">
+			</a>
+		</th:block>
+	</div>
+	<!-- Delete check-->
+	
 	<div th:fragment="footer_frag">
 		<p>Rubik Control Panel - Copyright &copy; Rubik</p>  
 	</div>
+	
+	<!-- Message alert-->
+	
+	
+	<div th:fragment="message_alert">
+		<div th:if="${message != null}" class="alert alert-success"> 
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+			<i class="fas fa-shield-check"></i> 
+			<strong>Success Message</strong>
+			<hr class="message-inner-separator">
+			<p>[[${message}]]</p>
+		</div>
+	</div>
+	<!-- Message alert-->
 </body>
 </html>

@@ -24,13 +24,7 @@
                   				
                   				<div class="row">             					
                   					<div class="col">
-                  						<div th:if="${message != null}" class="alert alert-success"> 
-							                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-							              	<i class="fas fa-shield-check"></i> 
-							              	<strong>Success Message</strong>
-							                <hr class="message-inner-separator">
-							                <p>[[${message}]]</p>
-		                        		</div>
+                  						<div th:replace="fragments :: message_alert"></div>
                   					</div>
                   				</div>
 								
@@ -78,10 +72,12 @@
 														
 														<td class="">
 															<div th:replace="fragments :: status(${user.enabled}, 'user', '/users/' + ${user.id})"></div>
+															
 														</td>
-														
-														<td class="">
-															<div th:replace="fragments :: delete_edit('/users/', ${user.id})"></div>
+														<td>
+															<div th:replace="fragments :: edit_entity('user', '/users/edit/' + ${user.id})"></div>
+															&nbsp;
+															<div th:replace="fragments :: delete_entity('user', ${user.id}, '/users/delete/' + ${user.id}, true)"></div>
 														</td>
 													</tr>
 												</tbody>
@@ -110,22 +106,14 @@
     <div th:replace="front_fragments :: js_file"></div>
 	
 	<script type="text/javascript">
+		moduleURL = "[[@{/users}]]";
+	
 		$(document).ready(function() {
-			$('.link-delete-user').on("click", function(e) {
+			$('.link-delete').on("click", function(e) {
 				e.preventDefault();
-				link = $(this);
-				//alert($(this).attr("href"));
-				userId = link.attr("userId");
-				$('#yes-delete').attr("href", link.attr("href"));
-				$('#confirmText').text("Are you sure that you want to delete user ID " +userId + "?");
-				$('#confirmModal').modal();
-				
+				showDeleteConfirmModal($(this), 'user');
 			})
 		});
-
-		function clearFilter(){
-			window.location = "[[@{/users}]]";
-		}
 	</script>
 </body>
 </html>
