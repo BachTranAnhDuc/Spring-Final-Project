@@ -11,12 +11,195 @@
       	<div th:replace="front_fragments :: content_header"></div>
    		
 		<div class="content-body">
-	      	<p class="h2 font-weight-bold rb-shop">Rubbik Shop</p>
-	      	
-	       	<div th:replace="fragments :: footer_frag"></div>
+			
+			<div class="row mt-4 mx-5">
+			    <div class="col-3">
+			      <div class="circle-tile ">
+			        <a href="#">
+			        	<div class="circle-tile-heading dark-blue">
+			        		<i class="fa fa-users fa-fw fa-3x"></i>
+			        	</div>
+			        </a>
+			        
+			        <div class="circle-tile-content dark-blue">
+			          <div class="circle-tile-description text-faded">Total Users</div>
+			          <div class="circle-tile-number text-faded ">265</div>
+			          <a class="circle-tile-footer" href="#">More Info 
+			          	<i class="fa fa-chevron-circle-right"></i>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+     
+			    <div class="col-lg-3">
+			      <div class="circle-tile ">
+			        <a href="#">
+			        	<div class="circle-tile-heading green">
+			        		<i class="fa fa-users fa-fw fa-3x"></i>
+			        	</div>
+			        </a>
+			        
+			        <div class="circle-tile-content red">
+			          <div class="circle-tile-description text-faded">Total Categories</div>
+			          <div class="circle-tile-number text-faded ">10</div>
+			          <a class="circle-tile-footer" href="#">More Info 
+			          	<i class="fa fa-chevron-circle-right"></i>
+			          </a>
+			        </div>
+			      </div>
+			    </div> 
+     
+			    <div class="col-lg-3">
+			      <div class="circle-tile ">
+			        <a href="#">
+			        	<div class="circle-tile-heading yellow ">
+			        		<i class="fa fa-envelope fa-fw fa-3x"></i>
+			        	</div>
+			        </a>
+			        <div class="circle-tile-content yellow">
+			          <div class="circle-tile-description text-faded">Total Brands</div>
+			          <div class="circle-tile-number text-faded ">10</div>
+			          <a class="circle-tile-footer" href="#">More Info <i class="fa fa-chevron-circle-right"></i></a>
+			        </div>
+			      </div>
+			    </div> 
+     
+			    <div class="col-lg-3">
+			      <div class="circle-tile ">
+			        <a href="#">
+			        	<div class="circle-tile-heading orange">
+			        		<i class="fa fa-comments fa-fw fa-3x"></i>
+			        	</div>
+			        </a>
+			        <div class="circle-tile-content orange">
+			          <div class="circle-tile-description text-faded">Total Products</div>
+			          <div class="circle-tile-number text-faded ">10</div>
+			          <a class="circle-tile-footer" href="#">More Info <i class="fa fa-chevron-circle-right"></i></a>
+			        </div>
+			      </div>
+			    </div> 
+			</div> 
+			
+			<div class="row mt-5 mx-5">
+		      <div class="col-xl-3 col-sm-6 col-12"> 
+		        <div class="card">
+		          <div class="card-content">
+		            <div class="card-body">
+		              <div class="media d-flex">
+		                <div class="align-self-center">
+		                  <i class="fas fa-pen-fancy primary font-large-2 float-left"></i>
+		                </div>
+		                <div class="media-body text-right">
+		                  <h3>278</h3>
+		                  <span>New Posts</span>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		      
+		      <div class="col-xl-3 col-sm-6 col-12">
+		        <div class="card">
+		          <div class="card-content">
+		            <div class="card-body">
+		              <div class="media d-flex">
+		                <div class="align-self-center">
+		                  <i class="icon-speech warning font-large-2 float-left"></i>
+		                </div>
+		                <div class="media-body text-right">
+		                  <h3>156</h3>
+		                  <span>New Comments</span>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		      
+		      <div class="col-xl-3 col-sm-6 col-12">
+		        <div class="card">
+		          <div class="card-content">
+		            <div class="card-body">
+		              <div class="media d-flex">
+		                <div class="align-self-center">
+		                  <i class="icon-graph success font-large-2 float-left"></i>
+		                </div>
+		                <div class="media-body text-right">
+		                  <h3>64.89 %</h3>
+		                  <span>Bounce Rate</span>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		      
+		      <div class="col-xl-3 col-sm-6 col-12">
+		        <div class="card">
+		          <div class="card-content">
+		            <div class="card-body">
+		              <div class="media d-flex">
+		                <div class="align-self-center">
+		                  <i class="icon-pointer danger font-large-2 float-left"></i>
+		                </div>
+		                <div class="media-body text-right">
+		                  <h3>423</h3>
+		                  <span>Total Visits</span>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    
+		    <div class="row mt-5 mx-5">
+			    <div class="col-xl-6 col-md-12">
+			      <div class="card overflow-hidden">
+			        <div class="card-content">
+			          <div class="card-body cleartfix">
+			            <div class="media align-items-stretch">
+			              <div class="align-self-center">
+			                <i class="icon-pencil primary font-large-2 mr-2"></i>
+			              </div>
+			              <div class="media-body">
+			                <h4>Total Posts</h4>
+			                <span>Monthly blog posts</span>
+			              </div>
+			              <div class="align-self-center">
+			                <h1>18,000</h1>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			
+			    <div class="col-xl-6 col-md-12">
+			      <div class="card">
+			        <div class="card-content">
+			          <div class="card-body cleartfix">
+			            <div class="media align-items-stretch">
+			              <div class="align-self-center">
+			                <i class="icon-speech warning font-large-2 mr-2"></i>
+			              </div>
+			              <div class="media-body">
+			                <h4>Total Comments</h4>
+			                <span>Monthly blog comments</span>
+			              </div>
+			              <div class="align-self-center"> 
+			                <h1>84,695</h1>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
 		</div><!-- content-body -->
 		
-		
+		<div th:replace="front_fragments :: footer_frag"></div>
 		
 	</div><!-- content -->
 	
