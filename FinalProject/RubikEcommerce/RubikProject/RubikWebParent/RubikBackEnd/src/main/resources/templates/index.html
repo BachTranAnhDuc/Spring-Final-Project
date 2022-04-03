@@ -26,7 +26,7 @@
 			          <div class="circle-tile-number text-faded ">
 			          	[[${totalUsers}]]
 			          </div>
-			          <a class="circle-tile-footer" href="#">More Info 
+			          <a class="circle-tile-footer" th:href="@{'/users'}">More Info 
 			          	<i class="fa fa-chevron-circle-right"></i>
 			          </a>
 			        </div>
@@ -41,12 +41,12 @@
 			        	</div>
 			        </a>
 			        
-			        <div class="circle-tile-content red">
+			        <div class="circle-tile-content green">
 			          <div class="circle-tile-description text-faded">Total Categories</div>
 			          <div class="circle-tile-number text-faded ">
 			          	[[${totalCategories}]]
 			          </div>
-			          <a class="circle-tile-footer" href="#">More Info 
+			          <a class="circle-tile-footer" th:href="@{'/categories'}">More Info 
 			          	<i class="fa fa-chevron-circle-right"></i>
 			          </a>
 			        </div>
@@ -65,7 +65,7 @@
 			          <div class="circle-tile-number text-faded ">
 			          	[[${totalBrands}]]
 			          </div>
-			          <a class="circle-tile-footer" href="#">More Info <i class="fa fa-chevron-circle-right"></i></a>
+			          <a class="circle-tile-footer" th:href="@{'/brands'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
 			        </div>
 			      </div>
 			    </div> 
@@ -82,7 +82,7 @@
 			          <div class="circle-tile-number text-faded ">
 			          	[[${totalProducts}]]
 			          </div>
-			          <a class="circle-tile-footer" href="#">More Info <i class="fa fa-chevron-circle-right"></i></a>
+			          <a class="circle-tile-footer" th:href="@{'/products'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
 			        </div>
 			      </div>
 			    </div> 
