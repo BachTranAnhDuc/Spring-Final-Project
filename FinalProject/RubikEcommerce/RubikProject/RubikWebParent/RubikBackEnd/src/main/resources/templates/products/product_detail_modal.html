@@ -1,125 +1,100 @@
 <div class="modal-header">
-	<h4 class="modal-title">Product Detail</h4>
+	<p class="modal-title h-3 font-weight-bold">Product Detail</p>
 	<button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
 
-<div>
+<div class="modal-body">
 	<!-- Nav tabs -->
-	<ul class="nav nav-tabs" id="myTab" role="tablist">
-		<li class="nav-item">
-	    	<a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Overview</a>
-	 	</li>
-		<li class="nav-item">
-	    	<a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#images" role="tab">Image</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
-		</li>
-	</ul>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+			    	<a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Overview</a>
+			 	</li>
+				<li class="nav-item">
+			    	<a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#images" role="tab">Image</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 			
 	<!-- Tab panes -->
-	<div class="tab-content">
-		<div class="tab-pane active p-4" id="overview" role="tabpanel">
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Product Name:</label>
-					
-				<div class="col-sm-10">
-					<input type="text" class="form-control" th:value="${product.name}" readonly="readonly"/>
-				</div>	
+	<div class="row">
+		<div class="col">
+			<div class="tab-content">
+				<div class="tab-pane active p-4 mt-3" id="overview" role="tabpanel">
+					<div class="row">
+						
+						<div class="col-1"></div>
+						
+						<div class="col-8">
+							<div th:replace="products/product_description_readonly :: overview"></div>
+						</div>
+						
+						<div class="col-3 d-flex align-items-end flex-column">
+							<img class="img-fluid w-75 opacity-75 mt-auto"
+								th:src="@{'/images/rubik/rubik_demo_2.jpg'}"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="tab-pane mt-3" id="description" role="tabpanel">
+					<div class="row">
+						<div class="col-2"></div>
+						
+						<div class="col-8">
+							<div th:replace="products/product_description_readonly :: description"></div>
+						</div>
+						
+						<div class="col-2"></div>
+					</div>
+				</div>
+					  	
+				<div class="tab-pane mt-3" id="images" role="tabpanel">
+					<div class="row">
+						<div class="col-2"></div>
+						
+						<div class="col-8">
+							<div th:replace="products/product_description_readonly :: images"></div>
+						</div>
+						
+						<div class="col-2"></div>
+					</div>
+				</div>
+				
+				<div class="tab-pane p-3 mt-3" id="details" role="tabpanel">
+					<div class="row">
+						<div class="col-2"></div>
+						
+						<div class="col-8">
+							<div th:replace="products/product_description_readonly :: details"></div>
+						</div>
+						
+						<div class="col-2"></div>
+					</div>
+				</div>
+					  	
+				<div class="tab-pane p-3 mt-3" id="shipping" role="tabpanel">
+					<div class="row">
+						<div class="col-2"></div>
+						
+						<div class="col-8">
+							<div th:replace="products/product_description_readonly :: shipping"></div>
+						</div>
+						
+						<div class="col-2"></div>
+					</div>
+				</div>
 			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Alias:</label>
-					
-				<div class="col-sm-10">
-					<input type="text" class="form-control" th:value="${product.alias}" readonly="readonly"/>
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Brand:</label>
-					
-				<div class="col-sm-10">
-					<input type="text" class="form-control" th:value="${product.brand.name}" readonly="readonly"/>
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Category:</label>
-					
-				<div class="col-sm-10">
-					<input type="text" class="form-control" th:value="${product.category.name}" readonly="readonly"/>					
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Enabled:</label>
-					
-				<div class="col-sm-10">
-					<input type="checkbox" th:checked="${product.enabled}" onclick="return false;"/>
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">In Stock:</label>
-					
-				<div class="col-sm-10">
-					<input type="checkbox" th:checked="${product.inStock}" onclick="return false;"/>
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Cost:</label>
-					
-				<div class="col-sm-10">
-					<input type="text" class="form-control" th:value="${product.cost}" readonly="readonly"/>
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Price:</label>
-					
-				<div class="col-sm-10">
-					<input type="text" class="form-control" th:value="${product.price}" readonly="readonly"/>
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Discount percent:</label>
-					
-				<div class="col-sm-10">
-					<input type="text" class="form-control" th:value="${product.discountPercent}" readonly="readonly"/>
-				</div>	
-			</div>
-			
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Updated Time:</label>
-					
-				<div class="col-sm-10">
-					<span>[[${product.updatedTime}]]</span>
-				</div>	
-			</div>
-		</div>
-		
-		<div class="tab-pane" id="description" role="tabpanel">
-			<div th:replace="products/product_description_readonly :: description"></div>
-		</div>
-			  	
-		<div class="tab-pane" id="images" role="tabpanel">
-			<div th:replace="products/product_description_readonly :: images"></div>
-		</div>
-		<div class="tab-pane p-3" id="details" role="tabpanel">
-			<div th:replace="products/product_description_readonly :: details"></div>
-		</div>
-			  	
-		<div class="tab-pane p-3" id="shipping" role="tabpanel">
-			<div th:replace="products/product_description_readonly :: shipping"></div>	
 		</div>
 	</div>
 </div>

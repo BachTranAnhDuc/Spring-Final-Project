@@ -12,9 +12,11 @@
    		
 		<div class="content-body">
 			
+			
+			
 			<div class="row mt-4 mx-5">
-			    <div class="col-3">
-			      <div class="circle-tile ">
+			    <div class="col-lg-3">
+			      <div class="circle-tile">
 			        <a href="#">
 			        	<div class="circle-tile-heading dark-blue">
 			        		<i class="fa fa-users fa-fw fa-3x"></i>
@@ -37,7 +39,7 @@
 			      <div class="circle-tile ">
 			        <a href="#">
 			        	<div class="circle-tile-heading green">
-			        		<i class="fa fa-users fa-fw fa-3x"></i>
+			        		<i class="fas fa-gem fa-fw fa-3x mt-3"></i>
 			        	</div>
 			        </a>
 			        
@@ -56,11 +58,11 @@
 			    <div class="col-lg-3">
 			      <div class="circle-tile ">
 			        <a href="#">
-			        	<div class="circle-tile-heading yellow ">
-			        		<i class="fa fa-envelope fa-fw fa-3x"></i>
+			        	<div class="circle-tile-heading red">
+			        		<i class="fas fa-store fa-fw mt-3 fa-3x text-white"></i>
 			        	</div>
 			        </a>
-			        <div class="circle-tile-content yellow">
+			        <div class="circle-tile-content red">
 			          <div class="circle-tile-description text-faded">Total Brands</div>
 			          <div class="circle-tile-number text-faded ">
 			          	[[${totalBrands}]]
@@ -73,11 +75,11 @@
 			    <div class="col-lg-3">
 			      <div class="circle-tile ">
 			        <a href="#">
-			        	<div class="circle-tile-heading orange">
-			        		<i class="fa fa-comments fa-fw fa-3x"></i>
+			        	<div class="circle-tile-heading yellow">
+			        		<i class="fab fa-shopify fa-fw fa-3x mt-3 text-white"></i>
 			        	</div>
 			        </a>
-			        <div class="circle-tile-content orange">
+			        <div class="circle-tile-content yellow">
 			          <div class="circle-tile-description text-faded">Total Products</div>
 			          <div class="circle-tile-number text-faded ">
 			          	[[${totalProducts}]]
@@ -87,6 +89,13 @@
 			      </div>
 			    </div> 
 			</div> 
+			
+			<div class="row mx-5 my-5">
+				<div class="col">
+					<img class="img-fluid"
+						th:src="@{'/images/background/dashboard/background-dashboard-1.jpg'}"/>
+				</div>
+			</div>
 			
 			<div class="row mt-5 mx-5">
 		      <div class="col-xl-3 col-sm-6 col-12"> 
@@ -113,7 +122,7 @@
 		            <div class="card-body">
 		              <div class="media d-flex">
 		                <div class="align-self-center">
-		                  <i class="icon-speech warning font-large-2 float-left"></i>
+		                  <i class="far fa-keyboard font-large-2 float-left"></i>
 		                </div>
 		                <div class="media-body text-right">
 		                  <h3>156</h3>
@@ -131,7 +140,7 @@
 		            <div class="card-body">
 		              <div class="media d-flex">
 		                <div class="align-self-center">
-		                  <i class="icon-graph success font-large-2 float-left"></i>
+		                  <i class="fal fa-percent success font-large-2 float-left"></i>
 		                </div>
 		                <div class="media-body text-right">
 		                  <h3>64.89 %</h3>
@@ -149,7 +158,7 @@
 		            <div class="card-body">
 		              <div class="media d-flex">
 		                <div class="align-self-center">
-		                  <i class="icon-pointer danger font-large-2 float-left"></i>
+		                  <i class="fas fa-street-view danger font-large-2 float-left"></i>
 		                </div>
 		                <div class="media-body text-right">
 		                  <h3>423</h3>

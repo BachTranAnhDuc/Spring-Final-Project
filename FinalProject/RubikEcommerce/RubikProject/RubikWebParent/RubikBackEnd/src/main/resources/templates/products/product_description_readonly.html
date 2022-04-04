@@ -1,11 +1,11 @@
 <div th:fragment="description" th:remove="tag">
 	<div class="m-3">
-		<label>Short Description</label>
+		<label class="h-2 font-weight-bold">Short Description</label>
 		<div th:utext="${product.shortDescription}" class="border p-2 m-2"></div>
 	</div>
 				
 	<div class="m-3">
-		<label>Full Description</label>
+		<label class="h-2 font-weight-bold">Full Description</label>
 		<div th:utext="${product.fullDescription}" class="border p-2 m-2"></div>
 	</div>
 </div>
@@ -14,7 +14,7 @@
 <div th:fragment="images" th:remove="tag">
 	<div class="row">
 		<div class="col border m-3 p-2">
-			<div><label>Main Image: [[${product.mainImage}]]</label></div>
+			<div><label>Main Image:</label></div>
 			<div class="m-2">
 				<img alt="Main image preview" class="img-fluid"
 					th:src="@{${product.mainImagePath}}"/>
@@ -24,11 +24,12 @@
 		<th:block th:each="productImage, status : ${product.images}">
 		<div class="col border m-3 p-2">
 			<div>
-				<label>Extra Image #[[${status.index + 1}]]: [[${productImage.name}]]</label>				
+				<label>Extra Image #[[${status.index + 1}]]:</label>				
 			</div>
 			<div class="m-2">
 				<img th:alt="'Extra image #' + ${status.index + 1} + ' preview'" class="img-fluid"
-					th:src="@{${productImage.imagePath}}"/>
+					th:src="@{${productImage.imagePath}}"
+					style="min-width: 150px;"/>
 			</div>				
 		</div>		
 		</th:block>	  
@@ -84,3 +85,85 @@
 		</div>
 	</div>	
 </div>	
+
+
+<div th:fragment="overview" th:remove="tag">
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Product Name:</label>						
+		<div class="col-sm-10">
+			<input type="text" class="form-control" th:value="${product.name}" readonly="readonly"/>
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Alias:</label>
+									
+			<div class="col-sm-10">
+				<input type="text" class="form-control" th:value="${product.alias}" readonly="readonly"/>
+			</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Brand:</label>
+									
+		<div class="col-sm-10">
+			<input type="text" class="form-control" th:value="${product.brand.name}" readonly="readonly"/>
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Category:</label>
+									
+		<div class="col-sm-10">
+			<input type="text" class="form-control" th:value="${product.category.name}" readonly="readonly"/>					
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Enabled:</label>
+									
+		<div class="col-sm-10">
+			<input type="checkbox" th:checked="${product.enabled}" onclick="return false;"/>
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">In Stock:</label>
+									
+		<div class="col-sm-10">
+			<input type="checkbox" th:checked="${product.inStock}" onclick="return false;"/>
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Cost:</label>
+									
+		<div class="col-sm-10">
+			<input type="text" class="form-control" th:value="${product.cost}" readonly="readonly"/>
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Price:</label>
+									
+		<div class="col-sm-10">
+			<input type="text" class="form-control" th:value="${product.price}" readonly="readonly"/>
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Discount percent:</label>
+									
+		<div class="col-sm-10">
+			<input type="text" class="form-control" th:value="${product.discountPercent}" readonly="readonly"/>
+		</div>	
+	</div>
+							
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Updated Time:</label>
+									
+		<div class="col-sm-10">
+			<span>[[${product.updatedTime}]]</span>
+		</div>	
+	</div>
+</div>

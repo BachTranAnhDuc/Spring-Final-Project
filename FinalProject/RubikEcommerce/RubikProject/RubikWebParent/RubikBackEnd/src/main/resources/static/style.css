@@ -295,7 +295,7 @@ hr.message-inner-separator
     text-decoration: none;
 }
 .circle-tile-heading.dark-blue:hover {
-    background-color: #2E4154;
+    background-color: #004c6d;
 }
 .circle-tile-heading.green:hover {
     background-color: #138F77;
@@ -312,6 +312,10 @@ hr.message-inner-separator
 .circle-tile-heading.purple:hover {
     background-color: #7F3D9B;
 }
+.circle-tile-heading.yellow:hover {
+    background-color: #2e5d7b;
+}
+
 .tile-img {
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
 }
@@ -329,7 +333,7 @@ hr.message-inner-separator
     background-color: #F39C12;
 }
 .red {
-    background-color: #E74C3C;
+    background-color: #e67f83;
 }
 .purple {
     background-color: #8E44AD;
@@ -344,7 +348,7 @@ hr.message-inner-separator
     background-color: #BDC3C7;
 }
 .yellow {
-    background-color: #F1C40F;
+    background-color: #7d93a6;
 }
 .text-dark-blue {
     color: #34495E;
