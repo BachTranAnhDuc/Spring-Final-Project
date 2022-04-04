@@ -396,5 +396,30 @@
 		</div>
 	</div>
 	<!-- Message alert-->
+	
+	
+	<!-- List Roles Users -->
+	<div th:fragment="listRoles">
+		<th:block th:if="${roles.toString() == 'Admin'}">
+			<span class="badge badge-danger" th:text="${roles.toString()}"></span>
+		</th:block>
+																
+		<th:block th:if="${roles.toString() == 'Salesperson'}">
+			<span class="badge badge-primary" th:text="${roles.toString()}"></span>
+		</th:block>
+																
+		<th:block th:if="${roles.toString() == 'Editor'}">
+			<span class="badge badge-success" th:text="${roles.toString()}"></span>
+		</th:block>
+																
+		<th:block th:if="${roles.toString() == 'Assistant'}">
+			<span class="badge badge-info" th:text="${roles.toString()}"></span>
+		</th:block>
+																
+		<th:block th:if="${roles.toString() == 'Shipper'}">
+			<span class="badge badge-warning" th:text="${roles.toString()}"></span>
+		</th:block>
+	</div>
+	<!-- List Roles Users -->
 </body>
 </html>

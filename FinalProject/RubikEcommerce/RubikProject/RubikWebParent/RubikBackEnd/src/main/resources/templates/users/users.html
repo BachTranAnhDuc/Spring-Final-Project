@@ -68,7 +68,12 @@
 														<td class="">[[${user.email}]]</td>
 														<td class="">[[${user.firstName}]]</td>
 														<td class="">[[${user.lastName}]]</td>
-														<td class="font-italic">[[${user.roles}]]</td>
+														<td class="">
+															<div th:each="roles : ${user.roles}">
+																<div th:replace="fragments :: listRoles"></div>
+															</div>
+														</td>
+														
 														
 														<td class="">
 															<div th:replace="fragments :: status(${user.enabled}, 'user', '/users/' + ${user.id})"></div>
