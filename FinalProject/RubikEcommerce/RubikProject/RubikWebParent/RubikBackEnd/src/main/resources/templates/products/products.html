@@ -105,7 +105,7 @@
 															&nbsp;
 															
 															<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
-																<div th:replace="fragments :: edit_entity('/products/', ${product.id})"></div>
+																<div th:replace="fragments :: edit_entity('product', '/products/edit/' + ${product.id})"></div>
 															</th:block>
 															
 															<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">

@@ -149,12 +149,17 @@
 	</div><!-- sidebar-body -->
       	
 	<div class="sidebar-footer">
-        <a href="" class="avatar online"><span class="avatar-initial">D</span></a>
+        <a href="" class="avatar online">
+        	<span class="avatar-initial" 
+        		sec:authentication="principal.firstname"></span>
+        </a>
+        
         <div class="avatar-body">
           	<div class="d-flex align-items-center justify-content-between">
             	<h6 sec:authentication="principal.fullname"></h6>
             	<a href="" class="footer-menu"><i class="ri-settings-4-line"></i></a>
           	</div>
+          	
 			<span sec:authentication="principal.authorities"></span>
 		</div><!-- avatar-body -->
 	</div><!-- sidebar-footer -->

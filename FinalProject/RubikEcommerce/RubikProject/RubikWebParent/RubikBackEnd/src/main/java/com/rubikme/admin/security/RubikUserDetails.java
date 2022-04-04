@@ -76,11 +76,19 @@ public class RubikUserDetails implements UserDetails {
 		return this.user.getFirstName() + " " + this.user.getLastName();
 	}
 	
+	public Character getFirstname() {
+		return this.user.getFirstName().charAt(0);
+	}
+	
 	public void setFirstName(String firstName) {
 		this.user.setFirstName(firstName);
 	}
 	
 	public void setLastName(String lastName) {
 		this.user.setLastName(lastName);
+	}
+	
+	public Character setFirstCharacterFirstName(String firstName) {
+		return this.user.getFirstName().charAt(0);
 	}
 }
