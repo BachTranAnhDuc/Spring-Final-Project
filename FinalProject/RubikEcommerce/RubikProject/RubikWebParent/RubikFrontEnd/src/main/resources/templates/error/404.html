@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments_front :: page_head('Error - Rubik Shop', 'none')">
+</head>
+</head>
+<body>
+
+	<section th:fragment="product_customer" class="bg0 p-t-23 p-b-140">
+		<div class="container">
+			<div class="p-b-10">
+				<h3 class="ltext-103 cl5">
+					Sorry, the requested page could not be found
+				</h3>
+			</div>
+		</div>
+	</section>
+	
+	<div th:replace="fragments_front :: js_files_footer"></div>
+</body>
+</html>
