@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,13 @@ import com.rubikme.admin.brand.BrandService;
 import com.rubikme.admin.category.CategoryService;
 import com.rubikme.admin.product.ProductNotFoundException;
 import com.rubikme.admin.product.ProductService;
+import com.rubikme.admin.product.exporter.ProductCsvExporter;
+import com.rubikme.admin.user.export.UserCsvExporter;
 import com.rubikme.common.entity.Brand;
 import com.rubikme.common.entity.Category;
 import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.ProductImage;
+import com.rubikme.common.entity.User;
 
 @Controller
 public class ProductController {
@@ -328,5 +333,13 @@ public class ProductController {
 			
 			return "redirect:/products";
 		}
+	}
+	
+	@GetMapping("/products/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		List<Product> listProducts = productService.listAll();
+		
+		ProductCsvExporter productCsvExporter = new ProductCsvExporter();
+		productCsvExporter.export(listProducts, response);
 	}
 }
