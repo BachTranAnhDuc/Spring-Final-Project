@@ -31,7 +31,10 @@ import com.rubikme.admin.category.CategoryService;
 import com.rubikme.admin.product.ProductNotFoundException;
 import com.rubikme.admin.product.ProductService;
 import com.rubikme.admin.product.exporter.ProductCsvExporter;
+import com.rubikme.admin.product.exporter.ProductExcelExporter;
+import com.rubikme.admin.product.exporter.ProductPdfExporter;
 import com.rubikme.admin.user.export.UserCsvExporter;
+import com.rubikme.admin.user.export.UserPdfExporter;
 import com.rubikme.common.entity.Brand;
 import com.rubikme.common.entity.Category;
 import com.rubikme.common.entity.Product;
@@ -341,5 +344,23 @@ public class ProductController {
 		
 		ProductCsvExporter productCsvExporter = new ProductCsvExporter();
 		productCsvExporter.export(listProducts, response);
+	}
+	
+	@GetMapping("/products/export/pdf")
+	public void exportToPDF(HttpServletResponse response) throws IOException {
+		List<Product> listProducts = productService.listAll();
+		
+		ProductPdfExporter productPdfExporter = new ProductPdfExporter();
+		
+		productPdfExporter.export(listProducts, response);
+	}
+	
+	@GetMapping("/products/export/excel")
+	public void exportToExcel(HttpServletResponse response) throws IOException {
+		List<Product> listProducts = productService.listAll();
+		
+		ProductExcelExporter productExcelExporter = new ProductExcelExporter();
+		
+		productExcelExporter.export(listProducts, response);
 	}
 }
