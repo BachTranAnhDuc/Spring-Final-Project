@@ -19,6 +19,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.decimal4j.util.DoubleRounder;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -294,5 +296,16 @@ public class Product {
 		return false;
 	}
 	
+	@Transient
+	public float getDiscountPrice() {
+		
+		float dis = price * ((100 - discountPercent) / 100);
+		
+		if (discountPercent > 0) {
+			return (float) DoubleRounder.round(dis, 2);
+		}
+		
+		return this.price;
+	}
 	
 }

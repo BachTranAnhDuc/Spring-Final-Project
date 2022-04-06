@@ -76,7 +76,7 @@
 					
 					<!-- Logo desktop -->		
 					<a th:href="@{'/'}" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+						<img th:src="@{/images/icons/logo-01.png}" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -135,7 +135,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.html"><img th:src="@{/images/icons/logo-01.png}" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -231,7 +231,7 @@
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
+					<img th:src="@{/images/icons/icon-close2.png}" alt="CLOSE">
 				</button>
 
 				<form class="wrap-search-header flex-w p-l-15">
@@ -264,7 +264,7 @@
 				<ul class="header-cart-wrapitem w-full">
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
-							<img src="images/item-cart-01.jpg" alt="IMG">
+							<img th:src="@{/images/item-cart-01.jpg}" alt="IMG">
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
@@ -280,7 +280,7 @@
 
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
-							<img src="images/item-cart-02.jpg" alt="IMG">
+							<img th:src="@{/images/item-cart-02.jpg}" alt="IMG">
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
@@ -296,7 +296,7 @@
 
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
-							<img src="images/item-cart-03.jpg" alt="IMG">
+							<img th:src="@{/images/item-cart-03.jpg}" alt="IMG">
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
@@ -769,8 +769,8 @@
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									<img class="icon-heart1 dis-block trans-04" th:src="@{/images/icons/icon-heart-01.png}" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" th:src="@{/images/icons/icon-heart-02.png}" alt="ICON">
 								</a>
 							</div>
 						</div>
@@ -791,7 +791,8 @@
 	<section th:fragment="product_view_by_category" class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-t-50">
-				<h3 class="ltext-103 cl5">
+				
+				<h3 class="ltext-103 cl5 my-5">
 					Product Overview
 				</h3>
 				<div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
@@ -812,6 +813,20 @@
 							</nav>
 						</div>
 					</div>
+				</div>
+				
+				<div class="row text-center my-3">
+					<th:block th:each="cat : ${category.children}">
+						<div class="col-3" th:if="${cat.enabled == true}">
+							<a th:href="@{'/c/' + ${cat.alias}}">
+								<img th:src="@{${cat.getImagePath}}" 
+								class=""
+								height="100"/>
+								<br/>
+								<b>[[${cat.name}]]</b>
+							</a>
+						</div>
+					</th:block>
 				</div>
 			</div>
 
@@ -1059,11 +1074,11 @@
 
 			<div class="row isotope-grid">
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women"
-					th:each="categoryParent : ${listCategoriesParent}">
+					th:each="product : ${listProducts}">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img th:src="@{${categoryParent.getImagePath}}" alt="IMG-PRODUCT">
+							<img th:src="@{${product.getMainImagePath}}" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
@@ -1072,20 +1087,34 @@
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a th:href="@{'/c/' + ${categoryParent.alias}}" 
+								<a th:href="@{'/c/' + ${product.alias}}" 
 									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									[[${categoryParent.name}]]
+									[[${product.name}]]
 								</a>
 
-								<span class="stext-105 cl3">
-									[[${categoryParent.id}]]
-								</span>
+								<div th:if="${product.discountPercent <= 0}">
+									<span class="stext-105 cl3">
+										[[${product.price}]]$
+									</span>
+								</div>
+								
+								<div th:if="${product.discountPercent > 0}">
+									<span class="stext-105 cl3 font-weight-bold text-danger">
+										[[${product.getDiscountPrice}]]$
+									</span>
+									<br/>
+									<del>
+										<span class="stext-105 cl3">
+											[[${product.price}]]$
+										</span>
+									</del>
+								</div>
 							</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									<img class="icon-heart1 dis-block trans-04" th:src="@{/images/icons/icon-heart-01.png}" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" th:src="@{/images/icons/icon-heart-02.png}" alt="ICON">
 								</a>
 							</div>
 						</div>
@@ -1095,9 +1124,7 @@
 
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
-				</a>
+				<div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product')"></div>
 			</div>
 		</div>
 	</section>
@@ -1217,23 +1244,23 @@
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+						<img th:src="@{/images/icons/icon-pay-01.png}" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+						<img th:src="@{/images/icons/icon-pay-02.png}" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+						<img th:src="@{/images/icons/icon-pay-03.png}" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+						<img th:src="@{/images/icons/icon-pay-04.png}" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+						<img th:src="@{/images/icons/icon-pay-05.png}" alt="ICON-PAY">
 					</a>
 				</div>
 
@@ -1250,14 +1277,14 @@
 	<div th:fragment="js_files_footer">
 		
 		<!--===============================================================================================-->	
-		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script th:src="@{/vendor/jquery/jquery-3.2.1.min.js}"></script>
 		<!--===============================================================================================-->
-		<script src="vendor/animsition/js/animsition.min.js"></script>
+		<script th:src="@{/vendor/animsition/js/animsition.min.js}"></script>
 		<!--===============================================================================================-->
-		<script src="vendor/bootstrap/js/popper.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script th:src="@{/vendor/bootstrap/js/popper.js}"></script>
+		<script th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
 		<!--===============================================================================================-->
-		<script src="vendor/select2/select2.min.js"></script>
+		<script th:src="@{/vendor/select2/select2.min.js}"></script>
 		<script>
 			$(".js-select2").each(function(){
 				$(this).select2({
@@ -1267,18 +1294,18 @@
 			})
 		</script>
 		<!--===============================================================================================-->
-		<script src="vendor/daterangepicker/moment.min.js"></script>
-		<script src="vendor/daterangepicker/daterangepicker.js"></script>
+		<script th:src="@{/vendor/daterangepicker/moment.min.js}"></script>
+		<script th:src="@{/vendor/daterangepicker/daterangepicker.js}"></script>
 		<!--===============================================================================================-->
-		<script src="vendor/slick/slick.min.js"></script>
-		<script src="js/slick-custom.js"></script>
+		<script th:src="@{/vendor/slick/slick.min.js}"></script>
+		<script th:src="@{/js/slick-custom.js}"></script>
 		<!--===============================================================================================-->
-		<script src="vendor/parallax100/parallax100.js"></script>
+		<script th:src="@{/vendor/parallax100/parallax100.js}"></script>
 		<script>
 	        $('.parallax100').parallax100();
 		</script>
 		<!--===============================================================================================-->
-		<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+		<script th:src="@{/vendor/MagnificPopup/jquery.magnific-popup.min.js}"></script>
 		<script>
 			$('.gallery-lb').each(function() { // the containers for all your galleries
 				$(this).magnificPopup({
@@ -1292,9 +1319,9 @@
 			});
 		</script>
 		<!--===============================================================================================-->
-		<script src="vendor/isotope/isotope.pkgd.min.js"></script>
+		<script th:src="@{/vendor/isotope/isotope.pkgd.min.js}"></script>
 		<!--===============================================================================================-->
-		<script src="vendor/sweetalert/sweetalert.min.js"></script>
+		<script th:src="@{/vendor/sweetalert/sweetalert.min.js}"></script>
 		<script>
 			$('.js-addwish-b2').on('click', function(e){
 				e.preventDefault();
@@ -1332,7 +1359,7 @@
 		
 		</script>
 		<!--===============================================================================================-->
-		<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script th:src="@{/vendor/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
 		<script>
 			$('.js-pscroll').each(function(){
 				$(this).css('position','relative');
@@ -1349,7 +1376,7 @@
 			});
 		</script>
 		<!--===============================================================================================-->
-		<script src="js/main.js"></script>
+		<script th:src="@{/js/main.js}"></script>
 	
 	</div>
 	

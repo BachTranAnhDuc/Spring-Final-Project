@@ -2,7 +2,7 @@
 <html lang="en"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head th:replace="fragments_front :: page_head(${title}, 'none')">
+<head th:replace="fragments_front :: page_head('Rubik Front-End', 'none')">
 </head>
 <body class="animsition">
 	
@@ -10,7 +10,11 @@
 
 	<div th:replace="fragments_front :: cart_customer"></div>
 	
+	
+	
 	<div th:replace="fragments_front :: product_view_by_category"></div>
+	
+	
 	
 	<footer th:replace="fragments_front :: footer_customer"></footer>
 
