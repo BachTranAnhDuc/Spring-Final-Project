@@ -92,7 +92,7 @@
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a th:href="@{'/products'}">Shop</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
@@ -491,10 +491,10 @@
 		</div>
 	</div>
 	
-	<!-- Product -->
-	<section th:fragment="product_customer" class="bg0 p-t-23 p-b-140">
+	<!-- Category -->
+	<section th:fragment="category_customer" class="bg0 p-t-23 p-b-140">
 		<div class="container">
-			<div class="p-b-10">
+			<div class="p-t-50">
 				<h3 class="ltext-103 cl5">
 					Product Overview
 				</h3>
@@ -757,7 +757,8 @@
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a th:href="@{'/c/' + ${categoryParent.alias}}" 
+									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									[[${categoryParent.name}]]
 								</a>
 
