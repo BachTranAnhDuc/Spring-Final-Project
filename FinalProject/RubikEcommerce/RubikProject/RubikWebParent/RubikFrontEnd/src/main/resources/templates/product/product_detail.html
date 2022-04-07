@@ -14,27 +14,7 @@
 
 
 	<!-- breadcrumb -->
-	<div class="container mt-5" 
-		th:if="${listCategoryParents != null && !listCategoryParents.empty}">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a th:href="@{/}" class="stext-109 cl8 hov-cl1 trans-04">
-				Home
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
-			
-			<th:block th:each="parent : ${listCategoryParents}">
-				<a th:href="@{'/c/' + ${parent.alias}}" 
-					class="stext-109 cl8 hov-cl1 trans-04 ml-2">
-					[[${parent.name}]]/
-				</a>
-			</th:block>
-			
-			<span class="stext-109 cl4 ml-2"
-				th:if="${product != null}">
-				[[${product.getShortName}]]
-			</span>
-		</div>
-	</div>
+	<div th:replace="fragments_child_1 :: bread_crumb_product"></div>
 		
 
 	<!-- Product Detail -->

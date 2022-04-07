@@ -72,9 +72,32 @@ public class ProductController {
 	}
 	
 	@GetMapping("/products")
-	public String viewHomePage(Model model,
-			@PathVariable("pageNum") int pageNum) {
+	public String viewProduct(Model model) {
 			
+		return viewProuctByPage(model, 1);
+	}
+	
+	@GetMapping("/products/page/{pageNum}")
+	public String viewProuctByPage(Model model,
+			@PathVariable("pageNum") int pageNum) {
+		
+		Page<Product> pageProducts = productService.listProductByPage(pageNum);
+		List<Product> listResult = pageProducts.getContent();
+		
+		long startCount = (pageNum - 1) * ProductService.SEARCH_PRODUCTS_PER_PAGE + 1;
+		long endCount = startCount + ProductService.SEARCH_PRODUCTS_PER_PAGE - 1;
+		if (endCount > pageProducts.getTotalElements()) {
+			endCount = pageProducts.getTotalElements();
+		}
+		
+		model.addAttribute("listProducts", listResult);
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("totalPages", pageProducts.getTotalPages());
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", pageProducts.getTotalElements());
+		model.addAttribute("title", "Product");
+		
 		return "product/products";
 	}
 	
@@ -118,7 +141,7 @@ public class ProductController {
 		}
 		
 		model.addAttribute("keyword", keyword);
-		model.addAttribute("listResult", listResult);
+		model.addAttribute("listProducts", listResult);
 		model.addAttribute("currentPage", pageNum);
 		model.addAttribute("totalPages", pageProducts.getTotalPages());
 		model.addAttribute("startCount", startCount);
