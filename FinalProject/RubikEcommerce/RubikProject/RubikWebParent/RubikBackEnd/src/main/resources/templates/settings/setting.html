@@ -58,7 +58,7 @@
 							  </div>
 							  
 							  <div class="tab-pane" id="countries" role="tabpanel">
-								<h2>Countries</h2>
+								<div th:replace="settings/countries :: content"></div>
 							  </div>
 							  
 							  <div class="tab-pane" id="states" role="tabpanel">
@@ -94,17 +94,15 @@
 
     
 	<script type="text/javascript">
-		moduleURL = "[[@{/products}]]";
-		brandModuleURL = "[[@{/brands}]]";
-		defaultImageThumbnailSrc = "[[@{/images/image-thumbnail.png}]]";
-		checkUniqueURL = "[[@{/products/check_unique}]]";
-		
+		MAX_FILE_SIZE = 102400; // 100KB
+		contextPath = "[[@{/}]]";
+		var csrfHeaderName = "[[${_csrf.headerName}]]";
+		var csrfValue = "[[${_csrf.token}]]";
+	
 	</script>
 
 	<script th:src="@{/js/common_form.js}"></script>
-	<script th:src="@{/js/product_form_overview.js}"></script>
-	<script th:src="@{/js/product_form_images.js}"></script>
-	<script th:src="@{/js/product_form_details.js}"></script>
+	<script th:src="@{/js/country_setting.js}"></script>
 	
 	<div th:replace="front_fragments :: js_file"></div>
 
