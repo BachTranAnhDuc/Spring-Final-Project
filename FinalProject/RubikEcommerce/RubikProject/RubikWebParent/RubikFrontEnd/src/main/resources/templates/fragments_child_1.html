@@ -313,18 +313,25 @@
 
 					<div th:if="${product.discountPercent <= 0}">
 						<span class="stext-105 cl3">
-							[[${product.price}]]$
+						<span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}"
+							th:remove="tag">[[${CURRENCY_SYMBOL}]]
+							</span>
+							[[${product.price}]]
+							<span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}"
+								th:remove="tag">[[${CURRENCY_SYMBOL}]]
+							</span>
 						</span>
+						
 					</div>
 								
 					<div th:if="${product.discountPercent > 0}">
 						<span class="stext-105 cl3 font-weight-bold text-danger">
-							[[${product.getDiscountPrice}]]$
+							[[${#numbers.formatDecimal(product.getDiscountPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]
 						</span>
 						<br/>
 						<del>
 							<span class="stext-105 cl3">
-								[[${product.price}]]$
+								[[${product.price}]][[${CURRENCY_SYMBOL}]]
 							</span>
 						</del>
 					</div>

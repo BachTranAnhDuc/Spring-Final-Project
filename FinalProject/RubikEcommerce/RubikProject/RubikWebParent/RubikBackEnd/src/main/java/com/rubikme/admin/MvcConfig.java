@@ -48,6 +48,8 @@ public class MvcConfig implements WebMvcConfigurer {
 		exposoDirectory("../brand-logos", registry);
 		
 		exposoDirectory("../product-images", registry);
+		
+		exposoDirectory("../site-logo", registry);
 	}
 	
 	private void exposoDirectory(String pathPattern, ResourceHandlerRegistry registry) {

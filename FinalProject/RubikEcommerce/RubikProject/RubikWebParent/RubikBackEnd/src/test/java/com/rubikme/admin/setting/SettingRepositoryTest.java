@@ -33,4 +33,25 @@ public class SettingRepositoryTest {
 		
 		assertThat(iterable).size().isGreaterThan(0);
 	}
+	
+	@Test
+	public void testCreateLogo() {
+		Setting logo = new Setting("SITE_LOGO", "logo.png", SettingCategory.GENERAL);
+		
+		repo.save(logo);
+		
+	}
+	
+	@Test
+	public void testCreateCurrencySetting() {
+		Setting currencyId = new Setting("CURRENCY_ID", "1", SettingCategory.CURRENCY);
+		Setting symbol = new Setting("CURRENCY_SYMBOL", "$", SettingCategory.CURRENCY);
+		Setting symbolPosition = new Setting("CURRENCY_SYMBOL_POSITION", "before", SettingCategory.CURRENCY);
+		Setting decimalPointType = new Setting("DECIMAL_POINT_TYPE", "POINT", SettingCategory.CURRENCY);
+		Setting decimalDigits = new Setting("DECIMAL_DIGITS", "2", SettingCategory.CURRENCY);
+		Setting thousandsPointType = new Setting("THOUSANDS_POINT_TYPE", "COMMA", SettingCategory.CURRENCY);
+		
+		repo.saveAll(List.of(currencyId, symbol, symbolPosition, decimalPointType, 
+				decimalDigits, thousandsPointType));
+	}
 }

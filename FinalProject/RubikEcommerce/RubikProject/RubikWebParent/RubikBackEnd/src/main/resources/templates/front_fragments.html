@@ -1,7 +1,9 @@
 <div th:fragment="side_bar" class="sidebar">
 	<div class="sidebar-header">
-        <a href="#" class="sidebar-logo"><span></span></a>
-        <a th:href="@{/}" class="sidebar-logo-text">RubikShop</a>
+        <a th:href="@{/}" class="sidebar-logo">
+        	<img th:src="@{${SITE_LOGO}}"
+        		class="img-fluid w-50"/>
+        </a>
     </div><!-- sidebar-header -->
     
       <div class="sidebar-search">
@@ -129,7 +131,8 @@
 	          	</li>
 	          	
 	          	<li class="nav-item">
-	          		<a th:href="@{'/settings'}" class="nav-link with-sub">
+	          		<a th:href="@{'/settings'}" class="nav-link with-sub"
+	          			onclick="change_settings();">
 	          			<i data-feather="settings"></i>
 	          			<span>Setting</span>
 	          		</a>
@@ -376,6 +379,10 @@
 
 		function change_logout() {
 			window.location = "[[@{/logout}]]"
+		}
+
+		function change_settings() {
+			window.location = "[[@{/settings}]]"
 		}
 			
 	</script>

@@ -302,7 +302,9 @@ public class Product {
 		float dis = price * ((100 - discountPercent) / 100);
 		
 		if (discountPercent > 0) {
-			return (float) DoubleRounder.round(dis, 2);
+			//return (float) DoubleRounder.round(dis, 2);
+			
+			return dis;
 		}
 		
 		return this.price;

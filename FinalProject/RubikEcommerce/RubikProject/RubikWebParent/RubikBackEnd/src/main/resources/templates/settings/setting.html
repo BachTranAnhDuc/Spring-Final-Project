@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<head th:replace="fragments :: page_head(${pageTitle}, 'tag')"/>
+	<link rel="stylesheet" th:href="@{/richtext/richtext.min.css}"/>
+	<script th:src="@{/richtext/jquery.richtext.min.js}"></script>
+</head>
+<body class="skin-red animate">
+	<div th:replace="front_fragments :: side_bar"></div>
+
+    <div class="content">
+      	<div th:replace="front_fragments :: content_header"></div>
+   		
+		<div class="content-body mb-5">
+			
+			<div class="row mt-5">
+			
+				<div class="col-1"></div>
+				
+				<div class="col-8">
+					<div class="row">
+						<div class="col">
+							<div th:if="${message != null}"
+								class="alert alert-success text-center">
+								[[${message}]]
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<ul class="nav nav-tabs" id="settingTab" role="tablist">
+							  <li class="nav-item">
+							    <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
+							  </li>
+							  
+							  <li class="nav-item">
+							    <a class="nav-link" data-toggle="tab" href="#countries" role="tab">Countries</a>
+							  </li>
+							  
+							  <li class="nav-item">
+							    <a class="nav-link" data-toggle="tab" href="#states" role="tab">States</a>
+							  </li>
+							  
+							  <li class="nav-item">
+							    <a class="nav-link" data-toggle="tab" href="#mailServer" role="tab">Mail Server</a>
+							  </li>
+							  
+							  <li class="nav-item">
+							    <a class="nav-link" data-toggle="tab" href="#mailTemplate" role="tab">Mail Templates</a>
+							  </li>	
+							  	  
+							</ul>
+							
+							<div class="tab-content">
+							  <div class="tab-pane active p-3" id="general" role="tabpanel">
+							  	<div th:replace="settings/general :: content" />
+							  </div>
+							  
+							  <div class="tab-pane" id="countries" role="tabpanel">
+								<h2>Countries</h2>
+							  </div>
+							  
+							  <div class="tab-pane" id="states" role="tabpanel">
+								<h2>States</h2>
+							  </div>
+							  
+							  <div class="tab-pane p-3" id="mailServer" role="tabpanel">
+								<h2>Mail Server</h2>
+							  </div>
+							  
+							  <div class="tab-pane p-3" id="mailTemplates" role="tabpanel">
+								<h2>Mail Templates</h2>
+							  </div>	
+							  
+							 </div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-3 d-flex align-items-end flex-column">
+					<img th:src="@{'/images/people_animation/Happy_woman_teacher_in_government_uniform_smiling_character_cartoon_art_illustration.jpg'}" alt="Photo user preview"
+						class="img-fluid mt-auto" style="max-width: 175px"/>
+				</div>
+			</div>
+								
+			<div th:replace="fragments :: modal_dialog"></div>
+	
+		</div><!-- content-body -->
+		
+		<div th:replace="front_fragments :: footer_frag"></div>
+	</div><!-- content -->
+
+
+    
+	<script type="text/javascript">
+		moduleURL = "[[@{/products}]]";
+		brandModuleURL = "[[@{/brands}]]";
+		defaultImageThumbnailSrc = "[[@{/images/image-thumbnail.png}]]";
+		checkUniqueURL = "[[@{/products/check_unique}]]";
+		
+	</script>
+
+	<script th:src="@{/js/common_form.js}"></script>
+	<script th:src="@{/js/product_form_overview.js}"></script>
+	<script th:src="@{/js/product_form_images.js}"></script>
+	<script th:src="@{/js/product_form_details.js}"></script>
+	
+	<div th:replace="front_fragments :: js_file"></div>
+
+</body>
+</html>
