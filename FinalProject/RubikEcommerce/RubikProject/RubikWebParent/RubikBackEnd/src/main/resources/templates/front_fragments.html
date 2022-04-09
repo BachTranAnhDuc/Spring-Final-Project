@@ -82,10 +82,17 @@
 	          		
 	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 	          		<li class="nav-item">
-			          	<a href="" class="nav-link with-sub">
+			          	<a th:href="@{/customers}" class="nav-link with-sub">
 			          		<i data-feather="smile"></i>
 			          		<span>Customers</span>
 			          	</a>
+			          	
+			          	<nav class="nav-sub">
+			                <a th:href="@{'/customers'}" class="sub-link"
+			                	onclick="change_customers_detail()">Details</a>
+			                <a th:href="@{'/customers/new'}" class="sub-link"
+			                	onclick="change_customers_new()">New Products</a>
+			       		</nav>
 		          	</li>
 	          	</th:block>
 	          		
@@ -343,6 +350,14 @@
 
 		function change_products_new() {
 			window.location = "[[@{/products/new}]]";
+		}
+
+		function change_customers_detail() {
+			window.location = "[[@{/customers}]]";
+		}
+
+		function change_customers_new() {
+			window.location = "[[@{/customers/new}]]";
 		}
 
 		function change_brands_detail() {
