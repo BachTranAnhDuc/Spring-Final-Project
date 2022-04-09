@@ -138,4 +138,8 @@ public class Customer {
 		this.createdTime = createdTime;
 	}
 	
+	
+	public String getFullName() {
+		return this.firstName + " " + this.lastName;
+	}
 }

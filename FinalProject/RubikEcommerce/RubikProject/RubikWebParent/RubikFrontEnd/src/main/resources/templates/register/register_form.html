@@ -28,7 +28,7 @@
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
 					<form th:action="@{/create_customer}" method="post"
 						th:object="${customer}"
-						onsubmit="checkEmailUnique(this)">
+						onsubmit="return checkEmailUnique(this)">
 						<h4 class="mtext-105 cl2 txt-center p-b-30">
 							Register
 						</h4>
@@ -168,51 +168,51 @@
 	<div th:replace="fragments_front :: js_files_footer"></div>
 	
 	<script type="text/javascript">
+		contextPath = "[[@{/}]]";
 		
 		function checkPasswordMatch(confirmPassword) {
 			if (confirmPassword.value != $("#password").val()) {
-				confirmPassword.setCustomValidity("Password does not match!");
-			}
-			else {
+				confirmPassword.setCustomValidity("Passwords do not match!");
+			} else {
 				confirmPassword.setCustomValidity("");
 			}
 		}
-
+		
 		function checkEmailUnique(form) {
-			url = contextPath + "/customers/check_unique_email";
-			userEmail = $("#email").val();
+			url = contextPath + "customers/check_unique_email";
+			customerEmail = $("#email").val();
 			csrfValue = $("input[name='_csrf']").val();
-			params = {email: userEmail, _csrf: csrfValue};
-
+			
+			params = {email: customerEmail, _csrf: csrfValue};
+			
 			$.post(url, params, function(response) {
 				if (response == "OK") {
 					form.submit();
-				}
-				else if (response == "Duplicated") {
-					showWarningModal("Warning", "There is another customer having the email " + userEmail);
-				}
-				else {
-					showErrorModal("Error", "Unknown response from server");
+				} else if (response == "Duplicated") {
+					showWarningModal("There is another cusotmer having the email " + customerEmail);
+				} else {
+					showErrorModal("Unknown response from server");
 				}
 			}).fail(function() {
-				showErrorModal("Error", "Could not connect to the server");
+				showErrorModal("Could not connect to the server");
 			});
+			
 			return false;
-		}
-
+		}	
+		
 		function showModalDialog(title, message) {
 			$("#modalTitle").text(title);
 			$("#modalBody").text(message);
 			$("#modalDialog").modal();
 		}
-
+	
 		function showErrorModal(message) {
 			showModalDialog("Error", message);
 		}
-
+	
 		function showWarningModal(message) {
 			showModalDialog("Warning", message);
-		}
+		}	
 	</script>
 </body>
 </html>
