@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -45,6 +46,10 @@ public class Customer {
 	
 	@Column(name = "created_time")
 	private Date createdTime;
+	
+	@Enumerated
+	@Column(name = "auth_type", length = 10)
+	private AuthenticationType authenticationType;
 	
 	public Customer() {
 		
@@ -142,4 +147,14 @@ public class Customer {
 	public String getFullName() {
 		return this.firstName + " " + this.lastName;
 	}
+
+	public AuthenticationType getAuthenticationType() {
+		return authenticationType;
+	}
+
+	public void setAuthenticationType(AuthenticationType authenticationType) {
+		this.authenticationType = authenticationType;
+	}
+	
+	
 }

@@ -50,6 +50,12 @@
 					<div class="left-top-bar">
 						Free shipping for standard order over $100
 					</div>
+					
+					<th:block sec:authorize="isAuthenticated()">	
+						<form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+							<input type="submit" value="Logout" />
+						</form>
+					</th:block>
 
 					<div class="right-top-bar flex-w h-full">
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
@@ -60,13 +66,19 @@
 							Register
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
+						<a th:href="@{/login}" class="flex-c-m trans-04 p-lr-25">
+							Login
 						</a>
+						
+						<th:block sec:authorize="isAuthenticated()">
+							<a th:href="@{/customers}" class="flex-c-m trans-04 p-lr-25"
+								sec:authentication="principal.fullName">
+							</a>
+							
+							<a class="nav-link" href="javascript: document.logoutForm.submit()">Logout</a>
+						</th:block>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
+						
 					</div>
 				</div>
 			</div>
