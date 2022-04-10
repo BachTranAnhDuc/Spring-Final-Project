@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "cart_item")
@@ -66,5 +67,8 @@ public class CartItem {
 		this.quantity = quantity;
 	}
 	
-	
+	@Transient
+	public float getTotalPrice() {
+		return product.getDiscountPrice() * quantity;
+	}
 }
