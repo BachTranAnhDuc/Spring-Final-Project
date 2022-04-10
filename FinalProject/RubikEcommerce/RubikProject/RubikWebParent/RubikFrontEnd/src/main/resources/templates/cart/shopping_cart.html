@@ -66,7 +66,8 @@
 										<div th:replace="fragments :: quantity_control(${item.quantity}, ${product.id})"></div>
 									</td>
 									<td class="column-5">
-										<p>[[${#numbers.formatDecimal(item.getTotalPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]</p>
+										<p th:id="'totalall' + ${product.id}"
+											class="subtotal">[[${#numbers.formatDecimal(item.getTotalPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]</p>
 										<a href="" class="fas fa-trash"></a>
 									</td>
 								</tr>
@@ -105,7 +106,7 @@
 							</div>
 
 							<div class="size-209">
-								<span class="mtext-110 cl2">
+								<span class="mtext-110 cl2" id="total">
 									[[${#numbers.formatDecimal(totalAllPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]
 								</span>
 							</div>
@@ -182,6 +183,8 @@
 		th:if="${#lists.isEmpty(listCartItems)}">
 		<h2>You have not chosen any product yet.</h2>
 	</div>
+	
+	<div th:replace="fragments :: modal_dialog"></div>
 			
 	<!-- Footer -->
 	<footer th:replace="fragments_front :: footer_customer"></footer>
@@ -198,6 +201,8 @@
 	
 	<script type="text/javascript">
 
+		contextPath = "[[@{/}]]";
+	
 		var csrfHeaderName = "[[${_csrf.headerName}]]";
 		var csrfValue = "[[${_csrf.token}]]";
 		
@@ -215,7 +220,7 @@
 			showModalDialog("Warning", message);
 		}	
 	</script>
-	
-	<script type="text/javascript" th:src="@{/js/quantity_control.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/cart_shopping.js}"></script>
 </body>
 </html>
