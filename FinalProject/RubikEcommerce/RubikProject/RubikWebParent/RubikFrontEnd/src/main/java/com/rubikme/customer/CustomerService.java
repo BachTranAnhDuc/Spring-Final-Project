@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.rubikme.common.entity.AuthenticationType;
 import com.rubikme.common.entity.Customer;
 
 import net.bytebuddy.utility.RandomString;
@@ -58,4 +59,28 @@ public class CustomerService {
 		}
 		
 	}
+	
+	public Customer getCustomerByEmail(String email) {
+		return customerRepo.findByEmail(email);
+	}
+	
+	public void update(Customer customerInForm) {
+		//Customer customerInDB = customerRepo.findById(customerInForm.getId()).get();
+		
+		Customer customerInDB = customerRepo.findById(customerInForm.getId()).get();
+			
+		if (!customerInForm.getPassword().isEmpty()) {
+			String encodedPassword = passwordEncoder.encode(customerInForm.getPassword());
+			customerInForm.setPassword(encodedPassword);			
+		} 
+		else {
+			customerInForm.setPassword(customerInDB.getPassword());
+		}		
+		
+		customerInForm.setEnabled(customerInDB.isEnabled());
+		customerInForm.setCreatedTime(customerInDB.getCreatedTime());
+		customerInForm.setVerificationCode(customerInDB.getVerificationCode());
+		
+		customerRepo.save(customerInForm);
+	}	
 }

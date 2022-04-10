@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import com.rubikme.common.entity.AuthenticationType;
 import com.rubikme.common.entity.Customer;
 
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {

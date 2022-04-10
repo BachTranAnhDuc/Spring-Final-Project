@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments_front :: page_head('Rubik Front-End', 'none')">
+</head>
+<body>
+	
+	<!-- Header -->
+	<header th:replace="fragments_front :: header_customer"></header>
+
+	<!-- Cart -->
+	<div th:replace="fragments_front :: cart_customer"></div>
+
+
+	<!-- Title page -->
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+		<h2 class="ltext-105 cl0 txt-center">
+			Register
+		</h2>
+	</section>	
+
+
+	<!-- Content page -->
+	<section class="bg0 p-t-104 p-b-116">
+		<div class="container">
+			<div class="flex-w flex-tr">
+				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+					<form th:action="@{/update_account_details}" method="post" th:object="${customer}">
+						
+						<input type="hidden" th:field="*{id}" />
+					
+						<h4 class="mtext-105 cl2 txt-center p-b-30">
+							Update Account
+						</h4>
+						
+						<div th:if="${message != null}" 
+							class="alert alert-success text-center">
+							[[${message}]]
+						</div>
+						
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="text" th:field="*{firstName}"
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+								required="required" maxlength="45" minlength="2"/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+						
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="text" th:field="*{lastName}"
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+								required="required" maxlength="45" minlength="2"/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="text" th:field="*{email}"
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" readonly/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="password" th:field="*{password}" 
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+								maxlength="15" minlength="6"
+								oninput="checkPasswordMatch(document.getElementById('confirmPassword'))"/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+						
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="password" id="confirmPassword"
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+								maxlength="15" minlength="6"
+								oninput="checkPasswordMatch(this)"/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+						
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="text" th:field="*{phoneNumber}"
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+								required="required" maxlength="15" minlength="8"/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+						
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="text" th:field="*{addressLine}"
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+								required="required" maxlength="64" minlength="3"/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+						
+						<div class="bor8 m-b-20 how-pos4-parent">
+							<input type="text" th:field="*{postalCode}"
+								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+								required="required" maxlength="8" minlength="3"/>
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+								style="max-width: 25px;">
+						</div>
+
+						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
+							type="submit">
+							Submit
+						</button>
+					</form>
+				</div>
+
+				<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+					<div class="flex-w w-full p-b-42">
+						<span class="fs-18 cl5 txt-center size-211">
+							<span class="lnr lnr-map-marker"></span>
+						</span>
+
+						<div class="size-212 p-t-2">
+							<span class="mtext-110 cl2">
+								Address
+							</span>
+
+							<p class="stext-115 cl6 size-213 p-t-18">
+								Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+							</p>
+						</div>
+					</div>
+
+					<div class="flex-w w-full p-b-42">
+						<span class="fs-18 cl5 txt-center size-211">
+							<span class="lnr lnr-phone-handset"></span>
+						</span>
+
+						<div class="size-212 p-t-2">
+							<span class="mtext-110 cl2">
+								Lets Talk
+							</span>
+
+							<p class="stext-115 cl1 size-213 p-t-18">
+								+1 800 1236879
+							</p>
+						</div>
+					</div>
+
+					<div class="flex-w w-full">
+						<span class="fs-18 cl5 txt-center size-211">
+							<span class="lnr lnr-envelope"></span>
+						</span>
+
+						<div class="size-212 p-t-2">
+							<span class="mtext-110 cl2">
+								Sale Support
+							</span>
+
+							<p class="stext-115 cl1 size-213 p-t-18">
+								contact@example.com
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div th:replace="fragments :: modal_dialog"></div>
+
+	<!-- Footer -->
+	<footer th:replace="fragments_front :: footer_customer"></footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	
+	<div th:replace="fragments_front :: js_files_footer"></div>
+	
+	<script type="text/javascript">
+		contextPath = "[[@{/}]]";
+		
+		function checkPasswordMatch(confirmPassword) {
+			if (confirmPassword.value != $("#password").val()) {
+				confirmPassword.setCustomValidity("Passwords do not match!");
+			} else {
+				confirmPassword.setCustomValidity("");
+			}
+		}
+
+		function showModalDialog(title, message) {
+			$("#modalTitle").text(title);
+			$("#modalBody").text(message);
+			$("#modalDialog").modal();
+		}
+
+		function showErrorModal(message) {
+			showModalDialog("Error", message);
+		}
+
+		function showWarningModal(message) {
+			showModalDialog("Warning", message);
+		}	
+	</script>
+</body>
+</html>

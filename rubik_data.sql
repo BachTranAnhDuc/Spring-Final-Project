@@ -12,7 +12,9 @@ select * from brands_categories;
 select * from products;
 select * from product_images;
 select * from product_details;
-
+select * from settings;
+select * from currencies;
+select * from customers;
 
 
 
@@ -89,7 +91,6 @@ insert into categories values (1, 'standard_rubik', null, 1, null, 'rubik standa
 insert into categories values (2, 'variant_rubik', null, 1, null, 'rubik variant', null);
 insert into categories values (3, 'accessory', null, 1, null, 'accessory', null);
 
-
 insert into categories values (4, 'rubik_2x2x2', '-1-', 1, '2x2.jpg', '2x2x2', 1);
 insert into categories values (5, 'rubik_3x3x3', '-1-', 0, '3x3.jpg', '3x3x3', 1);
 insert into categories values (6, 'rubik_4x4x4', '-1-', 1, '4x4.jpg', '4x4x4', 1);
@@ -109,11 +110,13 @@ insert into categories values (18, 'rubik_pyraminx', '-2-', 1, 'pyraminx.jpg', '
 insert into categories values (19, 'rubik_skewb', '-2-', 1, 'skewb.jpg', 'Skewb', 2);
 insert into categories values (20, 'rubik_square-1', '-2-', 1, 'square_1.jpg', 'Square-1', 2);
 
-insert into categories values (21, 'cubible_sticker', '-3-', 1, null, 'Sticker', 3);
-insert into categories values (22, 'cubible_lube', '-3-', 1, null, 'Lube', 3);
-insert into categories values (23, 'core', '-3-', 1, null, 'Core', 3);
-insert into categories values (24, 'bag', '-3-', 1, null, 'Bag', 3);
-insert into categories values (25, 'time_clock', '-3-', 1, null, 'Time Clock', 3);
+insert into categories values (21, 'Timer&Mats', '-3-', 1, null, 'Timer&Mats', 3);
+insert into categories values (22, 'Timer&Skin', '-3-', 1, null, 'Timer&Skin', 3);
+insert into categories values (23, 'Store&Display', '-3-', 1, null, 'Store&Display', 3);
+
+insert into categories values (26, 'lubricant', null, 1, null, 'Lubricant', null);
+insert into categories values (27, 'cosmic_lub', '-26-', 1, null, 'Cosmic Lub', 26);
+insert into categories values (28, 'speed_lub', '-26-', 1, null, 'Speed Lub', 26);
 
 insert into brands values (1, 'yongjun.png', 'YongJun');
 insert into brands values (2, 'qiyi.jpg', 'QiYi');
@@ -276,8 +279,13 @@ insert into products values (57, 'DaYan Megaminx V2 Magnetic', 'DaYan_Megaminx_V
 insert into products values (58, 'Galaxy V2 M Magnetic Sculpture Stickerless X-Man Galaxy Megaminx V2 M', 'X_Man_Galaxy_Megaminx_V2_M', "<div><h3><b>Product Description</b></h3></div><span>The X-Man Galaxy Megaminx V2 (Sculpted) is the updated version of the world-famous X-Man Galaxy Megaminx (Sculpted).&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Galaxy Megaminx V2 M (Sculpted) is the QiYi magnetized version of the X-Man Galaxy Megaminx V2.</li><li>The puzzle has medium strength magnets that provide a very tactile feedback when the layers align. This version has sculpted ridges on each piece to aid turning and grip.</li><li>This is a fantastic Megaminx. It is a more stable version of the Galaxy v2, which was the intent. Unlike many other mass-produced magnetic puzzles, the magnets are fairly strong. Personally, I would have preferred very slightly weaker magnets, but I also don't have a problem with how they are. The strength just makes it slightly more tiring to do many solves in a row compared to a non-magnetic puzzle or a puzzle with weaker magnets. Out of the box, it was very tight and dry. After adding a varie</li></ul>", null, null, 1, 1, 28.00, 29.99, 5, 'X_Man_Galaxy_Megaminx_V2_M_Main.jpg', 1, 1, 1, 1, 14, 16);
 insert into products values (59, 'GAN Skewb, Magnetic Speed Cube Gans Skweb', 'GAN_Magnetic_Skewb', "<div><h3><b>Product Description</b></h3></div><span>The GAN Skewb is a massive advancement in Skewb mechanism! This Skewb features a lot of GAN's innovative features that put them on the map such as their GES tensioning system and the new Core/Corner Magnet system that was recently introduced!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>LIGHTWEIGHT AND REINVENTED - Only 81 grams, GAN Skewb is the most lightweight skewb puzzle in the market. Meanwhile it is first time with built-in magnets in the core. Total 2 versions available and you're viewing the one with 32 magnets.</li><li>MAGNETIC CORE POSITIONING - Introducing the new GAN Magnetic Core-Positioning System. In this system, GAN’s core has one side of the magnets, and edge pieces the other. Like an upgraded engine, it provides new sense of positioning with low starting resistance and better aligning. You'll feel super fast and super smooth in the very first turns!</li><li>EASILY TUNED DUAL ADJUSTMENT - Don't know which handfeel suits you best? Try our GES PRO design to explore easy tuning! Each axis has 4 kinds of nut distances and 6 levels elasticity. Altogether 24 configurations can be achieved using our accessories. Step-by-step instruction included!</li><li>DETAILS YOU'D LIKE TO KNOW - Includes lots of technology to give you the best skewb solving experience: 90° corner cutting; smooth tracks and round curves; scratch-proof stickerless surface; honeycomb touchface; all-symmetry lock up tiles; and more.</li></ul>", null, null, 1, 1, 30.00, 31.99, 5, 'GAN_Magnetic_Skewb_Main.jpg', 1, 1, 1, 1, 4, 19);
 insert into products values (60, 'MoYu AoYan Magnetic Skewb', 'MoYu_AoYan_Magnetic_Skewb', "<div><h3><b>Product Description</b></h3></div><span>The MoYu AoYan Magnetic Skewb is a new design featuring interchangeable center caps that have a large dimple that can improve grip and comfort for some speedcubers (stickerless version only). Additionally the AoYan features magnets to improve grip and improved corner cutting.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Accessories: display case, concave caps (stickerless version only) and screwdriver</li></ul>", null, null, 1, 1, 17.00, 18.99, 5, 'MoYu_AoYan_Magnetic_Skewb_Main.jpg', 1, 1, 1, 1, 3, 19);
-
-
+insert into products values (61, 'GAN Pyraminx 60 Magnets, Speed Magnetic Pyramid', 'GAN_Magnetic_Pyraminx', "<div><h3><b>Product Description</b></h3></div><span>The GAN Magnetic Pyraminx is a ground-breaking release from GAN! GAN's of the pyraminx features an all-new core-edge magnetic positioning system which greatly improves the feel and performance!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>LIGHTWEIGHT AND REINVENTED - Only 64 grams, GAN Pyraminx is the most lightweight pyramid puzzle in the market. Meanwhile it is first time with built-in magnets in the core. Total 3 versions available and you're viewing the one with 60 magnets(corner/center 24, edge/core 12, edge/center 24) and 4 sets of GES.</li><li>MAGNETIC CORE POSITIONING - Introducing the new GAN Magnetic Core-Positioning System. In this system, GAN’s core has one side of the magnets, and edge pieces the other. Like an upgraded engine, it provides new sense of positioning with low starting resistance and better aligning. You'll feel super fast and super smooth in the very first turns!</li><li>EASILY TUNED GES NUTS - Don't know which handfeel suits you best? Try our GES+ (GAN Elastic System) design to explore easy tuning! Each nut has 2 distance slots to be tuned by simply push and twist. The larger the distance and the weaker the elastic force, makes the cube looser. Certain versions have 4 types of elastic nuts to change tensions.</li></ul>", null, null, 1, 1, 27.00, 28.99, 5, 'GAN_Magnetic_Pyraminx_Main.jpg', 1, 1, 1, 1, 4, 18);
+insert into products values (62, 'X-Man Volt Square-1 V2 M UD (Fully Magnetic) stickerless Black Squre one', 'X_Man_Volt_Square_1_V2', "<div><h3><b>Product Description</b></h3></div><span>&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>The X-Man Volt Square-1 V2 M (Fully MagneThe X-Man Volt Square-1 V2 M (Fully Magnetic) is an updated design of the original X-Man Volt Square-1.tic) is an updated design of the original X-Man Volt Square-1.</li><li>This version features a more robust design for durability, and magnets in each of the pieces to aid turning accuracy.</li><li>Perfect Christmas Gift / Birthday Gift for kids. This classic puzzle game will never go out of style</li></ul>", null, null, 1, 1, 18.00, 19.99, 5, 'X_Man_Volt_Square_1_V2_Main.jpg', 1, 1, 1, 1, 14, 20);
+insert into products values (63, 'JPerm Mini Mat 2022', 'JPerm_Mini_Mat', "<div><h3><b>Product Description</b></h3></div><span>Made for true JPerm fans, the JPerm Mini Mat 2022 is the perfect way to support the JPerm YouTube Channel! Our mini mat is a great desk decoration and is designed to provide a soft surface to absorb the impact of your puzzle!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Mini mats are super easy to roll up and take with you on the go!</li><li>Size: 13.7' x 7'</li></ul>", null, null, 1, 1, 6.00, 7.99, 5, 'JPerm_Mini_Mat_Main.jpg', 1, 1, 1, 1, 14, 21);
+insert into products values (64, 'GAN Smart Timer (Bluetooth)', 'GAN_Smart_Timer', "<div><h3><b>Product Description</b></h3></div><span>Introducing the GAN Smart Timer with Bluetooth compatibility! Designed by cubers, for cubers, the Smart Timer includes many useful features that you will love!&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Smart Timer buttons will 'freeze' for 1 second after a solve is completed to prevent accidental resets.</li><li>Smart Timer will automatically record a rolling average of 5</li><li>Solves can automatically sync to your Cube Station app to be accessed across multiple devices</li><li>Durable, 'non-sticky' buttons</li><li>2.5mm auxilary output</li></ul>", null, null, 1, 1, 27.00, 28.99, 5, 'GAN_Smart_Timer_Main.jpg', 1, 1, 1, 1, 4, 22);
+insert into products values (65, 'GAN Cube Bag', 'GAN_Cube_Bag', "<div><h3><b>Product Description</b></h3></div><span>Keep your cubes protected with a GAN Cube Bag! These bags are made of a plush felt material that will keep your cubes protected from exterior damage.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li></li><li></li></ul>", null, null, 1, 1, 2.00, 3.99, 5, 'GAN_Cube_Bag_Main.jpg', 1, 1, 1, 1, 4, 23);
+insert into products values (66, 'Vortex Lubricant', 'Vortex_Lubricant', "<div><h3><b>Product Description</b></h3></div><span>Lubricating the hardware of your speed cube is a lost art but offers great performance increases and will substantially dampen that pesky spring noise.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Vortex's thick formulation makes it easy to apply, is stain-free, and will never need to be re-applied if applied properly.</li><li>Being that Vortex is designed specifically for hardware, we do not recommend that it be used on plastic surfaces.</li></ul>", null, null, 1, 1, 9.00, 9.99, 5, 'Vortex_Lubricant_Main.jpg', 1, 1, 1, 1, 4, 27);
+insert into products values (67, 'Speed Lube Weight 1', 'Speed_Lube_Weight', "<div><h3><b>Product Description</b></h3></div><span>Speed Lube is a popular lubricant option among speed cubers who are looking to achieve a longer-lasting and specific feel.&nbsp;</span><div><b><br></b></div>", "<h4>Overview</h4><ul><li>Speed Lube is offered in 8 different weights, each 'weight' being a different viscosity or 'thickness'.</li><li>The larger the number, the thicker or less viscous the lubricant. This will in turn create a smoother, more controllable feel.</li><li>We find that many cubers will mix different Speed Lubes. A common example would be a higher weight on the core and a lower weight on the pieces to create a quick, smooth feel.</li></ul>", null, null, 1, 1, 4.00, 5.99, 5, 'Speed_Lube_Weight_Main.jpg', 1, 1, 1, 1, 4, 28);
 
 
 
@@ -593,12 +601,33 @@ insert into product_images value (245, 'X_Man_Galaxy_Megaminx_V2_M_Extras_3.jpg'
 insert into product_images value (246, 'X_Man_Galaxy_Megaminx_V2_M_Extras_4.jpg', 58);
 insert into product_images value (247, 'X_Man_Galaxy_Megaminx_V2_M_Extras_5.jpg', 58);
 
--- product id = 58
+-- product id = 59
 insert into product_images value (248, 'GAN_Magnetic_Skewb_Extras_1.jpg', 59);
 insert into product_images value (249, 'GAN_Magnetic_Skewb_Extras_2.jpg', 59);
 insert into product_images value (250, 'GAN_Magnetic_Skewb_Extras_3.jpg', 59);
 insert into product_images value (251, 'GAN_Magnetic_Skewb_Extras_4.jpg', 59);
 insert into product_images value (252, 'GAN_Magnetic_Skewb_Extras_5.jpg', 59);
+-- product id = 60
+insert into product_images value (253, 'MoYu_AoYan_Magnetic_Skewb_Extras_1.jpg', 60);
+insert into product_images value (254, 'MoYu_AoYan_Magnetic_Skewb_Extras_2.jpg', 60);
+insert into product_images value (255, 'MoYu_AoYan_Magnetic_Skewb_Extras_3.jpg', 60);
+-- product id = 61
+insert into product_images value (256, 'GAN_Magnetic_Pyraminx_Extras_1.jpg', 61);
+insert into product_images value (257, 'GAN_Magnetic_Pyraminx_Extras_2.jpg', 61);
+insert into product_images value (258, 'GAN_Magnetic_Pyraminx_Extras_3.jpg', 61);
+insert into product_images value (259, 'GAN_Magnetic_Pyraminx_Extras_4.jpg', 61);
+insert into product_images value (260, 'GAN_Magnetic_Pyraminx_Extras_5.jpg', 61);
+insert into product_images value (261, 'GAN_Magnetic_Pyraminx_Extras_6.jpg', 61);
+-- product id = 62
+insert into product_images value (262, 'X_Man_Volt_Square_1_V2_Extras_1.jpg', 62);
+insert into product_images value (263, 'X_Man_Volt_Square_1_V2_Extras_2.jpg', 62);
+insert into product_images value (264, 'X_Man_Volt_Square_1_V2_Extras_3.jpg', 62);
+-- product id = 66
+insert into product_images value (265, 'Vortex_Lubricant_Extras_1.jpg', 66);
+insert into product_images value (266, 'Vortex_Lubricant_Extras_2.jpg', 66);
+insert into product_images value (267, 'Vortex_Lubricant_Extras_3.jpg', 66);
+insert into product_images value (268, 'Vortex_Lubricant_Extras_4.jpg', 66);
+
 
 
 
@@ -1134,18 +1163,83 @@ insert into product_details value (461, 'Gross Weight', '87g', 59);
 insert into product_details value (462, 'Item Weight', '55.9g', 59);
 insert into product_details value (463, 'Dimensions', '51.0mm', 59);
 insert into product_details value (464, 'Dimensions', '51.0mm', 59);
+-- product id = 60
+insert into product_details value (465, 'Brand', 'MoYu', 60);
+insert into product_details value (466, 'Type', 'Skew-b', 60);
+insert into product_details value (467, 'Magnets', 'Magnetic', 60);
+insert into product_details value (468, 'Stock Shades', 'Stickerless (Bright)', 60);
+insert into product_details value (469, 'Feel', 'Smooth', 60);
+insert into product_details value (470, 'Gross Weight', '87g', 60);
+insert into product_details value (471, 'Item Weight', '55.9g', 60);
+insert into product_details value (472, 'Dimensions', '51.0mm', 60);
+insert into product_details value (473, 'Dimensions', '51.0mm', 60);
+-- product id = 61
+insert into product_details value (474, 'Brand', 'GAN', 61);
+insert into product_details value (475, 'Type', 'Pyraminx', 61);
+insert into product_details value (476, 'Magnets', 'Magnetic', 61);
+insert into product_details value (477, 'Stock Shades', 'Stickerless (Bright)', 61);
+insert into product_details value (478, 'Feel', 'Smooth', 61);
+insert into product_details value (479, 'Gross Weight', '87g', 61);
+insert into product_details value (480, 'Item Weight', '55.9g', 61);
+insert into product_details value (481, 'Dimensions', '51.0mm', 61);
+insert into product_details value (482, 'Dimensions', '51.0mm', 61);
+-- product id = 62
+insert into product_details value (483, 'Brand', 'X-man Design', 62);
+insert into product_details value (484, 'Type', 'Square-1', 62);
+insert into product_details value (485, 'Magnets', 'Magnetic', 62);
+insert into product_details value (486, 'Stock Shades', 'Stickerless (Bright)', 62);
+insert into product_details value (487, 'Feel', 'Smooth', 62);
+insert into product_details value (488, 'Gross Weight', '87g', 62);
+insert into product_details value (489, 'Item Weight', '55.9g', 62);
+insert into product_details value (490, 'Dimensions', '51.0mm', 62);
+insert into product_details value (491, 'Dimensions', '51.0mm', 62);
+-- product id = 63
+insert into product_details value (492, 'Brand', 'X-man Design', 63);
+insert into product_details value (493, 'Type', 'Mats', 63);
+-- product id = 64
+insert into product_details value (494, 'Brand', 'GAN', 64);
+insert into product_details value (495, 'Type', 'Timers', 64);
+
+insert into currencies value (1, 'USD', 'United States Dollar', '$');
+insert into currencies value (2, 'VND', 'Vietnam Dong', 'đ');
+
+insert into settings value ('SITE_NAME', 'Rubikme', 'GENERAL');
+
+insert into countries value (1, 'US', 'United State');
+insert into countries value (2, 'VN', 'Vietnam');
+
+insert into settings value('MAIL_HOST', 'MAIL_SERVER', 'smtp.gmail.com');
+insert into settings value('MAIL_PORT', 'MAIL_SERVER', '587');
+insert into settings value('MAIL_USERNAME', 'MAIL_SERVER', 'username');
+insert into settings value('MAIL_PASSWORD', 'MAIL_SERVER', 'password');
+insert into settings value('MAIL_FROM', 'MAIL_SERVER', 'rubikme@gmail.com');
+insert into settings value('SMTP_AUTH', 'MAIL_SERVER', true);
+insert into settings value('SMTP_SECURED', 'MAIL_SERVER', true);
+insert into settings value('MAIL_SENDER_NAME', 'MAIL_SERVER', 'Rubik Team');
+insert into settings value('CUSTOMER_VERIFY_SUBJECT', 'MAIL_TEMPLATE', 'Email subject');
+insert into settings value('CUSTOMER_VERIFY_CONTENT', 'MAIL_TEMPLATE', 'Email content');
+
+update settings set value = '587' where `key` = 'MAIL_PORT';
 
 
 
-delete from product_images where id = 20;
-delete from product_images where id = 21;
-delete from product_images where id = 22;
+delete from product_images where id = 262;
+delete from product_images where id = 263;
+delete from product_images where id = 264;
 delete from product_images where id = 23;
 delete from product_images where id = 24;
 delete from product_images where id = 78;
 
 delete from product_details where product_id = 21;
 
-delete from products where id = 9;
+delete from settings where `key` = 'MAIL_POST';
 
-update products set maim_image = 'QiYi_Valk_5_M_5x5_Main.jpg' where id = 54;
+drop table countries;
+
+
+select * from products where name like '%gan%'
+or short_description like '%gan%'
+or full_description like '%gan%';
+
+select * from settings;
+select * from customers;

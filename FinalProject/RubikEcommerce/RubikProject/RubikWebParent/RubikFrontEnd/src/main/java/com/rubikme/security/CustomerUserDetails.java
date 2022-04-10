@@ -53,4 +53,16 @@ public class CustomerUserDetails implements UserDetails{
 	public String getFullName() {
 		return customer.getFirstName() + " " + customer.getLastName();
 	}
+	
+	public void setFirstName(String firstName) {
+		this.customer.setFirstName(firstName);
+	}
+	
+	public void setLastName(String lastName) {
+		this.customer.setLastName(lastName);
+	}
+	
+	public Customer getCustomer() {
+		return this.customer;
+	}
 }
