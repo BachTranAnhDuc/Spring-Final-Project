@@ -57,3 +57,19 @@
 			</div>
 		</div>
 	</div>
+	
+<div class="wrap-num-product flex-w m-r-20 m-tb-10"
+	th:fragment="quantity_control(quantityValue, productId)">
+	<a class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m" th:pid="${productId}">
+		<i class="fs-16 zmdi zmdi-minus"></i>
+	</a>
+		
+	<input class="mtext-104 cl3 txt-center num-product" type="text"
+		th:value="${quantityValue}"
+		th:id="'quantity' + ${productId}">
+		
+	<a class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m" th:pid="${productId}">
+		<i class="fs-16 zmdi zmdi-plus"></i>
+	</a>
+</div>
+	

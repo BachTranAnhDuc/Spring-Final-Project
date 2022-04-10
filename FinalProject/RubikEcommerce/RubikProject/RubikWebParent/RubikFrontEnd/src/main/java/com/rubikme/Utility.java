@@ -31,4 +31,15 @@ public class Utility {
 		
 		return mailSender;
 	}
+	
+	public static String getEmailOfCustomer(HttpServletRequest request) {
+		
+		Object principal = request.getUserPrincipal();
+		
+		if (principal == null) return null;
+
+		String email = request.getUserPrincipal().getName();
+		
+		return email;
+	}
 }

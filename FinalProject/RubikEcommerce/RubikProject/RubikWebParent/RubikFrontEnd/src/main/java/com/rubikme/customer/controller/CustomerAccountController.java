@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.rubikme.Utility;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.customer.CustomerService;
 import com.rubikme.security.CustomerUserDetails;
@@ -26,7 +27,7 @@ public class CustomerAccountController {
 	@GetMapping("/account_details")
 	public String viewAccountDetails(Model model, HttpServletRequest request) {
 		
-		String email = request.getUserPrincipal().getName();
+		String email = Utility.getEmailOfCustomer(request);
 		
 		Customer customer = service.getCustomerByEmail(email);
 		
