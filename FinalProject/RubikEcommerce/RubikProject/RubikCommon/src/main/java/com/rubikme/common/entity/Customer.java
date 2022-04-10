@@ -47,6 +47,9 @@ public class Customer {
 	@Column(name = "created_time")
 	private Date createdTime;
 	
+	@Column(name = "reset_password_token", length = 30)
+	private String resetPasswordToken;
+	
 	public Customer() {
 		
 	}
@@ -142,5 +145,14 @@ public class Customer {
 	
 	public String getFullName() {
 		return this.firstName + " " + this.lastName;
+	}
+
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
 	}	
+	
 }

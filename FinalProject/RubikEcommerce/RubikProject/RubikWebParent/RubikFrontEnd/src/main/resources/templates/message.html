@@ -26,46 +26,11 @@
 		<div class="container">
 			<div class="flex-w flex-tr">
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-					<form th:action="@{/login}" method="post">
-					
-						<h4 class="mtext-105 cl2 txt-center p-b-30">
-							Login Form
-						</h4>
-						
-						<div th:if="${param.error}">
-							<p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
-						</div>
-						
-						<div th:if="${param.logout}">
-							<p class="text-warning">You have been logged out.</p>
-						</div>
-
-						<div class="bor8 m-b-20 how-pos4-parent">
-							<input type="email" name="email" 
-								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="E-mail" required />
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
-								style="max-width: 25px;">
-						</div>
-
-						<div class="bor8 m-b-20 how-pos4-parent">
-							<input type="password" name="password" 
-								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Password" required />
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
-								style="max-width: 25px;">
-						</div>
-						
-						<input type="checkbox" name="remember-me" />Remember Me
-
-						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
-							type="submit">
-							Submit
-						</button>
-					</form>
-					
-					<a class="mtext-80 cl2 txt-center p-b-30"
-						th:href="@{/forgot_password}">
-						Forget the password?
-					</a>
+					<div th:if="${message != null}">
+						<p class="mtext-90 cl2 txt-center p-b-30">
+							[[${message}]]
+						</p>
+					</div>
 				</div>
 
 				<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
