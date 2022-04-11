@@ -32,14 +32,15 @@
 								</tr>
 								
 								<th:block th:each="item, status : ${listCartItems}">
-								<tr class="table_row" th:with="product = ${item.product}">
+								<tr class="table_row" th:with="product = ${item.product}" th:id="'row' + ${status.count}">
 									<td class="column-1">
 										<div class="how-itemcart1">
 											<img th:src="@{${product.getMainImagePath}}" alt="IMG">
 										</div>
 									</td>
 									<td class="column-2">
-										<a th:href="@{'/p/' + ${product.alias}}" target="_blank">[[${product.getShortName}]]</a>
+										<a th:href="@{'/p/' + ${product.alias}}" target="_blank"
+											th:rowNumber="${status.count}">[[${product.getShortName}]]</a>
 									</td>
 									<td class="column-3">
 										<div>
@@ -68,7 +69,8 @@
 									<td class="column-5">
 										<p th:id="'totalall' + ${product.id}"
 											class="subtotal">[[${#numbers.formatDecimal(item.getTotalPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]</p>
-										<a href="" class="fas fa-trash"></a>
+										<a th:href="@{'/cart/remove/' + ${product.id}}" class="fas fa-trash linkRemove"
+											th:rowNumber="${status.count}"></a>
 									</td>
 								</tr>
 								</th:block>
@@ -92,7 +94,8 @@
 				</div>
 
 				<div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50" 
-					th:unless="${#lists.isEmpty(listCartItems)}">
+					th:unless="${#lists.isEmpty(listCartItems)}"
+					id="sectionTotal">
 					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
 						<h4 class="mtext-109 cl2 p-b-30">
 							Cart Totals
@@ -179,8 +182,8 @@
 		</div>
 	</form>
 	
-	<div class="container"
-		th:if="${#lists.isEmpty(listCartItems)}">
+	<div th:class="'text-center' + ${#lists.isEmpty(cartItems) ? '' : ' d-none'}"
+		id="sectionEmptyCartMessage">
 		<h2>You have not chosen any product yet.</h2>
 	</div>
 	

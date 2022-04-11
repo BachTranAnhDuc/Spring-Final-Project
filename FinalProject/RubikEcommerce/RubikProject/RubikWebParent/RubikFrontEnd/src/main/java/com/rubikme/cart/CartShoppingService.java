@@ -64,4 +64,8 @@ public class CartShoppingService {
 		
 		return totalAll;
 	}
+	
+	public void removeProduct(Integer productId, Customer customer) {
+		cartRepo.deleteByCustomerAndProduct(customer.getId(), productId);
+	}
 }

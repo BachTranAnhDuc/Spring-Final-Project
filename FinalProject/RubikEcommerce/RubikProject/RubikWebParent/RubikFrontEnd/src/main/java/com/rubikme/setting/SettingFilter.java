@@ -41,11 +41,11 @@ public class SettingFilter implements Filter {
 		List<Setting> generalSettings = service.getGeneralSetting();
 		
 		generalSettings.forEach(setting -> {
-			System.out.println(setting);
+			//System.out.println(setting);
 			request.setAttribute(setting.getKey(), setting.getValue());
 		});
 		
-		System.out.println(url);
+		//System.out.println(url);
 
 		chain.doFilter(request, response);
 	}
