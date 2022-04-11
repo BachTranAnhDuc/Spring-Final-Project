@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/account_details", "/update_account_details", "/cart").authenticated()
+			.antMatchers("/account_details", "/update_account_details", "/cart", "/address/**").authenticated()
 			.anyRequest().permitAll()
 			.and()
 			.formLogin()
@@ -36,9 +36,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.rememberMe()
 				.key("1234567890_aBcDeFgHiJkLmNoPqRsTuVwXyZ")
-				.tokenValiditySeconds(14 * 24 * 60 * 60);
-		
-		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
+				.tokenValiditySeconds(14 * 24 * 60 * 60)
+			.and()
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
 	}
 
 	@Override

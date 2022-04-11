@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "customers")
@@ -52,6 +53,11 @@ public class Customer {
 	
 	public Customer() {
 		
+	}
+	
+	public Customer(Integer id) {
+		super();
+		this.id = id;
 	}
 
 	public Integer getId() {
@@ -155,4 +161,8 @@ public class Customer {
 		this.resetPasswordToken = resetPasswordToken;
 	}	
 	
+	@Transient
+	public String getFullAddress() {
+		return getFullName() + ", " + this.postalCode + ", " + this.phoneNumber + ", " + this.addressLine;
+	}
 }
