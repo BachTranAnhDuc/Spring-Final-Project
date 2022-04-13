@@ -421,5 +421,15 @@
 		</th:block>
 	</div>
 	<!-- List Roles Users -->
+	
+	<!-- Format Number -->
+	<div th:fragment="format_number(amount)" th:remove="tag">
+		<span>[[${#numbers.formatDecimal(amount, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]</span>
+	</div>
+	
+	<!-- Format Time -->
+	<div th:fragment="format_time(dateTime)" th:remove="tag">
+		<span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+	</div>
 </body>
 </html>

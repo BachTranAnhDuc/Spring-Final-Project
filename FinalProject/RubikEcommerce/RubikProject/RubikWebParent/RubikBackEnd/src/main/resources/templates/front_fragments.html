@@ -107,7 +107,8 @@
 	          		
 	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 	          		<li class="nav-item">
-			          	<a th:href="@{/orders}" class="nav-link with-sub">
+			          	<a th:href="@{/orders}" class="nav-link with-sub"
+			          		onclick="change_orders();">
 			          		<i data-feather="inbox"></i>
 			          		<span>Orders</span>
 			          	</a>

@@ -1219,6 +1219,21 @@ insert into settings value('MAIL_SENDER_NAME', 'MAIL_SERVER', 'Rubik Team');
 insert into settings value('CUSTOMER_VERIFY_SUBJECT', 'MAIL_TEMPLATE', 'Email subject');
 insert into settings value('CUSTOMER_VERIFY_CONTENT', 'MAIL_TEMPLATE', 'Email content');
 
+-- Address
+insert into addresses value(1, '24, Vinh Phu, Thuan An, Binh Duong', 0, 8);
+drop table addresses;
+
+-- Orders
+insert into orders value(1, '2022-02-02 15:02:02', 10, '2022-03-03 15:02:02', 'COD', 1500, 'NEW', 15000, 1);
+insert into orders value(2, '2022-02-02 15:02:02', 10, '2022-03-03 15:02:02', 'COD', 1500, 'NEW', 15000, 2);
+insert into orders value(3, '2022-02-02 15:02:02', 10, '2022-03-03 15:02:02', 'COD', 1500, 'NEW', 15000, 6);
+insert into orders value(4, '2022-02-02 15:02:02', 10, '2022-03-03 15:02:02', 'CREDIT_CARD', 1500, 'NEW', 15000, 8);
+insert into orders value(5, '2022-02-02 15:02:02', 10, '2022-03-03 15:02:02', 'CREDIT_CARD', 1500, 'NEW', 15000, 1);
+
+update addresses set default_address = true where id = 1;
+
+
+
 update settings set value = '587' where `key` = 'MAIL_PORT';
 
 
@@ -1243,3 +1258,7 @@ or full_description like '%gan%';
 
 select * from settings;
 select * from customers;
+select * from cart_item;
+select * from addresses;
+select * from orders;
+use rubikdb;
