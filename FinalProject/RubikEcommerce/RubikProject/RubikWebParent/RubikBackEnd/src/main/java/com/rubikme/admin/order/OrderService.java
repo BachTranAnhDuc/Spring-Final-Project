@@ -65,6 +65,7 @@ public class OrderService {
 			List<OrderTrack> listOrderTracts = orderInDb.getOrderTracks();
 			
 			OrderTrack track = new OrderTrack();
+			track.setOrder(orderInDb);
 			track.setStatus(statusUpdate);
 			track.setUpdateTime(new Date());
 			track.setNotes(statusUpdate.defaultDescription());

@@ -245,6 +245,26 @@
 		</div>
 	</div>
 	
+	<div th:fragment="confirm_modal_update" class="modal fade text-center" id="confirmModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="model-title">Update Confirmation</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+					
+				<div class="modal-body">
+					<span id="confirmText"></span>
+				</div>
+					
+				<div class="modal-footer">
+					<a class="btn btn-success" href="" id="yes-update">Yes</a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" id="no-button">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<!-- Edit and delete category -->
 	<div th:fragment="category_action" th:remove="tag">
 		<a class="fas fa-edit fa-2x icon-green"
@@ -431,5 +451,20 @@
 	<div th:fragment="format_time(dateTime)" th:remove="tag">
 		<span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
 	</div>
+	
+	<!-- Shipping update -->
+	<div th:fragment="shipper_update(statusVar, statusName, iconName)" class="col">
+	<th:block th:if="${statusVar}">
+		<i th:class="'fas ' + ${iconName} + ' fa-2x icon-green'"></i>
+	</th:block>
+	<th:block th:unless="${statusVar}">
+		<a th:class="'fas ' + ${iconName} + ' fa-2x icon-dark link-update-status'"
+			th:id="'link' + ${statusName} + ${order.id}"
+			th:orderId="${order.id}"
+			th:status="${statusName}"
+			th:href="@{'/orders_shipper/update/' + ${order.id} + '/' + ${statusName}}"
+			></a>
+	</th:block>							
+</div>
 </body>
 </html>

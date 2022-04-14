@@ -63,41 +63,10 @@
 											<div>&nbsp;</div>
 											
 											<div class="row">
-												<div class="col">
-													<th:block th:if="${order.picked}">
-														<i class="fas fa-people-carry fa-2x icon-green"></i>
-													</th:block>
-													<th:block th:unless="${order.picked}">
-														<i class="fas fa-people-carry fa-2x icon-dark"></i>
-													</th:block>							
-												</div>
-												
-												<div class="col">
-													<th:block th:if="${order.shipping}">
-														<i class="fas fa-shipping-fast fa-2x icon-green"></i>
-													</th:block>
-													<th:block th:unless="${order.shipping}">
-														<i class="fas fa-shipping-fast fa-2x icon-dark"></i>
-													</th:block>							
-												</div>
-												
-												<div class="col">
-													<th:block th:if="${order.delivered}">
-														<i class="fas fa-box-open fa-2x icon-green"></i>
-													</th:block>
-													<th:block th:unless="${order.delivered}">
-														<i class="fas fa-box-open fa-2x icon-dark"></i>
-													</th:block>							
-												</div>
-												
-												<div class="col">
-													<th:block th:if="${order.returned}">
-														<i class="fas fa-undo fa-2x icon-green"></i>
-													</th:block>
-													<th:block th:unless="${order.returned}">
-														<i class="fas fa-undo fa-2x icon-dark"></i>
-													</th:block>							
-												</div>						
+												<div class="col" th:replace="fragments :: shipper_update(${order.picked}, 'PICKED', 'fa-people-carry')"></div>	
+												<div class="col" th:replace="fragments :: shipper_update(${order.shipping}, 'SHIPPING', 'fa-shipping-fast')"></div>	
+												<div class="col" th:replace="fragments :: shipper_update(${order.delivered}, 'DELIVERED', 'fa-box-open')"></div>	
+												<div class="col" th:replace="fragments :: shipper_update(${order.returned}, 'RETURNED', 'fa-undo')"></div>					
 											</div>
 										</div>
 									</div>
@@ -110,14 +79,7 @@
 			
 			<div th:replace="fragments :: pagination('/orders', 'orders')"></div>
 		
-			<div th:replace="fragments :: confirm_modal"></div>
-			
-			<div class="modal fade" id="detailModal">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-					</div>
-				</div>
-			</div>	
+			<div th:replace="fragments :: confirm_modal_update"></div>
 			
 			<div class="modal fade" id="orderDetailModal">
 				<div class="modal-dialog modal-lg">
@@ -139,20 +101,13 @@
 	
 	<script type="text/javascript">
 		moduleURL = "[[@{/orders}]]";
+
+		var csrfHeaderName = "[[${_csrf.headerName}]]";
+		var csrfValue = "[[${_csrf.token}]]";
 	
 		$(document).ready(function() {
-			handleLinkViewCustomerDetails();
 			handleLinkViewOrderDetails();
-			handleLinkDeleteOrder();
 		});
-		
-		function handleLinkViewCustomerDetails() {
-			$(".linkCustomerDetail").on("click", function(e) {
-				e.preventDefault();
-				linkDetailURL = $(this).attr("href");
-				$("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
-			});			
-		}
 
 		function handleLinkViewOrderDetails() {
 			$(".linkOrderDetail").on("click", function(e) {
@@ -161,13 +116,8 @@
 				$("#orderDetailModal").modal("show").find(".modal-content").load(linkDetailURL);
 			});		
 		}
-
-		function handleLinkDeleteOrder() {
-			$(".link-delete").on("click", function(e){
-				e.preventDefault();
-				showDeleteConfirmModal($(this), 'order');
-			});
-		}
 	</script>
+	
+	<script th:src="@{/js/order_shipper.js}"></script>
 </body>
 </html>
