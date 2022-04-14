@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Rubik Admin Control Panel', 'none')">
+</head>
+<body class="skin-red animate">
+	
+	<div th:replace="front_fragments :: side_bar"></div>
+
+    <div class="content">
+      	<div th:replace="front_fragments :: content_header"></div>
+   		
+		<div class="content-body mb-5">
+		
+			<div class="full-details m-5">
+				<div class="row">
+            		<div class="col-lg-12 grid-margin stretch-card">
+	            		<div class="row mb-4">
+	                		<div th:replace="fragments :: export('/orders', ${title})"></div>
+	                		<div th:replace="fragments :: search_form('/orders/page/1')" class=""></div>
+	                	</div>
+              			
+						<div class="row m-1">
+							<th:block th:each="order : ${listOrders}">
+								<div class="col-6">
+									<div class="card">
+										<div class="card-header">
+											<div class="row">
+												<div class="col-8">
+													<span>Order ID: [[${order.id}]]</span>
+												</div>
+												<div class="col-4">
+													<div class="float-right">
+														<a class="fas fa-file-alt fa-2x icon-green linkOrderDetail"
+															th:href="@{'/orders/detail/' + ${order.id}}"
+															title="View details of this order"
+															>
+														</a>								
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div>
+												<i class="fas fa-user"></i>
+												<b>[[${order.getRecipientName}]]</b>
+											</div>
+											
+											<div>
+												<i class="fas fa-home"></i>
+												<i>[[${order.getRecipientAddress}]]</i>
+											</div>
+											
+											<div>
+												<i class="fas fa-phone-alt">
+													[[${order.customer.phoneNumber}]]
+												</i>
+											</div>
+											
+											<div th:if="${order.COD}">
+												<span>COD: <b><div th:replace="fragments :: format_number(${order.subtotal})"></div></b></span>
+											</div>
+											
+											<div>&nbsp;</div>
+											
+											<div class="row">
+												<div class="col">
+													<th:block th:if="${order.picked}">
+														<i class="fas fa-people-carry fa-2x icon-green"></i>
+													</th:block>
+													<th:block th:unless="${order.picked}">
+														<i class="fas fa-people-carry fa-2x icon-dark"></i>
+													</th:block>							
+												</div>
+												
+												<div class="col">
+													<th:block th:if="${order.shipping}">
+														<i class="fas fa-shipping-fast fa-2x icon-green"></i>
+													</th:block>
+													<th:block th:unless="${order.shipping}">
+														<i class="fas fa-shipping-fast fa-2x icon-dark"></i>
+													</th:block>							
+												</div>
+												
+												<div class="col">
+													<th:block th:if="${order.delivered}">
+														<i class="fas fa-box-open fa-2x icon-green"></i>
+													</th:block>
+													<th:block th:unless="${order.delivered}">
+														<i class="fas fa-box-open fa-2x icon-dark"></i>
+													</th:block>							
+												</div>
+												
+												<div class="col">
+													<th:block th:if="${order.returned}">
+														<i class="fas fa-undo fa-2x icon-green"></i>
+													</th:block>
+													<th:block th:unless="${order.returned}">
+														<i class="fas fa-undo fa-2x icon-dark"></i>
+													</th:block>							
+												</div>						
+											</div>
+										</div>
+									</div>
+								</div>
+							</th:block> 
+						</div>					             			
+                    </div>
+				</div>
+			</div>
+			
+			<div th:replace="fragments :: pagination('/orders', 'orders')"></div>
+		
+			<div th:replace="fragments :: confirm_modal"></div>
+			
+			<div class="modal fade" id="detailModal">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+					</div>
+				</div>
+			</div>	
+			
+			<div class="modal fade" id="orderDetailModal">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+					</div>
+				</div>
+			</div>	
+		
+			
+		</div><!-- content-body -->
+		
+		<div th:replace="front_fragments :: footer_frag"></div>
+	</div><!-- content -->
+
+
+    <div th:replace="front_fragments :: js_file"></div>
+    
+    <script type="text/javascript" th:src="@{/js/common_list.js}"></script>
+	
+	<script type="text/javascript">
+		moduleURL = "[[@{/orders}]]";
+	
+		$(document).ready(function() {
+			handleLinkViewCustomerDetails();
+			handleLinkViewOrderDetails();
+			handleLinkDeleteOrder();
+		});
+		
+		function handleLinkViewCustomerDetails() {
+			$(".linkCustomerDetail").on("click", function(e) {
+				e.preventDefault();
+				linkDetailURL = $(this).attr("href");
+				$("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
+			});			
+		}
+
+		function handleLinkViewOrderDetails() {
+			$(".linkOrderDetail").on("click", function(e) {
+				e.preventDefault();
+				linkDetailURL = $(this).attr("href");
+				$("#orderDetailModal").modal("show").find(".modal-content").load(linkDetailURL);
+			});		
+		}
+
+		function handleLinkDeleteOrder() {
+			$(".link-delete").on("click", function(e){
+				e.preventDefault();
+				showDeleteConfirmModal($(this), 'order');
+			});
+		}
+	</script>
+</body>
+</html>

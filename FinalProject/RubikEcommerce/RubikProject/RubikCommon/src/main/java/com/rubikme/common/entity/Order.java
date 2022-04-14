@@ -1,7 +1,9 @@
 package com.rubikme.common.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "orders")
@@ -44,6 +47,9 @@ public class Order {
 	
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private Set<OrderDetail> orderDetails = new HashSet<>();
+	
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+	private List<OrderTrack> orderTracks = new ArrayList<>();
 	
 	public Order() {
 		
@@ -128,11 +134,63 @@ public class Order {
 	public void setOrderDetails(Set<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
-	
+
+	public List<OrderTrack> getOrderTracks() {
+		return orderTracks;
+	}
+
+	public void setOrderTracks(List<OrderTrack> orderTracks) {
+		this.orderTracks = orderTracks;
+	}
 
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", subtotal=" + subtotal + ", paymentMethod=" + paymentMethod + ", status=" + status
 				+ ", customer=" + customer.getFullName() + "]";
+	}
+	
+	@Transient
+	public String getRecipientAddress() {
+		return "Address: " + this.customer.getAddressLine() + ", postal code: " + this.customer.getPostalCode();
+	}
+	
+	@Transient
+	public String getRecipientName() {
+		return this.customer.getFirstName() + " " + this.customer.getLastName();
+	}
+	
+	@Transient
+	public boolean isCOD() {
+		return paymentMethod.equals(PaymentMethod.COD);
+	}
+	
+	@Transient
+	public boolean isPicked() {
+		return hasStatus(OrderStatus.PICKED);
+	}
+	
+	@Transient
+	public boolean isShipping() {
+		return hasStatus(OrderStatus.SHIPPING);
+	}
+	
+	@Transient
+	public boolean isDelivered() {
+		return hasStatus(OrderStatus.DELIVERED);
+	}
+	
+	@Transient
+	public boolean isReturned() {
+		return hasStatus(OrderStatus.RETURNED);
+	}	
+	
+	public boolean hasStatus(OrderStatus status) {
+		for (OrderTrack aTrack : orderTracks) {
+			if (aTrack.getStatus().equals(status)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }

@@ -91,4 +91,8 @@ public class RubikUserDetails implements UserDetails {
 	public Character setFirstCharacterFirstName(String firstName) {
 		return this.user.getFirstName().charAt(0);
 	}
+	
+	public boolean hasRole(String roleName) {
+		return this.user.hasRole(roleName);
+	}
 }

@@ -1,5 +1,7 @@
 package com.rubikme.admin.order;
 
+import java.util.Date;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.rubikme.common.entity.Order;
+import com.rubikme.common.entity.OrderStatus;
+import com.rubikme.common.entity.OrderTrack;
 
 @Service
 public class OrderService {
@@ -51,5 +55,25 @@ public class OrderService {
 		}
 		
 		repo.deleteById(id);
+	}
+	
+	public void updateStatus(Integer orderId, String status) {
+		Order orderInDb = repo.findById(orderId).get();
+		OrderStatus statusUpdate = OrderStatus.valueOf(status);
+		
+		if (!orderInDb.hasStatus(statusUpdate)) {
+			List<OrderTrack> listOrderTracts = orderInDb.getOrderTracks();
+			
+			OrderTrack track = new OrderTrack();
+			track.setStatus(statusUpdate);
+			track.setUpdateTime(new Date());
+			track.setNotes(statusUpdate.defaultDescription());
+			
+			listOrderTracts.add(track);
+			
+			orderInDb.setStatus(statusUpdate);
+			
+			repo.save(orderInDb);
+		}
 	}
 }

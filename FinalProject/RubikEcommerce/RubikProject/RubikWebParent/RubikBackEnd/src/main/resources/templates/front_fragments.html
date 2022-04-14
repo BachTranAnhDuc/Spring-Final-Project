@@ -64,7 +64,7 @@
 		          	</li>
 	          	</th:block>
 	          		
-	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Editor', 'Shipper')">
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Shipper')">
 	          		<li class="nav-item">
 			          	<a href="" class="nav-link with-sub">
 			         		<i data-feather="shopping-bag"></i>
@@ -96,7 +96,7 @@
 		          	</li>
 	          	</th:block>
 	          		
-	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Shipper')">
 	          		<li class="nav-item">
 			          	<a href="" class="nav-link with-sub">
 			          		<i data-feather="truck"></i>
@@ -105,7 +105,7 @@
 		          	</li>
 	          	</th:block>
 	          		
-	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson','Shipper')">
 	          		<li class="nav-item">
 			          	<a th:href="@{/orders}" class="nav-link with-sub"
 			          		onclick="change_orders();">
