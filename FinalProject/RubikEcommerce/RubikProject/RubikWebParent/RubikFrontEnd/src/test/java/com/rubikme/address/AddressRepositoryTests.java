@@ -33,4 +33,13 @@ public class AddressRepositoryTests {
 		assertThat(savedAddress).isNotNull();
 		assertThat(savedAddress.getId()).isGreaterThan(0);
 	}
+	
+	@Test 
+	public void testGetDefaultAddress() {
+		Integer cusId = 1;
+		
+		Address address = repo.findDefaultByCustomer(cusId);
+		assertThat(address).isNotNull();
+		System.out.println(address);
+	}
 }

@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.rubikme.Utility;
+import com.rubikme.address.AddressService;
 import com.rubikme.cart.CartShoppingService;
+import com.rubikme.common.entity.Address;
 import com.rubikme.common.entity.CartItem;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.common.exception.CustomerNotFoundException;
@@ -23,6 +25,9 @@ public class CartShoppingController {
 	
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private AddressService addressService;
 	
 	@GetMapping("/cart")
 	public String viewCart(Model model, HttpServletRequest request) {
@@ -37,6 +42,15 @@ public class CartShoppingController {
 			totalAllPrice += cart.getTotalPrice();
 		}
 		
+		Address defaultAddress = addressService.getDefaultAddressByCustomer(customer);
+		boolean usePrimaryAddressAsDefault = false;
+		
+		if (defaultAddress == null) {
+			usePrimaryAddressAsDefault = true;
+		}
+		
+		
+		model.addAttribute("usePrimaryAddressAsDefault", usePrimaryAddressAsDefault);
 		model.addAttribute("listCartItems", listCartItems);
 		model.addAttribute("totalAllPrice", totalAllPrice);
 		

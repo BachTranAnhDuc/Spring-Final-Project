@@ -16,7 +16,7 @@
 	<div th:replace="fragments_child_1 :: bread_crumb_product"></div>
 		
 	<!-- Shoping Cart -->
-	<form class="bg0 p-t-75 p-b-85 mt-3">
+	<section class="bg0 p-t-75 p-b-120">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -172,15 +172,18 @@
 								</span>
 							</div>
 						</div>
+						
+						<a class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
+							th:href="@{/checkout}">
+								Process to checkout
+						</a>
 
-						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed to Checkout
-						</button>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-	</form>
+	</section>
 	
 	<div th:class="'text-center' + ${#lists.isEmpty(cartItems) ? '' : ' d-none'}"
 		id="sectionEmptyCartMessage">

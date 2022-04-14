@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments_front :: page_head('Rubik Front-End', 'none')">
+</head>
+<body class="animsition">
+	
+	<!-- Header -->
+	<header th:replace="fragments_front :: header_customer"></header>
+
+	<!-- Cart -->
+	<div th:replace="fragments_front :: cart_customer"></div>
+
+	<!-- breadcrumb -->
+	<div th:replace="fragments_child_1 :: bread_crumb_product"></div>
+		
+	<!-- Shoping Cart -->
+	<section class="bg0 p-t-75 p-b-120">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+				<div class="card">
+					<div class="card-header">
+						<h5>Shipping information</h5>
+					</div>
+								
+					<div class="card-body">
+						<p>
+							<b>Ship to: </b>[[${shippingAddress}]]
+						</p>
+						<a th:href="@{/address}">Shipping to anther address</a>
+						
+						<p>
+							<b>Days to deliver: </b>[[${checkoutInfo.deliverDays}]]
+						</p>
+						
+						<p>
+							<b>Expected deliver date: </b>[[${checkoutInfo.deliverDate}]]]
+						</p>
+					</div>
+								
+				</div>
+				
+				<div class="card mt-5">
+					<div class="card-header">
+						<h5>Payment Method</h5>
+					</div>
+								
+					<div class="card-body">
+						<div>
+							<form th:action="@{/place_order}" method="post">
+								<p>
+									<input type="radio" name="paymentMethod" id="radio-COD" value="COD"/>Cash on Delivery (COD)
+									&nbsp;
+									<button class="btn btn-primary d-none" id="button-COD" type="submit">Place Order with COD</button>
+								</p>
+							</form>	
+							
+							<form th:action="@{/credit_card}" method="post">
+								<p>
+									<input type="radio" name="paymentMethod" id="radio-card" value="CREDIT_CARD"/>Credit with card
+									&nbsp;
+									<button class="btn btn-primary d-none" id="button-card" type="submit">Payment with card</button>
+								</p>
+							</form>
+						</div>
+					</div>
+								
+				</div>
+			</div>
+			
+			<div class="col-lg-10 col-xl-5 m-lr-auto m-b-50">
+				<div class="card">
+					<div class="card-header">
+						<h5>Order Summary</h5>
+					</div>
+								
+					<div class="card-body">
+						<table>
+							<th:block th:each="item : ${listCartItems}">
+								<tr th:with="product = ${item.product}">
+									<td>[[${item.quantity}]]</td>
+									
+									<td class="w-75">
+										<a th:href="@{'/p/' + ${product.alias}}"
+											target="_blank">[[${item.product.getShortName}]]
+										</a>
+										<small><b>Ship Cost</b>: <i>Free Ship</i></small>	
+									</td>
+									
+									<td>
+										<div th:replace="fragments :: format_number(${item.getTotalPrice})"></div>
+									</td>
+								</tr>
+							</th:block>
+							<tr>
+								<td colspan="3"><hr/></td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="row mt-3">
+						<div class="col">Product Total: </div>
+						<div class="col">
+							<div th:replace="fragments :: format_number(${checkoutInfo.productTotal})"></div>
+						</div>
+					</div>			
+					
+					<div class="row mt-3">
+						<div class="col">Payment Total: </div>
+						<div class="col">
+							<div th:replace="fragments :: format_number(${checkoutInfo.paymentTotal})"></div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+
+
+	
+	<div th:replace="fragments :: modal_dialog"></div>
+			
+	<!-- Footer -->
+	<footer th:replace="fragments_front :: footer_customer"></footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	<div th:replace="fragments_front :: js_files_footer"></div>
+	
+	<script type="text/javascript">
+
+		contextPath = "[[@{/}]]";
+	
+		var csrfHeaderName = "[[${_csrf.headerName}]]";
+		var csrfValue = "[[${_csrf.token}]]";
+
+		$(document).ready(function() {
+			$("#radio-COD").on("click", function() {
+				$("#button-COD").removeClass("d-none");
+			});
+			$("#radio-card").on("click", function() {
+				$("#button-card").removeClass("d-none");
+			});
+		});
+		
+		function showModalDialog(title, message) {
+			$("#modalTitle").text(title);
+			$("#modalBody").text(message);
+			$("#modalDialog").modal();
+		}
+	
+		function showErrorModal(message) {
+			showModalDialog("Error", message);
+		}
+	
+		function showWarningModal(message) {
+			showModalDialog("Warning", message);
+		}	
+
+	</script>
+</body>
+</html>

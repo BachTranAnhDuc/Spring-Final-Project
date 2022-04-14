@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments_front :: page_head('Rubik Front-End', 'none')">
+</head>
+<body class="animsition">
+	
+	<!-- Header -->
+	<header th:replace="fragments_front :: header_customer"></header>
+
+	<!-- Cart -->
+	<div th:replace="fragments_front :: cart_customer"></div>
+
+	<!-- breadcrumb -->
+	<div th:replace="fragments_child_1 :: bread_crumb_product"></div>
+		
+	<!-- Shoping Cart -->
+	<section class="bg0 p-t-75 p-b-120">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2>Payment Successfully!</h2>
+				
+				<a>Click here to continue shopping</a>
+			</div>
+		
+		</div>
+	</div>
+	</section>
+
+
+	
+	<div th:replace="fragments :: modal_dialog"></div>
+			
+	<!-- Footer -->
+	<footer th:replace="fragments_front :: footer_customer"></footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	<div th:replace="fragments_front :: js_files_footer"></div>
+	
+	<script type="text/javascript">
+
+		contextPath = "[[@{/}]]";
+	
+		var csrfHeaderName = "[[${_csrf.headerName}]]";
+		var csrfValue = "[[${_csrf.token}]]";
+		
+		function showModalDialog(title, message) {
+			$("#modalTitle").text(title);
+			$("#modalBody").text(message);
+			$("#modalDialog").modal();
+		}
+	
+		function showErrorModal(message) {
+			showModalDialog("Error", message);
+		}
+	
+		function showWarningModal(message) {
+			showModalDialog("Warning", message);
+		}	
+	</script>
+	<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/cart_shopping.js}"></script>
+</body>
+</html>
