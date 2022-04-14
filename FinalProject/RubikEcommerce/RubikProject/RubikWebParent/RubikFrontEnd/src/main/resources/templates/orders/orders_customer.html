@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments_front :: page_head('Rubik Front-End', 'none')">
+</head>
+<body class="animsition">
+	
+	<!-- Header -->
+	<header th:replace="fragments_front :: header_customer"></header>
+
+	<!-- Cart -->
+	<div th:replace="fragments_front :: cart_customer"></div>
+
+	<!-- breadcrumb -->
+	<div th:replace="fragments_child_1 :: bread_crumb_product"></div>
+		
+	<!-- Shoping Cart -->
+	<section class="bg0 p-t-75 p-b-120">
+		<div class="container">
+			<div class="row">
+				<div class="col m-b-50">
+					<div class="m-l-25 m-r--38 m-lr-0-xl">
+						<div class="wrap-table-shopping-cart">
+							<table class="table-shopping-cart">
+								<tr class="table_head">
+									<th class="column-1">ID</th>
+									
+									<th class="column-2">Order Time</th>
+									
+									<th class="clumn-3">Total Payment</th>
+									
+									<th class="column-4">Status</th>
+									
+									<th class="column-5"></th>
+								</tr>
+								
+								<th:block th:each="order, status : ${listOrders}">
+								<tr>
+									<td class="column-1">
+										<b>[[${order.id}]]</b>
+									</td>
+									
+									<td class="column-2">
+										<p>[[${order.orderTime}]]</p>
+									</td>
+									
+									<td class="column-3">
+										<p>[[${order.subtotal}]]</p>
+									</td>
+									
+									<td class="column-4">
+										<span>[[${order.status}]]</span>
+									</td>
+									
+									<td class="column-5">
+										<a class="fas fa-file-alt fa-2x text-success" href="" title="View details of this order"></a>
+										
+										<th:block th:unless="${order.isReturnedRequest}">
+											&nbsp;
+											<a class="fas fa-undo fa-2x text-secondary" href="" title="Return this order"></a>
+										</th:block>
+									</td>
+								</tr>
+								</th:block>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div th:replace="fragments :: modal_dialog"></div>
+	
+	<div th:replace="fragments :: pagination('/orders', 'orders')"></div>
+			
+	<!-- Footer -->
+	<footer th:replace="fragments_front :: footer_customer"></footer>
+
+
+	<div th:replace="fragments_front :: js_files_footer"></div>
+	
+	<script type="text/javascript">
+
+		moduleURL = "[[@{/orders}]]";
+	
+		function clearFilter() {
+			window.location = moduleURL;
+		}	
+	</script>
+</body>
+</html>

@@ -65,6 +65,12 @@
 								Address
 							</a>
 						</th:block>
+						
+						<th:block sec:authorize="isAuthenticated()">
+							<a th:href="@{/orders}" class="flex-c-m trans-04 p-lr-25">
+								Orders
+							</a>
+						</th:block>
 
 						<a th:href="@{/register}" class="flex-c-m trans-04 p-lr-25">
 							Register

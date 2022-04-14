@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.rubikme.checkout.CheckOutInfo;
@@ -19,6 +23,8 @@ import com.rubikme.common.entity.Product;
 
 @Service
 public class OrderService {
+	
+	public static final int ORDERS_PER_PAGE = 6;
 	
 	@Autowired
 	private OrderRepository orderRepo;
@@ -87,5 +93,19 @@ public class OrderService {
 		
 		
 		return orderRepo.save(newOrder);
+	}
+	
+	public Page<Order> listOrderByPage(Customer customer, int pageNum, String sortField, String sortDir, String keyword) {
+		Sort sort = Sort.by(sortField);
+		
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+		
+		Pageable pageable = PageRequest.of(pageNum - 1, ORDERS_PER_PAGE, sort);
+		
+		if (keyword != null) {
+			return orderRepo.findAllByPageByKeyword(keyword, customer.getId(), pageable);
+		}
+		
+		return orderRepo.findAllByPage(customer.getId() ,pageable);
 	}
 }

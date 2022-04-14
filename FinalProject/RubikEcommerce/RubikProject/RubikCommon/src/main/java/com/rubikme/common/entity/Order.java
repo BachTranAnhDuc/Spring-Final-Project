@@ -184,6 +184,16 @@ public class Order {
 		return hasStatus(OrderStatus.RETURNED);
 	}	
 	
+	@Transient
+	public boolean isReturn() {
+		return hasStatus(OrderStatus.RETURNED);
+	}
+	
+	@Transient
+	public boolean isReturnedRequest() {
+		return hasStatus(OrderStatus.RETURN_REQUESTED);
+	}
+	
 	public boolean hasStatus(OrderStatus status) {
 		for (OrderTrack aTrack : orderTracks) {
 			if (aTrack.getStatus().equals(status)) {
