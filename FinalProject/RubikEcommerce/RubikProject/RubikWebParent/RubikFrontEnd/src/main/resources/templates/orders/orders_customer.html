@@ -16,8 +16,20 @@
 	<div th:replace="fragments_child_1 :: bread_crumb_product"></div>
 		
 	<!-- Shoping Cart -->
-	<section class="bg0 p-t-75 p-b-120">
+	<section class="bg0 p-t-75 p-b-120 mt-5">
 		<div class="container">
+			<div class="row m-t-25 m-b-25">
+				<div class="col m-l-25">
+					<h3>Order Detail For You</h3>
+				</div>
+			</div>
+			
+			<div class="row m-t-25">
+				<div class="col m-l-25">
+					<div th:replace="fragments :: search_form_and_message()"></div>
+				</div>
+			</div>
+			
 			<div class="row">
 				<div class="col m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
