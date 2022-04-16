@@ -76,6 +76,9 @@
 			                	onclick="change_products_detail()">Details</a>
 			                <a th:href="@{'/products/new'}" class="sub-link"
 			                	onclick="change_products_new()">New Products</a>
+			                <a th:href="@{'/reviews'}" class="sub-link"
+			                	onclick="change_products_review()"
+			                	sec:authorize="hasAnyAuthority('Admin')">Review</a>
 			       		</nav>
 		          	</li>
 	          	</th:block>
@@ -90,17 +93,16 @@
 			          	<nav class="nav-sub">
 			                <a th:href="@{'/customers'}" class="sub-link"
 			                	onclick="change_customers_detail()">Details</a>
-			                <a th:href="@{'/customers/new'}" class="sub-link"
-			                	onclick="change_customers_new()">New Products</a>
 			       		</nav>
 		          	</li>
 	          	</th:block>
 	          		
-	          	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Shipper')">
+	          	<th:block sec:authorize="hasAuthority('Assistant')">
 	          		<li class="nav-item">
-			          	<a href="" class="nav-link with-sub">
+			          	<a th:href="@{/reviews}" class="nav-link with-sub"
+			          		onclick="change_products_review();">
 			          		<i data-feather="truck"></i>
-			          		<span>Shipping</span>
+			          		<span>Review</span>
 			          	</a>
 		          	</li>
 	          	</th:block>
@@ -351,6 +353,10 @@
 
 		function change_products_new() {
 			window.location = "[[@{/products/new}]]";
+		}
+
+		function change_products_review() {
+			window.location = "[[@{/reviews}]]";
 		}
 
 		function change_customers_detail() {
