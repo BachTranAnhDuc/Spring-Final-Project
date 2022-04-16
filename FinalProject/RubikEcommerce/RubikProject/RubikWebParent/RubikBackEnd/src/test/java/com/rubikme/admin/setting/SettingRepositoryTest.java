@@ -22,17 +22,19 @@ public class SettingRepositoryTest {
 	@Autowired
 	SettingRepository repo;
 	
-	@Test
-	public void testCreateGeneralSettings() {
-		Setting siteName = new Setting("SITE_NAME", "Rubikme", SettingCategory.GENERAL);
-		Setting copyright = new Setting("COPYRIGHT", "Copyright (C) 2021 Rubikme", SettingCategory.GENERAL);
-		
-		repo.saveAll(List.of(siteName, copyright));
-		
-		Iterable<Setting> iterable = repo.findAll();
-		
-		assertThat(iterable).size().isGreaterThan(0);
-	}
+//	@Test
+//	public void testCreateGeneralSettings() {
+//		//Setting siteName = new Setting("SITE_NAME", "Rubikme", SettingCategory.GENERAL);
+//		//Setting siteName = new Setting("SITE_NAME", SettingCategory.GENERAL, "Rubikme");
+//		Setting copyright = new Setting("COPYRIGHT", "Copyright (C) 2021 Rubikme", SettingCategory.GENERAL);
+//		Setting logo = new Setting("SITE_LOGO", "logo.png", SettingCategory.GENERAL);
+//		
+//		repo.saveAll(List.of(siteName, copyright, logo));
+//		
+//		Iterable<Setting> iterable = repo.findAll();
+//		
+//		assertThat(iterable).size().isGreaterThan(0);
+//	}
 	
 	@Test
 	public void testCreateLogo() {

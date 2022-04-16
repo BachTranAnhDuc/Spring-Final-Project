@@ -206,6 +206,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -o-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  z-index: 98;
 }
 
 .header-v2 .container-menu-desktop {

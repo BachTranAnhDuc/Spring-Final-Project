@@ -35,6 +35,9 @@ public class Order {
 	private int deliverDays;
 	private Date deliverDate;
 	
+	@Column(name = "address_deliver")
+	private String addressFinal;
+	
 	@Enumerated(EnumType.STRING)
 	private PaymentMethod paymentMethod;
 	
@@ -142,6 +145,14 @@ public class Order {
 	public void setOrderTracks(List<OrderTrack> orderTracks) {
 		this.orderTracks = orderTracks;
 	}
+	
+	public String getAddressFinal() {
+		return addressFinal;
+	}
+
+	public void setAddressFinal(String addressFinal) {
+		this.addressFinal = addressFinal;
+	}
 
 	@Override
 	public String toString() {
@@ -193,6 +204,13 @@ public class Order {
 	public boolean isReturnedRequest() {
 		return hasStatus(OrderStatus.RETURN_REQUESTED);
 	}
+	
+	@Transient
+	public boolean isProcessing() {
+		return hasStatus(OrderStatus.PROCESSING);
+	}
+	
+	
 	
 	public boolean hasStatus(OrderStatus status) {
 		for (OrderTrack aTrack : orderTracks) {

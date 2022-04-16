@@ -45,10 +45,8 @@ public class ProductExcelExporter extends AbstractExporter{
 		createCell(row, 7, "Cost", cellStyle);
 		createCell(row, 8, "Price", cellStyle);
 		createCell(row, 9, "Discount Percent", cellStyle);
-		createCell(row, 10, "Length", cellStyle);
-		createCell(row, 11, "Width", cellStyle);
-		createCell(row, 12, "Height", cellStyle);
-		createCell(row, 13, "Weight", cellStyle);
+		createCell(row, 10, "Total comment", cellStyle);
+		createCell(row, 11, "Average Rate", cellStyle);
 	}
 	
 	private void createCell(XSSFRow row, int columnIndex, Object value, CellStyle style) {		
@@ -90,10 +88,8 @@ public class ProductExcelExporter extends AbstractExporter{
 			createCell(row, columnIndex++, product.getCost(), cellStyle);
 			createCell(row, columnIndex++, product.getPrice(), cellStyle);
 			createCell(row, columnIndex++, product.getDiscountPercent(), cellStyle);
-			createCell(row, columnIndex++, product.getLength(), cellStyle);
-			createCell(row, columnIndex++, product.getWidth(), cellStyle);
-			createCell(row, columnIndex++, product.getHeight(), cellStyle);
-			createCell(row, columnIndex++, product.getWeight(), cellStyle);
+			createCell(row, columnIndex++, product.getReviewCount(), cellStyle);
+			createCell(row, columnIndex++, product.getAverageRating(), cellStyle);
 		}
 	}
 	

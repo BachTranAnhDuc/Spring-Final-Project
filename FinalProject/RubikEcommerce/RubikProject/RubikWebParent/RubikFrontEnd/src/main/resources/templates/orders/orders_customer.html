@@ -66,7 +66,7 @@
 									</td>
 									
 									<td class="column-5">
-										<a class="fas fa-file-alt fa-2x text-success" href="" title="View details of this order"></a>
+										<a class="fas fa-file-alt fa-2x text-success link-detail" th:href="@{'/orders/detail/' + ${order.id}}" title="View details of this order"></a>
 										
 										<th:block th:unless="${order.isReturnedRequest}">
 											&nbsp;
@@ -85,6 +85,13 @@
 	
 	<div th:replace="fragments :: modal_dialog"></div>
 	
+	<div class="modal fade" id="orderDetailModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>	
+	
 	<div th:replace="fragments :: pagination('/orders', 'orders')"></div>
 			
 	<!-- Footer -->
@@ -100,6 +107,17 @@
 		function clearFilter() {
 			window.location = moduleURL;
 		}	
+
+		$(document).ready(function() {
+			handleDetailLink();
+		});
+
+		function handleDetailLink() {
+			$(".link-detail").on("click", function(e) {
+				e.preventDefault();
+				$("#orderDetailModal").modal('show').find('.modal-content').load($(this).attr("href"));
+			});
+		}
 	</script>
 </body>
 </html>

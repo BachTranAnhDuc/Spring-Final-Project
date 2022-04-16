@@ -22,8 +22,8 @@ public class ProductCsvExporter extends AbstractExporter{
 		ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(), 
 				CsvPreference.STANDARD_PREFERENCE);
 		
-		String[] csvHeader = {"Product ID", "Name", "Alias", "Short Description", "Full Description", "Enabled", "In Stock", "Cost", "Price", "Discount Percent", "Length", "Width", "Height", "Weight"};
-		String[] fieldMapping = {"id", "name", "alias", "shortDescription", "fullDescription", "enabled", "inStock", "cost", "price", "discountPercent", "length", "width", "height", "weight"};
+		String[] csvHeader = {"Product ID", "Name", "Alias", "Short Description", "Full Description", "Enabled", "In Stock", "Cost", "Price", "Discount Percent", "Comment", "Rate"};
+		String[] fieldMapping = {"id", "name", "alias", "shortDescription", "fullDescription", "enabled", "inStock", "cost", "price", "discountPercent", "reviewCount", "averageRating"};
 		
 		csvWriter.writeHeader(csvHeader);
 		

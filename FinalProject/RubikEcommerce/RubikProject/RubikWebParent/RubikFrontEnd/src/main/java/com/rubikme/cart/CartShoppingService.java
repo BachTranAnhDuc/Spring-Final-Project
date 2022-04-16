@@ -72,4 +72,12 @@ public class CartShoppingService {
 	public void deleteByCustomer(Customer customer) {
 		cartRepo.deleteByCustomer(customer.getId());
 	}
+	
+	public void applyCouponCode(Integer productId, Customer customer, String code) {
+		
+		Product product = productRepository.findById(productId).get();
+		
+		float totalApplyCode = product.getDiscountPercent() * (float)(0.9);
+		
+	}
 }

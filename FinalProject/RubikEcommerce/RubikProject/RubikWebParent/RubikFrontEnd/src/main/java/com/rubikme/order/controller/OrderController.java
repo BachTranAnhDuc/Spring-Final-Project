@@ -92,21 +92,17 @@ public class OrderController {
 		}	
 	}
 	
-//	@GetMapping("/orders/detail/{id}")
-//	public String viewOrderDetail(@PathVariable("id") Integer id, Model model,
-//			RedirectAttributes ra, HttpServletRequest request, @AuthenticationPrincipal RubikUserDetails loggerUser) {
-//		try {
-//			Order order = orderService.get(id);
-//			loadCurrencySetting(request);
-//			model.addAttribute("order", order);
-//			
-//			return "orders/order_details_modal";
-//		}
-//		catch (OrderNotFoundException ex) {
-//			ra.addFlashAttribute("message", ex.getMessage());
-//			return listByPage(1, model, "id", "asc", null, request, loggerUser);
-//		}
-//	}
+	@GetMapping("/orders/detail/{id}")
+	public String viewOrderDetail(@PathVariable("id") Integer id, Model model,
+			RedirectAttributes ra, HttpServletRequest request, @AuthenticationPrincipal CustomerUserDetails loggerUser) {
+		Customer customer = getCustomerAuthentication(request);
+			
+		Order order = orderService.getOrder(id, customer);
+		loadCurrencySetting(request);
+		model.addAttribute("order", order);
+			
+		return "orders/order_details_modal";
+	}
 //	
 //	@GetMapping("/orders/delete/{id}")
 //	public String deleteOrder(@PathVariable("id") Integer id,

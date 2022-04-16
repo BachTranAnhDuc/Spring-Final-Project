@@ -5,9 +5,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.rubikme.Utility;
 import com.rubikme.address.AddressService;
@@ -47,6 +49,45 @@ public class CartShoppingController {
 		
 		if (defaultAddress == null) {
 			usePrimaryAddressAsDefault = true;
+		}
+		
+		
+		model.addAttribute("usePrimaryAddressAsDefault", usePrimaryAddressAsDefault);
+		model.addAttribute("listCartItems", listCartItems);
+		model.addAttribute("totalAllPrice", totalAllPrice);
+		
+		return "cart/shopping_cart";
+	}
+	
+	@PostMapping("/cart/code")
+	public String applyCode(Model model, HttpServletRequest request) {
+		
+		Customer customer = getEmailByCustomer(request);
+		
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		String code = request.getParameter("couponCode");
+		
+		float totalAllPrice = 0;
+		
+		for (CartItem cart : listCartItems) {
+			totalAllPrice += cart.getTotalPrice();
+		}
+		
+		Address defaultAddress = addressService.getDefaultAddressByCustomer(customer);
+		boolean usePrimaryAddressAsDefault = false;
+		
+		if (defaultAddress == null) {
+			usePrimaryAddressAsDefault = true;
+		}
+		
+		if (code == null) {
+			totalAllPrice = totalAllPrice;
+		}
+		else {
+			if (code.equals("code")) {
+				totalAllPrice = totalAllPrice * (float)(0.9);
+			}
 		}
 		
 		

@@ -3,6 +3,7 @@ package com.rubikme.cart.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -84,4 +85,17 @@ public class CartShoppingRestController {
 			
 			return "The product has been removed from your shopping cart.";
 	}
+	
+//	@PostMapping("/cart/apply_code")
+//	public String applyCouponCode(@Param("code") String code,
+//			HttpServletRequest request) {
+//		String email = Utility.getEmailOfCustomer(request);
+//		Customer customer = customerService.getCustomerByEmail(email);
+//		
+//		if (code.equals("FIRSTCODE")) {
+//			return "Perfect code";
+//		}
+//		
+//		return "Wrong code";
+//	}
 }

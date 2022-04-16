@@ -59,12 +59,11 @@ public class Product {
 	@Column(name = "discount_percent")
 	private float discountPercent;
 	
-	private float length;
-	private float width;
-	private float height;
-	private float weight;
+	private int reviewCount;
 	
-	@Column(name = "maim_image", nullable = false)
+	private float averageRating;
+	
+	@Column(name = "main_image", nullable = false)
 	private String mainImage;
 	
 	@ManyToOne
@@ -189,36 +188,20 @@ public class Product {
 		this.discountPercent = discountPercent;
 	}
 
-	public float getLength() {
-		return length;
+	public int getReviewCount() {
+		return reviewCount;
 	}
 
-	public void setLength(float length) {
-		this.length = length;
+	public void setReviewCount(int reviewCount) {
+		this.reviewCount = reviewCount;
 	}
 
-	public float getWidth() {
-		return width;
+	public float getAverageRating() {
+		return averageRating;
 	}
 
-	public void setWidth(float width) {
-		this.width = width;
-	}
-
-	public float getHeight() {
-		return height;
-	}
-
-	public void setHeight(float height) {
-		this.height = height;
-	}
-
-	public float getWeight() {
-		return weight;
-	}
-
-	public void setWeight(float weight) {
-		this.weight = weight;
+	public void setAverageRating(float averageRating) {
+		this.averageRating = averageRating;
 	}
 
 	public Category getCategory() {

@@ -76,8 +76,8 @@ public class CheckOutController {
 		Customer customer = getCustomerAuthencicated(request);
 		Address addressDefault = addressService.getDefaultAddressByCustomer(customer);
 		
+		//Address addressDefault = null;
 		
-
 		List<CartItem> listCartItems = cartService.listCartItems(customer);
 		CheckOutInfo checkoutInfo = checkoutService.prepareCheckout(listCartItems);
 		

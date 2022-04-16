@@ -34,6 +34,7 @@ public class OrderService {
 		
 		Order newOrder = new Order();
 		newOrder.setOrderTime(new Date());
+		
 		newOrder.setStatus(OrderStatus.NEW);
 		newOrder.setCustomer(customer);
 		newOrder.setProductCost(checkoutInfo.getProductCost());
@@ -41,6 +42,12 @@ public class OrderService {
 		newOrder.setPaymentMethod(paymentMethod);
 		newOrder.setDeliverDays(5);
 		newOrder.setDeliverDate(checkoutInfo.getDeliverDate());
+		
+		if (address == null) {
+			newOrder.setAddressFinal(customer.getAddressLine());
+		} else {
+			newOrder.setAddressFinal(address.getAddressLine());
+		}
 		
 		Set<OrderDetail> listOrderDetails = newOrder.getOrderDetails();
 		
@@ -75,6 +82,12 @@ public class OrderService {
 		newOrder.setDeliverDate(checkoutInfo.getDeliverDate());
 		newOrder.setStatus(OrderStatus.PAID);
 		
+		if (address == null) {
+			newOrder.setAddressFinal(customer.getAddressLine());
+		} else {
+			newOrder.setAddressFinal(address.getAddressLine());
+		}
+		
 		Set<OrderDetail> listOrderDetails = newOrder.getOrderDetails();
 		
 		for (CartItem cart : listCartItems) {
@@ -107,5 +120,9 @@ public class OrderService {
 		}
 		
 		return orderRepo.findAllByPage(customer.getId() ,pageable);
+	}
+	
+	public Order getOrder(Integer id, Customer customer) {
+		return orderRepo.findByIdAndCustomer(id, customer);
 	}
 }

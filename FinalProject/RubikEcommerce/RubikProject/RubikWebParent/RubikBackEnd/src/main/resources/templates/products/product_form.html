@@ -44,9 +44,6 @@
 							  	<li class="nav-item">
 							    	<a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
 							  	</li>
-							  	<li class="nav-item">
-							    	<a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
-							  	</li>
 							</ul>
 							
 							<!-- Tab panes -->
@@ -88,17 +85,7 @@
 								  				onclick="addNextDetailSection()"/>
 								  		</div>
 							  		</th:block>
-							  	</div>
-							  	
-							  	<div class="tab-pane p-3" id="shipping" role="tabpanel">
-							  		<th:block sec:authorize="hasAnyAuthority('Salesperson')">
-							  			<div th:replace="products/product_description_readonly :: images"></div>
-							  		</th:block>
-							  		
-							  		<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-							  			<div th:replace="products/product_fragment :: shipping"></div>
-							  		</th:block>
-							  	</div>
+							  	</div>				 
 							</div>
 						</div>
 						
