@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments_front :: page_head('Rubik Front-End', 'none')">
+</head>
+<body class="animsition">
+	
+	<!-- Header -->
+	<header th:replace="fragments_front :: header_customer"></header>
+
+	<!-- Cart -->
+	<div th:replace="fragments_front :: cart_customer"></div>
+
+	<!-- breadcrumb -->
+	<div th:replace="fragments_child_1 :: bread_crumb_product"></div>
+		
+	<!-- Shoping Cart -->
+	<section class="bg0 p-t-75 p-b-120 mt-5">
+		<div class="container">
+			<div class="row m-t-25 m-b-25">
+				<div class="col m-l-25">
+					<h3>Order Detail For You</h3>
+				</div>
+			</div>
+			
+			<div class="row m-t-25">
+				<div class="col m-l-25">
+					<div th:replace="fragments :: search_form_and_message()"></div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col m-b-50">
+					<div class="m-l-25 m-r--38 m-lr-0-xl">
+						<div class="wrap-table-shopping-cart">
+							<table class="table-shopping-cart">
+								<tr class="table_head">
+									<th class="column-1">ID</th>
+									
+									<th class="column-2">Product Name</th>
+									
+									<th class="clumn-3">Headline</th>
+									
+									<th class="column-4">Rating</th>
+									
+									<th class="column-5">Review Time</th>
+									
+									<th class="column-6"></th>
+								</tr>
+								
+								<th:block th:each="review : ${listReviews}">
+								<tr>
+									<td class="column-1">
+										<b>[[${review.id}]]</b>
+									</td>
+									
+									<td class="column-2">
+										<a th:href="@{'/p/' + ${review.product.alias}}">[[${review.product.getShortName}]]</a>
+									</td>
+									
+									<td class="column-3">
+										<p>[[${review.headline}]]</p>
+									</td>
+									
+									<td class="column-4">
+										<p>[[${review.rating}]] <i class="far fa-star"></i></p>
+									</td>
+									
+									<td class="column-5">
+										<p>[[${review.reviewTime}]]</p>
+									</td>
+									
+									<td class="column-6">
+										<a class="fas fa-file-alt fa-2x text-success link-detail" 
+											th:href="@{'/reviews/detail/' + ${review.id}}" title="View details of this comment"></a>
+									</td>
+								</tr>
+								</th:block>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div th:replace="fragments :: modal_dialog"></div>
+	
+	<div class="modal fade" id="reviewDetailModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>	
+	
+	<div th:replace="fragments :: pagination('/reviews', 'reviews')"></div>
+			
+	<!-- Footer -->
+	<footer th:replace="fragments_front :: footer_customer"></footer>
+
+
+	<div th:replace="fragments_front :: js_files_footer"></div>
+	
+	<script type="text/javascript">
+
+		moduleURL = "[[@{/reviews}]]";
+	
+		function clearFilter() {
+			window.location = moduleURL;
+		}	
+
+		$(document).ready(function() {
+			handleDetailLink();
+		});
+
+		function handleDetailLink() {
+			$(".link-detail").on("click", function(e) {
+				e.preventDefault();
+				$("#reviewDetailModal").modal('show').find('.modal-content').load($(this).attr("href"));
+			});
+		}
+	</script>
+</body>
+</html>

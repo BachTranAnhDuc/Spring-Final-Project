@@ -60,6 +60,13 @@
 					</th:block>
 
 					<div class="right-top-bar flex-w h-full">
+					
+						<th:block sec:authorize="isAuthenticated()">
+							<a th:href="@{/reviews}" class="flex-c-m trans-04 p-lr-25">
+								Review
+							</a>
+						</th:block>
+						
 						<th:block sec:authorize="isAuthenticated()">
 							<a th:href="@{/address}" class="flex-c-m trans-04 p-lr-25">
 								Address
