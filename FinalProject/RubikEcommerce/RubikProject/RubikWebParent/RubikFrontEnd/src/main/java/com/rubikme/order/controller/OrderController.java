@@ -1,5 +1,6 @@
 package com.rubikme.order.controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.rubikme.Utility;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Order;
+import com.rubikme.common.entity.OrderDetail;
+import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.Setting;
 import com.rubikme.customer.CustomerService;
 import com.rubikme.order.OrderService;
+import com.rubikme.review.ReviewService;
 import com.rubikme.security.CustomerUserDetails;
 import com.rubikme.setting.SettingService;
 
@@ -33,6 +37,9 @@ public class OrderController {
 	
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private ReviewService reviewService;
 	
 	@GetMapping("/orders")
 	public String listFirstPage(Model model, HttpServletRequest request, @AuthenticationPrincipal CustomerUserDetails loggerUser) {
@@ -98,11 +105,35 @@ public class OrderController {
 		Customer customer = getCustomerAuthentication(request);
 			
 		Order order = orderService.getOrder(id, customer);
+		
+		setProductReviewStatus(customer, order);
+		
 		loadCurrencySetting(request);
 		model.addAttribute("order", order);
 			
 		return "orders/order_details_modal";
 	}
+	
+	private void setProductReviewStatus(Customer customer, Order order) {
+		// TODO Auto-generated method stub
+		Iterator<OrderDetail> iterator = order.getOrderDetails().iterator();
+		
+		while (iterator.hasNext()) {
+			OrderDetail orderDetail = iterator.next();
+			Product product = orderDetail.getProduct();
+			Integer productId = product.getId();
+			
+			boolean didCustomerReview = reviewService.didCustomerReviewProduct(customer, productId);
+			
+			product.setReviewByCustomer(didCustomerReview);
+			
+			if (!didCustomerReview) {
+				boolean canCustomerReview = reviewService.canCustomerReview(customer, productId);
+				product.setCustomerCanReview(canCustomerReview);
+			}
+		}
+	}
+
 //	
 //	@GetMapping("/orders/delete/{id}")
 //	public String deleteOrder(@PathVariable("id") Integer id,

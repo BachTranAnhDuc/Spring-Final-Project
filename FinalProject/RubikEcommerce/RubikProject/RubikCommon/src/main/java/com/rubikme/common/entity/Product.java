@@ -309,4 +309,32 @@ public class Product {
 		
 		return this.name;
 	}
+	
+	@Transient
+	public String getURI() {
+		return "/p/" + this.alias + "/";
+	}
+	
+	@Transient
+	private boolean customerCanReview;
+	
+	@Transient
+	private boolean reviewByCustomer;
+
+	public boolean isCustomerCanReview() {
+		return customerCanReview;
+	}
+
+	public void setCustomerCanReview(boolean customerCanReview) {
+		this.customerCanReview = customerCanReview;
+	}
+
+	public boolean isReviewByCustomer() {
+		return reviewByCustomer;
+	}
+
+	public void setReviewByCustomer(boolean reviewByCustomer) {
+		this.reviewByCustomer = reviewByCustomer;
+	}
+	
 }

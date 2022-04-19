@@ -1330,6 +1330,7 @@ select * from orders;
 select * from order_details;
 select * from products;
 select * from currencies;
+select * from reviews;
 use rubikdb;
 
 delete from settings where `key` = 'SITE_LOGO';

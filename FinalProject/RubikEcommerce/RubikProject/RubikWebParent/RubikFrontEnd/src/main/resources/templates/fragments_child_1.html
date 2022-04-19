@@ -312,6 +312,17 @@
 						class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 						[[${product.getShortName}]]
 					</a>
+					
+					<div class="row">
+						<div class="col-10">
+							<input type="text" class="product-detail-rating" dir="ltr" data-size="md"
+								th:value="${product.averageRating}"/>
+						</div>
+					
+						<div class="col-2">
+							<small class="mt-5">[[${product.reviewCount}]]</small>
+						</div>
+					</div>
 
 					<div th:if="${product.discountPercent <= 0}">
 						<span class="stext-105 cl3">

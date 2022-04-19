@@ -2,7 +2,13 @@
 <html lang="en"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head th:replace="fragments_front :: page_head('Rubik Front-End', 'none')">
+
+<head>
+	<head th:replace="fragments_front :: page_head('Rubik Front-End', 'tag')"/>
+	<link th:href="@{/stars/css/star-rating.css}" media="all" rel="stylesheet" type="text/css" />
+	<script th:src="@{/stars/js/star-rating.js}" type="text/javascript"></script>
+	<link th:href="@{/stars/themes/krajee-svg/theme.css}" media="all" rel="stylesheet" type="text/css" />
+	<script th:src="@{/stars/themes/krajee-svg/theme.js}"></script>
 </head>
 <body class="animsition">
 	
@@ -63,6 +69,17 @@
 										<h4 class="mtext-105 cl2 js-name-detail p-b-14">
 											[[${product.name}]]
 										</h4>
+									</div>																
+								</div>
+								
+								<div class="row">
+									<div class="col">
+										<input type="text" class="product-detail-rating" dir="ltr" data-size="md"
+											th:value="${product.averageRating}"/>
+									</div>
+									
+									<div class="col">
+										<a class="mt-3" th:href="@{${product.URI} + '#review'}">[[${product.reviewCount}]] rating(s)</a>
 									</div>
 								</div>
 								
@@ -291,6 +308,9 @@
 												Submit
 											</button>
 										</form>
+										
+										<div th:replace="product/product_reviews :: content"></div>
+										
 									</div>
 								</div>
 							</div>
@@ -731,6 +751,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
 
 	<div th:replace="fragments_front :: js_files_footer"></div>
 	
@@ -741,6 +763,20 @@
 
 		var csrfHeaderName = "[[${_csrf.headerName}]]";
 		var csrfValue = "[[${_csrf.token}]]";
+
+		decimalSeparator = "[[${DECIMAL_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+		thousandSeparator = "[[${THOUSAND_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+
+		$(document).ready(function() {
+			formatRating();
+		});
+
+		$(".product-detail-rating").rating({
+			displayOnly: true,
+			hoverOnClera: false,
+			showCaption: false,
+			theme: 'krajee-svg'
+		});
 		
 		function showModalDialog(title, message) {
 			$("#modalTitle").text(title);
@@ -755,9 +791,16 @@
 		function showWarningModal(message) {
 			showModalDialog("Warning", message);
 		}	
+
+		function formatRating() {
+			ratingText = $("#ratingNumber").text();
+			formattedRating = $.number(ratingText, 2, decimalSeparator, thousandSeparator);
+			$("#ratingNumber").text(formattedRating);
+		}
 	</script>
 	
 	<script type="text/javascript" th:src="@{/js/quantity_control.js}"></script>
 	<script type="text/javascript" th:src="@{/js/add_to_cart.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
 </body>
 </html>

@@ -69,7 +69,10 @@ public class ProductService {
 		
 		product.setUpdatedTime(new Date());
 		
-		return repo.save(product);
+		Product updateProduct = repo.save(product);
+		repo.updateReviewCountAndAverageRating(updateProduct.getId());
+		
+		return updateProduct;
 	}
 	
 	public String checkUnique(Integer id, String name) {

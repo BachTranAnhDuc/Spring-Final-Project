@@ -37,4 +37,8 @@ public interface ProductRepository extends PagingAndSortingRepository<Product, I
 			+ "OR p.category.name LIKE %?1% ")
 	public Page<Product> searchInCategory(Integer categoryId, String categoryIdMatch, 
 			String keyword, Pageable pageable);
+	
+	@Query("UPDATE Product p SET p.averageRating = COALESCE((SELECT AVG(r.rating) FROM Review r WHERE r.product.id = ?1), 0), p.reviewCount = (SELECT COUNT(r.id) FROM Review r WHERE r.product.id = ?1) WHERE p.id = ?1")
+	@Modifying
+	public void updateReviewCountAndAverageRating(Integer productId);
 }

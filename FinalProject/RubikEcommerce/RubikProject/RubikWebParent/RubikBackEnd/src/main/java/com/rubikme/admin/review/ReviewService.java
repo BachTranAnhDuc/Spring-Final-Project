@@ -2,6 +2,8 @@ package com.rubikme.admin.review;
 
 import java.util.NoSuchElementException;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -9,15 +11,20 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.rubikme.admin.product.ProductRepository;
 import com.rubikme.common.entity.Review;
 
 @Service
+@Transactional
 public class ReviewService {
 	
 	public static final int REVIEWS_PER_PAGE = 5;
 	
 	@Autowired
 	private ReviewRepository reviewRepo;
+	
+	@Autowired
+	private ProductRepository productRepo;
 	
 	public Page<Review> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
 		
@@ -49,7 +56,9 @@ public class ReviewService {
 		reviewInDB.setHeadline(reviewInform.getHeadline());
 		reviewInDB.setComment(reviewInform.getComment());
 		
+		
 		reviewRepo.save(reviewInDB);
+		productRepo.updateReviewCountAndAverageRating(reviewInDB.getProduct().getId());
 	}
 	
 	public void delete(Integer id) throws ReviewNotFoundException {

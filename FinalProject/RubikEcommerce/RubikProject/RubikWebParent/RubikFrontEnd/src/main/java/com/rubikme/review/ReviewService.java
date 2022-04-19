@@ -8,7 +8,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.rubikme.common.entity.Customer;
+import com.rubikme.common.entity.OrderStatus;
+import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.Review;
+import com.rubikme.order.detail.OrderDetailRepository;
 
 @Service
 public class ReviewService {
@@ -17,6 +20,9 @@ public class ReviewService {
 	
 	@Autowired
 	private ReviewRepository repo;
+	
+	@Autowired
+	private OrderDetailRepository orderDetailRepo;
 	
 	public Page<Review> listByCustomerPage(Customer customer, String keyword, int pageNum, String sortField, String sortDir) {
 		Sort sort = Sort.by(sortField);
@@ -40,5 +46,32 @@ public class ReviewService {
 		
 		
 		return review;
+	}
+	
+	public Page<Review> listByProduct(Product product, int pageNum, String sortField, String sortDir) {
+		Sort sort = Sort.by(sortField);
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+		Pageable pageable = PageRequest.of(pageNum - 1, REVIEWS_PER_PAGE, sort);
+		
+		return repo.findByProduct(product, pageable);
+	}
+	
+	public Page<Review> listMostRecentReviewsByProduct(Product product) {
+		Sort sort = Sort.by("reviewTime").descending();
+		Pageable pageable = PageRequest.of(0, 3, sort);
+		
+		return repo.findByProduct(product, pageable);		
+	}
+	
+	public boolean didCustomerReviewProduct(Customer customer, Integer productId) {
+		Long count = repo.countByCustomerAndProduct(customer.getId(), productId);
+		
+		return count > 0;
+	}
+	
+	public boolean canCustomerReview(Customer customer, Integer productId) {
+		Long count = orderDetailRepo.countByProductAndCustomerOrderStatus(productId, customer.getId(), OrderStatus.DELIVERED);
+		
+		return count > 0;
 	}
 }

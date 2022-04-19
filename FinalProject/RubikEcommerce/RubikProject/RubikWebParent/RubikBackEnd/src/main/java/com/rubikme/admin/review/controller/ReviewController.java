@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.rubikme.admin.product.ProductService;
 import com.rubikme.admin.review.ReviewNotFoundException;
 import com.rubikme.admin.review.ReviewService;
 import com.rubikme.admin.user.UserService;
@@ -22,6 +23,9 @@ import com.rubikme.common.entity.User;
 public class ReviewController {
 	@Autowired 
 	private ReviewService reviewService;
+	
+	@Autowired
+	private ProductService productService;
 	
 	@GetMapping("/reviews")
 	public String listFirstPage(Model model) {

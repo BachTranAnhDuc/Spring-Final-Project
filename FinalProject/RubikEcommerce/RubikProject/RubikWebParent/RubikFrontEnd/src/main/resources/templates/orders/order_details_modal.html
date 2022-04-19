@@ -102,7 +102,15 @@
 						 	= 
 						 	<div th:replace="fragments :: format_number(${detail.subtotal})" />
 						</div>
-									
+						
+						<div th:if="${!product.isReviewByCustomer && product.isCustomerCanReview}">
+							<a href="" class="btn btn-info">Write Review</a>
+						</div>
+						
+						<div th:if="${product.isReviewByCustomer}">
+							<a th:href="@{'/reviews/page/1?sortField=reviewTime&sortDir=desc'}" class="btn btn-warning">See your review</a>
+						</div>
+						
 					</div>
 				</div>
 			</th:block>

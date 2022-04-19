@@ -14,8 +14,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.Utility;
 import com.rubikme.common.entity.Customer;
+import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.Review;
+import com.rubikme.common.exception.ProductNotFoundException;
 import com.rubikme.customer.CustomerService;
+import com.rubikme.product.ProductService;
 import com.rubikme.review.ReviewNotFoundException;
 import com.rubikme.review.ReviewService;
 
@@ -27,6 +30,9 @@ public class ReviewController {
 	
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private ProductService productService;
 	
 	@GetMapping("/reviews")
 	public String listFirstPage(Model model, HttpServletRequest request) {
@@ -90,5 +96,46 @@ public class ReviewController {
 		String email = Utility.getEmailOfCustomer(request);
 		
 		return customerService.getCustomerByEmail(email);
+	}
+	
+	@GetMapping("/ratings/{productAlias}/page/{pageNum}")
+	public String listByProductByPage(Model model, 
+			@PathVariable(name = "productAlias") String productAlias,
+			@PathVariable(name = "pageNum") int pageNum,
+			String sortField, String sortDir) {
+		Product product = null;
+		
+		try {
+			product = productService.getProduct(productAlias);
+		}
+		catch (ProductNotFoundException ex) {
+			return "error/404";
+		}
+		
+		Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
+		List<Review> listReviews = page.getContent();
+		
+		long startCount = (pageNum - 1) * ReviewService.REVIEWS_PER_PAGE + 1;
+		long endCount = startCount + ReviewService.REVIEWS_PER_PAGE - 1;
+		if (endCount > page.getTotalElements()) {
+			endCount = page.getTotalElements();
+		}
+		
+		model.addAttribute("listReviews", listReviews);
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("totalPages", page.getTotalPages());
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", page.getTotalElements());
+		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+		model.addAttribute("product", product);
+		
+		return "reviews/reviews_product";
+	}
+	
+	@GetMapping("/ratings/{productAlias}")
+	public String listByProductFirstPage(@PathVariable(name = "productAlias") String productAlias,
+			Model model) {
+		return listByProductByPage(model, productAlias, 1, "reviewTime", "desc");
 	}
 }

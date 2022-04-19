@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.rubikme.category.CategoryService;
 import com.rubikme.common.entity.Category;
 import com.rubikme.common.entity.Product;
+import com.rubikme.common.entity.Review;
 import com.rubikme.common.exception.CategoryNotFoundException;
 import com.rubikme.common.exception.ProductNotFoundException;
+import com.rubikme.review.ReviewService;
 
 @Controller
 public class ProductController {
@@ -24,6 +26,9 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private ReviewService reviewService;
 	
 	@GetMapping("/c/{category_alias}")
 	public String viewCategoryFirstPage(@PathVariable("category_alias") String alias,
@@ -74,11 +79,11 @@ public class ProductController {
 	@GetMapping("/products")
 	public String viewProduct(Model model) {
 			
-		return viewProuctByPage(model, 1);
+		return viewProductByPage(model, 1);
 	}
 	
 	@GetMapping("/products/page/{pageNum}")
-	public String viewProuctByPage(Model model,
+	public String viewProductByPage(Model model,
 			@PathVariable("pageNum") int pageNum) {
 		
 		Page<Product> pageProducts = productService.listProductByPage(pageNum);
@@ -103,15 +108,36 @@ public class ProductController {
 	
 	@GetMapping("/p/{product_alias}")
 	public String viewProdutDetail(@PathVariable("product_alias") String alias,
-			Model model) {
+			Model model,
+			String sortField, String sortDir) {
 		try {
 			Product product = productService.getProduct(alias);
 			List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
+			Page<Review> listReviews = reviewService.listByProduct(product, 1, "reviewTime", "desc");
+			
+//			Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
+//			List<Review> listReviews = page.getContent();
+//			
+//			long startCount = (pageNum - 1) * ReviewService.REVIEWS_PER_PAGE + 1;
+//			long endCount = startCount + ReviewService.REVIEWS_PER_PAGE - 1;
+//			if (endCount > page.getTotalElements()) {
+//				endCount = page.getTotalElements();
+//			}
+//			
+//			model.addAttribute("currentPage", pageNum);
+//			model.addAttribute("totalPages", page.getTotalPages());
+//			model.addAttribute("startCount", startCount);
+//			model.addAttribute("endCount", endCount);
+//			model.addAttribute("totalItems", page.getTotalElements());
+//			model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 			
 			model.addAttribute("listCategoryParents", listCategoryParents);
-			model.addAttribute("product", product);
+			model.addAttribute("listReviews", listReviews);
 			model.addAttribute("title", product.getShortName());
+			model.addAttribute("product", product);
 			
+			
+		
 			
 			return "product/product_detail";
 		}
