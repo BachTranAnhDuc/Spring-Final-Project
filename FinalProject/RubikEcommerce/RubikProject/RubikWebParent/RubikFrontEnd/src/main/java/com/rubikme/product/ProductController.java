@@ -2,6 +2,8 @@ package com.rubikme.product;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -10,12 +12,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.rubikme.Utility;
 import com.rubikme.category.CategoryService;
 import com.rubikme.common.entity.Category;
+import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.Review;
 import com.rubikme.common.exception.CategoryNotFoundException;
 import com.rubikme.common.exception.ProductNotFoundException;
+import com.rubikme.customer.CustomerService;
 import com.rubikme.review.ReviewService;
 
 @Controller
@@ -29,6 +34,9 @@ public class ProductController {
 	
 	@Autowired
 	private ReviewService reviewService;
+	
+	@Autowired
+	private CustomerService customerService;
 	
 	@GetMapping("/c/{category_alias}")
 	public String viewCategoryFirstPage(@PathVariable("category_alias") String alias,
@@ -109,11 +117,30 @@ public class ProductController {
 	@GetMapping("/p/{product_alias}")
 	public String viewProdutDetail(@PathVariable("product_alias") String alias,
 			Model model,
-			String sortField, String sortDir) {
+			String sortField, String sortDir, HttpServletRequest request) {
 		try {
 			Product product = productService.getProduct(alias);
 			List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
 			Page<Review> listReviews = reviewService.listByProduct(product, 1, "reviewTime", "desc");
+			
+			Customer customer = getAuthenticationCustomer(request);
+			boolean didCustomerReview = reviewService.didCustomerReviewProduct(customer, product.getId());
+			
+			if (didCustomerReview) {
+				model.addAttribute("didCustomerReview", didCustomerReview);
+			}
+			else {
+				boolean didCustomerCanReview = reviewService.canCustomerReview(customer, product.getId());
+				
+				if (didCustomerCanReview) {
+					model.addAttribute("didCustomerCanReview", didCustomerCanReview);
+				}
+				else {
+					model.addAttribute("NoReviewPermission", true);
+				}
+			}
+			
+			Review review = new Review();
 			
 //			Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
 //			List<Review> listReviews = page.getContent();
@@ -135,6 +162,7 @@ public class ProductController {
 			model.addAttribute("listReviews", listReviews);
 			model.addAttribute("title", product.getShortName());
 			model.addAttribute("product", product);
+			model.addAttribute("review", review);
 			
 			
 		
@@ -176,5 +204,11 @@ public class ProductController {
 		model.addAttribute("title", keyword + " - Search Result");
 		
 		return "product/product_result";
+	}
+	
+	private Customer getAuthenticationCustomer(HttpServletRequest request) {
+		String email = Utility.getEmailOfCustomer(request);
+		
+		return customerService.getCustomerByEmail(email);
 	}
 }

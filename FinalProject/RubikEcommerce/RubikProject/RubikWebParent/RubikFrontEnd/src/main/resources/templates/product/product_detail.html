@@ -262,8 +262,16 @@
 											</div>
 										</div>
 										
+										<div class="row" th:if="${didCustomerReview}">
+											<div class="col">
+												<span class="text-success">You already reviewed this product.</span>
+											</div>
+										</div>
+										
 										<!-- Add review -->
-										<form class="w-full">
+										<form class="w-full" th:if="${didCustomerCanReview}"
+											th:action="@{/post_review}" method="post" th:object="${review}">
+											<h5>You can write your comment in this product now!</h5>
 											<h5 class="mtext-108 cl2 p-b-7">
 												Add a review
 											</h5>
@@ -277,39 +285,30 @@
 													Your Rating
 												</span>
 
-												<span class="wrap-rating fs-18 cl11 pointer">
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<input class="dis-none" type="number" name="rating">
-												</span>
+												<p>
+													<input type="text" th:field="*{rating}" class="product-rating-star" dir="ltr" data-size="md" data-step="1"/>
+												</p>
 											</div>
 
-											<div class="row p-b-25">
+											<div class="row p-b-25">											
+												<div class="col-sm-12 p-b-5">
+													<label class="stext-102 cl3" for="name">Headline</label>
+													<input class="size-111 bor8 stext-102 cl2 p-lr-20" th:field="*{headline}">
+												</div>
+
 												<div class="col-12 p-b-5">
 													<label class="stext-102 cl3" for="review">Your review</label>
-													<textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review" name="review"></textarea>
-												</div>
-
-												<div class="col-sm-6 p-b-5">
-													<label class="stext-102 cl3" for="name">Name</label>
-													<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name" type="text" name="name">
-												</div>
-
-												<div class="col-sm-6 p-b-5">
-													<label class="stext-102 cl3" for="email">Email</label>
-													<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email" type="text" name="email">
+													<textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" 
+														th:field="*{comment}"></textarea>
 												</div>
 											</div>
 
-											<button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
+											<button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10" type="submit">
 												Submit
 											</button>
 										</form>
 										
-										<div th:replace="product/product_reviews :: content"></div>
+										
 										
 									</div>
 								</div>
@@ -797,6 +796,13 @@
 			formattedRating = $.number(ratingText, 2, decimalSeparator, thousandSeparator);
 			$("#ratingNumber").text(formattedRating);
 		}
+	</script>
+	
+	<script type="text/javascript">
+		$(".product-rating-star").rating({
+			hoverOnClear: false,
+			theme: 'krajee-svg'
+		});	
 	</script>
 	
 	<script type="text/javascript" th:src="@{/js/quantity_control.js}"></script>

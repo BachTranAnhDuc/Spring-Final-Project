@@ -10,8 +10,21 @@
 		</div>
 		<div class="col-xs ml-1 mt-3"><span id="ratingNumber">[[${product.averageRating}]]</span> of 5</div>
 	</div>
+	
 	<div class="row m-1 ml-3">
 		<a href="">View all [[${product.reviewCount}]] ratings</a>
+	</div>
+	
+	<div class="row m-1 ml-3" th:if="${didCustomerReview}">
+		<span class="text-success">You already reviewed this product.</span>
+	</div>
+	
+	<div class="row m-1 ml-3" th:if="${didCustomerCanReview}">
+		<span class="text-info">You purchased and got this product.
+			<b>
+				<a th:href="@{'/write_review/product/' + ${product.id}}">Write Your Review Now.</a>
+			</b>
+		</span>
 	</div>
 	
 	<div class="row"><div class="col"><hr/></div></div>

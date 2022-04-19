@@ -138,4 +138,23 @@ public class ReviewController {
 			Model model) {
 		return listByProductByPage(model, productAlias, 1, "reviewTime", "desc");
 	}
+	
+	@GetMapping("/write_review/product/{productId}")
+	public String reviewForm(@PathVariable("productId") Integer productId, Model model, HttpServletRequest request) {
+		
+		Review review = new Review();
+		Product product = null;
+		
+		try {
+			product = productService.getProduct(productId);
+		} catch (ProductNotFoundException e) {
+			// TODO Auto-generated catch block
+			return "error/404";
+		}
+		
+		model.addAttribute("product", product);
+		model.addAttribute("review", review);
+		
+		return "reviews/review_form";
+	}
 }

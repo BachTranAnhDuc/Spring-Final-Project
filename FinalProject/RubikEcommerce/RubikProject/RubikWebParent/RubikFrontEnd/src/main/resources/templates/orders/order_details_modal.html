@@ -104,7 +104,7 @@
 						</div>
 						
 						<div th:if="${!product.isReviewByCustomer && product.isCustomerCanReview}">
-							<a href="" class="btn btn-info">Write Review</a>
+							<a th:href="@{'/write_review/product/' + ${product.id}}" class="btn btn-info">Write Review</a>
 						</div>
 						
 						<div th:if="${product.isReviewByCustomer}">
