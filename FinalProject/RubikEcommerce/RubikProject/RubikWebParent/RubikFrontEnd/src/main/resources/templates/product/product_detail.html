@@ -268,9 +268,17 @@
 											</div>
 										</div>
 										
+										<div class="row" th:if="${NoReviewPermission}">
+											<div class="col">
+												<span class="text-success">You can not review this product because you did not purchase or you have not received.</span>
+											</div>
+										</div>
+										
 										<!-- Add review -->
 										<form class="w-full" th:if="${didCustomerCanReview}"
 											th:action="@{/post_review}" method="post" th:object="${review}">
+											
+											<input type="hidden" name="productId" th:value="${product.id}"/>
 											<h5>You can write your comment in this product now!</h5>
 											<h5 class="mtext-108 cl2 p-b-7">
 												Add a review

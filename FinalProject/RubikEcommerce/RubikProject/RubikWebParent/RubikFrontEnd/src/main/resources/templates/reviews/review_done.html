@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<head th:replace="fragments_front :: page_head('Rubik Front-End', 'tag')"/>
+	<link th:href="@{/stars/css/star-rating.css}" media="all" rel="stylesheet" type="text/css" />
+	<script th:src="@{/stars/js/star-rating.js}" type="text/javascript"></script>
+	<link th:href="@{/stars/themes/krajee-svg/theme.css}" media="all" rel="stylesheet" type="text/css" />
+	<script th:src="@{/stars/themes/krajee-svg/theme.js}"></script>
+</head>
+<body class="animsition">
+	
+	<!-- Header -->
+	<header th:replace="fragments_front :: header_customer"></header>
+
+	<!-- Cart -->
+	<div th:replace="fragments_front :: cart_customer"></div>
+
+
+	<!-- Title page -->
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+		<h2 class="ltext-105 cl0 txt-center">
+			About
+		</h2>
+	</section>
+
+
+	<!-- Content page -->
+	<section class="bg0 p-t-75 p-b-120">
+		<div class="container">
+			<div class="row p-b-148">
+				<div class="col-md-7 col-lg-8">
+					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Your Review has been posted
+						</h3>
+						
+						<p>
+							<input type="text" th:value="${review.rating}" class="product-rating-star" dir="ltr" data-size="md" />
+						</p>
+						
+						<p>
+							<input type="text" th:value="${review.headline}" class="form-control" readonly="readonly" />
+			 			</p>
+			 			
+			 			<p>
+			 				<textarea rows="3" cols="10" class="form-control" readonly="readonly">[[${review.comment}]]</textarea>
+			 			</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div th:replace="fragments :: modal_dialog"></div>
+
+	<!-- Footer -->
+	<footer th:replace="fragments_front :: footer_customer"></footer>
+
+	<div th:replace="fragments_front :: js_files_footer"></div>
+	
+	<script type="text/javascript">
+	$(".product-rating-star").rating({
+		displayOnly: true,
+		hoverOnClear: false,
+		showCaption: false,
+		theme: 'krajee-svg'
+	});	
+</script>
+	
+</body>
+</html>
