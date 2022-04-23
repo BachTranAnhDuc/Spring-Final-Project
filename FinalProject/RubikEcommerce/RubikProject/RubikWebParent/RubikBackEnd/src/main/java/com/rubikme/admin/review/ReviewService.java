@@ -1,5 +1,6 @@
 package com.rubikme.admin.review;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
@@ -67,5 +68,9 @@ public class ReviewService {
 		}
 		
 		reviewRepo.deleteById(id);
+	}
+	
+	public List<Review> findAll() {
+		return reviewRepo.findAll();
 	}
 }

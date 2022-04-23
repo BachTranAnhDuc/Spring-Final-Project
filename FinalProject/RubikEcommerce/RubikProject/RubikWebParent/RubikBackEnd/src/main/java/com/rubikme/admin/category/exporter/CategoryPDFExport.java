@@ -39,7 +39,7 @@ public class CategoryPDFExport extends AbstractExporter{
 		
 		document.add(para);
 		
-		PdfPTable table = new PdfPTable(6);
+		PdfPTable table = new PdfPTable(2);
 		table.setWidthPercentage(100f);
 		table.setSpacingBefore(10);
 		
@@ -56,8 +56,6 @@ public class CategoryPDFExport extends AbstractExporter{
 		for (Category cate : listCategory) {
 			table.addCell(String.valueOf(cate.getId()));
 			table.addCell(String.valueOf(cate.getName()));
-			table.addCell(String.valueOf(cate.getAlias()));
-			table.addCell(String.valueOf(cate.isEnabled()));
 		}
 	}
 
@@ -76,10 +74,5 @@ public class CategoryPDFExport extends AbstractExporter{
 		cell.setPhrase(new Phrase("Name", font));
 		table.addCell(cell);
 		
-		cell.setPhrase(new Phrase("Alias", font));
-		table.addCell(cell);
-		
-		cell.setPhrase(new Phrase("Enabled", font));
-		table.addCell(cell);
 	}
 }

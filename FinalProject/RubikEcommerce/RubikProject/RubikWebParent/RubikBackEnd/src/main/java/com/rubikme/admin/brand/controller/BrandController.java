@@ -159,7 +159,7 @@ public class BrandController {
 	
 	@GetMapping("/brands/export/csv")
 	public void exportToCSV(HttpServletResponse response) throws IOException {
-		List<Brand> listBrands = service.listAll();
+		List<Brand> listBrands = service.findAll();
 		
 		BrandCsvExporter exporter = new BrandCsvExporter();
 		
@@ -168,7 +168,7 @@ public class BrandController {
 	
 	@GetMapping("/brands/export/excel")
 	public void exportToExcel(HttpServletResponse response) throws IOException {
-		List<Brand> listBrands = service.listAll();
+		List<Brand> listBrands = service.findAll();
 		
 		BrandExcelExporter exporter = new BrandExcelExporter();
 		
@@ -177,7 +177,7 @@ public class BrandController {
 	
 	@GetMapping("/brands/export/pdf")
 	public void exportToPDF(HttpServletResponse response) throws IOException {
-		List<Brand> listBrands = service.listAll();
+		List<Brand> listBrands = service.findAll();
 		
 		BrandPDFExporter exporter = new BrandPDFExporter();
 		

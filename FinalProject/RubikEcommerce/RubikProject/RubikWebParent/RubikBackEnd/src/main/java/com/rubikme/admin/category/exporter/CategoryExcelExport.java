@@ -37,10 +37,7 @@ public class CategoryExcelExport extends AbstractExporter{
 		cellStyle.setFont(font);
 		
 		createCell(row, 0, "Category ID", cellStyle);
-		createCell(row, 1, "Name", cellStyle);
-		createCell(row, 2, "Alias", cellStyle);
-		createCell(row, 3, "Enabled", cellStyle);
-		
+		createCell(row, 1, "Name", cellStyle);	
 	}
 	
 	private void createCell(XSSFRow row, int columnIndex, Object value, CellStyle style) {		
@@ -88,8 +85,6 @@ public class CategoryExcelExport extends AbstractExporter{
 			
 			createCell(row, columnIndex++, cate.getId(), cellStyle);
 			createCell(row, columnIndex++, cate.getName(), cellStyle);
-			createCell(row, columnIndex++, cate.getAlias(), cellStyle);
-			createCell(row, columnIndex++, cate.isEnabled(), cellStyle);
 		}
 	}
 }

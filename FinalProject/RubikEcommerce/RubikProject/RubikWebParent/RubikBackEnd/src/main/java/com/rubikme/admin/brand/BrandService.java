@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.rubikme.admin.brand.error.BrandNotFoundException;
 import com.rubikme.common.entity.Brand;
+import com.rubikme.common.entity.User;
 
 @Service
 @Transactional
@@ -78,5 +79,9 @@ public class BrandService {
 		}
 		
 		return repo.findAll(pageable);
+	}
+	
+	public List<Brand> findAll() {
+		return (List<Brand>) repo.findAllNotSort();
 	}
 }

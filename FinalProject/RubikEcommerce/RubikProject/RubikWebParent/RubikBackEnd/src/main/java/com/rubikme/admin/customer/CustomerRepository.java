@@ -1,5 +1,7 @@
 package com.rubikme.admin.customer;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
@@ -23,4 +25,7 @@ public interface CustomerRepository extends PagingAndSortingRepository<Customer,
 	public Customer findByEmail(String email);
 	
 	public Long countById(Integer id);
+	
+	@Query("SELECT c FROM Customer c")
+	public List<Customer> findAll();
 }

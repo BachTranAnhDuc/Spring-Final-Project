@@ -1,6 +1,9 @@
 package com.rubikme.admin.customer.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,7 +16,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.admin.customer.CustomerService;
+import com.rubikme.admin.customer.exporter.CustomerCsvExporter;
+import com.rubikme.admin.customer.exporter.CustomerExcelExporter;
+import com.rubikme.admin.customer.exporter.CustomerPDFExporter;
+import com.rubikme.admin.user.export.UserCsvExporter;
+import com.rubikme.admin.user.export.UserExcelExporter;
+import com.rubikme.admin.user.export.UserPdfExporter;
 import com.rubikme.common.entity.Customer;
+import com.rubikme.common.entity.User;
 import com.rubikme.common.exception.CustomerNotFoundException;
 
 @Controller
@@ -55,6 +65,7 @@ public class CustomerController {
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 		model.addAttribute("endCount", endCount);
+		model.addAttribute("title", "Manage Customers");
 		
 		return "customers/customers";
 	}
@@ -117,5 +128,31 @@ public class CustomerController {
 		}
 		
 		return "redirect:/customers";
+	}
+	
+	@GetMapping("/customers/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		List<Customer> listCustomers = service.listAll();
+		
+		CustomerCsvExporter customerCsvExporter = new CustomerCsvExporter();
+		customerCsvExporter.export(listCustomers, response);
+	}
+	
+	@GetMapping("/customers/export/excel")
+	public void exportToExcel(HttpServletResponse response) throws IOException {
+		List<Customer> listCustomers = service.listAll();
+		
+		CustomerExcelExporter customerExcelExporter = new CustomerExcelExporter();
+		
+		customerExcelExporter.export(listCustomers, response);
+	}
+	
+	@GetMapping("/customers/export/pdf")
+	public void exportToPDF(HttpServletResponse response) throws IOException {
+		List<Customer> listCustomers = service.listAll();
+		
+		CustomerPDFExporter customerPdfExporter = new CustomerPDFExporter();
+		
+		customerPdfExporter.export(listCustomers, response);
 	}
 }

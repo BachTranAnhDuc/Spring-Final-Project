@@ -12,6 +12,7 @@
    		
 		<div class="content-body">
 			
+			<th:block sec:authorize="hasAuthority('Admin')">
 			<div class="row mt-4 mx-5">
 			    <div class="col-lg-3">
 			      <div class="circle-tile">
@@ -87,6 +88,69 @@
 			      </div>
 			    </div> 
 			</div> 
+			</th:block>
+			
+			<!-- Salesperson -->
+			<th:block sec:authorize="hasAuthority('Salesperson')">
+			<div class="row mt-4 mx-5">
+			    <div class="col-lg-4">
+			      <div class="circle-tile">
+			        <a href="#">
+			        	<div class="circle-tile-heading dark-blue">
+			        		<i class="fab fa-shopify fa-fw fa-3x mt-3 text-white"></i>
+			        	</div>
+			        </a>
+			        
+			        <div class="circle-tile-content dark-blue">
+			          <div class="circle-tile-description text-faded">Total Products</div>
+			          <div class="circle-tile-number text-faded ">
+			          	[[${totalProducts}]]
+			          </div>
+			          <a class="circle-tile-footer" th:href="@{'/products'}">More Info 
+			          	<i class="fa fa-chevron-circle-right"></i>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+     
+			    <div class="col-lg-4">
+			      <div class="circle-tile ">
+			        <a href="#">
+			        	<div class="circle-tile-heading green">
+			        		<i class="fas fa-gem fa-fw fa-3x mt-3"></i>
+			        	</div>
+			        </a>
+			        
+			        <div class="circle-tile-content green">
+			          <div class="circle-tile-description text-faded">Total Orders</div>
+			          <div class="circle-tile-number text-faded ">
+			          	[[${totalOrders}]]
+			          </div>
+			          <a class="circle-tile-footer" th:href="@{'/orders'}">More Info 
+			          	<i class="fa fa-chevron-circle-right"></i>
+			          </a>
+			        </div>
+			      </div>
+			    </div> 
+     
+			    <div class="col-lg-4">
+			      <div class="circle-tile ">
+			        <a href="#">
+			        	<div class="circle-tile-heading red">
+			        		<i class="fas fa-store fa-fw mt-3 fa-3x text-white"></i>
+			        	</div>
+			        </a>
+			        <div class="circle-tile-content red">
+			          <div class="circle-tile-description text-faded">Total Brands</div>
+			          <div class="circle-tile-number text-faded ">
+			          	[[${totalBrands}]]
+			          </div>
+			          <a class="circle-tile-footer" th:href="@{'/brands'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
+			        </div>
+			      </div>
+			    </div> 
+			</div> 
+			</th:block>
 			
 			<div class="row mx-5 my-5">
 				<div class="col">
@@ -95,26 +159,10 @@
 				</div>
 			</div>
 			
+			<th:block sec:authorize="hasAuthority('Admin')">
 			<div class="row mt-5 mx-5">
-		      <div class="col-xl-3 col-sm-6 col-12"> 
-		        <div class="card">
-		          <div class="card-content">
-		            <div class="card-body">
-		              <div class="media d-flex">
-		                <div class="align-self-center">
-		                  <i class="fas fa-pen-fancy primary font-large-2 float-left"></i>
-		                </div>
-		                <div class="media-body text-right">
-		                  <h3>278</h3>
-		                  <span>New Posts</span>
-		                </div>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
 		      
-		      <div class="col-xl-3 col-sm-6 col-12">
+		      <div class="col-xl-4 col-sm-6 col-12">
 		        <div class="card">
 		          <div class="card-content">
 		            <div class="card-body">
@@ -123,8 +171,8 @@
 		                  <i class="far fa-keyboard font-large-2 float-left"></i>
 		                </div>
 		                <div class="media-body text-right">
-		                  <h3>156</h3>
-		                  <span>New Comments</span>
+		                  <h3>[[${totalReviews}]]</h3>
+		                  <span>Reviews</span>
 		                </div>
 		              </div>
 		            </div>
@@ -132,7 +180,7 @@
 		        </div>
 		      </div>
 		      
-		      <div class="col-xl-3 col-sm-6 col-12">
+		      <div class="col-xl-4 col-sm-6 col-12">
 		        <div class="card">
 		          <div class="card-content">
 		            <div class="card-body">
@@ -142,7 +190,7 @@
 		                </div>
 		                <div class="media-body text-right">
 		                  <h3>64.89 %</h3>
-		                  <span>Bounce Rate</span>
+		                  <span>Counting</span>
 		                </div>
 		              </div>
 		            </div>
@@ -150,7 +198,7 @@
 		        </div>
 		      </div>
 		      
-		      <div class="col-xl-3 col-sm-6 col-12">
+		      <div class="col-xl-4 col-sm-6 col-12">
 		        <div class="card">
 		          <div class="card-content">
 		            <div class="card-body">
@@ -159,7 +207,7 @@
 		                  <i class="fas fa-street-view danger font-large-2 float-left"></i>
 		                </div>
 		                <div class="media-body text-right">
-		                  <h3>423</h3>
+		                  <h3>[[${totalCustomers}]]</h3>
 		                  <span>Total Visits</span>
 		                </div>
 		              </div>
@@ -168,7 +216,9 @@
 		        </div>
 		      </div>
 		    </div>
+		    </th:block>
 		    
+		    <th:block sec:authorize="hasAuthority('Admin')">
 		    <div class="row mt-5 mx-5">
 			    <div class="col-xl-6 col-md-12">
 			      <div class="card overflow-hidden">
@@ -212,9 +262,10 @@
 			      </div>
 			    </div>
 			  </div>
+			  </th:block>
 		</div><!-- content-body -->
 		
-		<div th:replace="front_fragments :: footer_frag"></div>
+		<div th:replace="front_fragments :: footer_final"></div>
 		
 	</div><!-- content -->
 	

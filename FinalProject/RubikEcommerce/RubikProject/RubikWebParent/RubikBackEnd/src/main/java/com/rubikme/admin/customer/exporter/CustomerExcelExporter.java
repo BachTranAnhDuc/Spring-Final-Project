@@ -1,7 +1,6 @@
-package com.rubikme.admin.brand.exporter;
+package com.rubikme.admin.customer.exporter;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletOutputStream;
@@ -16,20 +15,19 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.rubikme.admin.exporter.AbstractExporter;
-import com.rubikme.common.entity.Brand;
-import com.rubikme.common.entity.Category;
+import com.rubikme.common.entity.Customer;
 
-public class BrandExcelExporter extends AbstractExporter{
+public class CustomerExcelExporter extends AbstractExporter{
 	
 	private XSSFWorkbook workbook;
 	private XSSFSheet sheet;
 	
-	public BrandExcelExporter() {
+	public CustomerExcelExporter() {
 		workbook = new XSSFWorkbook();
 	}
 	
 	private void writeHeaderLine() {
-		sheet = workbook.createSheet("Brands");
+		sheet = workbook.createSheet("Customers");
 		XSSFRow row = sheet.createRow(0);
 		
 		XSSFCellStyle cellStyle = workbook.createCellStyle();
@@ -38,9 +36,13 @@ public class BrandExcelExporter extends AbstractExporter{
 		font.setFontHeight(16);
 		cellStyle.setFont(font);
 		
-		createCell(row, 0, "Brand ID", cellStyle);
-		createCell(row, 1, "Brand Name", cellStyle);
-		createCell(row, 2, "Categories", cellStyle);		
+		createCell(row, 0, "Customer ID", cellStyle);
+		createCell(row, 1, "E-mail", cellStyle);
+		createCell(row, 2, "First Name", cellStyle);	
+		createCell(row, 3, "Last name", cellStyle);	
+		createCell(row, 4, "Phone Number", cellStyle);
+		createCell(row, 5, "Address", cellStyle);		
+		createCell(row, 6, "Enabled", cellStyle);	
 	}
 	
 	private void createCell(XSSFRow row, int columnIndex, Object value, CellStyle style) {		
@@ -60,7 +62,7 @@ public class BrandExcelExporter extends AbstractExporter{
 		cell.setCellStyle(style);
 	}
 	
-	private void writeDataLine(List<Brand> listBrands) {
+	private void writeDataLine(List<Customer> listCustomers) {
 		int rowIndex = 1;
 		
 		XSSFCellStyle cellStyle = workbook.createCellStyle();
@@ -68,21 +70,25 @@ public class BrandExcelExporter extends AbstractExporter{
 		font.setFontHeight(14);
 		cellStyle.setFont(font);
 		
-		for (Brand brand : listBrands) {
+		for (Customer customer : listCustomers) {
 			XSSFRow row = sheet.createRow(rowIndex++);
 			int columnIndex = 0;
 			
-			createCell(row, columnIndex++, brand.getId(), cellStyle);
-			createCell(row, columnIndex++, brand.getName(), cellStyle);
-			createCell(row, columnIndex++, brand.getCategories().toString(), cellStyle);
+			createCell(row, columnIndex++, customer.getId(), cellStyle);
+			createCell(row, columnIndex++, customer.getEmail(), cellStyle);
+			createCell(row, columnIndex++, customer.getFirstName(), cellStyle);
+			createCell(row, columnIndex++, customer.getLastName(), cellStyle);
+			createCell(row, columnIndex++, customer.getPhoneNumber(), cellStyle);
+			createCell(row, columnIndex++, customer.getAddressLine(), cellStyle);
+			createCell(row, columnIndex++, customer.isEnabled(), cellStyle);
 		}
 	}
 	
-	public void export(List<Brand> listBrands, HttpServletResponse response) throws IOException {
-		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "Brands_");
+	public void export(List<Customer> listCustomers, HttpServletResponse response) throws IOException {
+		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "Customers_");
 		
 		writeHeaderLine();
-		writeDataLine(listBrands);
+		writeDataLine(listCustomers);
 		
 		
 		

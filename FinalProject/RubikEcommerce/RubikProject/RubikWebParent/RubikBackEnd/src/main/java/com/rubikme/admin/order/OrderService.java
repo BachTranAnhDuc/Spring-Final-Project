@@ -77,4 +77,10 @@ public class OrderService {
 			repo.save(orderInDb);
 		}
 	}
+	
+	public List<Order> listAll() {
+		List<Order> listOrders = repo.findAll();
+		
+		return listOrders;
+	}
 }

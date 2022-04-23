@@ -1,5 +1,7 @@
 package com.rubikme.admin.order;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -17,4 +19,7 @@ public interface OrderRepository extends PagingAndSortingRepository<Order, Integ
 	public Page<Order> findAll(String keyword, Pageable pageable);
 	
 	public long countById(Integer id);
+	
+	@Query("SELECT o FROM Order o")
+	public List<Order> findAll();
 }

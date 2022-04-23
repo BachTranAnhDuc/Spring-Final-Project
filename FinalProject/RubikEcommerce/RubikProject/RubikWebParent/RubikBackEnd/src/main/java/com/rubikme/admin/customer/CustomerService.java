@@ -1,5 +1,6 @@
 package com.rubikme.admin.customer;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
@@ -89,5 +90,9 @@ public class CustomerService {
 		}
 		
 		customerRepo.deleteById(id);
+	}
+	
+	public List<Customer> listAll() {
+		return customerRepo.findAll();
 	}
 }

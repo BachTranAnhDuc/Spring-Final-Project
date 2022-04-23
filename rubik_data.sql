@@ -1227,6 +1227,12 @@ insert into settings value('CUSTOMER_VERIFY_CONTENT', 'MAIL_TEMPLATES', 'Hi,&nbs
 insert into customers value(1, 'Ton Duc Thang University', null, 'anhduc@gmail.com', 1, 'Duc', 'Bach Tran Anh', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '111111111', '123456', null, null);
 insert into customers value(2, 'Ton Duc Thang University', null, 'anhduc1@gmail.com', 0, 'Duc', 'Bach Tran Anh', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '111111111', '123456', null, null);
 insert into customers value(3, 'Ton Duc Thang University', null, 'anhduc2@gmail.com', 1, 'Duc', 'Bach Tran Anh', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '111111111', '123456', null, null);
+insert into customers value(6, '28 Binh Thanh', '2022-04-20', 'customer01@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(7, 'Dakao Quan 1', '2022-04-20', 'customer02@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(8, 'Quan 4', '2022-04-20', 'customer03@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(9, 'Quan 5', '2022-04-20', 'customer04@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(10, 'Quan 6', '2022-04-20', 'customer05@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+
 
 -- Address
 insert into addresses value(1, '24, Vinh Phu, Thuan An, Binh Duong', 0, 1);
@@ -1314,6 +1320,8 @@ update products set review_count = 0, average_rating = 0 where id = 65;
 update products set review_count = 0, average_rating = 0 where id = 66;
 update products set review_count = 0, average_rating = 0 where id = 67;
 
+update users set password = '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi' where id = 7;
+
 
 
 
@@ -1331,6 +1339,8 @@ select * from order_details;
 select * from products;
 select * from currencies;
 select * from reviews;
+select * from categories;
+select * from brands;
 use rubikdb;
 
 delete from settings where `key` = 'SITE_LOGO';

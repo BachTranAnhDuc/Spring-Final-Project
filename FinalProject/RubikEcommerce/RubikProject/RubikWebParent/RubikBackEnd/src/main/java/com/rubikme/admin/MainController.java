@@ -12,11 +12,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.rubikme.admin.brand.BrandService;
 import com.rubikme.admin.category.CategoryService;
+import com.rubikme.admin.customer.CustomerService;
+import com.rubikme.admin.order.OrderService;
 import com.rubikme.admin.product.ProductService;
+import com.rubikme.admin.review.ReviewService;
 import com.rubikme.admin.user.UserService;
 import com.rubikme.common.entity.Brand;
 import com.rubikme.common.entity.Category;
+import com.rubikme.common.entity.Customer;
+import com.rubikme.common.entity.Order;
 import com.rubikme.common.entity.Product;
+import com.rubikme.common.entity.Review;
 import com.rubikme.common.entity.User;
 
 @Controller
@@ -34,6 +40,15 @@ public class MainController {
 	@Autowired
 	private ProductService productService;
 	
+	@Autowired
+	private OrderService orderService;
+	
+	@Autowired
+	private ReviewService reviewService;
+	
+	@Autowired
+	private CustomerService customerService;
+	
 	@GetMapping("")
 	public String viewHomePage(Model model) {
 		
@@ -41,11 +56,17 @@ public class MainController {
 		List<Category> listCategories = categoryService.listAllCategory();
 		List<Brand> listBrands = brandService.listAll();
 		List<Product> listProducts = productService.listAll();
+		List<Order> listOrders = orderService.listAll();
+		List<Review> listReviews = reviewService.findAll();
+		List<Customer> listCustomers = customerService.listAll();
 		
 		Integer countUsers = listUsers.size();
 		Integer countCategories = listCategories.size();
 		Integer countBrands = listBrands.size();
 		Integer countProducts = listProducts.size();
+		Integer countOrders = listOrders.size();
+		Integer countReviews = listReviews.size();
+		Integer countCustomers = listCustomers.size();
 		
 		
 		model.addAttribute("title", "Homepage");
@@ -54,6 +75,9 @@ public class MainController {
 		model.addAttribute("totalBrands", countBrands);
 		model.addAttribute("totalCategories", countCategories);
 		model.addAttribute("totalProducts", countProducts);
+		model.addAttribute("totalOrders", countOrders);
+		model.addAttribute("totalReviews", countReviews);
+		model.addAttribute("totalCustomers", countCustomers);
 		
 		return "index";
 	}
