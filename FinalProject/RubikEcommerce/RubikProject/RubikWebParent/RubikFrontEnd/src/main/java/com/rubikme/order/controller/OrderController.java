@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.Utility;
+import com.rubikme.cart.CartShoppingService;
+import com.rubikme.common.entity.CartItem;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Order;
 import com.rubikme.common.entity.OrderDetail;
@@ -41,6 +43,9 @@ public class OrderController {
 	@Autowired
 	private ReviewService reviewService;
 	
+	@Autowired
+	private CartShoppingService cartService;
+	
 	@GetMapping("/orders")
 	public String listFirstPage(Model model, HttpServletRequest request, @AuthenticationPrincipal CustomerUserDetails loggerUser) {
 		
@@ -58,6 +63,9 @@ public class OrderController {
 			@AuthenticationPrincipal CustomerUserDetails loggerUser){
 		
 		Customer customer = getCustomerAuthentication(request);
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		int countCartItems = listCartItems.size();
 		
 		Page<Order> pageOrder = orderService.listOrderByPage(customer, pageNum, sortField, sortDir, keyword);
 		List<Order> listOrders = pageOrder.getContent();
@@ -82,6 +90,7 @@ public class OrderController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("moduleURL", "/orders");
+		model.addAttribute("countCartItems", countCartItems);
 		
 		model.addAttribute("headerTitle", "/orders");
 		
@@ -103,6 +112,9 @@ public class OrderController {
 	public String viewOrderDetail(@PathVariable("id") Integer id, Model model,
 			RedirectAttributes ra, HttpServletRequest request, @AuthenticationPrincipal CustomerUserDetails loggerUser) {
 		Customer customer = getCustomerAuthentication(request);
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		int countCartItems = listCartItems.size();
 			
 		Order order = orderService.getOrder(id, customer);
 		
@@ -110,6 +122,7 @@ public class OrderController {
 		
 		loadCurrencySetting(request);
 		model.addAttribute("order", order);
+		model.addAttribute("countCartItems", countCartItems);
 			
 		return "orders/order_details_modal";
 	}

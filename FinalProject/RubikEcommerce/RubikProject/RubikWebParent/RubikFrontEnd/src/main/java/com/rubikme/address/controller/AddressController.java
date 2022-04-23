@@ -14,7 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.Utility;
 import com.rubikme.address.AddressService;
+import com.rubikme.cart.CartShoppingService;
 import com.rubikme.common.entity.Address;
+import com.rubikme.common.entity.CartItem;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.customer.CustomerService;
 
@@ -23,8 +25,12 @@ public class AddressController {
 	
 	@Autowired
 	private AddressService addressService;
+	
 	@Autowired 
 	private CustomerService customerService;	
+	
+	@Autowired
+	private CartShoppingService cartService;
 	
 	@GetMapping("/address")
 	public String showAddressBook(Model model, HttpServletRequest request) {
@@ -39,9 +45,14 @@ public class AddressController {
 			}
 		}
 		
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		int countCartItems = listCartItems.size();
+		
 		model.addAttribute("listAddresses", listAddresses);
 		model.addAttribute("customer", customer);
 		model.addAttribute("usePrimaryAddressAsDefault", usePrimaryAddressAsDefault);
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "address/addresses";
 	}

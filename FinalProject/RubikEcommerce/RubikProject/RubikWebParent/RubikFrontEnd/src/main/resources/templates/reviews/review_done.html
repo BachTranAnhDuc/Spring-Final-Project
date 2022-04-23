@@ -37,15 +37,15 @@
 							Your Review has been posted
 						</h3>
 						
-						<p>
+						<p class="mt-3">
 							<input type="text" th:value="${review.rating}" class="product-rating-star" dir="ltr" data-size="md" />
 						</p>
 						
-						<p>
+						<p class="mt-3"> 
 							<input type="text" th:value="${review.headline}" class="form-control" readonly="readonly" />
 			 			</p>
 			 			
-			 			<p>
+			 			<p class="mt-3">
 			 				<textarea rows="3" cols="10" class="form-control" readonly="readonly">[[${review.comment}]]</textarea>
 			 			</p>
 					</div>

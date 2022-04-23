@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.rubikme.Utility;
+import com.rubikme.cart.CartShoppingService;
 import com.rubikme.category.CategoryService;
+import com.rubikme.common.entity.CartItem;
 import com.rubikme.common.entity.Category;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Product;
@@ -38,18 +40,27 @@ public class ProductController {
 	@Autowired
 	private CustomerService customerService;
 	
+	@Autowired
+	private CartShoppingService cartService;
+	
 	@GetMapping("/c/{category_alias}")
 	public String viewCategoryFirstPage(@PathVariable("category_alias") String alias,
-			Model model) {
-		return viewCategoryByPage(alias, 1, model);
+			Model model, HttpServletRequest request) {
+		return viewCategoryByPage(alias, 1, model, request);
 	}
 	
 	@GetMapping("/c/{category_alias}/page/{pageNum}")
 	public String viewCategoryByPage(@PathVariable("category_alias") String alias,
 			@PathVariable("pageNum") int pageNum,
-			Model model) {
+			Model model, HttpServletRequest request) {
 		
 		try {
+			
+			Customer customer = getAuthenticationCustomer(request);
+			List<CartItem> listCartItems = cartService.listCartItems(customer);
+			
+			int countCartItems = listCartItems.size();
+			
 			Category category;
 			
 			category = categoryService.getCategory(alias);
@@ -75,6 +86,7 @@ public class ProductController {
 			model.addAttribute("listCategoryParents", listCategoryParents);
 			model.addAttribute("listProducts", listProducts);
 			model.addAttribute("category", category);
+			model.addAttribute("countCartItems", countCartItems);
 			
 			return "product/product_by_category";
 		} 
@@ -85,14 +97,14 @@ public class ProductController {
 	}
 	
 	@GetMapping("/products")
-	public String viewProduct(Model model) {
+	public String viewProduct(Model model, HttpServletRequest request) {
 			
-		return viewProductByPage(model, 1);
+		return viewProductByPage(model, 1, request);
 	}
 	
 	@GetMapping("/products/page/{pageNum}")
 	public String viewProductByPage(Model model,
-			@PathVariable("pageNum") int pageNum) {
+			@PathVariable("pageNum") int pageNum, HttpServletRequest request) {
 		
 		Page<Product> pageProducts = productService.listProductByPage(pageNum);
 		List<Product> listResult = pageProducts.getContent();
@@ -103,6 +115,11 @@ public class ProductController {
 			endCount = pageProducts.getTotalElements();
 		}
 		
+		Customer customer = getAuthenticationCustomer(request);		
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		int countCartItems = listCartItems.size();
+		
 		model.addAttribute("listProducts", listResult);
 		model.addAttribute("currentPage", pageNum);
 		model.addAttribute("totalPages", pageProducts.getTotalPages());
@@ -110,6 +127,7 @@ public class ProductController {
 		model.addAttribute("endCount", endCount);
 		model.addAttribute("totalItems", pageProducts.getTotalElements());
 		model.addAttribute("title", "Product");
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "product/products";
 	}
@@ -141,6 +159,10 @@ public class ProductController {
 			}
 			
 			Review review = new Review();
+				
+			List<CartItem> listCartItems = cartService.listCartItems(customer);
+			
+			int countCartItems = listCartItems.size();
 			
 //			Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
 //			List<Review> listReviews = page.getContent();
@@ -163,10 +185,8 @@ public class ProductController {
 			model.addAttribute("title", product.getShortName());
 			model.addAttribute("product", product);
 			model.addAttribute("review", review);
-			
-			
-		
-			
+			model.addAttribute("countCartItems", countCartItems);
+					
 			return "product/product_detail";
 		}
 		catch (ProductNotFoundException e) {
@@ -176,14 +196,14 @@ public class ProductController {
 	
 	@GetMapping("/search")
 	public String searchFirstPage(@Param("keyword") String keyword,
-			Model model) {
-		 return searchByPage(keyword, model, 1);
+			Model model, HttpServletRequest request) {
+		 return searchByPage(keyword, model, 1, request);
 	}
 	
 	@GetMapping("/search/page/{pageNum}")
 	public String searchByPage(@Param("keyword") String keyword,
 			Model model,
-			@PathVariable("pageNum") int pageNum) {
+			@PathVariable("pageNum") int pageNum, HttpServletRequest request) {
 		
 		Page<Product> pageProducts = productService.search(keyword, pageNum);
 		List<Product> listResult = pageProducts.getContent();
@@ -194,6 +214,11 @@ public class ProductController {
 			endCount = pageProducts.getTotalElements();
 		}
 		
+		Customer customer = getAuthenticationCustomer(request);		
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		int countCartItems = listCartItems.size();
+		
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("listProducts", listResult);
 		model.addAttribute("currentPage", pageNum);
@@ -202,6 +227,7 @@ public class ProductController {
 		model.addAttribute("endCount", endCount);
 		model.addAttribute("totalItems", pageProducts.getTotalElements());
 		model.addAttribute("title", keyword + " - Search Result");
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "product/product_result";
 	}

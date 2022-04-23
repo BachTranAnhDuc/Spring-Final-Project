@@ -45,6 +45,8 @@ public class CheckOutController {
 		Address addressDefault = addressService.getDefaultAddressByCustomer(customer);
 		CheckOutInfo checkoutInfo = checkoutService.prepareCheckout(listCartItems);
 		
+		int countCartItems = listCartItems.size();
+		
 		
 		if (addressDefault != null) {
 			model.addAttribute("shippingAddress", addressDefault);
@@ -57,6 +59,7 @@ public class CheckOutController {
 		model.addAttribute("listCartItems", listCartItems);
 		model.addAttribute("customer", customer);
 		model.addAttribute("checkoutInfo", checkoutInfo);
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "checkout/checkout";
 	}
@@ -80,6 +83,7 @@ public class CheckOutController {
 		
 		List<CartItem> listCartItems = cartService.listCartItems(customer);
 		CheckOutInfo checkoutInfo = checkoutService.prepareCheckout(listCartItems);
+		int countCartItems = listCartItems.size();
 		
 		orderSerive.createOrder(customer, addressDefault, listCartItems, paymentMethod, checkoutInfo);
 		cartService.deleteByCustomer(customer);
@@ -87,6 +91,7 @@ public class CheckOutController {
 		
 		model.addAttribute("listCartItems", listCartItems);
 		model.addAttribute("checkoutInfo", checkoutInfo);
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "checkout/order_completed";
 	}
@@ -102,6 +107,7 @@ public class CheckOutController {
 		
 		List<CartItem> listCartItems = cartService.listCartItems(customer);
 		CheckOutInfo checkoutInfo = checkoutService.prepareCheckout(listCartItems);
+		int countCartItems = listCartItems.size();
 		
 		orderSerive.createOrderCreditCard(customer, addressDefault, listCartItems, paymentMethod, checkoutInfo);
 		cartService.deleteByCustomer(customer);
@@ -109,6 +115,7 @@ public class CheckOutController {
 		
 		model.addAttribute("listCartItems", listCartItems);
 		model.addAttribute("checkoutInfo", checkoutInfo);
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "checkout/order_completed";
 	}

@@ -37,6 +37,9 @@ public class CartShoppingController {
 		Customer customer = getEmailByCustomer(request);
 		
 		List<CartItem> listCartItems = cartService.listCartItems(customer);
+	
+		
+		int countCartItems = listCartItems.size();
 		
 		float totalAllPrice = 0;
 		
@@ -55,6 +58,7 @@ public class CartShoppingController {
 		model.addAttribute("usePrimaryAddressAsDefault", usePrimaryAddressAsDefault);
 		model.addAttribute("listCartItems", listCartItems);
 		model.addAttribute("totalAllPrice", totalAllPrice);
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "cart/shopping_cart";
 	}
@@ -90,10 +94,13 @@ public class CartShoppingController {
 			}
 		}
 		
+		int countCartItems = listCartItems.size();
+		
 		
 		model.addAttribute("usePrimaryAddressAsDefault", usePrimaryAddressAsDefault);
 		model.addAttribute("listCartItems", listCartItems);
 		model.addAttribute("totalAllPrice", totalAllPrice);
+		model.addAttribute("countCartItems", countCartItems);
 		
 		return "cart/shopping_cart";
 	}

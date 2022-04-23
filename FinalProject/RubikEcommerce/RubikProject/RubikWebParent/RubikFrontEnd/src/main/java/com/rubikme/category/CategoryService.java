@@ -41,6 +41,16 @@ public class CategoryService {
 		return category;
 	}
 	
+	public Category getCategoryById(Integer id) throws CategoryNotFoundException {
+		Category category = repo.findById(id).get();
+		
+		if (category == null) {
+			throw new CategoryNotFoundException("Could not find any categories with ID " + id);
+		}
+		
+		return category;
+	}
+	
 	public List<Category> getCategoryParents(Category child) {
 		List<Category> listParents = new ArrayList<>();
 		

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubikme.Utility;
+import com.rubikme.cart.CartShoppingService;
+import com.rubikme.common.entity.CartItem;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.Review;
@@ -35,6 +37,9 @@ public class ReviewController {
 	@Autowired
 	private ProductService productService;
 	
+	@Autowired 
+	private CartShoppingService cartService;
+	
 	@GetMapping("/reviews")
 	public String listFirstPage(Model model, HttpServletRequest request) {
 		return listReviewByCustomerByPage(model, request, 1, null, "reviewTime", "desc");
@@ -48,6 +53,10 @@ public class ReviewController {
 		Page<Review> page = reviewService.listByCustomerPage(customer, keyword, pageNum, sortField, sortDir);
 		List<Review> listReviews = page.getContent();
 		
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		int countCartItems = listCartItems.size();
+		
 		model.addAttribute("totalPages", page.getTotalPages());
 		model.addAttribute("totalItems", page.getTotalElements());
 		model.addAttribute("currentPage", pageNum);
@@ -56,6 +65,7 @@ public class ReviewController {
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 		model.addAttribute("headerTitle", "/reviews");
+		model.addAttribute("countCartItems", countCartItems);
 		
 		model.addAttribute("listReviews", listReviews);
 		
@@ -78,10 +88,14 @@ public class ReviewController {
 	public String viewReview(@PathVariable("id") Integer id, Model model,
 			RedirectAttributes ra, HttpServletRequest request) {
 		Customer customer = getCustomer(request);
+		List<CartItem> listCartItems = cartService.listCartItems(customer);
+		
+		int countCartItems = listCartItems.size();
 		
 		try {
 			Review review = reviewService.getCustomerAndId(customer, id);
 			model.addAttribute("review", review);
+			model.addAttribute("countCartItems", countCartItems);
 			
 			return "reviews/review_detail_modal";
 		}

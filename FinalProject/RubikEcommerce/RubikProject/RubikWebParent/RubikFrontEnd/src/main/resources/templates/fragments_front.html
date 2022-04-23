@@ -81,10 +81,6 @@
 							</a>
 						</th:block>
 
-						<a th:href="@{/register}" class="flex-c-m trans-04 p-lr-25">
-							Register
-						</a>
-
 						<a th:href="@{/login}" class="flex-c-m trans-04 p-lr-25">
 							Login
 						</a>
@@ -150,11 +146,9 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="2">
-							<a th:href="@{/cart}">
-								<i class="zmdi zmdi-shopping-cart"></i>
-							</a>
-						</div>
+						<a th:href="@{/cart}" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" th:data-notify="@{${countCartItems}}">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</a>
 
 						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
@@ -230,14 +224,6 @@
 			<ul class="main-menu-m">
 				<li>
 					<a href="index.html">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="index.html">Homepage 1</a></li>
-						<li><a href="home-02.html">Homepage 2</a></li>
-						<li><a href="home-03.html">Homepage 3</a></li>
-					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
 				</li>
 
 				<li>
@@ -452,16 +438,17 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-01.jpg" alt="IMG-BANNER">
+						<img th:src="@{${cate1.getImagePath}}" alt="IMG-BANNER"
+							class="h-50 opacity-25">
 
 						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
+									Standar Rubik
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Rubik 2022
 								</span>
 							</div>
 
@@ -477,16 +464,16 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-02.jpg" alt="IMG-BANNER">
+						<img th:src="@{${cate2.getImagePath}}" alt="IMG-BANNER">
 
 						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
+									Rubik Variant
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Rubik 2022
 								</span>
 							</div>
 
@@ -502,7 +489,7 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-03.jpg" alt="IMG-BANNER">
+						<img th:src="@{${cate3.getImagePath}}" alt="IMG-BANNER" class="">
 
 						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
@@ -511,7 +498,7 @@
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									New Trend
+									New accessories
 								</span>
 							</div>
 

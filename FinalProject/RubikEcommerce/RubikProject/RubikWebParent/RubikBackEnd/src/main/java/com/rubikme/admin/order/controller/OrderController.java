@@ -36,7 +36,7 @@ public class OrderController {
 		
 		model.addAttribute("title", "Manage Order");
 		
-		return listByPage(1, model, "id", "asc", null, request, loggerUser);
+		return listByPage(1, model, "orderTime", "desc", null, request, loggerUser);
 		
 		//return "redirect:/orders/page/1?sortField=orderTime&sortDir=desc";
 	}
@@ -105,7 +105,7 @@ public class OrderController {
 		}
 		catch (OrderNotFoundException ex) {
 			ra.addFlashAttribute("message", ex.getMessage());
-			return listByPage(1, model, "id", "asc", null, request, loggerUser);
+			return listByPage(1, model, "orderTime", "desc", null, request, loggerUser);
 		}
 	}
 	
@@ -120,6 +120,6 @@ public class OrderController {
 			ra.addFlashAttribute("message", ex.getMessage());
 		}
 		
-		return listByPage(1, model, "id", "asc", null, request, loggerUser);
+		return listByPage(1, model, "orderTime", "desc", null, request, loggerUser);
 	}
 }
