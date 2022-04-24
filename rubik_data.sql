@@ -1323,6 +1323,8 @@ update products set review_count = 0, average_rating = 0 where id = 67;
 update users set password = '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi' where id = 7;
 
 
+update orders set address_deliver = 'Vinh Phu 24' where id = 1;
+update orders set address_deliver = 'Vinh Phu 24' where id = 2;
 update orders set address_deliver = 'Vinh Phu 24' where id = 3;
 update orders set address_deliver = 'Vinh Phu 24' where id = 4;
 update orders set address_deliver = 'Vinh Phu 24' where id = 5;

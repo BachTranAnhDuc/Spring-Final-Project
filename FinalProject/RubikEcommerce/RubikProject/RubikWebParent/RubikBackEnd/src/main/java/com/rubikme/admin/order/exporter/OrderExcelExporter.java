@@ -63,6 +63,12 @@ public class OrderExcelExporter extends AbstractExporter{
 		else if (value instanceof Boolean) {
 			cell.setCellValue((Boolean) value);
 		} 
+		else if (value instanceof Date) {
+			cell.setCellValue((Date) value);
+		}
+		else if (value instanceof Float) {
+			cell.setCellValue((Float) value);
+		}
 		else {
 			cell.setCellValue((String) value);
 		}
@@ -84,10 +90,10 @@ public class OrderExcelExporter extends AbstractExporter{
 			
 			createCell(row, columnIndex++, order.getId(), cellStyle);
 			createCell(row, columnIndex++, order.getAddressFinal(), cellStyle);
-			createCell(row, columnIndex++, order.getOrderTime().toString(), cellStyle);
+			createCell(row, columnIndex++, order.getOrderTime(), cellStyle);
 			createCell(row, columnIndex++, order.getPaymentMethod().toString(), cellStyle);
 			createCell(row, columnIndex++, order.getSubtotal(), cellStyle);
-			createCell(row, columnIndex++, order.getStatus(), cellStyle);
+			createCell(row, columnIndex++, order.getStatus().toString(), cellStyle);
 			createCell(row, columnIndex++, order.getDeliverDays(), cellStyle);
 			createCell(row, columnIndex++, order.getDeliverDate().toString(), cellStyle);
 		}
