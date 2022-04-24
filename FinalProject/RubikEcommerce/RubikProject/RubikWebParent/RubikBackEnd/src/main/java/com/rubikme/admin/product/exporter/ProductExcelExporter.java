@@ -13,8 +13,12 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.rubikme.admin.exporter.AbstractExporter;
+import com.rubikme.admin.order.OrderService;
+import com.rubikme.common.entity.Order;
+import com.rubikme.common.entity.OrderDetail;
 import com.rubikme.common.entity.Product;
 
 public class ProductExcelExporter extends AbstractExporter{
@@ -47,6 +51,10 @@ public class ProductExcelExporter extends AbstractExporter{
 		createCell(row, 9, "Discount Percent", cellStyle);
 		createCell(row, 10, "Total comment", cellStyle);
 		createCell(row, 11, "Average Rate", cellStyle);
+		createCell(row, 12, "Total Quantity Sells", cellStyle);
+		createCell(row, 13, "Total Price Sells", cellStyle);
+		createCell(row, 14, "Revenue Quantity", cellStyle);
+		createCell(row, 15, "Revenue Price", cellStyle);
 	}
 	
 	private void createCell(XSSFRow row, int columnIndex, Object value, CellStyle style) {		
@@ -59,6 +67,9 @@ public class ProductExcelExporter extends AbstractExporter{
 		else if (value instanceof Boolean) {
 			cell.setCellValue((Boolean) value);
 		} 
+		else if (value instanceof Float) {
+			cell.setCellValue((Float) value);
+		}
 		else {
 			cell.setCellValue((String) value);
 		}
@@ -66,7 +77,7 @@ public class ProductExcelExporter extends AbstractExporter{
 		cell.setCellStyle(style);
 	}
 	
-	private void writeDataLine(List<Product> listProducts) {
+	private void writeDataLine(List<Product> listProducts, List<Order> listOrders) {
 		int rowIndex = 1;
 		
 		XSSFCellStyle cellStyle = workbook.createCellStyle();
@@ -74,9 +85,31 @@ public class ProductExcelExporter extends AbstractExporter{
 		font.setFontHeight(14);
 		cellStyle.setFont(font);
 		
+		XSSFRow row = null;
+		
+		int revenue = 0;
+		int revenueProduct = 0;
+		
 		for (Product product : listProducts) {
-			XSSFRow row = sheet.createRow(rowIndex++);
+			
+			row = sheet.createRow(rowIndex++);
+			
 			int columnIndex = 0;
+						
+			int countQuantity = 0;
+			int totalPrices = 0;
+			
+			for (Order order : listOrders) {				
+				
+				for (OrderDetail orderDetail : order.getOrderDetails()) {
+					if (product.getId() == orderDetail.getProduct().getId()) {
+						countQuantity += orderDetail.getQuantity();
+						totalPrices += orderDetail.getSubtotal();
+						revenue += orderDetail.getSubtotal();
+						revenueProduct += orderDetail.getQuantity();
+					}
+				}
+			}
 			
 			createCell(row, columnIndex++, product.getId(), cellStyle);
 			createCell(row, columnIndex++, product.getName(), cellStyle);
@@ -90,14 +123,20 @@ public class ProductExcelExporter extends AbstractExporter{
 			createCell(row, columnIndex++, product.getDiscountPercent(), cellStyle);
 			createCell(row, columnIndex++, product.getReviewCount(), cellStyle);
 			createCell(row, columnIndex++, product.getAverageRating(), cellStyle);
+			createCell(row, columnIndex++, countQuantity, cellStyle);
+			createCell(row, columnIndex++, totalPrices, cellStyle);
+			
 		}
+		
+		createCell(row, 14, revenueProduct, cellStyle);
+		createCell(row, 15, revenue, cellStyle);
 	}
 	
-	public void export(List<Product> listProducts, HttpServletResponse response) throws IOException {
+	public void export(List<Product> listProducts, List<Order> listOrders, HttpServletResponse response) throws IOException {
 		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "Products_");
 		
 		writeHeaderLine();
-		writeDataLine(listProducts);
+		writeDataLine(listProducts, listOrders);
 		
 		
 		ServletOutputStream outputStream = response.getOutputStream();

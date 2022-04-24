@@ -28,6 +28,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.rubikme.admin.FileUploadUtil;
 import com.rubikme.admin.brand.BrandService;
 import com.rubikme.admin.category.CategoryService;
+import com.rubikme.admin.order.OrderService;
 import com.rubikme.admin.product.ProductNotFoundException;
 import com.rubikme.admin.product.ProductService;
 import com.rubikme.admin.product.exporter.ProductCsvExporter;
@@ -37,6 +38,8 @@ import com.rubikme.admin.user.export.UserCsvExporter;
 import com.rubikme.admin.user.export.UserPdfExporter;
 import com.rubikme.common.entity.Brand;
 import com.rubikme.common.entity.Category;
+import com.rubikme.common.entity.Order;
+import com.rubikme.common.entity.OrderDetail;
 import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.ProductImage;
 import com.rubikme.common.entity.User;
@@ -55,6 +58,9 @@ public class ProductController {
 	@Autowired
 	private CategoryService categoryService;
 	
+	@Autowired
+	private OrderService orderService;
+	
 	@GetMapping("/products")
 	public String listFirstPage(Model model) {
 		return listByPage(1, model, "id", "asc", null, 0);
@@ -68,7 +74,12 @@ public class ProductController {
 			@Param("categoryId") Integer categoryId
 			) {
 		Page<Product> page = productService.listByPage(pageNum, sortField, sortDir, keyword, categoryId);
+		
 		List<Product> listProducts = page.getContent();
+		List<Order> listOrders = orderService.listAll();
+		List<Product> listAllProduct = productService.listAll();
+		List<Product> listProductInOrder = null;
+		
 		
 		List<Category> listCategories = categoryService.listCategoriesUsedInForm();
 		
@@ -81,6 +92,19 @@ public class ProductController {
 		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
 		
 		if (categoryId != null) model.addAttribute("categoryId", categoryId); 
+		
+//		Integer countQuantity = 0;
+//		int subtotal = 0;
+//		
+//		for (Product product : listAllProduct) {
+//			for (Order order : listOrders) {
+//				for (OrderDetail orderDetail : order.getOrderDetails()) {
+//					if (orderDetail.getProduct().getId() == product.getId()) {
+//						
+//					}
+//				}
+//			}
+//		}
 			
 		model.addAttribute("currentPage", pageNum);
 		model.addAttribute("totalPages", page.getTotalPages());
@@ -358,9 +382,10 @@ public class ProductController {
 	@GetMapping("/products/export/excel")
 	public void exportToExcel(HttpServletResponse response) throws IOException {
 		List<Product> listProducts = productService.listAll();
+		List<Order> listOrders = orderService.listAll();
 		
 		ProductExcelExporter productExcelExporter = new ProductExcelExporter();
 		
-		productExcelExporter.export(listProducts, response);
+		productExcelExporter.export(listProducts, listOrders, response);
 	}
 }
