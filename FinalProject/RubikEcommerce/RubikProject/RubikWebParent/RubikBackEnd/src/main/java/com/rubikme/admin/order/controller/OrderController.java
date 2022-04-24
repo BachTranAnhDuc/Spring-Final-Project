@@ -1,9 +1,11 @@
 package com.rubikme.admin.order.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,10 +17,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.rubikme.admin.customer.exporter.CustomerCsvExporter;
+import com.rubikme.admin.customer.exporter.CustomerExcelExporter;
+import com.rubikme.admin.customer.exporter.CustomerPDFExporter;
 import com.rubikme.admin.order.OrderNotFoundException;
 import com.rubikme.admin.order.OrderService;
+import com.rubikme.admin.order.exporter.OrderCsvExporter;
+import com.rubikme.admin.order.exporter.OrderExcelExporter;
+import com.rubikme.admin.order.exporter.OrderPdfExporter;
 import com.rubikme.admin.security.RubikUserDetails;
 import com.rubikme.admin.setting.SettingService;
+import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Order;
 import com.rubikme.common.entity.Setting;
 
@@ -121,5 +130,31 @@ public class OrderController {
 		}
 		
 		return listByPage(1, model, "orderTime", "desc", null, request, loggerUser);
+	}
+	
+	@GetMapping("/orders/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		List<Order> listOrders = orderService.listAll();
+		
+		OrderCsvExporter orderCsvExporter = new OrderCsvExporter();
+		orderCsvExporter.export(listOrders, response);
+	}
+	
+	@GetMapping("/orders/export/excel")
+	public void exportToExcel(HttpServletResponse response) throws IOException {
+		List<Order> listOrders = orderService.listAll();
+		
+		OrderExcelExporter orderExcelExporter = new OrderExcelExporter();
+		
+		orderExcelExporter.export(listOrders, response);
+	}
+	
+	@GetMapping("/orders/export/pdf")
+	public void exportToPDF(HttpServletResponse response) throws IOException {
+		List<Order> listOrders = orderService.listAll();
+		
+		OrderPdfExporter orderPdfExporter = new OrderPdfExporter();
+		
+		orderPdfExporter.export(listOrders, response);
 	}
 }

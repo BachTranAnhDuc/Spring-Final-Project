@@ -361,6 +361,15 @@
 		<a th:href="@{${moduleURL} + '/export/pdf'}" class="fas fa-file-pdf fa-2x icon.silver mr-2"></a>
 	</div>
 	
+	<!-- Export without new-->
+	<div th:fragment="export_without_new(moduleURL, title)" class="col-7 my-auto">
+		<a th:href="@{${moduleURL} + '/export/csv'}" class="fas fa-file-csv fa-2x icon.silver mr-2"></a>
+		&nbsp;|&nbsp;
+		<a th:href="@{${moduleURL} + '/export/excel'}" class="fas fa-file-excel fa-2x icon.silver mr-2"></a>
+		&nbsp;|&nbsp;
+		<a th:href="@{${moduleURL} + '/export/pdf'}" class="fas fa-file-pdf fa-2x icon.silver mr-2"></a>
+	</div>
+	
 	<!-- Delete and Edit not check-->
 	<div th:fragment="delete_edit(moduleURL, idEntity)">
 		<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">

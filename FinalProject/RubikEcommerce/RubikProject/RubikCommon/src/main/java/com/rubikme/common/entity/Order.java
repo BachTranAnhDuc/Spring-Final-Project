@@ -210,8 +210,6 @@ public class Order {
 		return hasStatus(OrderStatus.PROCESSING);
 	}
 	
-	
-	
 	public boolean hasStatus(OrderStatus status) {
 		for (OrderTrack aTrack : orderTracks) {
 			if (aTrack.getStatus().equals(status)) {

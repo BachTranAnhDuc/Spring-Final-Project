@@ -18,7 +18,7 @@ import com.rubikme.common.entity.OrderTrack;
 @Service
 public class OrderService {
 	
-	public static final int ORDERS_PER_PAGE = 10;
+	public static final int ORDERS_PER_PAGE = 5;
 	
 	@Autowired 
 	private OrderRepository repo;
