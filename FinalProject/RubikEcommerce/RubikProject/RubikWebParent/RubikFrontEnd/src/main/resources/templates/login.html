@@ -14,9 +14,9 @@
 
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-02.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
-			Register
+			Login
 		</h2>
 	</section>	
 
@@ -50,11 +50,11 @@
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<input type="password" name="password" 
 								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Password" required />
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/padlock.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
-						<input type="checkbox" name="remember-me" />Remember Me
+						<label><input type="checkbox" name="remember-me" />Remember Me</label>
 
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
 							type="submit">
@@ -62,10 +62,12 @@
 						</button>
 					</form>
 					
-					<a class="mtext-80 cl2 txt-center p-b-30"
+					<a class="mtext-80 cl2 txt-center p-b-30 m-t-30"
 						th:href="@{/forgot_password}">
 						Forget the password?
 					</a>
+					
+					<br/>
 					
 					<a class="mtext-80 cl2 txt-center p-b-30"
 						th:href="@{/register}">

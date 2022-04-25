@@ -14,7 +14,7 @@
 
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-02.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
 			Register
 		</h2>
@@ -29,9 +29,9 @@
 					<form th:action="@{/create_customer}" method="post"
 						th:object="${customer}"
 						onsubmit="return checkEmailUnique(this)">
-						<h4 class="mtext-105 cl2 txt-center p-b-30">
-							Register
-						</h4>
+						<h3 class="mtext-115 cl2 txt-center p-b-30">
+							Register Form
+						</h3>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" placeholder="Enter your first name"
@@ -50,7 +50,7 @@
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" placeholder="Enter your e-mail"
 								th:field="*{email}" required minlength="2" maxlength="45">
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/email.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
@@ -58,7 +58,7 @@
 							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" placeholder="Password"
 								th:field="*{password}" required minlength="2" maxlength="45"
 								oninput="checkPasswordMatch(document.getElementById('confirmPassword'))">
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/padlock.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
@@ -66,28 +66,28 @@
 							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" placeholder="Confirm password"
 								id="confirmPassword" required minlength="2" maxlength="45"
 								oninput="checkPasswordMatch(this);">
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/padlock.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" placeholder="Phone number"
 								th:field="*{phoneNumber}" required minlength="8" maxlength="15">
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/telephone.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" placeholder="Address"
 								th:field="*{addressLine}" required minlength="3" maxlength="64">
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/home.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" placeholder="Postal code"
 								th:field="*{postalCode}" required minlength="2" maxlength="10">
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/code.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 

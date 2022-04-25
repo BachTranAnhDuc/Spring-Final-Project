@@ -1345,6 +1345,7 @@ select * from currencies;
 select * from reviews;
 select * from categories;
 select * from brands;
+select * from roles;
 use rubikdb;
 
 delete from settings where `key` = 'SITE_LOGO';
