@@ -340,12 +340,14 @@
 								
 					<div th:if="${product.discountPercent > 0}">
 						<span class="stext-105 cl3 font-weight-bold text-danger">
-							[[${#numbers.formatDecimal(product.getDiscountPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]
+							<th:block th:replace="fragments :: format_number_change_money(${product.getDiscountPrice()}, ${CURRENCY_SYMBOL})"></th:block>
 						</span>
+						
 						<br/>
+						
 						<del>
 							<span class="stext-105 cl3">
-								[[${product.price}]][[${CURRENCY_SYMBOL}]]
+								<th:block th:replace="fragments :: format_number_change_money(${product.price}, ${CURRENCY_SYMBOL})"></th:block>
 							</span>
 						</del>
 					</div>

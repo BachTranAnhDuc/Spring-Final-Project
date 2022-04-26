@@ -44,6 +44,9 @@ public class SettingController {
 			model.addAttribute(setting.getKey(), setting.getValue());
 		}
 		
+		model.addAttribute("title", "Settings");
+		model.addAttribute("headerTitle", "/settings");
+		
 		return "settings/setting";
 	}
 	

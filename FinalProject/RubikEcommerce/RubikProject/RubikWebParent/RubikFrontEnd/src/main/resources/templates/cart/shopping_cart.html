@@ -48,6 +48,7 @@
 											<span class="stext-105 cl3"
 												th:if="${product.discountPercent <= 0}">					
 												[[${product.price}]]$
+												
 											</span>
 											
 											<del th:if="${product.discountPercent > 0}"> 
@@ -69,7 +70,10 @@
 									</td>
 									<td class="column-5">
 										<p th:id="'totalall' + ${product.id}"
-											class="subtotal">[[${#numbers.formatDecimal(item.getTotalPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]</p>
+											class="subtotal">											
+											[[${#numbers.formatDecimal(item.getTotalPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]							
+										</p>
+										
 										<a th:href="@{'/cart/remove/' + ${product.id}}" class="fas fa-trash linkRemove"
 											th:rowNumber="${status.count}"></a>
 									</td>
@@ -125,7 +129,7 @@
 							</div>
 
 							<div class="size-209 p-t-1">
-								<span class="mtext-110 cl2">
+								<span class="mtext-110 cl2" id="total1">
 									[[${#numbers.formatDecimal(totalAllPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]
 								</span>
 							</div>
@@ -190,6 +194,10 @@
 		function showWarningModal(message) {
 			showModalDialog("Warning", message);
 		}	
+
+		decimalDigits = "[[${DECIMAL_DIGITS}]]";
+		decimalPointType = "[[${DECIMAL_POINT_TYPE}]]";
+		thousandsPointType = "[[${THOUSANDS_POINT_TYPE}]]";
 	</script>
 	<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
 	<script type="text/javascript" th:src="@{/js/cart_shopping.js}"></script>

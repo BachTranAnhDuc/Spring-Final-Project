@@ -94,6 +94,16 @@
 <div th:fragment="format_number(productPrice)" th:remove="tag">
 	[[${#numbers.formatDecimal(productPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]] [[${CURRENCY_SYMBOL}]]</span>
 </div>
+
+<th:block th:fragment="format_number_change_money(productPrice, currentSymbol)" th:remove="tag">
+	<th:block th:if="${currentSymbol == '$'}">
+		[[${#numbers.formatDecimal(productPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]] [[${CURRENCY_SYMBOL}]]</span>
+	</th:block>
+	
+	<th:block th:unless="${currentSymbol == '$'}">
+		[[${#numbers.formatDecimal(productPrice * 22000, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]] [[${CURRENCY_SYMBOL}]]</span>
+	</th:block>
+</th:block>
 <!-- Format Time -->
 <div th:fragment="format_time(dateTime)" th:remove="tag">
 	<span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
