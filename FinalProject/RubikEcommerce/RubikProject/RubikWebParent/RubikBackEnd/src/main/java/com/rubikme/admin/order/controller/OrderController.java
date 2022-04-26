@@ -23,6 +23,8 @@ import com.rubikme.admin.customer.exporter.CustomerPDFExporter;
 import com.rubikme.admin.order.OrderNotFoundException;
 import com.rubikme.admin.order.OrderService;
 import com.rubikme.admin.order.exporter.OrderCsvExporter;
+import com.rubikme.admin.order.exporter.OrderDetailExcelExporter;
+import com.rubikme.admin.order.exporter.OrderDetailPdfExporter;
 import com.rubikme.admin.order.exporter.OrderExcelExporter;
 import com.rubikme.admin.order.exporter.OrderPdfExporter;
 import com.rubikme.admin.security.RubikUserDetails;
@@ -156,5 +158,23 @@ public class OrderController {
 		OrderPdfExporter orderPdfExporter = new OrderPdfExporter();
 		
 		orderPdfExporter.export(listOrders, response);
+	}
+	
+	@GetMapping("/orders/detail/{id}/export/excel")
+	public void exportOrderDetailToExcel(HttpServletResponse response, @PathVariable("id") Integer id) throws IOException, OrderNotFoundException {
+		Order order = orderService.get(id);
+		
+		OrderDetailExcelExporter orderDetailExcelExporter = new OrderDetailExcelExporter();
+		
+		orderDetailExcelExporter.export(order, response);
+	}
+	
+	@GetMapping("/orders/detail/{id}/export/pdf")
+	public void exportOrderDetailToPDF(HttpServletResponse response, @PathVariable("id") Integer id) throws IOException, OrderNotFoundException {
+		Order order = orderService.get(id);
+		
+		OrderDetailPdfExporter orderDetailPdfExporter = new OrderDetailPdfExporter();
+		
+		orderDetailPdfExporter.export(order, response);
 	}
 }

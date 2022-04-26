@@ -20,6 +20,10 @@
 		<li class="nav-item">
 			<a class="nav-link" id="track-tab" data-toggle="tab" href="#track" role="tab">Track</a>
 		</li>	
+		
+		<li class="nav-item">
+			<a class="nav-link" id="export-tab" data-toggle="tab" href="#export" role="tab">Export</a>
+		</li>
 	</ul>
 		
 	<div class="tab-content" id="myTabContent">
@@ -182,6 +186,10 @@
 				</table>
 			</div>
 		</div>	
+		
+		<div class="tab-pane fade p-3" id="export" role="tabpanel" aria-labelledby="export-tab">
+			<div th:replace="fragments :: export_without_new('/orders/detail/' + ${order.id}, ${title})"></div>
+		</div>
 	</div>		
 </div>
 	
