@@ -14,9 +14,9 @@
 
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-02.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
-			Register
+			Account Form
 		</h2>
 	</section>	
 
@@ -58,7 +58,7 @@
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<input type="text" th:field="*{email}"
 								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" readonly/>
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/email.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 
@@ -67,7 +67,7 @@
 								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
 								maxlength="15" minlength="6"
 								oninput="checkPasswordMatch(document.getElementById('confirmPassword'))"/>
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/padlock.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
@@ -76,7 +76,7 @@
 								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
 								maxlength="15" minlength="6"
 								oninput="checkPasswordMatch(this)"/>
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/padlock.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
@@ -84,7 +84,7 @@
 							<input type="text" th:field="*{phoneNumber}"
 								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
 								required="required" maxlength="15" minlength="8"/>
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/telephone.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
@@ -92,7 +92,7 @@
 							<input type="text" th:field="*{addressLine}"
 								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
 								required="required" maxlength="64" minlength="3"/>
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/home.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 						
@@ -100,7 +100,7 @@
 							<input type="text" th:field="*{postalCode}"
 								class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
 								required="required" maxlength="8" minlength="3"/>
-							<img class="how-pos4 pointer-none" th:src="@{/images/icons/user.png}" alt="ICON"
+							<img class="how-pos4 pointer-none" th:src="@{/images/icons/code.png}" alt="ICON"
 								style="max-width: 25px;">
 						</div>
 

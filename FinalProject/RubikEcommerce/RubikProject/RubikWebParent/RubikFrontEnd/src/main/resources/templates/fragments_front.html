@@ -11,7 +11,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" th:href="@{/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/fontawesome-free-6.1.1-web/css/all.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/fontawesome-free-6.1.1-web/css/all.min.css}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" th:href="@{/fonts/iconic/css/material-design-iconic-font.min.css}">
 <!--===============================================================================================-->
@@ -80,8 +81,8 @@
 								Orders
 							</a>
 						</th:block>
-
-						<a th:href="@{/login}" class="flex-c-m trans-04 p-lr-25">
+	
+						<a sec:authorize="!isAuthenticated()" th:href="@{/login}" class="flex-c-m trans-04 p-lr-25">
 							Login
 						</a>
 						
@@ -118,11 +119,11 @@
 								</ul>
 							</li>
 
-							<li>
+							<li class="label1" data-label1="hot">
 								<a th:href="@{'/products'}">Shop</a>
 							</li>
 
-							<li class="label1" data-label1="hot">
+							<li>
 								<a href="shoping-cart.html">Features</a>
 							</li>
 
@@ -146,11 +147,22 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<a th:href="@{/cart}" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" th:data-notify="@{${countCartItems}}">
+						<a th:if="${countCartItems != null}"	th:href="@{/cart}"
+							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" 
+							th:data-notify="@{${countCartItems}}">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</a>
+						
+						<a th:unless="${countCartItems != null}" th:href="@{/cart}"
+							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</a>
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<a sec:authorize="isAuthenticated()" href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+							<i class="zmdi zmdi-favorite-outline"></i>
+						</a>
+						
+						<a sec:authorize="!isAuthenticated()" href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 					</div>
@@ -356,7 +368,7 @@
 	<section th:fragment="slider_customer" class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
-				<div class="item-slick1" style="background-image: url(images/background/background-3.jpg);">
+				<div class="item-slick1" style="background-image: url(images/background/background-light-1.jpg);">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
@@ -639,25 +651,25 @@
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
+								2x2
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
+								3x3
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
+								4x4
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
+								Megaminx
 							</a>
 						</li>
 					</ul>
@@ -701,20 +713,20 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Any questions? Let us know in store at 192 Nguyen Binh Khiem, DaKao, District 1
 					</p>
 
 					<div class="p-t-27">
 						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
+							<i class="fa-brands fa-facebook"></i>
 						</a>
 
 						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
+							<i class="fa-brands fa-instagram"></i>
 						</a>
 
 						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
+							<i class="fa-brands fa-pinterest-p"></i>
 						</a>
 					</div>
 				</div>
@@ -764,7 +776,7 @@
 
 				<p class="stext-107 cl6 txt-center">
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>

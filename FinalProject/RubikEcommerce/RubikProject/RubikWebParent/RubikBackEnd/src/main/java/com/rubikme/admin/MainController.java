@@ -21,6 +21,7 @@ import com.rubikme.common.entity.Brand;
 import com.rubikme.common.entity.Category;
 import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Order;
+import com.rubikme.common.entity.OrderDetail;
 import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.Review;
 import com.rubikme.common.entity.User;
@@ -68,6 +69,14 @@ public class MainController {
 		Integer countReviews = listReviews.size();
 		Integer countCustomers = listCustomers.size();
 		
+		float totalPrice = 0;
+		
+		for (Order order : listOrders) {
+			for (OrderDetail orderDetail : order.getOrderDetails()) {
+				totalPrice += orderDetail.getSubtotal();
+			}
+		}
+		
 		
 		model.addAttribute("title", "Homepage");
 		model.addAttribute("headerTitle", "/");
@@ -78,6 +87,7 @@ public class MainController {
 		model.addAttribute("totalOrders", countOrders);
 		model.addAttribute("totalReviews", countReviews);
 		model.addAttribute("totalCustomers", countCustomers);
+		model.addAttribute("totalPrice", totalPrice);
 		
 		return "index";
 	}

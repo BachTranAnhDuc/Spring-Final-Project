@@ -21,6 +21,7 @@ import com.rubikme.common.entity.Customer;
 import com.rubikme.common.entity.Product;
 import com.rubikme.common.entity.Review;
 import com.rubikme.common.exception.CategoryNotFoundException;
+import com.rubikme.common.exception.CustomerNotFoundException;
 import com.rubikme.common.exception.ProductNotFoundException;
 import com.rubikme.customer.CustomerService;
 import com.rubikme.review.ReviewService;
@@ -142,27 +143,31 @@ public class ProductController {
 			Page<Review> listReviews = reviewService.listByProduct(product, 1, "reviewTime", "desc");
 			
 			Customer customer = getAuthenticationCustomer(request);
-			boolean didCustomerReview = reviewService.didCustomerReviewProduct(customer, product.getId());
 			
-			if (didCustomerReview) {
-				model.addAttribute("didCustomerReview", didCustomerReview);
-			}
-			else {
-				boolean didCustomerCanReview = reviewService.canCustomerReview(customer, product.getId());
+			int countCartItems = 0;
+			Review review = new Review();
+			
+			if (customer != null) {
+				boolean didCustomerReview = reviewService.didCustomerReviewProduct(customer, product.getId());
 				
-				if (didCustomerCanReview) {
-					model.addAttribute("didCustomerCanReview", didCustomerCanReview);
+				if (didCustomerReview) {
+					model.addAttribute("didCustomerReview", didCustomerReview);
 				}
 				else {
-					model.addAttribute("NoReviewPermission", true);
+					boolean didCustomerCanReview = reviewService.canCustomerReview(customer, product.getId());
+					
+					if (didCustomerCanReview) {
+						model.addAttribute("didCustomerCanReview", didCustomerCanReview);
+					}
+					else {
+						model.addAttribute("NoReviewPermission", true);
+					}
 				}
-			}
-			
-			Review review = new Review();
+					
+				List<CartItem> listCartItems = cartService.listCartItems(customer);
 				
-			List<CartItem> listCartItems = cartService.listCartItems(customer);
-			
-			int countCartItems = listCartItems.size();
+				countCartItems = listCartItems.size();
+			}
 			
 //			Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
 //			List<Review> listReviews = page.getContent();
