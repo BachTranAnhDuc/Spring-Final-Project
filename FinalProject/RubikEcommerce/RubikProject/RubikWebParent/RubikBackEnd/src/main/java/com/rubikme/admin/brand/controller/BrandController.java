@@ -75,6 +75,7 @@ public class BrandController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("listBrands", listBrands);
+		model.addAttribute("title", "Manage Brands");
 		model.addAttribute("headerTitle", "/brands");
 		
 		return "brands/brands";
@@ -127,7 +128,7 @@ public class BrandController {
 			
 			model.addAttribute("brand", brand);
 			model.addAttribute("listCategories", listCategories);
-			model.addAttribute("pageTitle", "Edit Brand (ID: " + id + ")");
+			model.addAttribute("title", "Edit Brand (ID: " + id + ")");
 			model.addAttribute("headerTitle", header);
 			
 			return "brands/brand_form";

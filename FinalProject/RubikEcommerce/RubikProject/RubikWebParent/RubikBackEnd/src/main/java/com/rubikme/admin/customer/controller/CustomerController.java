@@ -98,9 +98,12 @@ public class CustomerController {
 	public String editCustomer(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) {
 		try {
 			Customer customer = service.get(id);
+			
+			String titleLink = "/customers/edit/" + id;
 					
 			model.addAttribute("customer", customer);
-			model.addAttribute("pageTitle", String.format("Edit Customer (ID: %d)", id));
+			model.addAttribute("title", String.format("Edit Customer (ID: %d)", id));
+			model.addAttribute("headerTitle", titleLink);
 			
 			return "customers/customer_form";
 			

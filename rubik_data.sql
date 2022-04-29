@@ -1227,11 +1227,21 @@ insert into settings value('CUSTOMER_VERIFY_CONTENT', 'MAIL_TEMPLATES', 'Hi,&nbs
 insert into customers value(1, 'Ton Duc Thang University', null, 'anhduc@gmail.com', 1, 'Duc', 'Bach Tran Anh', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '111111111', '123456', null, null);
 insert into customers value(2, 'Ton Duc Thang University', null, 'anhduc1@gmail.com', 0, 'Duc', 'Bach Tran Anh', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '111111111', '123456', null, null);
 insert into customers value(3, 'Ton Duc Thang University', null, 'anhduc2@gmail.com', 1, 'Duc', 'Bach Tran Anh', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '111111111', '123456', null, null);
-insert into customers value(6, '28 Binh Thanh', '2022-04-20', 'customer01@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
-insert into customers value(7, 'Dakao Quan 1', '2022-04-20', 'customer02@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
-insert into customers value(8, 'Quan 4', '2022-04-20', 'customer03@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
-insert into customers value(9, 'Quan 5', '2022-04-20', 'customer04@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
-insert into customers value(10, 'Quan 6', '2022-04-20', 'customer05@gmail.com', 1, '', '', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(6, '28 Binh Thanh', '2022-04-20', 'customer01@gmail.com', 1, 'Jessica', 'Perry', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(7, 'Dakao Quan 1', '2022-04-20', 'customer02@gmail.com', 1, 'Amber', 'Holland', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(8, 'Quan 4', '2022-04-20', 'customer03@gmail.com', 1, 'Suzzanne', 'Terry', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(9, 'Quan 5', '2022-04-20', 'customer04@gmail.com', 1, 'Nancy', 'Clark', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(10, 'Quan 6', '2022-04-20', 'customer05@gmail.com', 1, 'Amalia', 'Martin', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+update customers set first_name = 'Daniel', last_name = 'Williams' where id = 6;
+update customers set first_name = 'Joseph', last_name = 'Harris' where id = 7;
+update customers set first_name = 'Nicholas', last_name = 'Walker' where id = 8;
+update customers set first_name = 'Jason', last_name = 'Howard' where id = 9;
+update customers set first_name = 'Jose', last_name = 'White' where id = 10;
+insert into customers value(11, 'Binh Duong', '2022-04-20', 'customer06@gmail.com', 1, 'Cynthia', 'Davis', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(12, 'TP Thu Duc', '2022-04-20', 'customer07@gmail.com', 1, 'Laura', 'Miller', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(13, 'Dakao', '2022-04-20', 'customer08@gmail.com', 1, 'Anna', 'Clark', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(14, 'RMIT', '2022-04-20', 'customer09@gmail.com', 1, 'Carol', 'Smith', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
+insert into customers value(15, 'UEF', '2022-04-20', 'customer10@gmail.com', 1, 'Rebecca', 'Morgan', '$2a$10$HalyCWlFL5rWDSInsUyxY.gH3xom/Ounod0QZxObv0K3LFy5nAMyi', '987654321', '123456', null, null);
 
 
 -- Address
@@ -1346,6 +1356,7 @@ select * from reviews;
 select * from categories;
 select * from brands;
 select * from roles;
+select * from users;
 use rubikdb;
 
 delete from settings where `key` = 'SITE_LOGO';

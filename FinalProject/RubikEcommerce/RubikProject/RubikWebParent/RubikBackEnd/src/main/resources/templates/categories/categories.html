@@ -74,7 +74,6 @@
 			</div>
 			
 			<div th:if="${keyword != null}" class="text-center">
-				<span>Result does not have in categories.</span>
 				<div th:replace="fragments :: pagination('/categories', 'categories')"></div>
 			</div>
 								
@@ -85,11 +84,11 @@
 			<div th:replace="fragments :: confirm_modal"></div>
 								
 		</div><!-- content-body -->
-		
-		<div th:replace="front_fragments :: footer_final"></div>
+				
 	</div><!-- content -->
 
-
+	<div th:replace="front_fragments :: footer_final"></div>
+	
     <div th:replace="front_fragments :: js_file"></div>
 	
 	

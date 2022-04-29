@@ -90,7 +90,7 @@ public class OrderController {
 			return "orders/orders_shipper";
 		}
 		else {
-			model.addAttribute("title", "Manage Orders (Admin)");
+			model.addAttribute("title", "Manage Orders");
 		}
 		
 		return "orders/orders";

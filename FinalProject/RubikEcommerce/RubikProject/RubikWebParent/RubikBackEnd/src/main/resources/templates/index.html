@@ -140,12 +140,15 @@
 			        		<i class="fas fa-store fa-fw mt-3 fa-3x text-white"></i>
 			        	</div>
 			        </a>
+			        
 			        <div class="circle-tile-content red">
-			          <div class="circle-tile-description text-faded">Total Brands</div>
-			          <div class="circle-tile-number text-faded ">
-			          	[[${totalBrands}]]
+			          <div class="circle-tile-description">
+			          	<p class="text-faded" sec:authentication="principal.fullname"></p>
 			          </div>
-			          <a class="circle-tile-footer" th:href="@{'/brands'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
+			          <div class="circle-tile-number">	          	
+			          	<span class="text-faded" sec:authentication="principal.authorities"></span>
+			          </div>
+			          <a class="circle-tile-footer" th:href="@{/account}">More Info <i class="fa fa-chevron-circle-right"></i></a>
 			        </div>
 			      </div>
 			    </div> 
