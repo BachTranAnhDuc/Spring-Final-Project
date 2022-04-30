@@ -12,148 +12,19 @@
    		
 		<div class="content-body">
 			
-			<th:block sec:authorize="hasAuthority('Admin')">
-			<div class="row mt-4 mx-5">
-			    <div class="col-lg-3">
-			      <div class="circle-tile">
-			        <a href="#">
-			        	<div class="circle-tile-heading dark-blue">
-			        		<i class="fa fa-users fa-fw fa-3x"></i>
-			        	</div>
-			        </a>
-			        
-			        <div class="circle-tile-content dark-blue">
-			          <div class="circle-tile-description text-faded">Total Users</div>
-			          <div class="circle-tile-number text-faded ">
-			          	[[${totalUsers}]]
-			          </div>
-			          <a class="circle-tile-footer" th:href="@{'/users'}">More Info 
-			          	<i class="fa fa-chevron-circle-right"></i>
-			          </a>
-			        </div>
-			      </div>
-			    </div>
-     
-			    <div class="col-lg-3">
-			      <div class="circle-tile ">
-			        <a href="#">
-			        	<div class="circle-tile-heading green">
-			        		<i class="fas fa-gem fa-fw fa-3x mt-3"></i>
-			        	</div>
-			        </a>
-			        
-			        <div class="circle-tile-content green">
-			          <div class="circle-tile-description text-faded">Total Categories</div>
-			          <div class="circle-tile-number text-faded ">
-			          	[[${totalCategories}]]
-			          </div>
-			          <a class="circle-tile-footer" th:href="@{'/categories'}">More Info 
-			          	<i class="fa fa-chevron-circle-right"></i>
-			          </a>
-			        </div>
-			      </div>
-			    </div> 
-     
-			    <div class="col-lg-3">
-			      <div class="circle-tile ">
-			        <a href="#">
-			        	<div class="circle-tile-heading red">
-			        		<i class="fas fa-store fa-fw mt-3 fa-3x text-white"></i>
-			        	</div>
-			        </a>
-			        <div class="circle-tile-content red">
-			          <div class="circle-tile-description text-faded">Total Brands</div>
-			          <div class="circle-tile-number text-faded ">
-			          	[[${totalBrands}]]
-			          </div>
-			          <a class="circle-tile-footer" th:href="@{'/brands'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
-			        </div>
-			      </div>
-			    </div> 
-     
-			    <div class="col-lg-3">
-			      <div class="circle-tile ">
-			        <a href="#">
-			        	<div class="circle-tile-heading yellow">
-			        		<i class="fab fa-shopify fa-fw fa-3x mt-3 text-white"></i>
-			        	</div>
-			        </a>
-			        <div class="circle-tile-content yellow">
-			          <div class="circle-tile-description text-faded">Total Products</div>
-			          <div class="circle-tile-number text-faded ">
-			          	[[${totalProducts}]]
-			          </div>
-			          <a class="circle-tile-footer" th:href="@{'/products'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
-			        </div>
-			      </div>
-			    </div> 
-			</div> 
-			</th:block>
+			<th:block th:replace="front_fragments :: admin_index"></th:block>
 			
 			<!-- Salesperson -->
-			<th:block sec:authorize="hasAuthority('Salesperson')">
-			<div class="row mt-4 mx-5">
-			    <div class="col-lg-4">
-			      <div class="circle-tile">
-			        <a href="#">
-			        	<div class="circle-tile-heading dark-blue">
-			        		<i class="fab fa-shopify fa-fw fa-3x mt-3 text-white"></i>
-			        	</div>
-			        </a>
-			        
-			        <div class="circle-tile-content dark-blue">
-			          <div class="circle-tile-description text-faded">Total Products</div>
-			          <div class="circle-tile-number text-faded ">
-			          	[[${totalProducts}]]
-			          </div>
-			          <a class="circle-tile-footer" th:href="@{'/products'}">More Info 
-			          	<i class="fa fa-chevron-circle-right"></i>
-			          </a>
-			        </div>
-			      </div>
-			    </div>
-     
-			    <div class="col-lg-4">
-			      <div class="circle-tile ">
-			        <a href="#">
-			        	<div class="circle-tile-heading green">
-			        		<i class="fas fa-gem fa-fw fa-3x mt-3"></i>
-			        	</div>
-			        </a>
-			        
-			        <div class="circle-tile-content green">
-			          <div class="circle-tile-description text-faded">Total Orders</div>
-			          <div class="circle-tile-number text-faded ">
-			          	[[${totalOrders}]]
-			          </div>
-			          <a class="circle-tile-footer" th:href="@{'/orders'}">More Info 
-			          	<i class="fa fa-chevron-circle-right"></i>
-			          </a>
-			        </div>
-			      </div>
-			    </div> 
-     
-			    <div class="col-lg-4">
-			      <div class="circle-tile ">
-			        <a href="#">
-			        	<div class="circle-tile-heading red">
-			        		<i class="fas fa-store fa-fw mt-3 fa-3x text-white"></i>
-			        	</div>
-			        </a>
-			        
-			        <div class="circle-tile-content red">
-			          <div class="circle-tile-description">
-			          	<p class="text-faded" sec:authentication="principal.fullname"></p>
-			          </div>
-			          <div class="circle-tile-number">	          	
-			          	<span class="text-faded" sec:authentication="principal.authorities"></span>
-			          </div>
-			          <a class="circle-tile-footer" th:href="@{/account}">More Info <i class="fa fa-chevron-circle-right"></i></a>
-			        </div>
-			      </div>
-			    </div> 
-			</div> 
-			</th:block>
+			<th:block th:replace="front_fragments :: salesperson_index"></th:block>
+			
+			<!-- Editor -->
+			<th:block th:replace="front_fragments :: editor_index"></th:block>
+			
+			<!-- Assistant -->
+			<th:block th:replace="front_fragments :: assistant_index"></th:block>
+			
+			<!-- Shipper -->
+			<th:block th:replace="front_fragments :: shipper_index"></th:block>
 			
 			<div class="row mx-5 my-5">
 				<div class="col">

@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -34,6 +35,7 @@ import com.rubikme.admin.product.ProductService;
 import com.rubikme.admin.product.exporter.ProductCsvExporter;
 import com.rubikme.admin.product.exporter.ProductExcelExporter;
 import com.rubikme.admin.product.exporter.ProductPdfExporter;
+import com.rubikme.admin.security.RubikUserDetails;
 import com.rubikme.admin.user.export.UserCsvExporter;
 import com.rubikme.admin.user.export.UserPdfExporter;
 import com.rubikme.common.entity.Brand;
@@ -62,8 +64,8 @@ public class ProductController {
 	private OrderService orderService;
 	
 	@GetMapping("/products")
-	public String listFirstPage(Model model) {
-		return listByPage(1, model, "id", "asc", null, 0);
+	public String listFirstPage(Model model, @AuthenticationPrincipal RubikUserDetails loggerUser) {
+		return listByPage(1, model, "id", "asc", null, 0, loggerUser);
 	}
 	
 	@GetMapping("/products/page/{pageNum}")
@@ -71,8 +73,8 @@ public class ProductController {
 			@PathVariable(name = "pageNum") int pageNum, Model model,
 			@Param("sortField") String sortField, @Param("sortDir") String sortDir,
 			@Param("keyword") String keyword,
-			@Param("categoryId") Integer categoryId
-			) {
+			@Param("categoryId") Integer categoryId,
+			@AuthenticationPrincipal RubikUserDetails loggerUser) {
 		Page<Product> page = productService.listByPage(pageNum, sortField, sortDir, keyword, categoryId);
 		
 		List<Product> listProducts = page.getContent();
@@ -117,8 +119,16 @@ public class ProductController {
 		model.addAttribute("keyword", keyword);		
 		model.addAttribute("listProducts", listProducts);
 		model.addAttribute("listCategories", listCategories);	
-		model.addAttribute("title", "Manage Product");
 		model.addAttribute("headerTitle", "/products");
+		
+		if (!loggerUser.hasRole("Admin") && !loggerUser.hasRole("Salesperson") && !loggerUser.hasRole("Editor") && !loggerUser.hasRole("Assistant") && loggerUser.hasRole("Shipper")) {
+			model.addAttribute("title", "View Products (Shipper)");
+		}
+		else {
+			model.addAttribute("title", "Manage Products");
+		}
+		
+		
 		
 		return "products/products";		
 	}
