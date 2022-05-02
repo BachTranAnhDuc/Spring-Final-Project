@@ -97,10 +97,22 @@ public class ProductController {
 		}
 	}
 	
-	@GetMapping("/products")
+	@GetMapping("/c/standard_rubik")
 	public String viewProduct(Model model, HttpServletRequest request) {
 			
-		return viewProductByPage(model, 1, request);
+		return viewCategoryByPage("standard_rubik", 1, model, request);
+	}
+	
+	@GetMapping("/c/variant_rubik")
+	public String viewProductVariant(Model model, HttpServletRequest request) {
+			
+		return viewCategoryByPage("variant_rubik", 1, model, request);
+	}
+	
+	@GetMapping("/c/accessory")
+	public String viewProductAssesories(Model model, HttpServletRequest request) {
+			
+		return viewCategoryByPage("accessory", 1, model, request);
 	}
 	
 	@GetMapping("/products/page/{pageNum}")
