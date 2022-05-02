@@ -89,8 +89,8 @@ public class OrderDetailExcelExporter extends AbstractExporter{
 			createCell(row, columnIndex++, orderDetail.getId(), cellStyle);
 			createCell(row, columnIndex++, orderDetail.getProduct().getName(), cellStyle);
 			createCell(row, columnIndex++, orderDetail.getQuantity(), cellStyle);
-			createCell(row, columnIndex++, orderDetail.getUnitPrice(), cellStyle);
-			createCell(row, columnIndex++, orderDetail.getSubtotal(), cellStyle);
+			createCell(row, columnIndex++, String.format("%.2f", orderDetail.getUnitPrice()), cellStyle);		
+			createCell(row, columnIndex++, String.format("%.2f", orderDetail.getSubtotal()), cellStyle);
 		}
 	}
 	

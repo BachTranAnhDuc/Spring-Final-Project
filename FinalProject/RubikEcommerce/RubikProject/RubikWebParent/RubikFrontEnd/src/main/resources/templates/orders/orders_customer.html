@@ -58,7 +58,7 @@
 									</td>
 									
 									<td class="column-3">
-										<p>[[${order.subtotal}]]</p>
+										<div th:replace="fragments :: format_number(${order.subtotal})"></div>
 									</td>
 									
 									<td class="column-4">

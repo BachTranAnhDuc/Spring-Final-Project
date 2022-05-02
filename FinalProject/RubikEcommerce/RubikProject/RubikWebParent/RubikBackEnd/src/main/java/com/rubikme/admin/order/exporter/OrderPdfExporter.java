@@ -56,7 +56,7 @@ public class OrderPdfExporter extends AbstractExporter{
 			table.addCell(String.valueOf(order.getId()));
 			table.addCell(String.valueOf(order.getAddressFinal()));
 			table.addCell(String.valueOf(order.getOrderTime()));
-			table.addCell(String.valueOf(order.getSubtotal()));
+			table.addCell(String.valueOf("$" + String.format("%.2f", order.getSubtotal())));
 			table.addCell(String.valueOf(order.getStatus()));
 		}
 	}

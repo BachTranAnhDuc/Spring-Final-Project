@@ -61,14 +61,16 @@ function updateQuantity(productId, quantity) {
 	}).done(function(updatedTotalAll) {
 		updateTotal(updatedTotalAll, productId);
 		updateTotalAll()
+		
 	}).fail(function() {
 		showErrorModal("Error while updating product to shopping cart.");
 	});
 }
 
 function updateTotal(updatedTotalAll, productId) {
-	formatNumber = $.number(updatedTotalAll, 2);
-	$("#totalall" + productId).text(formatCurrency(updatedTotalAll));
+	//formatNumber = $.number(updatedTotalAll, 2);
+	//$("#totalall" + productId).text(formatCurrency(updatedTotalAll));
+	$("#subtotal" + productId).text(formatCurrency(updatedTotalAll));
 }
 
 function updateTotalAll() {

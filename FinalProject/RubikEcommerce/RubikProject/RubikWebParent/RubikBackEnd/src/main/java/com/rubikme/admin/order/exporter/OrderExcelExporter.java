@@ -92,7 +92,7 @@ public class OrderExcelExporter extends AbstractExporter{
 			createCell(row, columnIndex++, order.getAddressFinal(), cellStyle);
 			createCell(row, columnIndex++, order.getOrderTime(), cellStyle);
 			createCell(row, columnIndex++, order.getPaymentMethod().toString(), cellStyle);
-			createCell(row, columnIndex++, order.getSubtotal(), cellStyle);
+			createCell(row, columnIndex++, String.format("%.2f", order.getSubtotal()), cellStyle);
 			createCell(row, columnIndex++, order.getStatus().toString(), cellStyle);
 			createCell(row, columnIndex++, order.getDeliverDays(), cellStyle);
 			createCell(row, columnIndex++, order.getDeliverDate().toString(), cellStyle);

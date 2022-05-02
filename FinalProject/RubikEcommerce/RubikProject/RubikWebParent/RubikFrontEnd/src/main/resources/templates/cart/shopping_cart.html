@@ -47,20 +47,19 @@
 										<div>
 											<span class="stext-105 cl3"
 												th:if="${product.discountPercent <= 0}">					
-												[[${product.price}]]$
-												
+												<div th:replace="fragments :: format_number(${product.price})"></div>
 											</span>
 											
 											<del th:if="${product.discountPercent > 0}"> 
 												<span class="stext-105 cl3">
-													[[${product.price}]]$
+													<div th:replace="fragments :: format_number(${product.price})"></div>
 												</span>
 											</del>
 										</div>
 										
 										<div th:if="${product.discountPercent > 0}">
 											<span class="stext-105 cl3 font-weight-bold text-danger">
-												[[${#numbers.formatDecimal(product.getDiscountPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]
+												<div th:replace="fragments :: format_number(${product.getDiscountPrice})"></div>
 											</span>
 											
 										</div>
@@ -69,9 +68,8 @@
 										<div th:replace="fragments :: quantity_control(${item.quantity}, ${product.id})"></div>
 									</td>
 									<td class="column-5">
-										<p th:id="'totalall' + ${product.id}"
-											class="subtotal">											
-											[[${#numbers.formatDecimal(item.getTotalPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]							
+										<p>											
+											<span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span><span class="subtotal" th:id="'subtotal' + ${product.id}">[[${#numbers.formatDecimal(item.getTotalPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]]</span><span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span>							
 										</p>
 										
 										<a th:href="@{'/cart/remove/' + ${product.id}}" class="fas fa-trash linkRemove"
@@ -101,8 +99,8 @@
 							</div>
 
 							<div class="size-209">
-								<span class="mtext-110 cl2" id="total">
-									[[${#numbers.formatDecimal(totalAllPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]
+								<span class="mtext-110 cl2">
+									<span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span><span id="total">[[${#numbers.formatDecimal(totalAllPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]]</span><span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span>
 								</span>
 							</div>
 						</div>
@@ -129,8 +127,8 @@
 							</div>
 
 							<div class="size-209 p-t-1">
-								<span class="mtext-110 cl2" id="total1">
-									[[${#numbers.formatDecimal(totalAllPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]][[${CURRENCY_SYMBOL}]]
+								<span class="mtext-110 cl2">
+									<span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span><span id="total1">[[${#numbers.formatDecimal(totalAllPrice, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]]</span><span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span>
 								</span>
 							</div>
 						</div>
@@ -138,9 +136,7 @@
 						<a class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
 							th:href="@{/checkout}">
 								Process to checkout
-						</a>
-
-						
+						</a>				
 					</div>
 				</div>
 			</div>

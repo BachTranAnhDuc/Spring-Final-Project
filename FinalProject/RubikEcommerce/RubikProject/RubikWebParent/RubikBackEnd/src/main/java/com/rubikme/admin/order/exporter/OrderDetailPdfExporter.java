@@ -68,7 +68,7 @@ public class OrderDetailPdfExporter extends AbstractExporter{
 		
 		document.add(table);
 		
-		Paragraph paraSubtotal = new Paragraph("Subtotal: " + order.getSubtotal(), fontHeader);
+		Paragraph paraSubtotal = new Paragraph("Subtotal: $" + order.getSubtotal(), fontHeader);
 		paraSubtotal.setAlignment(Paragraph.ALIGN_RIGHT);
 		paraSubtotal.setSpacingBefore(10);
 		
@@ -83,8 +83,8 @@ public class OrderDetailPdfExporter extends AbstractExporter{
 			table.addCell(String.valueOf(orderDetail.getId()));
 			table.addCell(String.valueOf(orderDetail.getProduct().getName()));
 			table.addCell(String.valueOf(orderDetail.getQuantity()));
-			table.addCell(String.valueOf(orderDetail.getUnitPrice()));
-			table.addCell(String.valueOf(orderDetail.getSubtotal()));
+			table.addCell(String.valueOf("$" + String.format("%.2f", orderDetail.getUnitPrice())));
+			table.addCell(String.valueOf("$" + String.format("%.2f", orderDetail.getSubtotal())));
 		}
 	}
 
