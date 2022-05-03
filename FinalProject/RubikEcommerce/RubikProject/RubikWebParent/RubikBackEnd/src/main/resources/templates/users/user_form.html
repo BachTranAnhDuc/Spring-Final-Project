@@ -97,13 +97,14 @@
 						</div>
 					</form>	
 										
-					<div th:replace="fragments :: confirm_modal"></div>
 				</div>
 				
 			</div>
 								
 			
 		</div><!-- content-body -->
+		
+		<div th:replace="fragments :: modal_dialog"></div>
 		
 		<div th:replace="front_fragments :: footer_final"></div>
 	</div><!-- content -->
@@ -127,13 +128,13 @@
 					form.submit();
 				}
 				else if (response == "Duplicated") {
-					showWarningModal("Warning", "There is another user having the email " + userEmail);
+					showWarningModal("There is another user having the email " + userEmail);
 				}
 				else {
-					showErrorModal("Error", "Unknown response from server");
+					showErrorModal("Unknown response from server");
 				}
 			}).fail(function() {
-				showErrorModal("Error", "Could not connect to the server");
+				showErrorModal("Could not connect to the server");
 			});
 			return false;
 		}
