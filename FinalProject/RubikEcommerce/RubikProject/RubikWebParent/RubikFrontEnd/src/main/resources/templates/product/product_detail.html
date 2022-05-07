@@ -102,12 +102,14 @@
 											<span class="stext-105 cl3"
 												th:if="${product.discountPercent <= 0}">					
 												
-												<div th:replace="fragments :: format_number(${product.price})"></div>
+												<!-- <div th:replace="fragments :: format_number(${product.price})"></div> -->
+												<th:block th:replace="fragments :: format_number_change_money(${product.price}, ${CURRENCY_SYMBOL})"></th:block>
 											</span>
 											
 											<del th:if="${product.discountPercent > 0}"> 
 												<span class="stext-105 cl3">
-													<div th:replace="fragments :: format_number(${product.price})"></div>
+													<!-- <div th:replace="fragments :: format_number(${product.price})"></div> -->
+													<th:block th:replace="fragments :: format_number_change_money(${product.price}, ${CURRENCY_SYMBOL})"></th:block>
 												</span>
 											</del>
 										</div>
@@ -115,7 +117,8 @@
 										<div th:if="${product.discountPercent > 0}">
 											Price:
 											<span class="stext-105 cl3 font-weight-bold text-danger">
-												<div th:replace="fragments :: format_number(${product.getDiscountPrice})"></div>
+												<!-- <div th:replace="fragments :: format_number(${product.getDiscountPrice})"></div> -->
+												<th:block th:replace="fragments :: format_number_change_money(${product.getDiscountPrice}, ${CURRENCY_SYMBOL})"></th:block>
 											</span>
 											([[${product.discountPercent}]]% off)
 										</div>
