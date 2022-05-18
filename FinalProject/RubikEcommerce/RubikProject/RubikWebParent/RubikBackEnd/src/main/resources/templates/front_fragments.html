@@ -390,7 +390,7 @@
 
 <th:block th:fragment="salesperson_index" sec:authorize="hasAuthority('Salesperson')">
 	<div class="row mt-4 mx-5">
-		<div class="col-lg-3">
+		<div class="col-lg-4">
 			<div class="circle-tile">
 				<a href="#">
 			 		<div class="circle-tile-heading dark-blue">
@@ -412,7 +412,7 @@
 			</div>
 		</div>
      
-		<div class="col-lg-3">
+		<div class="col-lg-4">
 			<div class="circle-tile ">
 				<a href="#">
 			  		<div class="circle-tile-heading green">
@@ -433,7 +433,7 @@
 			</div>
 		</div> 
      
-		<div class="col-lg-3">
+		<div class="col-lg-4">
 			<div class="circle-tile ">
 				<a href="#">
 			   		<div class="circle-tile-heading red">
@@ -451,26 +451,6 @@
 			          	
 			       	<a class="circle-tile-footer" th:href="@{'/account'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
 				</div>
-			</div>
-		</div> 
-     
-		<div class="col-lg-3">
-			<div class="circle-tile ">
-				<a href="#">
-			      	<div class="circle-tile-heading yellow">
-			        	<i class="fab fa-shopify fa-fw fa-3x mt-3 text-white"></i>
-			        </div>
-			    </a>
-			    	
-			     <div class="circle-tile-content yellow">
-					<div class="circle-tile-description text-faded">Total Products</div>		
-			    	
-			    	<div class="circle-tile-number text-faded ">
-			          	[[${totalProducts}]]
-			       	</div>
-			 			
-			 		<a class="circle-tile-footer" th:href="@{'/products'}">More Info <i class="fa fa-chevron-circle-right"></i></a>
-			   	</div>
 			</div>
 		</div> 
 	</div> 
