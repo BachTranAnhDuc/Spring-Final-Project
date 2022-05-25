@@ -1,0 +1,18 @@
+package com.rubikme.admin.user.export;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import com.rubikme.common.entity.User;
+
+public class UserExportExcelTemplate extends UserAbstractExporter{
+
+	@Override
+	public void export(List<User> listUsers, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

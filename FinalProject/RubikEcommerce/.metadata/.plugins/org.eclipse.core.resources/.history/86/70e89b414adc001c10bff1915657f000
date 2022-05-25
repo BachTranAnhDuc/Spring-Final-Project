@@ -1,0 +1,5 @@
+package com.rubikme.admin.user.export;
+
+public class UserExportExcelTemplate{
+
+}

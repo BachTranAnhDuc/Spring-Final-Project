@@ -22,8 +22,12 @@ import com.rubikme.common.entity.User;
 import com.rubikme.admin.FileUploadUtil;
 import com.rubikme.admin.user.UserNotFoundException;
 import com.rubikme.admin.user.UserService;
+import com.rubikme.admin.user.export.UserAbstractExporter;
 import com.rubikme.admin.user.export.UserCsvExporter;
 import com.rubikme.admin.user.export.UserExcelExporter;
+import com.rubikme.admin.user.export.UserExportCsvTemplate;
+import com.rubikme.admin.user.export.UserExportExcelTemplate;
+import com.rubikme.admin.user.export.UserExportPdfTemplate;
 import com.rubikme.admin.user.export.UserPdfExporter;
 import com.rubikme.common.entity.Role;
 
@@ -182,28 +186,40 @@ public class UserController {
 	
 	@GetMapping("/users/export/csv")
 	public void exportToCSV(HttpServletResponse response) throws IOException {
+//		List<User> listUser = service.listAll();
+//		
+//		UserCsvExporter userCsvExporter = new UserCsvExporter();
+//		userCsvExporter.export(listUser, response);
+		
 		List<User> listUser = service.listAll();
 		
-		UserCsvExporter userCsvExporter = new UserCsvExporter();
-		userCsvExporter.export(listUser, response);
+		UserAbstractExporter csvExport = new UserExportCsvTemplate();
+		csvExport.doExport(listUser, response);
 	}
 	
 	@GetMapping("/users/export/excel")
 	public void exportToExcel(HttpServletResponse response) throws IOException {
 		List<User> listUser = service.listAll();
 		
-		UserExcelExporter userExcelExporter = new UserExcelExporter();
+//		UserExcelExporter userExcelExporter = new UserExcelExporter();
+//		
+//		userExcelExporter.export(listUser, response);
 		
-		userExcelExporter.export(listUser, response);
+		UserAbstractExporter excelExport = new UserExportExcelTemplate();
+		excelExport.doExport(listUser, response);
 	}
 	
 	@GetMapping("/users/export/pdf")
 	public void exportToPDF(HttpServletResponse response) throws IOException {
 		List<User> listUser = service.listAll();
 		
-		UserPdfExporter userPdfExporter = new UserPdfExporter();
+//		UserPdfExporter userPdfExporter = new UserPdfExporter();
+//		
+//		userPdfExporter.export(listUser, response);
 		
-		userPdfExporter.export(listUser, response);
+		UserAbstractExporter pdfExport = new UserExportPdfTemplate();
+		
+		pdfExport.doExport(listUser, response);
 	}
 	
 //	@GetMapping("/login")
