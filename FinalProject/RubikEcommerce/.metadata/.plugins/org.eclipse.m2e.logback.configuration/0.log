@@ -727,3 +727,10 @@ org.eclipse.jdt.core.JavaModelException: RubikCommon does not exist
 2022-05-26 00:37:25,209 [Worker-47: Launching RubikBackEnd - RubikBackEndApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RubikCommon: com.rubikme:RubikCommon:0.0.1-SNAPSHOT with classifier null to /RubikCommon/target/classes
 2022-05-26 00:37:25,422 [Worker-47: Launching RubikBackEnd - RubikBackEndApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RubikCommon: com.rubikme:RubikCommon:0.0.1-SNAPSHOT with classifier null to /RubikCommon/target/classes
 2022-05-26 00:37:25,649 [Worker-47: Launching RubikBackEnd - RubikBackEndApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RubikCommon: com.rubikme:RubikCommon:0.0.1-SNAPSHOT with classifier null to /RubikCommon/target/classes
+2022-05-26 00:58:37,018 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-26 00:58:37,023 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-26 00:58:37,025 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-05-26 00:58:37,025 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-05-26 00:58:37,030 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-26 00:58:37,031 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-26 00:58:37,031 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Project\CDCNPM\Spring-Final-Project\FinalProject\RubikEcommerce\RubikProject\RubikWebParent\RubikBackEnd\src\test\resources
